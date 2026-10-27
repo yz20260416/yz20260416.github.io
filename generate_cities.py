@@ -2,19 +2,13 @@
 """
 generate_cities.py
 
-读取硬编码的城市列表，调用 DeepSeek API 生成每个城市的旅行指南内容，
-使用 cities/tokyo.html 的结构作为模板输出到 cities/<slug>.html，
-并自动重建 sitemap.xml。
+读取 cities.json 配置，调用 DeepSeek API 生成城市旅行指南页面。
 
 用法:
-    export DEEPSEEK_API_KEY="sk-..."
     python generate_cities.py                 # 生成所有缺失的城市
     python generate_cities.py --force         # 覆盖已存在的文件
-    python generate_cities.py --only Tokyo    # 只生成指定城市（可多次使用）
-    python generate_cities.py --dry-run       # 只打印将要生成的城市，不调用 API
-
-依赖:
-    pip install requests
+    python generate_cities.py --only Tokyo    # 只生成指定城市
+    python generate_cities.py --dry-run       # 只打印计划，不调用 API
 """
 
 import argparse
@@ -35,87 +29,46 @@ import requests
 
 API_URL = "https://api.deepseek.com/chat/completions"
 API_MODEL = "deepseek-chat"
-API_KEY_ENV = "DEEPSEEK_API_KEY"
 
 BASE_DIR = Path(__file__).resolve().parent
 CITIES_DIR = BASE_DIR / "cities"
 SITEMAP_PATH = BASE_DIR / "sitemap.xml"
-SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://example.com").rstrip("/")
+CITIES_JSON = BASE_DIR / "cities.json"
+SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://yz20260416.github.io").rstrip("/")
 
-# 硬编码的 50 个城市
-CITIES = [
-    "Tokyo", "Kyoto", "Osaka", "Seoul", "Beijing",
-    "Shanghai", "Bangkok", "Singapore", "Bali", "Hanoi",
-    "Paris", "London", "Rome", "Barcelona", "Amsterdam",
-    "Vienna", "Prague", "Athens", "Lisbon", "Dublin",
-    "New York", "Los Angeles", "San Francisco", "Miami", "Toronto",
-    "Vancouver", "Mexico City", "Rio de Janeiro", "Buenos Aires", "Lima",
-    "Sydney", "Melbourne", "Auckland", "Fiji", "Bora Bora",
-    "Cairo", "Cape Town", "Marrakech", "Nairobi", "Zanzibar",
-    "Dubai", "Istanbul", "Jerusalem", "Petra", "Maldives",
-    "Moscow", "St. Petersburg", "Warsaw", "Budapest", "Copenhagen",
-]
+# 从 aider.sh 读取 API Key
+def get_api_key():
+    key = os.environ.get("DEEPSEEK_API_KEY")
+    if key:
+        return key
+    aider_sh = BASE_DIR / "aider.sh"
+    if aider_sh.exists():
+        try:
+            content = aider_sh.read_text()
+            match = re.search(r'OPENAI_API_KEY="([^"]+)"', content)
+            if match:
+                return match.group(1)
+        except Exception as e:
+            print(f"[warn] 读取 aider.sh 失败: {e}", file=sys.stderr)
+    return None
 
-# 相关城市映射（用于底部链接）；未列出的城市使用默认邻居
-RELATED_CITIES = {
-    "Tokyo": ["Kyoto", "Osaka", "Seoul"],
-    "Kyoto": ["Tokyo", "Osaka", "Seoul"],
-    "Osaka": ["Tokyo", "Kyoto", "Seoul"],
-    "Seoul": ["Tokyo", "Kyoto", "Osaka"],
-    "Beijing": ["Shanghai", "Seoul", "Tokyo"],
-    "Shanghai": ["Beijing", "Seoul", "Tokyo"],
-    "Bangkok": ["Singapore", "Hanoi", "Bali"],
-    "Singapore": ["Bangkok", "Bali", "Hanoi"],
-    "Bali": ["Singapore", "Bangkok", "Hanoi"],
-    "Hanoi": ["Bangkok", "Singapore", "Bali"],
-    "Paris": ["London", "Amsterdam", "Rome"],
-    "London": ["Paris", "Dublin", "Amsterdam"],
-    "Rome": ["Paris", "Barcelona", "Athens"],
-    "Barcelona": ["Rome", "Lisbon", "Paris"],
-    "Amsterdam": ["Paris", "London", "Copenhagen"],
-    "Vienna": ["Prague", "Budapest", "Warsaw"],
-    "Prague": ["Vienna", "Budapest", "Warsaw"],
-    "Athens": ["Rome", "Istanbul", "Lisbon"],
-    "Lisbon": ["Barcelona", "Rome", "Dublin"],
-    "Dublin": ["London", "Amsterdam", "Lisbon"],
-    "New York": ["Toronto", "Los Angeles", "Miami"],
-    "Los Angeles": ["San Francisco", "New York", "Miami"],
-    "San Francisco": ["Los Angeles", "Vancouver", "New York"],
-    "Miami": ["New York", "Los Angeles", "Mexico City"],
-    "Toronto": ["New York", "Vancouver", "Miami"],
-    "Vancouver": ["San Francisco", "Toronto", "Los Angeles"],
-    "Mexico City": ["Miami", "Lima", "Los Angeles"],
-    "Rio de Janeiro": ["Buenos Aires", "Lima", "Mexico City"],
-    "Buenos Aires": ["Rio de Janeiro", "Lima", "Mexico City"],
-    "Lima": ["Mexico City", "Buenos Aires", "Rio de Janeiro"],
-    "Sydney": ["Melbourne", "Auckland", "Fiji"],
-    "Melbourne": ["Sydney", "Auckland", "Fiji"],
-    "Auckland": ["Sydney", "Melbourne", "Fiji"],
-    "Fiji": ["Auckland", "Sydney", "Bora Bora"],
-    "Bora Bora": ["Fiji", "Auckland", "Sydney"],
-    "Cairo": ["Marrakech", "Petra", "Istanbul"],
-    "Cape Town": ["Nairobi", "Zanzibar", "Marrakech"],
-    "Marrakech": ["Cairo", "Cape Town", "Zanzibar"],
-    "Nairobi": ["Cape Town", "Zanzibar", "Cairo"],
-    "Zanzibar": ["Nairobi", "Cape Town", "Marrakech"],
-    "Dubai": ["Istanbul", "Maldives", "Cairo"],
-    "Istanbul": ["Athens", "Dubai", "Jerusalem"],
-    "Jerusalem": ["Petra", "Istanbul", "Cairo"],
-    "Petra": ["Jerusalem", "Cairo", "Istanbul"],
-    "Maldives": ["Dubai", "Singapore", "Bali"],
-    "Moscow": ["St. Petersburg", "Warsaw", "Budapest"],
-    "St. Petersburg": ["Moscow", "Warsaw", "Copenhagen"],
-    "Warsaw": ["Prague", "Budapest", "Vienna"],
-    "Budapest": ["Vienna", "Prague", "Warsaw"],
-    "Copenhagen": ["Amsterdam", "Vienna", "Warsaw"],
-}
+API_KEY = get_api_key()
+
+# 加载城市配置
+def load_cities():
+    if not CITIES_JSON.exists():
+        print(f"[error] 找不到 {CITIES_JSON}", file=sys.stderr)
+        sys.exit(1)
+    with open(CITIES_JSON, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+CITIES_DATA = load_cities()
 
 # ---------------------------------------------------------------------------
 # 工具函数
 # ---------------------------------------------------------------------------
 
 def slugify(name: str) -> str:
-    """把城市名转换为文件名 slug，例如 'New York' -> 'new-york'。"""
     s = name.lower().strip()
     s = re.sub(r"[^a-z0-9]+", "-", s)
     return s.strip("-")
@@ -125,15 +78,13 @@ def city_filename(name: str) -> str:
     return f"{slugify(name)}.html"
 
 
-def related_for(name: str):
-    if name in RELATED_CITIES:
-        return RELATED_CITIES[name]
-    # 默认取列表中相邻的三个城市
-    idx = CITIES.index(name)
-    picks = []
-    for offset in (1, 2, 3):
-        picks.append(CITIES[(idx + offset) % len(CITIES)])
-    return picks
+def related_for(city_data):
+    if "related" in city_data:
+        return city_data["related"]
+    # 默认取同 region 的前 3 个城市
+    region = city_data.get("region", "")
+    same_region = [c["name"] for c in CITIES_DATA if c.get("region") == region and c["name"] != city_data["name"]]
+    return same_region[:3]
 
 
 # ---------------------------------------------------------------------------
@@ -199,7 +150,7 @@ def call_deepseek(city: str, api_key: str, retries: int = 3) -> dict:
             data = resp.json()
             content = data["choices"][0]["message"]["content"]
             return json.loads(content)
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             last_err = exc
             print(f"  [warn] {city} 第 {attempt} 次调用失败: {exc}", file=sys.stderr)
             if attempt < retries:
@@ -215,7 +166,8 @@ def esc(text) -> str:
     return escape(str(text))
 
 
-def render_html(city: str, data: dict) -> str:
+def render_html(city_data: dict, data: dict) -> str:
+    city = city_data["name"]
     intro = esc(data.get("intro", ""))
     months = data.get("months", [])
     attractions = data.get("attractions", [])
@@ -253,7 +205,7 @@ def render_html(city: str, data: dict) -> str:
         for q in faq
     )
 
-    related = related_for(city)
+    related = related_for(city_data)
     related_items = "\n".join(
         f'          <li><a href="{city_filename(r)}">{esc(r)}</a></li>'
         for r in related
@@ -272,9 +224,7 @@ def render_html(city: str, data: dict) -> str:
   <div class="container">
     <header>
       <h1>Best Time to Visit {esc(city)}</h1>
-      <p>
-        {intro}
-      </p>
+      <p>{intro}</p>
     </header>
 
     <main>
@@ -364,7 +314,7 @@ def rebuild_sitemap() -> None:
 # ---------------------------------------------------------------------------
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="使用 DeepSeek API 生成城市旅行指南页面。")
+    parser = argparse.ArgumentParser(description="生成城市旅行指南页面。")
     parser.add_argument("--force", action="store_true", help="覆盖已存在的 HTML 文件")
     parser.add_argument("--only", action="append", default=[], metavar="CITY",
                         help="只生成指定城市（可多次使用）")
@@ -373,48 +323,48 @@ def main() -> int:
 
     CITIES_DIR.mkdir(parents=True, exist_ok=True)
 
-    targets = CITIES
+    targets = CITIES_DATA
     if args.only:
         wanted = {c.lower() for c in args.only}
-        targets = [c for c in CITIES if c.lower() in wanted]
-        missing = wanted - {c.lower() for c in targets}
+        targets = [c for c in CITIES_DATA if c["name"].lower() in wanted]
+        missing = wanted - {c["name"].lower() for c in targets}
         if missing:
             print(f"[error] 未知城市: {', '.join(sorted(missing))}", file=sys.stderr)
             return 1
 
-    api_key = os.environ.get(API_KEY_ENV)
+    api_key = API_KEY
     if not api_key and not args.dry_run:
-        print(f"[error] 请设置环境变量 {API_KEY_ENV}", file=sys.stderr)
+        print(f"[error] 无法获取 API Key", file=sys.stderr)
         return 1
 
     todo = []
-    for city in targets:
-        out = CITIES_DIR / city_filename(city)
+    for city_data in targets:
+        out = CITIES_DIR / city_filename(city_data["name"])
         if out.exists() and not args.force:
-            print(f"[skip] {city} 已存在: {out.name}")
+            print(f"[skip] {city_data['name']} 已存在: {out.name}")
             continue
-        todo.append(city)
+        todo.append(city_data)
 
     if not todo:
         print("[info] 没有需要生成的城市。")
         rebuild_sitemap()
         return 0
 
-    print(f"[info] 计划生成 {len(todo)} 个城市: {', '.join(todo)}")
+    print(f"[info] 计划生成 {len(todo)} 个城市: {', '.join(c['name'] for c in todo)}")
     if args.dry_run:
         return 0
 
-    for i, city in enumerate(todo, 1):
+    for i, city_data in enumerate(todo, 1):
+        city = city_data["name"]
         print(f"[{i}/{len(todo)}] 生成 {city} ...")
         try:
             data = call_deepseek(city, api_key)
-            html = render_html(city, data)
+            html = render_html(city_data, data)
             out = CITIES_DIR / city_filename(city)
             out.write_text(html, encoding="utf-8")
             print(f"  -> 已写入 {out}")
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             print(f"  [error] {city} 失败: {exc}", file=sys.stderr)
-        # 轻微限速，避免触发 API 频率限制
         time.sleep(1)
 
     rebuild_sitemap()
