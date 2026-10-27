@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dublin Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Dublin Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="dublin.html">Dublin</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            Here is a comprehensive HTML travel guide section for Dublin's top attractions, formatted as requested.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dublin Travel Guide – Top 10 Attractions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1e2b3a;
+            background-color: #f9fafc;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+        .guide-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem 2rem;
+            border: 1px solid #e6edf4;
+        }
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0b3b5c;
+            border-left: 8px solid #c44536;
+            padding-left: 1.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .intro {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            background: #f0f6fb;
+            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            margin-bottom: 2.2rem;
+            border: 1px solid #d9e6f2;
+        }
+        .intro p {
+            margin: 0;
+        }
+        .attraction-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px;
+            margin: 1.5rem 0 2rem;
+        }
+        .attraction-table th {
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #1f4e6f;
+            padding: 0 0.8rem 0.4rem 0.8rem;
+            border-bottom: 2px solid #cbdae7;
+        }
+        .attraction-table td {
+            background: #ffffff;
+            padding: 1.2rem 1rem;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2eaf2;
+            vertical-align: top;
+        }
+        .attraction-table tr:hover td {
+            background: #f8fcff;
+            border-color: #b8d2e8;
+            transition: 0.15s;
+        }
+        .attr-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0b3b5c;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .attr-desc {
+            font-size: 0.95rem;
+            color: #2f4052;
+            margin-bottom: 0.5rem;
+        }
+        .attr-price {
+            font-weight: 600;
+            color: #1d6f42;
+            background: #e6f3ea;
+            display: inline-block;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            margin-top: 0.3rem;
+        }
+        .attr-tip {
+            font-size: 0.88rem;
+            color: #4a5e72;
+            background: #f2f6fa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.4rem;
+            border-left: 3px solid #c44536;
+        }
+        .tips-section {
+            background: #eef4fa;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin-top: 2.5rem;
+            border: 1px solid #cfe0ee;
+        }
+        .tips-section h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #0b3b5c;
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .tips-section h3::before {
+            content: "🧭";
+            font-size: 1.8rem;
+        }
+        .tips-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem 2rem;
+        }
+        .tips-list li {
+            position: relative;
+            padding-left: 2rem;
+            font-size: 0.98rem;
+            color: #1f3a4e;
+            line-height: 1.5;
+        }
+        .tips-list li::before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1rem;
+        }
+        .small-note {
+            font-size: 0.85rem;
+            color: #5f7d95;
+            margin-top: 1.5rem;
+            font-style: italic;
+            border-top: 1px dashed #b8cbd9;
+            padding-top: 1rem;
+        }
+        @media (max-width: 700px) {
+            .guide-container { padding: 1.5rem; }
+            .attraction-table td { display: block; width: 100%; margin-bottom: 1rem; }
+            .attraction-table th { display: none; }
+            .attraction-table tr { display: block; margin-bottom: 1.2rem; }
+            .attraction-table td:first-child { border-radius: 14px 14px 0 0; }
+            .attraction-table td:last-child { border-radius: 0 0 14px 14px; }
+        }
+    </style>
+</head>
+<body>
+<div class="guide-container">
+
+    <!-- H2 heading as requested -->
+    <h2>Dublin Top 10 Attractions</h2>
+
+    <!-- Introduction paragraph -->
+    <div class="intro">
+        <p>Dublin is a city where Viking history, literary giants, and warm pub culture collide. From the hallowed halls of Trinity College to the hallowed (and haunted) walls of Kilmainham Gaol, the Irish capital packs centuries of story into a walkable centre. Whether you’re chasing the Book of Kells, a perfect pint of stout, or a windswept coastal view, these ten attractions capture the essence of Dublin. Below you’ll find honest descriptions, current ticket prices (as of 2025), and practical tips to help you skip queues, save money, and make the most of every stop.</p>
+    </div>
+
+    <!-- Main content: structured table with descriptions, prices, tips -->
+    <table class="attraction-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Attraction</th>
+                <th style="width: 45%;">Description</th>
+                <th style="width: 30%;">Ticket & Tips</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 1. Guinness Storehouse -->
+            <tr>
+                <td><span class="attr-name">1. Guinness Storehouse</span></td>
+                <td class="attr-desc">Ireland’s most visited attraction tells the story of the black stuff across seven floors shaped like a giant pint glass. You’ll learn about brewing, advertising, and the Guinness family, finishing with a complimentary pint in the Gravity Bar – Dublin’s best 360° view.</td>
+                <td>
+                    <span class="attr-price">€26–€32 (adult, online saver)</span><br>
+                    <span class="attr-tip">Book online for a 10–15% discount and skip the ticket queue. Go early (10am) or after 5pm to avoid crowds. Gravity Bar pint included.</span>
+                </td>
+            </tr>
+            <!-- 2. Trinity College & Book of Kells -->
+            <tr>
+                <td><span class="attr-name">2. Trinity College & Book of Kells</span></td>
+                <td class="attr-desc">Founded in 1592, Trinity’s cobbled squares are free to
+            
+            <section class="related-links">
+                <h3>More Dublin Guides</h3>
+                <ul>
+                    <li><a href="dublin.html">Best Time to Visit Dublin</a></li>
+                    <li><a href="dublin-weather.html">Dublin Weather</a></li>
+                    <li><a href="dublin-attractions.html">Dublin Attractions</a></li>
+                    <li><a href="dublin-itinerary.html">Dublin Itinerary</a></li>
+                    <li><a href="dublin-budget.html">Dublin Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

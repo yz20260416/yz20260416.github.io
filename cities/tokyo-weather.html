@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tokyo Weather by Month - Complete travel guide with practical information for visitors.">
+    <title>Tokyo Weather by Month | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="tokyo.html">Tokyo</a> > Weather by Month
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            Here is the HTML code for a comprehensive travel guide section on Tokyo's weather. It includes a detailed monthly table, a practical tips section, and is formatted for easy reading and integration into a travel website.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokyo Weather Guide · Monthly Climate & Travel Tips</title>
+  <style>
+    /* clean, travel-guide style */
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e2b3c;
+      background: #f9fbfd;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+    .guide-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 12px 30px rgba(0, 20, 30, 0.08);
+      padding: 2rem 2rem 2.5rem;
+    }
+    h2 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0f2b3d;
+      border-left: 6px solid #d94f4f;
+      padding-left: 1.2rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #1e3b4f;
+      border-bottom: 2px solid #e2e9f0;
+      padding-bottom: 0.4rem;
+    }
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+    .intro {
+      background: #f1f6fa;
+      padding: 1.2rem 1.8rem;
+      border-radius: 20px;
+      font-size: 1.08rem;
+      border-left: 4px solid #d94f4f;
+      margin-bottom: 2rem;
+    }
+    /* table styles */
+    .weather-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin: 1.5rem 0 2rem;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .weather-table th {
+      background: #1e3b4f;
+      color: white;
+      font-weight: 500;
+      padding: 0.9rem 0.6rem;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+    .weather-table td {
+      padding: 0.75rem 0.6rem;
+      text-align: center;
+      border-bottom: 1px solid #e6edf4;
+      background: white;
+    }
+    .weather-table tr:last-child td {
+      border-bottom: none;
+    }
+    .weather-table tbody tr:hover td {
+      background: #f4f9ff;
+    }
+    .month-name {
+      font-weight: 600;
+      color: #0f2b3d;
+      text-align: left;
+      padding-left: 1rem;
+    }
+    .temp-high {
+      font-weight: 600;
+      color: #c44536;
+    }
+    .temp-low {
+      color: #2e6b8a;
+    }
+    .rain {
+      font-weight: 500;
+      color: #3c6e8f;
+    }
+    .best-badge {
+      background: #dff0e1;
+      color: #1f6d3a;
+      font-weight: 600;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .table-note {
+      font-size: 0.9rem;
+      color: #4a5f72;
+      margin-top: -0.5rem;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    /* practical tips */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 1.8rem 0 1rem;
+    }
+    .tip-card {
+      background: #ffffff;
+      border: 1px solid #e2eaf1;
+      border-radius: 20px;
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      transition: all 0.15s ease;
+    }
+    .tip-card:hover {
+      border-color: #cbdae8;
+      box-shadow: 0 8px 18px rgba(0, 40, 60, 0.06);
+    }
+    .tip-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      color: #1e3b4f;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tip-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: #2d4053;
+    }
+    .tip-card ul {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0 0;
+      font-size: 0.95rem;
+    }
+    .tip-card li {
+      margin-bottom: 0.35rem;
+    }
+    .highlight {
+      background: #fff6e5;
+      padding: 0.1rem 0.3rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    .footnote {
+      margin-top: 2rem;
+      font-size: 0.88rem;
+      color: #5f7386;
+      border-top: 1px dashed #cddbe8;
+      padding-top: 1rem;
+    }
+    @media (max-width: 650px) {
+      .guide-container { padding: 1.5rem; }
+      h2 { font-size: 1.7rem; }
+      .weather-table { font-size: 0.8rem; }
+      .weather-table th, .weather-table td { padding: 0.5rem 0.2rem; }
+      .month-name { padding-left: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="guide-container">
+
+  <!-- H2 as requested -->
+  <h2>Tokyo Weather by Month</h2>
+
+  <!-- Introduction paragraph -->
+  <p class="intro">
+    Tokyo has a humid subtropical climate with four distinct seasons. Summers are hot and muggy, winters are cool and dry, 
+    and the rainy season (tsuyu) typically runs from early June to mid-July. Spring and autumn are the most comfortable 
+    periods, with mild temperatures and lower humidity. Below is a detailed monthly breakdown of average high/low temperatures 
+    and rainfall, followed by practical tips to help you plan your trip.
+  </p>
+
+  <!-- Main content: structured table -->
+  <h3>Monthly temperature & rainfall (1991–2020 averages)</h3>
+  <table class="weather-table">
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Avg. high (°C)</th>
+        <th>Avg. low (°C)</th>
+        <th>Rainfall (mm)</th>
+        <th>Best time?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="month-name">January</td><td class="temp-high">9.8</td><td class="temp-low">1.2</td><td class="rain">52</td><td>—</td></tr>
+      <tr><td class="month-name">February</td><td class="temp-high">10.9</td><td class="temp-low">2.1</td><td class="rain">56</td><td>—</td></tr>
+      <tr><td class="month-name">March</td><td class="temp-high">14.2</td><td class="temp-low">5.0</td><td class="rain">118</td><td><span class="best-badge">🌸 Good</
+            
+            <section class="related-links">
+                <h3>More Tokyo Guides</h3>
+                <ul>
+                    <li><a href="tokyo.html">Best Time to Visit Tokyo</a></li>
+                    <li><a href="tokyo-weather.html">Tokyo Weather</a></li>
+                    <li><a href="tokyo-attractions.html">Tokyo Attractions</a></li>
+                    <li><a href="tokyo-itinerary.html">Tokyo Itinerary</a></li>
+                    <li><a href="tokyo-budget.html">Tokyo Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

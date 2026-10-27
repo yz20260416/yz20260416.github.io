@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beijing Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Beijing Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="beijing.html">Beijing</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            Here is the HTML code for a comprehensive travel guide section about Beijing's top attractions. It includes an introduction, a structured table with descriptions, ticket prices, and tips, followed by a practical tips section.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beijing Top 10 Attractions – Travel Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1);
+      padding: 2rem 1.5rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      border-left: 8px solid #b91c1c;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .intro {
+      font-size: 1.15rem;
+      color: #334155;
+      margin-bottom: 2.5rem;
+      padding: 0 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1.5rem;
+    }
+    .intro strong {
+      color: #b91c1c;
+      font-weight: 600;
+    }
+    .attractions-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 12px;
+      margin: 1.5rem 0 2rem;
+    }
+    .attractions-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #475569;
+      padding: 0.75rem 1rem;
+      background: #f1f5f9;
+      border-radius: 12px 12px 0 0;
+      border-bottom: 2px solid #cbd5e1;
+    }
+    .attractions-table td {
+      background: #ffffff;
+      padding: 1.2rem 1rem;
+      vertical-align: top;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+    .attractions-table tr {
+      transition: all 0.15s ease;
+    }
+    .attractions-table tbody tr:hover td {
+      background: #fef9f9;
+      border-bottom-color: #fecaca;
+    }
+    .attr-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .attr-desc {
+      font-size: 0.95rem;
+      color: #334155;
+      margin-top: 0.3rem;
+    }
+    .ticket-price {
+      font-weight: 600;
+      color: #b91c1c;
+      white-space: nowrap;
+      font-size: 1rem;
+    }
+    .ticket-note {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 400;
+      display: block;
+      margin-top: 0.2rem;
+    }
+    .visit-tip {
+      font-size: 0.9rem;
+      background: #f1f5f9;
+      padding: 0.5rem 0.75rem;
+      border-radius: 12px;
+      color: #1e293b;
+      border-left: 3px solid #b91c1c;
+      margin-top: 0.3rem;
+    }
+    .practical-tips {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.8rem;
+      margin-top: 2.5rem;
+      border: 1px solid #e2e8f0;
+    }
+    .practical-tips h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.8rem;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .tip-card {
+      background: #ffffff;
+      padding: 1.2rem 1.2rem 1rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e2e8f0;
+    }
+    .tip-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #b91c1c;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tip-card p {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    .tip-card ul {
+      padding-left: 1.2rem;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    .tip-card li {
+      margin-bottom: 0.3rem;
+    }
+    .footnote {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 1.5rem;
+      text-align: center;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 1.2rem;
+    }
+    @media (max-width: 700px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      .attractions-table th {
+        display: none;
+      }
+      .attractions-table, .attractions-table tbody, .attractions-table tr, .attractions-table td {
+        display: block;
+        width: 100%;
+      }
+      .attractions-table tr {
+        margin-bottom: 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        background: #ffffff;
+      }
+      .attractions-table td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .attractions-table td:last-child {
+        border-bottom: none;
+      }
+      .attractions-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: inline-block;
+        width: 90px;
+        color: #64748b;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .attr-name {
+        display: inline;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-container">
+    <!-- H2 heading exactly as requested -->
+    <h2>Beijing Top 10 Attractions</h2>
+
+    <!-- Introduction paragraph -->
+    <p class="intro">
+      Beijing, the capital of China, is a city where ancient grandeur meets modern energy. 
+      From imperial palaces and sacred temples to lively hutongs and world-class museums, 
+      the city offers an unforgettable journey through 3,000 years of history. 
+      To help you plan, here are the <strong>top 10 attractions in Beijing</strong> — 
+      each with a description, current ticket prices (as of 2025), and practical visiting tips 
+      so you can make the most of your trip.
+    </p>
+
+    <!-- Main content: structured table with descriptions, prices
+            
+            <section class="related-links">
+                <h3>More Beijing Guides</h3>
+                <ul>
+                    <li><a href="beijing.html">Best Time to Visit Beijing</a></li>
+                    <li><a href="beijing-weather.html">Beijing Weather</a></li>
+                    <li><a href="beijing-attractions.html">Beijing Attractions</a></li>
+                    <li><a href="beijing-itinerary.html">Beijing Itinerary</a></li>
+                    <li><a href="beijing-budget.html">Beijing Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

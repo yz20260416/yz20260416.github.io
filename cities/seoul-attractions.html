@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seoul Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Seoul Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="seoul.html">Seoul</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Seoul's top 10 attractions. It presents key information in a clean, structured format with a table for quick comparison and detailed descriptions for each site, followed by practical travel tips.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seoul top 10 attractions · travel guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f9f7f4;
+            color: #1e1e1e;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .guide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 6px 12px rgba(0, 0, 0, 0.03);
+            padding: 2.5rem 2rem;
+            border: 1px solid #e9e2d9;
+        }
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1f2a3a;
+            border-left: 8px solid #c4452c;
+            padding-left: 1.4rem;
+            margin-top: 0.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .intro {
+            font-size: 1.15rem;
+            color: #3d3f45;
+            background: #fefcf8;
+            padding: 1.5rem 1.8rem;
+            border-radius: 20px;
+            margin-bottom: 2.5rem;
+            border: 1px solid #ede6dd;
+            box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
+        }
+        .intro p {
+            margin-bottom: 0;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            margin: 2rem 0 2.8rem 0;
+            border-radius: 20px;
+            border: 1px solid #e2d9cf;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 720px;
+        }
+        th {
+            background: #1f2a3a;
+            color: #f0ede8;
+            font-weight: 600;
+            padding: 1rem 1rem;
+            text-align: left;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            border-right: 1px solid #354152;
+        }
+        th:last-child {
+            border-right: none;
+        }
+        td {
+            padding: 1rem 1rem;
+            border-bottom: 1px solid #eae3db;
+            vertical-align: top;
+            background-color: #ffffff;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        td:first-child {
+            font-weight: 600;
+            color: #1f2a3a;
+            white-space: nowrap;
+        }
+        .price {
+            font-weight: 600;
+            color: #b13e2a;
+            white-space: nowrap;
+        }
+        .attraction-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2.5rem 0 1.5rem;
+        }
+        .attraction-item {
+            background: #fefcf9;
+            border-radius: 20px;
+            padding: 1.6rem 1.8rem;
+            border: 1px solid #e7dfd6;
+            transition: all 0.1s ease;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+        }
+        .attraction-item h3 {
+            font-size: 1.6rem;
+            font-weight: 650;
+            color: #1f2a3a;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        .attraction-item h3 span {
+            background: #c4452c;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 2.2rem;
+            height: 2.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-right: 0.3rem;
+        }
+        .meta-badge {
+            display: inline-block;
+            background: #eae3db;
+            color: #2d3138;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.25rem 0.9rem;
+            border-radius: 30px;
+            margin-right: 0.6rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.01em;
+        }
+        .price-badge {
+            background: #fff0ec;
+            color: #b13e2a;
+            font-weight: 600;
+        }
+        .desc {
+            margin: 0.8rem 0 0.6rem;
+            color: #2b2e34;
+        }
+        .tip-inline {
+            background: #f0ede8;
+            padding: 0.5rem 1rem;
+            border-radius: 14px;
+            font-size: 0.92rem;
+            color: #2c3a4b;
+            display: inline-block;
+            margin-top: 0.4rem;
+            border-left: 4px solid #c4452c;
+        }
+        .tips-section {
+            margin-top: 3rem;
+            background: #f3efe9;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #dfd7cc;
+        }
+        .tips-section h3 {
+            font-size: 1.8rem;
+            font-weight: 650;
+            color: #1f2a3a;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .tips-section h3::before {
+            content: "✨";
+            font-size: 2rem;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .tip-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.3rem 1.4rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2d9cf;
+        }
+        .tip-card h4 {
+            font-size: 1.2rem;
+            font-weight: 650;
+            margin-bottom: 0.6rem;
+            color: #1f2a3a;
+            border-bottom: 2px solid #c4452c;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+        }
+        .tip-card p {
+            font-size: 0.96rem;
+            color: #2d3138;
+        }
+        .footnote {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6a6e76;
+            text-align: right;
+            border-top: 1px solid #e2d9cf;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 600px) {
+            .guide-container { padding: 1.5rem 1rem; }
+            h2 { font-size: 1.9rem; padding-left: 1rem; }
+            .attraction-item { padding: 1.2rem; }
+            .attraction-item h3 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <h2>Seoul Top 10 Attractions</h2>
+        <
+            
+            <section class="related-links">
+                <h3>More Seoul Guides</h3>
+                <ul>
+                    <li><a href="seoul.html">Best Time to Visit Seoul</a></li>
+                    <li><a href="seoul-weather.html">Seoul Weather</a></li>
+                    <li><a href="seoul-attractions.html">Seoul Attractions</a></li>
+                    <li><a href="seoul-itinerary.html">Seoul Itinerary</a></li>
+                    <li><a href="seoul-budget.html">Seoul Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

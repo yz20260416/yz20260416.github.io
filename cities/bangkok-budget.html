@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bangkok Travel Cost Guide - Complete travel guide with practical information for visitors.">
+    <title>Bangkok Travel Cost Guide | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="bangkok.html">Bangkok</a> > Travel Cost Guide
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            Here is a comprehensive HTML travel guide section for Bangkok, formatted with a budget breakdown for different travel styles.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangkok Travel Cost Guide – Budget, Mid‑range & Luxury</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f9fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem 2rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      border-left: 6px solid #eab308;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      color: #334155;
+      margin-bottom: 2.5rem;
+      padding: 0 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1.8rem;
+    }
+
+    .intro strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .budget-table-wrapper {
+      overflow-x: auto;
+      margin: 2rem 0 1.5rem;
+      border-radius: 18px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      min-width: 720px;
+    }
+
+    th {
+      background: #0f172a;
+      color: white;
+      font-weight: 600;
+      padding: 1rem 1.2rem;
+      text-align: left;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+
+    td {
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid #eef2f6;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    .category {
+      font-weight: 600;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+
+    .budget {
+      color: #15803d;
+      font-weight: 600;
+    }
+
+    .mid {
+      color: #b45309;
+      font-weight: 600;
+    }
+
+    .luxury {
+      color: #7e22ce;
+      font-weight: 600;
+    }
+
+    .note {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-top: 0.4rem;
+      font-weight: 400;
+      display: block;
+    }
+
+    .currency {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 400;
+    }
+
+    .table-caption {
+      text-align: left;
+      font-size: 0.9rem;
+      color: #475569;
+      margin-top: 0.5rem;
+      padding-left: 0.2rem;
+      font-style: italic;
+    }
+
+    .tips-section {
+      margin-top: 3rem;
+      background: #f1f5f9;
+      border-radius: 24px;
+      padding: 2rem 2rem 1.8rem;
+    }
+
+    .tips-section h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tips-section h3::before {
+      content: "💡";
+      font-size: 1.8rem;
+    }
+
+    .tips-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem 2rem;
+    }
+
+    .tips-list li {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      font-size: 1rem;
+      color: #1e293b;
+      background: white;
+      padding: 1rem 1.2rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e9eef3;
+    }
+
+    .tips-list li::before {
+      content: "✔️";
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .highlight {
+      background: #fef9c3;
+      padding: 0.1rem 0.3rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+        padding-left: 0.8rem;
+      }
+      .intro {
+        font-size: 1rem;
+      }
+      .tips-section {
+        padding: 1.5rem 1rem;
+      }
+      .tips-list li {
+        padding: 0.9rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-container">
+    <h2>Bangkok Travel Cost Guide</h2>
+
+    <p class="intro">
+      Bangkok is one of the most affordable major cities in Asia, but costs can vary dramatically depending on your travel style.
+      Whether you’re a backpacker watching every baht, a mid‑range traveler seeking comfort and convenience, or a luxury seeker
+      indulging in five‑star hotels and fine dining, this guide breaks down <strong>realistic daily budgets</strong> for accommodation,
+      food, transport, and activities. All prices are in <strong>Thai Baht (THB)</strong> and reflect typical 2025 costs—use them
+      as a planning baseline. <span class="currency">(1 USD ≈ 36 THB; 1 EUR ≈ 39 THB)</span>
+    </p>
+
+    <!-- BUDGET BREAKDOWN TABLE -->
+    <div class="budget-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Expense category</th>
+            <th>Budget / Backpacker</th>
+            <th>Mid‑range / Comfort</th>
+            <th>Luxury / High‑end</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="category">🏨 Accommodation<br><span class="note">per night</span></td>
+            <td class="budget">300 – 700 THB<br><span class="note">Hostel dorm, fan room, basic guesthouse</span></td>
+            <td class="mid">1,200 – 3,000 THB<br><span class="note">3★ hotel, private room w/ AC, pool access</span></td>
+            <td class="luxury">4,500 – 15,000+ THB<br><span class="note">5★ international chains, riverside suites, serviced apartments</span></td>
+          </tr>
+          <tr>
+            <td class="category">🍜 Food &amp; drink<br><span class="note">per day</span></td>
+            <td class="budget">250 – 450 THB<br><span class="note">Street food, local shophouses, 7‑Eleven meals, tap water</span></td>
+            <td class="mid">600 – 1,200 THB<br><span class="note">Sit‑down restaurants, food courts, occasional Western meal, 1–2 drinks</span></td>
+            <td class="luxury">1,500 –
+            
+            <section class="related-links">
+                <h3>More Bangkok Guides</h3>
+                <ul>
+                    <li><a href="bangkok.html">Best Time to Visit Bangkok</a></li>
+                    <li><a href="bangkok-weather.html">Bangkok Weather</a></li>
+                    <li><a href="bangkok-attractions.html">Bangkok Attractions</a></li>
+                    <li><a href="bangkok-itinerary.html">Bangkok Itinerary</a></li>
+                    <li><a href="bangkok-budget.html">Bangkok Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

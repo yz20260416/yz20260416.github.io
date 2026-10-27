@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hanoi Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Hanoi Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="hanoi.html">Hanoi</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Hanoi's top attractions. It presents ten key sites with descriptions, ticket prices, and practical visiting tips in a clean, structured format. The page includes an introduction, a detailed table for each attraction, and a separate tips section, making it easy for travelers to plan their visit.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanoi Top 10 Attractions · Travel Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #faf8f5;
+            color: #1e1e1e;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .guide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            padding: 2rem 2rem 2.5rem;
+        }
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1e2b2f;
+            border-left: 6px solid #c44536;
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+        .intro {
+            font-size: 1.15rem;
+            color: #2d3e44;
+            background: #f2efe9;
+            padding: 1.4rem 1.8rem;
+            border-radius: 20px;
+            margin-bottom: 2.5rem;
+            border: 1px solid #e2dad0;
+        }
+        .intro p {
+            margin-bottom: 0.75rem;
+        }
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 20px;
+            border: 1px solid #e2dad0;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.98rem;
+            min-width: 860px;
+        }
+        th {
+            background: #1e2b2f;
+            color: #f0ede8;
+            font-weight: 500;
+            text-align: left;
+            padding: 1rem 1.2rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #eae3db;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .attraction-name {
+            font-weight: 600;
+            color: #1e2b2f;
+            font-size: 1.05rem;
+        }
+        .price-badge {
+            display: inline-block;
+            background: #e9e2d9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #3a2c25;
+            white-space: nowrap;
+        }
+        .free-badge {
+            background: #d9e8d6;
+            color: #1e4a2b;
+        }
+        .tip-text {
+            color: #4a5b62;
+            font-size: 0.93rem;
+        }
+        .tip-text strong {
+            color: #c44536;
+            font-weight: 600;
+        }
+        .practical-tips {
+            background: #f2efe9;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin-top: 1rem;
+            border: 1px solid #e2dad0;
+        }
+        .practical-tips h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1e2b2f;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .practical-tips h3::before {
+            content: "🧭";
+            font-size: 1.8rem;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 0.8rem;
+        }
+        .tip-card {
+            background: white;
+            padding: 1.2rem 1.4rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border-left: 4px solid #c44536;
+        }
+        .tip-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e2b2f;
+            margin-bottom: 0.6rem;
+        }
+        .tip-card p {
+            font-size: 0.95rem;
+            color: #3d4d54;
+        }
+        .tip-card ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #3d4d54;
+        }
+        .tip-card li {
+            margin-bottom: 0.35rem;
+        }
+        .note {
+            margin-top: 1.8rem;
+            font-size: 0.9rem;
+            color: #6b5e55;
+            font-style: italic;
+            border-top: 1px dashed #cfc5ba;
+            padding-top: 1.2rem;
+        }
+        @media (max-width: 700px) {
+            .guide-container { padding: 1.5rem 1rem; }
+            h2 { font-size: 1.8rem; }
+            .intro { padding: 1rem 1.2rem; font-size: 1rem; }
+            .practical-tips { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <!-- H2 heading -->
+        <h2>Hanoi Top 10 Attractions</h2>
+
+        <!-- Introduction paragraph -->
+        <div class="intro">
+            <p>Hanoi, Vietnam’s thousand-year-old capital, blends French colonial elegance with traditional Vietnamese soul. From the serene Hoan Kiem Lake to the bustling Old Quarter, the city offers a treasure trove of cultural and historical sites. Whether you’re a history buff, a foodie, or a wanderer, these ten attractions capture the essence of Hanoi. Below you’ll find descriptions, current ticket prices (in VND and approximate USD), and practical tips to make the most of your visit.</p>
+            <p><strong>Note:</strong> Prices are as of early 2025 and may change; always check official sources before you go. Many sites accept cash only, so carry small notes.</p>
+        </div>
+
+        <!-- Main content: structured table with attractions, prices, tips -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attraction</th>
+                        <th>Description</th>
+                        <th>Ticket price</th>
+                        <th>Visiting tips</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="attraction-name">1. Hoan Kiem Lake & Ngoc Son Temple</td>
+                        <td>Heart of Hanoi, this picturesque lake is perfect for a morning stroll. The red Huc Bridge leads to Ngoc Son Temple (Temple of the Jade Mound), dedicated to Tran Hung Dao. Legend says the lake is where Emperor Le Loi returned his magic sword to the Golden Turtle God.</td>
+                        <td><span class="price-badge">30,000 VND (~$1.20)</span> for temple entry (lake free)</td>
+                        <td class="tip-text"><strong>Go early (6–8am)</strong> to see locals doing tai chi and avoid crowds. The temple is small; combine with a walk around the lake. Weekend evenings the area becomes a pedestrian zone.</td>
+                    </tr>
+                    <tr>
+                        <td class="attraction
+            
+            <section class="related-links">
+                <h3>More Hanoi Guides</h3>
+                <ul>
+                    <li><a href="hanoi.html">Best Time to Visit Hanoi</a></li>
+                    <li><a href="hanoi-weather.html">Hanoi Weather</a></li>
+                    <li><a href="hanoi-attractions.html">Hanoi Attractions</a></li>
+                    <li><a href="hanoi-itinerary.html">Hanoi Itinerary</a></li>
+                    <li><a href="hanoi-budget.html">Hanoi Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

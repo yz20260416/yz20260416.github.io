@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Osaka Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Osaka Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="osaka.html">Osaka</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            Here is the HTML code for a comprehensive travel guide section on Osaka's top attractions. It's structured as a clean, informative webpage section with a table, detailed descriptions, and practical tips.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osaka Top 10 Attractions · Travel Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .guide-container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 8px 12px -6px rgba(0, 0, 0, 0.05);
+            padding: 2rem 2rem 2.5rem;
+            transition: all 0.2s;
+        }
+
+        @media (max-width: 640px) {
+            .guide-container {
+                padding: 1.5rem 1rem;
+                border-radius: 1.5rem;
+            }
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            border-left: 6px solid #e11d48;
+            padding-left: 1.25rem;
+            margin-top: 0.2rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.8rem;
+                padding-left: 1rem;
+            }
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #334155;
+            background: #f1f5f9;
+            padding: 1.25rem 1.75rem;
+            border-radius: 1.25rem;
+            margin-bottom: 2.25rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .intro p {
+            margin-bottom: 0;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 2.5rem;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            background: white;
+            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 780px;
+        }
+
+        th {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem 1rem;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        td {
+            padding: 1rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #fef2f2;
+            transition: background 0.15s;
+        }
+
+        .attraction-name {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 1rem;
+        }
+
+        .attraction-desc {
+            color: #334155;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            max-width: 360px;
+        }
+
+        .price {
+            font-weight: 600;
+            color: #be123c;
+            white-space: nowrap;
+        }
+
+        .tip-badge {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 0.2rem 0.75rem;
+            font-size: 0.8rem;
+            color: #1e293b;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .practical-tips {
+            background: #f8fafc;
+            border-radius: 1.5rem;
+            padding: 1.75rem 2rem;
+            border: 1px solid #e2e8f0;
+            margin-top: 1rem;
+        }
+
+        .practical-tips h3 {
+            font-size: 1.5rem;
+            font-weight: 650;
+            color: #0f172a;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .practical-tips h3::before {
+            content: "🧭";
+            font-size: 1.6rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem 1.75rem;
+        }
+
+        .tip-item {
+            background: white;
+            padding: 1rem 1.25rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #e9eef3;
+            font-size: 0.95rem;
+            transition: transform 0.1s;
+        }
+
+        .tip-item:hover {
+            transform: translateY(-2px);
+            border-color: #cbd5e1;
+        }
+
+        .tip-item strong {
+            display: block;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .tip-item span {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .footnote {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #64748b;
+            text-align: center;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 1.25rem;
+        }
+
+        .footnote a {
+            color: #be123c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footnote a:hover {
+            text-decoration: underline;
+        }
+
+        /* small screens fine */
+        @media (max-width: 600px) {
+            .practical-tips {
+                padding: 1.25rem;
+            }
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            .intro {
+                padding: 1rem 1.25rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <!-- H2 Heading -->
+        <h2>Osaka Top 10 Attractions</h2>
+
+        <!-- Introduction paragraph -->
+        <div class="intro">
+            <p>Osaka is a vibrant, food-obsessed metropolis where ancient temples stand beside neon-lit skyscrapers. Known as Japan’s “kitchen,” the city offers a dynamic blend of history, modern entertainment, and legendary street food. Whether you’re wandering through the iconic Dotonbori, exploring the majestic Osaka Castle, or getting lost in the retro charm of Shinsekai, there’s something for every traveler. Here are the top 10 attractions you shouldn’t miss — complete with ticket prices, descriptions, and insider tips to make the most of your visit.</p>
+        </div>
+
+        <!-- Main content: structured table -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Attraction</th>
+                        <th>Description</th>
+                        <th>Ticket price (approx.)</th>
+                        <th>Visiting tips</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 1. Universal Studios Japan -->
+                    <tr>
+                        <td>1</td>
+                        <td><span class="attraction-name">Universal Studios Japan (USJ)</span></td>
+                        <td class="attraction-desc">World-class theme park featuring Harry Potter, Super Nintendo World, and thrilling rides. Perfect for families and thrill
+            
+            <section class="related-links">
+                <h3>More Osaka Guides</h3>
+                <ul>
+                    <li><a href="osaka.html">Best Time to Visit Osaka</a></li>
+                    <li><a href="osaka-weather.html">Osaka Weather</a></li>
+                    <li><a href="osaka-attractions.html">Osaka Attractions</a></li>
+                    <li><a href="osaka-itinerary.html">Osaka Itinerary</a></li>
+                    <li><a href="osaka-budget.html">Osaka Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rome Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Rome Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="rome.html">Rome</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Rome's top 10 attractions. It presents key information in a clean, structured format with a table for descriptions, ticket prices, and visiting tips, followed by a practical tips section. The design is informative and easy to scan for travelers planning their itinerary.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rome Top 10 Attractions · Travel Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #faf7f2;
+      color: #1e1b16;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      padding: 2.5rem 2rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #1e1b16;
+      border-left: 8px solid #b8860b;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      background: #f8f4ed;
+      padding: 1.5rem 2rem;
+      border-radius: 1.5rem;
+      margin-bottom: 2.5rem;
+      color: #2d2a24;
+      border: 1px solid #e6dfd3;
+    }
+
+    .intro p {
+      margin-bottom: 0.75rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Table styling */
+    .attractions-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      margin-bottom: 2.5rem;
+    }
+
+    .attractions-table thead {
+      background: #2c3e4e;
+      color: #ffffff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.85rem;
+    }
+
+    .attractions-table th {
+      padding: 1rem 1rem;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .attractions-table td {
+      padding: 1.2rem 1rem;
+      background: #ffffff;
+      border-bottom: 1px solid #ede8df;
+      vertical-align: top;
+    }
+
+    .attractions-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .attractions-table tbody tr:hover td {
+      background: #fcf9f4;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #1e3b4f;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eae3d7;
+      color: #4a3e2e;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      margin-top: 0.3rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #0a5c36;
+      white-space: nowrap;
+    }
+
+    .price small {
+      font-weight: 400;
+      color: #5f5a50;
+      font-size: 0.8rem;
+      display: block;
+    }
+
+    .tips-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .tips-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.93rem;
+    }
+
+    .tips-list li::before {
+      content: "•";
+      color: #b8860b;
+      font-weight: 700;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0.2rem;
+      top: -0.1rem;
+    }
+
+    /* Practical tips section */
+    .practical-tips {
+      background: #f2efe8;
+      border-radius: 1.5rem;
+      padding: 2rem 2rem 1.8rem;
+      margin-top: 1rem;
+      border: 1px solid #e0d8cb;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #1e3b4f;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 2rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem 2.5rem;
+    }
+
+    .tip-card {
+      background: #ffffff;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9e1d6;
+    }
+
+    .tip-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2c3e4e;
+      margin-bottom: 0.7rem;
+      border-bottom: 2px solid #b8860b;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+
+    .tip-card p, .tip-card ul {
+      font-size: 0.96rem;
+      color: #2d2a24;
+    }
+
+    .tip-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .tip-card ul li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.3rem;
+      position: relative;
+    }
+
+    .tip-card ul li::before {
+      content: "→";
+      color: #b8860b;
+      position: absolute;
+      left: 0;
+      font-weight: 600;
+    }
+
+    /* responsive */
+    @media (max-width: 850px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+      h2 {
+        font-size: 1.9rem;
+      }
+      .intro {
+        padding: 1.2rem;
+        font-size: 1rem;
+      }
+      .attractions-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .attractions-table th, .attractions-table td {
+        padding: 0.9rem 0.8rem;
+        white-space: normal;
+        min-width: 140px;
+      }
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .attractions-table td {
+        min-width: 180px;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* small decoration */
+    .accent-text {
+      color: #b8860b;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-container">
+    <!-- H2 heading -->
+    <h2>Rome Top 10 Attractions</h2>
+
+    <!-- Introduction paragraph -->
+    <div class="intro">
+      <p>Rome is an open-air museum where ancient ruins, Renaissance masterpieces, and vibrant street life intertwine. With so many wonders, choosing where to start can be overwhelming. This guide highlights the <strong>10 essential attractions</strong> that capture the eternal city’s spirit — from the Colosseum’s bloody history to the Vatican’s sacred art. For each, you’ll find a concise description, current
+            
+            <section class="related-links">
+                <h3>More Rome Guides</h3>
+                <ul>
+                    <li><a href="rome.html">Best Time to Visit Rome</a></li>
+                    <li><a href="rome-weather.html">Rome Weather</a></li>
+                    <li><a href="rome-attractions.html">Rome Attractions</a></li>
+                    <li><a href="rome-itinerary.html">Rome Itinerary</a></li>
+                    <li><a href="rome-budget.html">Rome Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fiji Weather by Month - Complete travel guide with practical information for visitors.">
+    <title>Fiji Weather by Month | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="fiji.html">Fiji</a> > Weather by Month
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Fiji, focusing on a monthly weather breakdown. It provides a structured, at-a-glance table with temperature and rainfall data, a clear introduction, and practical tips to help travelers plan their visit based on climate and seasonal activities.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiji Weather by Month · Travel Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f8faff 0%, #eef3f9 100%);
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+            color: #1e2b3a;
+        }
+
+        .guide-card {
+            max-width: 1000px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0, 30, 60, 0.15), 0 8px 18px -6px rgba(0, 0, 0, 0.05);
+            padding: 2rem 2rem 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(2px);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0a2e4b;
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 4px solid #2b95d6;
+            display: inline-block;
+            line-height: 1.2;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            background: #f0f7fe;
+            padding: 1.2rem 1.6rem;
+            border-radius: 1.2rem;
+            margin: 1.2rem 0 1.8rem 0;
+            color: #1a3b55;
+            border-left: 5px solid #2b95d6;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .intro strong {
+            color: #0b4b77;
+        }
+
+        /* table styling */
+        .weather-table-wrapper {
+            margin: 1.8rem 0 2rem 0;
+            overflow-x: auto;
+            border-radius: 1.2rem;
+            box-shadow: 0 8px 20px -6px rgba(0, 40, 80, 0.12);
+            border: 1px solid #d9e6f2;
+        }
+
+        .weather-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: white;
+            min-width: 680px;
+        }
+
+        .weather-table th {
+            background: #0f3b5c;
+            color: white;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            padding: 1rem 0.8rem;
+            text-align: center;
+            border-right: 1px solid #2a577a;
+        }
+
+        .weather-table th:last-child {
+            border-right: none;
+        }
+
+        .weather-table td {
+            padding: 0.8rem 0.6rem;
+            text-align: center;
+            border-bottom: 1px solid #e2edf7;
+            border-right: 1px solid #e9f0f7;
+            background-color: #ffffff;
+            color: #1b3448;
+            font-weight: 400;
+        }
+
+        .weather-table td:last-child {
+            border-right: none;
+        }
+
+        .weather-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .weather-table tbody tr:hover td {
+            background-color: #f4faff;
+            transition: background 0.15s;
+        }
+
+        .weather-table td:first-child {
+            font-weight: 600;
+            background-color: #f9fcff;
+            text-align: left;
+            padding-left: 1.2rem;
+            color: #0a2e4b;
+        }
+
+        .weather-table tbody tr:hover td:first-child {
+            background-color: #e7f2fc;
+        }
+
+        .rain-high {
+            background-color: #e1efff;
+            font-weight: 500;
+            color: #06537e;
+        }
+
+        .temp-warm {
+            color: #b45309;
+            font-weight: 500;
+        }
+
+        .temp-hot {
+            color: #b91c1c;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #d4e7f7;
+            border-radius: 40px;
+            padding: 0.2rem 0.7rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #135b8c;
+            margin-left: 0.3rem;
+        }
+
+        .tips-section {
+            background: #e5f2fc;
+            border-radius: 1.5rem;
+            padding: 1.8rem 2rem;
+            margin-top: 2rem;
+            border: 1px solid #c2def5;
+            box-shadow: 0 8px 18px -10px rgba(0, 70, 120, 0.2);
+        }
+
+        .tips-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0b3b5c;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tips-section h3::before {
+            content: "☀️";
+            font-size: 1.8rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        .tip-item {
+            background: white;
+            padding: 1rem 1.2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #2b95d6;
+            font-size: 0.98rem;
+            transition: transform 0.1s;
+        }
+
+        .tip-item strong {
+            display: block;
+            color: #0a4a77;
+            margin-bottom: 0.3rem;
+            font-size: 1.02rem;
+        }
+
+        .tip-item span {
+            color: #2b4b66;
+        }
+
+        .footnote {
+            margin-top: 1.6rem;
+            font-size: 0.85rem;
+            color: #5b7f9a;
+            text-align: right;
+            border-top: 1px dashed #b8d1e8;
+            padding-top: 1rem;
+        }
+
+        .highlight {
+            background: #fff3d6;
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            font-weight: 500;
+            color: #7a4d00;
+        }
+
+        @media (max-width: 600px) {
+            .guide-card {
+                padding: 1.5rem 1rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .intro {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+            .tips-section {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-card">
+        <!-- H2 heading as required -->
+        <h2>Fiji Weather by Month</h2>
+
+        <!-- Introduction paragraph -->
+        <div class="intro">
+            <strong>Fiji enjoys a tropical climate</strong> with warm temperatures year‑round and a distinct wet season (November–April) and dry season (May–October). 
+            The table below gives you average daily high temperatures, rainfall, and a quick take on what each month feels like — so you can pick the perfect island escape. 
+            Whether you're chasing sunshine, avoiding crowds, or looking for the best surf, this monthly breakdown will guide you.
+        </div>
+
+        <!-- Main content: structured
+            
+            <section class="related-links">
+                <h3>More Fiji Guides</h3>
+                <ul>
+                    <li><a href="fiji.html">Best Time to Visit Fiji</a></li>
+                    <li><a href="fiji-weather.html">Fiji Weather</a></li>
+                    <li><a href="fiji-attractions.html">Fiji Attractions</a></li>
+                    <li><a href="fiji-itinerary.html">Fiji Itinerary</a></li>
+                    <li><a href="fiji-budget.html">Fiji Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

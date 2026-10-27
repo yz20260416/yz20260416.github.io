@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cape Town Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Cape Town Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="cape-town.html">Cape Town</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Cape Town's top 10 attractions. It presents a clear introduction, a structured table with descriptions, ticket prices, and visiting tips for each attraction, followed by a practical tips section. The design is clean and informative, suitable for travelers planning a trip.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cape Town Travel Guide · Top 10 attractions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+      padding: 2rem 2rem 3rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      border-left: 8px solid #e11d48;
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      background: #f1f5f9;
+      padding: 1.5rem 2rem;
+      border-radius: 1.5rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e2e8f0;
+      color: #1e293b;
+    }
+
+    .intro p {
+      margin-bottom: 0.75rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .attractions-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      background: white;
+    }
+
+    .attractions-table th {
+      background: #0f172a;
+      color: white;
+      font-weight: 600;
+      text-align: left;
+      padding: 1rem 1.2rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .attractions-table td {
+      padding: 1.2rem 1.2rem;
+      border-bottom: 1px solid #e9eef3;
+      vertical-align: top;
+      background: white;
+    }
+
+    .attractions-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .attractions-table tr:hover td {
+      background: #fafcff;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .attraction-desc {
+      color: #334155;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: #eef2ff;
+      color: #1e3a8a;
+      font-weight: 600;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      margin-top: 0.2rem;
+    }
+
+    .tip-text {
+      font-size: 0.9rem;
+      color: #475569;
+      background: #f8fafc;
+      padding: 0.4rem 0.6rem;
+      border-radius: 8px;
+      border-left: 3px solid #e11d48;
+      margin-top: 0.2rem;
+    }
+
+    .practical-tips {
+      background: #f0f4f9;
+      border-radius: 1.75rem;
+      padding: 2rem 2rem 1.8rem;
+      margin-top: 1rem;
+      border: 1px solid #d9e2ec;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.8rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tip-card {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 1.3rem 1.3rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.1s ease;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-2px);
+      border-color: #cbd5e1;
+    }
+
+    .tip-card strong {
+      display: block;
+      font-size: 1.05rem;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #e11d48;
+      padding-bottom: 0.4rem;
+      width: fit-content;
+    }
+
+    .tip-card p {
+      font-size: 0.92rem;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    .tip-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 1.8rem;
+      text-align: right;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 1rem;
+      font-style: italic;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+        padding-left: 1rem;
+      }
+      .intro {
+        padding: 1.2rem 1.2rem;
+        font-size: 1rem;
+      }
+      .attractions-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .attractions-table th,
+      .attractions-table td {
+        padding: 0.9rem 1rem;
+        white-space: normal;
+        min-width: 180px;
+      }
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .price-badge {
+        white-space: normal;
+      }
+      .attractions-table td {
+        min-width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="guide-container">
+
+  <!-- H2 heading as required -->
+  <h2>Cape Town Top 10 Attractions</h2>
+
+  <!-- Introduction paragraph -->
+  <div class="intro">
+    <p>🌍 <strong>Where the mountains meet the sea</strong> — Cape Town is a city of dramatic landscapes, poignant history, and vibrant culture. From the flat-topped silhouette of Table Mountain to the penguin‑dotted shores of Boulders Beach, there’s no shortage of iconic experiences. To help you plan, we’ve curated the <strong>top 10 attractions</strong> with up-to-date descriptions, ticket price ranges (in South African Rand, ZAR), and practical visiting tips. Whether you’re a first‑timer or a returning explorer, these highlights will anchor your Cape Town adventure.</p>
+    <p style="font-size:0.95rem; margin-top:0.5rem;">💡 <em>Prices are indicative for 2025 and may vary by season, age, and booking channel. Always check official websites for the latest rates.</em></p>
+  </div>
+
+  <!-- Main content: structured table with descriptions, prices, tips
+            
+            <section class="related-links">
+                <h3>More Cape Town Guides</h3>
+                <ul>
+                    <li><a href="cape-town.html">Best Time to Visit Cape Town</a></li>
+                    <li><a href="cape-town-weather.html">Cape Town Weather</a></li>
+                    <li><a href="cape-town-attractions.html">Cape Town Attractions</a></li>
+                    <li><a href="cape-town-itinerary.html">Cape Town Itinerary</a></li>
+                    <li><a href="cape-town-budget.html">Cape Town Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

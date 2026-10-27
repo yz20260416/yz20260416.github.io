@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bangkok Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Bangkok Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="bangkok.html">Bangkok</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Bangkok's top 10 attractions. It includes a clear introduction, a structured table with descriptions, ticket prices, and visiting tips, followed by a practical tips section. The design is clean and informative, suitable for travelers planning their itinerary.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangkok Travel Guide · Top 10 Attractions</title>
+  <style>
+    /* clean, travel-guide inspired styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8f6f2;
+      color: #1e1e1e;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      padding: 2rem 2rem 2.5rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1e2b3c;
+      border-left: 6px solid #d4a373;
+      padding-left: 1.25rem;
+      margin: 0 0 1.25rem 0;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      color: #2d3e4f;
+      margin-bottom: 2rem;
+      max-width: 85%;
+      background: #fefcf8;
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      border: 1px solid #e9e2d6;
+    }
+
+    /* table styling */
+    .attractions-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.98rem;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .attractions-table thead {
+      background: #2d3e4f;
+      color: white;
+    }
+
+    .attractions-table th {
+      padding: 1rem 0.9rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      border-bottom: 2px solid #d4a373;
+    }
+
+    .attractions-table td {
+      padding: 1rem 0.9rem;
+      vertical-align: top;
+      border-bottom: 1px solid #e6dfd3;
+      background: #ffffff;
+    }
+
+    .attractions-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .attractions-table tbody tr:hover td {
+      background: #faf8f4;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      color: #1e2b3c;
+      font-size: 1.05rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .attraction-desc {
+      color: #3f4e5e;
+      font-size: 0.92rem;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: #f0ebe2;
+      padding: 0.25rem 0.75rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #1e2b3c;
+      white-space: nowrap;
+    }
+
+    .tip-text {
+      color: #4d6275;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* practical tips section */
+    .practical-tips {
+      margin-top: 2.5rem;
+      background: #faf7f0;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #e2d9cb;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1e2b3c;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.8rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tip-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      border: 1px solid #ede7dd;
+    }
+
+    .tip-card strong {
+      display: block;
+      font-size: 1.05rem;
+      color: #1e2b3c;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #d4a373;
+      padding-bottom: 0.3rem;
+      width: fit-content;
+    }
+
+    .tip-card p {
+      color: #3f4e5e;
+      font-size: 0.94rem;
+      margin-top: 0.5rem;
+    }
+
+    .tip-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.6rem;
+      color: #3f4e5e;
+      font-size: 0.94rem;
+    }
+
+    .tip-card li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* small screens */
+    @media (max-width: 700px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .intro {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .attractions-table {
+        font-size: 0.85rem;
+      }
+
+      .attractions-table th,
+      .attractions-table td {
+        padding: 0.75rem 0.6rem;
+      }
+
+      .attraction-name {
+        font-size: 0.95rem;
+      }
+
+      .practical-tips {
+        padding: 1.3rem 1.2rem;
+      }
+    }
+
+    /* for very small screens, make table scrollable */
+    @media (max-width: 550px) {
+      .table-wrapper {
+        overflow-x: auto;
+        margin: 1rem 0;
+      }
+      .attractions-table {
+        min-width: 620px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="guide-container">
+  <!-- MAIN HEADING -->
+  <h2>Bangkok Top 10 Attractions</h2>
+
+  <!-- INTRODUCTION PARAGRAPH -->
+  <p class="intro">
+    Bangkok is a city of glittering temples, bustling markets, and vibrant street life. 
+    From the iconic Grand Palace to the serene canals of Thonburi, the Thai capital offers 
+    an unforgettable mix of culture, history, and modern energy. Whether you're a first-time 
+    visitor or a seasoned traveler, these ten attractions capture the essence of Bangkok. 
+    We've included current ticket prices (as of 2025) and practical tips to help you plan 
+    a smooth and memorable trip.
+  </p>
+
+  <!-- MAIN CONTENT: TABLE OF TOP 10 ATTRACTIONS -->
+  <div class="table-wrapper">
+    <table class="attractions-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Attraction</th>
+          <th>Description</th>
+          <th>Ticket Price (THB / USD approx.)</th>
+          <th>Visiting Tips</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 1. Grand Palace -->
+        <tr>
+          <td>1</td>
+          <td><span class="attraction-name">The Grand Palace</span></td>
+          <td class="attraction-desc">Bangkok’s most famous landmark, a dazzling complex of royal halls, temples, and the sacred Emerald Buddha. A must-see for its intricate
+            
+            <section class="related-links">
+                <h3>More Bangkok Guides</h3>
+                <ul>
+                    <li><a href="bangkok.html">Best Time to Visit Bangkok</a></li>
+                    <li><a href="bangkok-weather.html">Bangkok Weather</a></li>
+                    <li><a href="bangkok-attractions.html">Bangkok Attractions</a></li>
+                    <li><a href="bangkok-itinerary.html">Bangkok Itinerary</a></li>
+                    <li><a href="bangkok-budget.html">Bangkok Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

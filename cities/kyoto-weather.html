@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kyoto Weather by Month - Complete travel guide with practical information for visitors.">
+    <title>Kyoto Weather by Month | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="kyoto.html">Kyoto</a> > Weather by Month
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            Here is the HTML code for a comprehensive travel guide section about Kyoto's weather. It includes a monthly guide with temperatures, rainfall, and practical tips, formatted for easy reading.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyoto Weather Guide · Monthly Climate & Travel Tips</title>
+  <style>
+    /* clean, informative styling for a travel guide section */
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #faf9f7;
+      margin: 0;
+      padding: 2rem 1rem;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+    .guide-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+      padding: 2rem 2rem 2.5rem;
+    }
+    h2 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-top: 0.2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #c9a87c;
+      color: #2c3e4f;
+      display: inline-block;
+    }
+    .intro {
+      font-size: 1.1rem;
+      color: #2d3e4f;
+      background: #f6f3ef;
+      padding: 1.2rem 1.5rem;
+      border-radius: 18px;
+      margin: 1.5rem 0 2rem;
+      border-left: 6px solid #b8956a;
+    }
+    .intro p {
+      margin: 0;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 2rem 0 1.8rem;
+      border-radius: 16px;
+      border: 1px solid #e3dbd1;
+      background: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      min-width: 720px;
+    }
+    th {
+      background: #3a4e5e;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 14px 12px;
+      text-align: left;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+    td {
+      padding: 12px 12px;
+      border-bottom: 1px solid #ede7df;
+      vertical-align: top;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: #faf6f1;
+    }
+    .month-col {
+      font-weight: 600;
+      color: #2c3e4f;
+      white-space: nowrap;
+    }
+    .temp-high {
+      font-weight: 600;
+      color: #b34a2e;
+    }
+    .temp-low {
+      color: #3d6b8c;
+    }
+    .rain {
+      color: #3f6e7a;
+    }
+    .best-badge {
+      background: #e7d9c9;
+      color: #4a3a2a;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      border-radius: 30px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .tips-section {
+      background: #f2ede6;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-top: 2.2rem;
+    }
+    .tips-section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2c3e4f;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tips-section h3::before {
+      content: "☔";
+      font-size: 1.6rem;
+    }
+    .tips-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      list-style-type: none;
+    }
+    .tips-list li {
+      margin-bottom: 0.9rem;
+      padding-left: 1.6rem;
+      position: relative;
+    }
+    .tips-list li::before {
+      content: "•";
+      color: #b8956a;
+      font-weight: 700;
+      font-size: 1.4rem;
+      position: absolute;
+      left: 0;
+      top: -6px;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: #5b4f42;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed #cbbeb0;
+      font-style: italic;
+    }
+    .best-month-highlight {
+      background: #fdf3e9;
+      border-radius: 12px;
+      padding: 0.8rem 1.2rem;
+      margin: 1.2rem 0 0.5rem;
+      font-weight: 500;
+      color: #3d2e1f;
+    }
+  </style>
+</head>
+<body>
+<div class="guide-container">
+
+  <!-- H2 heading exactly as requested -->
+  <h2>Kyoto Weather by Month</h2>
+
+  <!-- Introduction paragraph -->
+  <div class="intro">
+    <p>Kyoto’s climate is humid subtropical, with four sharply defined seasons that transform the city’s temples, gardens, and streetscapes. Summer is hot and muggy, winter is crisp with occasional light snow, and spring and autumn are famously beautiful. Use this monthly guide — with average high/low temperatures, rainfall, and travel notes — to plan your visit around the weather you prefer.</p>
+  </div>
+
+  <!-- Main content: structured table with monthly weather data -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Avg. High (°C / °F)</th>
+          <th>Avg. Low (°C / °F)</th>
+          <th>Rainfall (mm)</th>
+          <th>Travel notes & best months</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="month-col">January</td>
+          <td class="temp-high">9°C / 48°F</td>
+          <td class="temp-low">1°C / 34°F</td>
+          <td class="rain">50 mm</td>
+          <td>Crisp and cold; occasional light snow. Fewer crowds, but some temples close early. <span class="best-badge">quiet season</span></td>
+        </tr>
+        <tr>
+          <td class="month-col">February</td>
+          <td class="temp-high">10°C / 50°F</td>
+          <td class="temp-low">1°C / 34°F</td>
+          <td class="rain">65 mm</td>
+          <td>Still chilly, but plum blossoms begin to bloom. Good for indoor tea ceremonies and museum visits.</td>
+        </tr>
+        <tr>
+          <td class="month-col">March</td>
+          <td class="temp-high">14°C / 57°F</td>
+          <td class="temp-low">4°C / 39°F</td>
+          <td class="rain">110 mm</td>
+          <td>Early spring; cherry blossom season starts late March. Crowds increase — book early. <span class="best-badge">shoulder</span></td>
+        </tr>
+        <tr>
+          <td class="month-col">April</td>
+          <td class="temp-high">20°C / 68°F</td>
+          <td class="temp-low">9°C / 48°F</td>
+          <td class="rain">120 mm</td>
+          <td><strong>Peak cherry blossom season.</strong> Mild and lovely, but very busy. <span class="best-badge" style="background:#d4b28c;">best month</span></td>
+        </tr>
+        <tr>
+          <td class="month-col">May</td>
+          <td class="temp-high">25°C / 77°F</td>
+          <td class="temp-low">14°C / 57°F</td>
+          <td class="rain">150 mm</td>
+          <td>
+            
+            <section class="related-links">
+                <h3>More Kyoto Guides</h3>
+                <ul>
+                    <li><a href="kyoto.html">Best Time to Visit Kyoto</a></li>
+                    <li><a href="kyoto-weather.html">Kyoto Weather</a></li>
+                    <li><a href="kyoto-attractions.html">Kyoto Attractions</a></li>
+                    <li><a href="kyoto-itinerary.html">Kyoto Itinerary</a></li>
+                    <li><a href="kyoto-budget.html">Kyoto Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

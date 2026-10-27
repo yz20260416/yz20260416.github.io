@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Osaka Travel Cost Guide - Complete travel guide with practical information for visitors.">
+    <title>Osaka Travel Cost Guide | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="osaka.html">Osaka</a> > Travel Cost Guide
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            Here is the HTML code for a comprehensive travel guide section on Osaka, formatted as requested.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Osaka Travel Cost Guide</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e1e2f;
+      background-color: #fafafc;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+    .guide-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+      padding: 2rem 2rem 2.5rem;
+      border: 1px solid #e9e9ef;
+    }
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0b2b4f;
+      margin-top: 0.2rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+      border-left: 6px solid #d32f2f;
+      padding-left: 1.2rem;
+    }
+    .intro {
+      font-size: 1.1rem;
+      color: #2c3e50;
+      background: #f0f4fa;
+      padding: 1.2rem 1.8rem;
+      border-radius: 18px;
+      margin: 1.5rem 0 2rem;
+      border-left: 4px solid #d32f2f;
+      font-weight: 400;
+    }
+    .intro p {
+      margin: 0;
+    }
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px dashed #cfd9e6;
+      padding-bottom: 0.4rem;
+    }
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.98rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .budget-table th {
+      background-color: #0b2b4f;
+      color: white;
+      font-weight: 600;
+      padding: 14px 12px;
+      text-align: left;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+    .budget-table td {
+      padding: 14px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+      background-color: white;
+    }
+    .budget-table tr:last-child td {
+      border-bottom: none;
+    }
+    .budget-table tr:hover td {
+      background-color: #f9fcff;
+    }
+    .budget-table .category {
+      font-weight: 600;
+      color: #0b2b4f;
+      width: 20%;
+    }
+    .style-badge {
+      display: inline-block;
+      background: #eef2f7;
+      border-radius: 30px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-right: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .list-styled {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 1.8rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .list-styled li {
+      background: #f9fbfe;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      border-left: 4px solid #d32f2f;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      font-size: 0.98rem;
+    }
+    .list-styled li strong {
+      color: #0b2b4f;
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1.05rem;
+    }
+    .tips-section {
+      background: #eef6fb;
+      border-radius: 22px;
+      padding: 1.8rem 2rem;
+      margin-top: 2.5rem;
+      border: 1px solid #cde3f0;
+    }
+    .tips-section h3 {
+      margin-top: 0;
+      border-bottom: none;
+      color: #0b2b4f;
+      font-size: 1.6rem;
+      padding-bottom: 0;
+      margin-bottom: 1.2rem;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .tip-item {
+      background: white;
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #d9e6f2;
+    }
+    .tip-item h4 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      color: #d32f2f;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tip-item p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #2d3e50;
+    }
+    .currency-note {
+      font-size: 0.9rem;
+      color: #5e6f8d;
+      background: #f4f7fc;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .table-caption {
+      font-size: 0.9rem;
+      color: #4a5e7a;
+      margin-top: 0.3rem;
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+    @media (max-width: 700px) {
+      .guide-container { padding: 1.5rem 1rem; }
+      h2 { font-size: 1.8rem; }
+      .budget-table th, .budget-table td { padding: 10px 8px; font-size: 0.9rem; }
+      .style-badge { font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="guide-container">
+  <h2>Osaka Travel Cost Guide</h2>
+  <div class="intro">
+    <p>Osaka is one of Japan’s most vibrant and affordable major cities, famous for its street food, nightlife, and friendly locals. While it offers plenty of budget-friendly options, costs can vary widely depending on your travel style. This guide breaks down typical daily expenses for three common traveler profiles—budget, mid-range, and luxury—so you can plan your Osaka adventure with confidence. All prices are in Japanese yen (¥) and reflect average 2025 costs, excluding international airfare.</p>
+  </div>
+
+  <h3>Daily budget breakdown by travel style</h3>
+  <p class="table-caption">Estimates per person per day (accommodation, food, local transport, and activities).</p>
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Expense category</th>
+        <th>Budget / Backpacker</th>
+        <th>Mid-range / Comfort</th>
+        <th>Luxury / Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="category">Accommodation</td>
+        <td>¥2,500 – ¥4,500<br><span style="font-size:0.85rem; color:#4a5e7a;">Hostel dorm, capsule hotel, or budget guesthouse</span></td>
+       
+            
+            <section class="related-links">
+                <h3>More Osaka Guides</h3>
+                <ul>
+                    <li><a href="osaka.html">Best Time to Visit Osaka</a></li>
+                    <li><a href="osaka-weather.html">Osaka Weather</a></li>
+                    <li><a href="osaka-attractions.html">Osaka Attractions</a></li>
+                    <li><a href="osaka-itinerary.html">Osaka Itinerary</a></li>
+                    <li><a href="osaka-budget.html">Osaka Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

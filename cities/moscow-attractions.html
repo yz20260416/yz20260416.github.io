@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moscow Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Moscow Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="moscow.html">Moscow</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Moscow's top 10 attractions. It presents a structured, informative overview with a clean and readable layout, including a detailed table of attractions with descriptions, ticket prices, and visiting tips, followed by practical travel advice.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moscow Top 10 Attractions · Travel Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 8px 16px -6px rgba(0, 0, 0, 0.02);
+      padding: 2rem 2rem 2.5rem;
+      transition: all 0.2s;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+      border-left: 8px solid #b91c1c;
+      padding-left: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.125rem;
+      color: #334155;
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .intro p {
+      margin-bottom: 0.75rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* table styling */
+    .attractions-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border-radius: 18px;
+      overflow: hidden;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .attractions-table th {
+      background: #0f172a;
+      color: #f1f5f9;
+      font-weight: 600;
+      text-align: left;
+      padding: 1rem 1rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      border-right: 1px solid #1e293b;
+    }
+
+    .attractions-table th:last-child {
+      border-right: none;
+    }
+
+    .attractions-table td {
+      background: white;
+      padding: 1rem 1rem;
+      vertical-align: top;
+      border-bottom: 1px solid #e9eef3;
+      color: #1e293b;
+    }
+
+    .attractions-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .attractions-table tr:hover td {
+      background: #fef9f0;
+      transition: background 0.15s;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      color: #9b1c1c;
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .attraction-desc {
+      color: #2d3c4f;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      padding: 0.2rem 0.5rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+      white-space: nowrap;
+    }
+
+    .price-free {
+      background: #e6f7ec;
+      border-color: #86d9a5;
+      color: #0b5e2e;
+    }
+
+    .tip-text {
+      font-size: 0.88rem;
+      color: #334155;
+      background: #f1f5f9;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      display: inline-block;
+      line-height: 1.4;
+    }
+
+    /* practical tips section */
+    .practical-tips {
+      background: #f1f5f9;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin-top: 2rem;
+      border: 1px solid #dbe4ed;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.7rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tip-card {
+      background: white;
+      border-radius: 18px;
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      border-left: 4px solid #b91c1c;
+      transition: transform 0.1s;
+    }
+
+    .tip-card strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .tip-card p {
+      font-size: 0.92rem;
+      color: #334155;
+      margin: 0;
+    }
+
+    .tip-card ul {
+      margin: 0.4rem 0 0 1rem;
+      padding: 0;
+      font-size: 0.92rem;
+      color: #334155;
+    }
+
+    .tip-card li {
+      margin-bottom: 0.25rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 1.2rem;
+      font-style: italic;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 1rem;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        padding-left: 0.9rem;
+      }
+
+      .attractions-table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+        border-radius: 14px;
+      }
+
+      .attractions-table th,
+      .attractions-table td {
+        padding: 0.8rem 0.8rem;
+      }
+
+      .attractions-table td {
+        min-width: 180px;
+      }
+
+      .practical-tips {
+        padding: 1.25rem;
+      }
+
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .attractions-table {
+        font-size: 0.85rem;
+      }
+
+      .price-badge {
+        white-space: normal;
+        word-break: break-word;
+      }
+    }
+
+    /* small utility */
+    .nowrap {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+<div class="guide-container">
+
+  <!-- H2 heading -->
+  <h2>Moscow Top 10 Attractions</h2>
+
+  <!-- Introduction paragraph -->
+  <div class="intro">
+    <p>Moscow is a city of monumental scale, where centuries-old history meets bold modern architecture. From the iconic onion domes of St. Basil’s to the gleaming skyscrapers of Moscow City, the Russian capital offers an unforgettable journey through time. Whether you’re a first-time visitor or a seasoned traveler, these <strong>top 10 attractions
+            
+            <section class="related-links">
+                <h3>More Moscow Guides</h3>
+                <ul>
+                    <li><a href="moscow.html">Best Time to Visit Moscow</a></li>
+                    <li><a href="moscow-weather.html">Moscow Weather</a></li>
+                    <li><a href="moscow-attractions.html">Moscow Attractions</a></li>
+                    <li><a href="moscow-itinerary.html">Moscow Itinerary</a></li>
+                    <li><a href="moscow-budget.html">Moscow Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

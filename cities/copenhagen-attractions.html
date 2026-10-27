@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Copenhagen Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Copenhagen Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="copenhagen.html">Copenhagen</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Copenhagen's top 10 attractions. It presents key information like descriptions, ticket prices, and visiting tips in a clean, structured format suitable for travelers.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copenhagen Top 10 Attractions · Travel Guide</title>
+  <style>
+    /* clean, readable travel-guide style */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f7f9fc;
+      color: #1e2b3c;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 20, 30, 0.08);
+      padding: 2.5rem 2rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b2b40;
+      border-left: 6px solid #2a7faa;
+      padding-left: 1.2rem;
+      margin: 0 0 1.2rem 0;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      color: #2c3e50;
+      background: #eef4f9;
+      padding: 1.4rem 1.8rem;
+      border-radius: 18px;
+      margin-bottom: 2.5rem;
+      border: 1px solid #d0e0ed;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.7);
+    }
+
+    .intro p {
+      margin-bottom: 0.75rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* structured list — each attraction as a card */
+    .attraction-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      margin: 2rem 0 2.5rem 0;
+    }
+
+    .attraction-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.5rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2eaf2;
+      transition: all 0.1s ease;
+    }
+
+    .attraction-card:hover {
+      border-color: #b6d2e8;
+      box-shadow: 0 8px 20px rgba(42, 127, 170, 0.08);
+    }
+
+    .attraction-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      gap: 0.5rem 1rem;
+    }
+
+    .attraction-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0e3b4f;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .attraction-number {
+      background: #2a7faa;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 600;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      margin-right: 0.2rem;
+    }
+
+    .ticket-badge {
+      background: #e3f0f7;
+      color: #1a5c7a;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      white-space: nowrap;
+      border: 1px solid #c2dcee;
+    }
+
+    .attraction-desc {
+      color: #2d4055;
+      margin-bottom: 0.9rem;
+      font-size: 1.02rem;
+    }
+
+    .visiting-tip {
+      background: #f9fcfd;
+      border-left: 4px solid #7fb8d4;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #1d4b63;
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .visiting-tip strong {
+      color: #0f4c6b;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* practical tips section */
+    .practical-tips {
+      background: #f0f6fb;
+      border-radius: 20px;
+      padding: 2rem 2.2rem;
+      margin-top: 2.2rem;
+      border: 1px solid #cfe0ee;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #0b2b40;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      letter-spacing: -0.01em;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.8rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem 2rem;
+    }
+
+    .tip-item {
+      background: white;
+      padding: 1.2rem 1.4rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #d9e6f2;
+    }
+
+    .tip-item h4 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1a5c7a;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tip-item p {
+      color: #2b4b62;
+      font-size: 0.97rem;
+    }
+
+    .tip-item ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.3rem;
+    }
+
+    .tip-item li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.6rem;
+      position: relative;
+      font-size: 0.97rem;
+      color: #2b4b62;
+    }
+
+    .tip-item li::before {
+      content: "•";
+      color: #2a7faa;
+      font-weight: 700;
+      font-size: 1.3rem;
+      position: absolute;
+      left: 0.2rem;
+      top: -0.1rem;
+    }
+
+    .price-note {
+      font-size: 0.85rem;
+      color: #5e7e94;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .attraction-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .attraction-name {
+        font-size: 1.3rem;
+      }
+
+      .practical-tips {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-container">
+    <!-- H2 heading as required -->
+    <h2>Copenhagen Top 10 Attractions</h2>
+
+    <!-- Introduction paragraph -->
+    <div class="intro">
+      <p>🌊 Copenhagen blends royal history, harbor-side design, and a famously relaxed atmosphere. From the 19th-century Tivoli Gardens to the modern architecture of the Opera House, the Danish capital packs a remarkable
+            
+            <section class="related-links">
+                <h3>More Copenhagen Guides</h3>
+                <ul>
+                    <li><a href="copenhagen.html">Best Time to Visit Copenhagen</a></li>
+                    <li><a href="copenhagen-weather.html">Copenhagen Weather</a></li>
+                    <li><a href="copenhagen-attractions.html">Copenhagen Attractions</a></li>
+                    <li><a href="copenhagen-itinerary.html">Copenhagen Itinerary</a></li>
+                    <li><a href="copenhagen-budget.html">Copenhagen Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

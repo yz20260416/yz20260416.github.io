@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Petra Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Petra Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="petra.html">Petra</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Petra. It presents a structured overview of the top ten attractions, including descriptions, ticket prices, and practical visiting tips, formatted for easy reading and reference.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petra Travel Guide · Top 10 Attractions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8f5f0;
+      color: #2e2b28;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+      padding: 2rem 2rem 2.5rem;
+      border: 1px solid #e8ddd0;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #3e2c1b;
+      border-left: 8px solid #c49a6c;
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .intro-text {
+      font-size: 1.15rem;
+      color: #4a3f35;
+      background: #fefbf7;
+      padding: 1.5rem 1.8rem;
+      border-radius: 20px;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e8d9c8;
+      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
+    }
+
+    .intro-text strong {
+      color: #a7692b;
+      font-weight: 600;
+    }
+
+    /* Table styling */
+    .attractions-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.98rem;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    .attractions-table thead {
+      background: #3e2c1b;
+      color: #f5ede3;
+    }
+
+    .attractions-table th {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 1rem 0.9rem;
+      text-align: left;
+      letter-spacing: 0.3px;
+      border-right: 1px solid #5e4b38;
+    }
+
+    .attractions-table th:last-child {
+      border-right: none;
+    }
+
+    .attractions-table td {
+      padding: 1rem 0.9rem;
+      border-bottom: 1px solid #e6d8ca;
+      vertical-align: top;
+      background: #ffffff;
+    }
+
+    .attractions-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .attractions-table tbody tr:hover td {
+      background: #fcf8f3;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      color: #7b4a1e;
+      font-size: 1.05rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .attraction-desc {
+      font-size: 0.92rem;
+      color: #4f4238;
+      line-height: 1.5;
+    }
+
+    .ticket-price {
+      font-weight: 600;
+      color: #1f5e3a;
+      background: #e9f3ed;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: #7a6a5c;
+      display: block;
+      margin-top: 0.3rem;
+      font-style: italic;
+    }
+
+    /* Practical tips section */
+    .tips-section {
+      margin-top: 2.8rem;
+      background: #f2ebe2;
+      border-radius: 24px;
+      padding: 2rem 2rem 1.8rem;
+      border: 1px solid #dbcbb9;
+    }
+
+    .tips-section h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #3e2c1b;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .tips-section h3::before {
+      content: "✦";
+      font-size: 2rem;
+      color: #b57e4b;
+      line-height: 1;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem 2rem;
+    }
+
+    .tip-item {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      padding: 1.2rem 1.3rem;
+      border-radius: 18px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e6d6c4;
+      transition: 0.1s ease;
+    }
+
+    .tip-item:hover {
+      border-color: #c49a6c;
+      background: #ffffff;
+    }
+
+    .tip-item strong {
+      display: block;
+      font-size: 1.05rem;
+      color: #7b4a1e;
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+
+    .tip-item p {
+      font-size: 0.94rem;
+      color: #3f352d;
+      margin: 0;
+    }
+
+    .small-note {
+      font-size: 0.85rem;
+      color: #6b5d4f;
+      margin-top: 1.8rem;
+      text-align: center;
+      border-top: 1px dashed #cbb9a6;
+      padding-top: 1.2rem;
+      font-style: italic;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 700px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        padding-left: 0.9rem;
+      }
+
+      .intro-text {
+        padding: 1.2rem;
+        font-size: 1rem;
+      }
+
+      .attractions-table {
+        font-size: 0.85rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .attractions-table th,
+      .attractions-table td {
+        padding: 0.8rem 0.7rem;
+      }
+
+      .attraction-desc {
+        white-space: normal;
+        min-width: 200px;
+      }
+
+      .tips-section {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .attractions-table {
+        font-size: 0.8rem;
+      }
+
+      .attraction-name {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-container">
+    <!-- H2 heading -->
+    <h2>Petra Top 10 Attractions</h2>
+
+    <!-- Introduction paragraph -->
+    <div class="intro-text">
+      <p>Carved into the rose-red cliffs of southern Jordan, <strong>Petra</strong> is more than a wonder of the ancient world — it’s a journey through 2,000 years of Nabataean history. With so much to see across its vast 264-square-kilometer site, knowing where to focus is key. This guide highlights the <strong>10 most remarkable attractions</strong>, complete with descriptions, current ticket prices (for the main Petra archaeological park), and practical advice to make the most of your visit. All prices are in <strong>Jordanian Din
+            
+            <section class="related-links">
+                <h3>More Petra Guides</h3>
+                <ul>
+                    <li><a href="petra.html">Best Time to Visit Petra</a></li>
+                    <li><a href="petra-weather.html">Petra Weather</a></li>
+                    <li><a href="petra-attractions.html">Petra Attractions</a></li>
+                    <li><a href="petra-itinerary.html">Petra Itinerary</a></li>
+                    <li><a href="petra-budget.html">Petra Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

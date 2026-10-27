@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Budapest Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Budapest Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="budapest.html">Budapest</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Budapest's top 10 attractions. It presents an introduction, a structured table with descriptions, ticket prices, and visiting tips, followed by a practical tips section. The design uses a clean, card-based layout with a warm color scheme to make the information easy to scan and use.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budapest Top 10 Attractions · Travel Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5efe9;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+      color: #2e241f;
+    }
+
+    .guide-card {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.15), 0 8px 12px -6px rgba(0, 0, 0, 0.05);
+      padding: 2.5rem 2rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1e1a17;
+      border-left: 8px solid #c49a6c;
+      padding-left: 1.25rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      color: #3d332e;
+      background: #faf6f2;
+      padding: 1.5rem 1.8rem;
+      border-radius: 1.5rem;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e8ddd2;
+      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
+    }
+
+    .intro p {
+      margin-bottom: 0.75rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Table styling */
+    .attractions-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 12px;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .attractions-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #7b6a5c;
+      padding: 0.6rem 1rem 0.6rem 1.5rem;
+      background: transparent;
+      border-bottom: 2px solid #e0d4c8;
+    }
+
+    .attractions-table td {
+      background: #fefcf9;
+      padding: 1.3rem 1.2rem 1.3rem 1.5rem;
+      vertical-align: top;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+      border: 1px solid #efe6de;
+      transition: transform 0.1s ease, box-shadow 0.2s ease;
+    }
+
+    .attractions-table tr:hover td {
+      box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+      background: #ffffff;
+      border-color: #dccfc2;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #1e1a17;
+      display: block;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .attraction-desc {
+      font-size: 0.95rem;
+      color: #4a3f38;
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: #e7d9cc;
+      color: #3e2e22;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.9rem;
+      border-radius: 30px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.3rem;
+      white-space: nowrap;
+    }
+
+    .tip-text {
+      font-size: 0.88rem;
+      color: #6b5a4c;
+      display: block;
+      margin-top: 0.5rem;
+      padding-left: 0.2rem;
+      border-left: 3px solid #c49a6c;
+      padding-left: 0.75rem;
+      font-style: italic;
+    }
+
+    .tip-text::before {
+      content: "💡 ";
+      font-style: normal;
+    }
+
+    /* practical tips section */
+    .practical-tips {
+      margin-top: 3rem;
+      background: #f3ede7;
+      border-radius: 1.8rem;
+      padding: 2rem 2rem 1.8rem;
+      border: 1px solid #e1d5c9;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.6rem;
+      font-weight: 650;
+      color: #1e1a17;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.8rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .tip-item {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      padding: 1rem 1.3rem;
+      border-radius: 1.2rem;
+      border: 1px solid #e2d6cb;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      font-size: 0.95rem;
+      color: #312a25;
+    }
+
+    .tip-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #1e1a17;
+    }
+
+    .tip-item span {
+      color: #5b4c41;
+    }
+
+    @media (max-width: 850px) {
+      .guide-card {
+        padding: 1.8rem 1.2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        padding-left: 1rem;
+      }
+
+      .attractions-table th {
+        display: none;
+      }
+
+      .attractions-table, .attractions-table tbody, .attractions-table tr, .attractions-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .attractions-table tr {
+        margin-bottom: 1.5rem;
+      }
+
+      .attractions-table td {
+        border-radius: 1rem;
+        padding: 1.2rem 1.2rem;
+        border: 1px solid #e1d5c9;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .attractions-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #8c7a6b;
+        margin-bottom: 0.5rem;
+      }
+
+      .practical-tips {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .intro {
+        padding: 1.2rem;
+        font-size: 1rem;
+      }
+
+      .price-badge {
+        font-size: 0.8rem;
+        white-space: normal;
+      }
+   
+            
+            <section class="related-links">
+                <h3>More Budapest Guides</h3>
+                <ul>
+                    <li><a href="budapest.html">Best Time to Visit Budapest</a></li>
+                    <li><a href="budapest-weather.html">Budapest Weather</a></li>
+                    <li><a href="budapest-attractions.html">Budapest Attractions</a></li>
+                    <li><a href="budapest-itinerary.html">Budapest Itinerary</a></li>
+                    <li><a href="budapest-budget.html">Budapest Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

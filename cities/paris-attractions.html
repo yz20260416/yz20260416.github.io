@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paris Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Paris Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="paris.html">Paris</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Paris's top 10 attractions. It presents essential information like descriptions, ticket prices, and visiting tips in a clean, structured format, including an introduction and a practical tips section for travelers.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paris Top 10 Attractions · Travel Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: #faf9f8;
+      color: #1e1e1e;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem 2rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b2b4a;
+      border-left: 6px solid #c9a03d;
+      padding-left: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+    }
+    .intro {
+      font-size: 1.15rem;
+      color: #2c3e50;
+      background: #f3f1ec;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      margin-bottom: 2.5rem;
+      border: 1px solid #e2ddd4;
+    }
+    .attraction-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0 1rem;
+      font-size: 0.98rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .attraction-table th {
+      background: #0b2b4a;
+      color: white;
+      font-weight: 600;
+      padding: 1rem 0.8rem;
+      text-align: left;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+    .attraction-table td {
+      padding: 1rem 0.8rem;
+      vertical-align: top;
+      border-bottom: 1px solid #e9e5df;
+      background: white;
+    }
+    .attraction-table tr:last-child td {
+      border-bottom: none;
+    }
+    .attraction-table tr:hover td {
+      background: #fcfaf7;
+    }
+    .attraction-name {
+      font-weight: 700;
+      color: #0b2b4a;
+      font-size: 1.05rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .attraction-desc {
+      color: #2d3e50;
+    }
+    .price-badge {
+      display: inline-block;
+      background: #eef3f9;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0b2b4a;
+      white-space: nowrap;
+    }
+    .price-free {
+      background: #e3f2e9;
+      color: #1e6b3b;
+    }
+    .tip-list, .practical-list {
+      list-style: none;
+      padding: 0;
+    }
+    .tip-list li, .practical-list li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+    .tip-list li::before {
+      content: "•";
+      color: #c9a03d;
+      font-weight: 700;
+      font-size: 1.4rem;
+      position: absolute;
+      left: 0.2rem;
+      top: -0.2rem;
+    }
+    .practical-list li::before {
+      content: "✓";
+      color: #1e6b3b;
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+      font-size: 1.1rem;
+    }
+    .practical-section {
+      background: #f3f1ec;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.5rem;
+      margin-top: 2.5rem;
+      border: 1px solid #e2ddd4;
+    }
+    .practical-section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0b2b4a;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .practical-section h3::before {
+      content: "🧳";
+      font-size: 1.8rem;
+    }
+    .note {
+      font-size: 0.92rem;
+      color: #4d5b68;
+      margin-top: 1.2rem;
+      font-style: italic;
+      border-top: 1px dashed #cbc6bd;
+      padding-top: 1rem;
+    }
+    @media (max-width: 780px) {
+      .guide-container { padding: 1.5rem 1rem; }
+      h2 { font-size: 1.8rem; }
+      .attraction-table th, .attraction-table td { padding: 0.8rem 0.5rem; }
+      .attraction-table { font-size: 0.9rem; }
+      .intro { padding: 1.2rem; }
+      .practical-section { padding: 1.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="guide-container">
+
+  <!-- H2 heading as required -->
+  <h2>Paris Top 10 Attractions</h2>
+
+  <!-- Introduction paragraph -->
+  <div class="intro">
+    <p>Paris is a living museum, a culinary capital, and a city of romance — but with so many iconic sights, planning can feel overwhelming. This curated guide covers the <strong>10 most essential attractions</strong>, with honest descriptions, up-to-date ticket prices (2025), and practical visiting tips. Whether you're a first-timer or a returning traveler, these landmarks capture the soul of the City of Light.</p>
+  </div>
+
+  <!-- Main content: structured table with descriptions, prices, tips -->
+  <table class="attraction-table">
+    <thead>
+      <tr>
+        <th style="width: 22%;">Attraction</th>
+        <th style="width: 38%;">Description</th>
+        <th style="width: 18%;">Ticket price (approx.)</th>
+        <th style="width: 22%;">Visiting tips</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 1. Eiffel Tower -->
+      <tr>
+        <td><span class="attraction-name">1. Eiffel Tower</span></td>
+        <td class="attraction-desc">The ultimate symbol of Paris. Iron lady offers swooping views from three levels. Summit access by lift, or climb 674 steps to the second floor. Sparkles hourly after dark.</td>
+        <td><span class="price-badge">€29.40 (summit, adult)</span><br><span class="price-badge price-free">€11.80 (2nd floor stairs)</span></td>
+        <td>Book online weeks ahead for summit; go at sunset for day+night views. Avoid peak hours (11am–4pm).</td>
+      </tr>
+      <!-- 2. Louvre Museum -->
+      <tr>
+        <td><span class="attraction-name">2. Louvre Museum</span></td>
+        <td class="attraction-desc">World’s largest art museum and historic palace. Home to Mona Lisa, Venus de Milo, and 35,000+ works. The glass pyramid is an icon itself.</td>
+        <td><span class="price-badge">€22 (online)</span><br><span class="price-badge">€25 (on-site)</span></td>
+        <td>Pre-book timed entry. Enter via Porte des Lions or Carrousel to avoid pyramid queues. Focus on 2–3 wings max.</td>
+      </tr>
+      <!-- 3. Notre-Dame Cathedral -->
+      <tr>
+        <td><span class="attraction-name">3. Notre-Dame Cathedral</span></td>
+        <
+            
+            <section class="related-links">
+                <h3>More Paris Guides</h3>
+                <ul>
+                    <li><a href="paris.html">Best Time to Visit Paris</a></li>
+                    <li><a href="paris-weather.html">Paris Weather</a></li>
+                    <li><a href="paris-attractions.html">Paris Attractions</a></li>
+                    <li><a href="paris-itinerary.html">Paris Itinerary</a></li>
+                    <li><a href="paris-budget.html">Paris Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

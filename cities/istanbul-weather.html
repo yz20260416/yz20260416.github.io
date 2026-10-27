@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Istanbul Weather by Month - Complete travel guide with practical information for visitors.">
+    <title>Istanbul Weather by Month | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="istanbul.html">Istanbul</a> > Weather by Month
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section about Istanbul's monthly weather. It includes a clear H2 heading, an introductory paragraph, a detailed monthly weather table with temperature and rainfall data, and a practical tips section to help travelers plan their visit.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Istanbul Weather by Month – Travel Guide</title>
+  <style>
+    /* clean, readable styling for the travel guide */
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #faf9f7;
+      margin: 0;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+    }
+    .guide-card {
+      max-width: 1100px;
+      width: 100%;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      padding: 2rem 2.5rem;
+      border: 1px solid #eae6e1;
+    }
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #1e3c4f;
+      margin-top: 0.2rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+      border-left: 6px solid #c44536;
+      padding-left: 1.2rem;
+    }
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #2d3e4b;
+      background: #f2f0ec;
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      margin: 1.5rem 0 2rem 0;
+      border-left: 4px solid #c44536;
+    }
+    .weather-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      margin: 1.5rem 0 2rem 0;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .weather-table th {
+      background-color: #1e3c4f;
+      color: white;
+      font-weight: 500;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+    .weather-table td {
+      padding: 10px 8px;
+      text-align: center;
+      border-bottom: 1px solid #e2ddd6;
+      background-color: white;
+    }
+    .weather-table tr:last-child td {
+      border-bottom: none;
+    }
+    .weather-table tbody tr:hover td {
+      background-color: #fcf9f5;
+    }
+    .month-col {
+      font-weight: 600;
+      color: #1e3c4f;
+      text-align: left;
+      padding-left: 16px;
+    }
+    .temp-high {
+      font-weight: 600;
+      color: #b13e2b;
+    }
+    .temp-low {
+      color: #3e6b7e;
+    }
+    .rain-val {
+      font-weight: 500;
+      color: #2c5e7a;
+    }
+    .best-badge {
+      background-color: #e6f0e6;
+      color: #1f6d3c;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .tips-section {
+      background: #f6f3ef;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-top: 2.2rem;
+      border: 1px solid #e0d8d0;
+    }
+    .tips-section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e3c4f;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tips-section h3::before {
+      content: "💡";
+      font-size: 1.7rem;
+    }
+    .tips-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .tips-list li {
+      background: white;
+      padding: 1rem 1.2rem;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      border-left: 4px solid #c44536;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      color: #2d3e4b;
+      display: flex;
+      gap: 10px;
+    }
+    .tips-list li strong {
+      color: #1e3c4f;
+      font-weight: 600;
+    }
+    .tip-icon {
+      font-size: 1.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .footnote {
+      font-size: 0.85rem;
+      color: #6b5e54;
+      margin-top: 1.2rem;
+      text-align: right;
+      border-top: 1px dashed #ccc6be;
+      padding-top: 1rem;
+    }
+    @media (max-width: 700px) {
+      .guide-card { padding: 1.5rem; }
+      h2 { font-size: 1.8rem; }
+      .weather-table { font-size: 0.8rem; }
+      .weather-table th, .weather-table td { padding: 8px 4px; }
+      .month-col { padding-left: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-card">
+    <!-- H2 heading exactly as required -->
+    <h2>Istanbul Weather by Month</h2>
+
+    <!-- Introduction paragraph -->
+    <p class="intro">
+      Istanbul enjoys a temperate maritime climate with four distinct seasons, but its unique position between 
+      the Black Sea and the Mediterranean means weather can shift quickly. Summers are warm and humid, winters 
+      are cool and wet, and spring and autumn offer mild, pleasant days. Below is a detailed month-by-month guide 
+      to help you plan your trip — including average high/low temperatures, typical rainfall, and the best months 
+      to visit for sightseeing, festivals, or budget travel.
+    </p>
+
+    <!-- Main content: structured table with monthly data -->
+    <table class="weather-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Avg High (°C)</th>
+          <th>Avg Low (°C)</th>
+          <th>Rainfall (mm)</th>
+          <th>Rainy Days</th>
+          <th>Verdict</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="month-col">January</td><td class="temp-high">9</td><td class="temp-low">3</td><td class="rain-val">100</td><td>14</td><td>Cold, wet, occasional snow</td></tr>
+        <tr><td class="month-col">February</td><td class="temp-high">9</td><td class="temp-low">3</td><td class="rain-val">75</td><td>12</td><td>Cool, rainy, quiet</td></tr>
+        <tr><td class="month-col">March</td><td class="temp-high">12</td><td class="temp-low">5</td><td class="rain-val">70</td><td>11</td><td>Mild, unpredictable</td></tr>
+        <tr><td class="month-col">April</td><td class="temp-high">17</td><td class="temp-low">8</td><td class="rain-val">55</td><td>9</td><td>Pleasant, spring blooms</td></tr>
+        <tr><td class="month-col">May</td><td class="temp-high">22</td><td class="temp-low">12</td><td class="rain-val">35</td><td>6</td><td><span class="best-badge">⭐
+            
+            <section class="related-links">
+                <h3>More Istanbul Guides</h3>
+                <ul>
+                    <li><a href="istanbul.html">Best Time to Visit Istanbul</a></li>
+                    <li><a href="istanbul-weather.html">Istanbul Weather</a></li>
+                    <li><a href="istanbul-attractions.html">Istanbul Attractions</a></li>
+                    <li><a href="istanbul-itinerary.html">Istanbul Itinerary</a></li>
+                    <li><a href="istanbul-budget.html">Istanbul Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marrakech Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Marrakech Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="marrakech.html">Marrakech</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Marrakech's top attractions. It presents ten key sites with descriptions, ticket prices, and visiting tips in a clean, structured format suitable for travelers planning their itinerary.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marrakech Top 10 Attractions · Travel Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background-color: #faf7f2;
+      color: #1e2b2f;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+      padding: 2.5rem 2rem;
+      border: 1px solid #f0e4d6;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #b35e2e;
+      border-left: 10px solid #d98e4a;
+      padding-left: 1.2rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      background: #fff8f0;
+      padding: 1.4rem 1.8rem;
+      border-radius: 20px;
+      margin-bottom: 2.8rem;
+      color: #3a4a4f;
+      border: 1px solid #e9d9cb;
+      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
+    }
+
+    .intro strong {
+      color: #a35225;
+      font-weight: 600;
+    }
+
+    .attractions-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      margin-bottom: 2.5rem;
+    }
+
+    .attractions-table th {
+      text-align: left;
+      padding: 0.9rem 1rem;
+      background: #e8d9cc;
+      color: #2e3b3f;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border-radius: 14px 14px 0 0;
+    }
+
+    .attractions-table td {
+      background: #fefcf9;
+      padding: 1.2rem 1rem;
+      vertical-align: top;
+      border-bottom: 1px solid #f0e2d6;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .attractions-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #b35e2e;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .attraction-desc {
+      font-size: 0.96rem;
+      color: #2d3e44;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .attraction-tip {
+      font-size: 0.88rem;
+      color: #6b5a4c;
+      background: #f8f0e8;
+      padding: 0.4rem 0.75rem;
+      border-radius: 30px;
+      display: inline-block;
+      font-style: italic;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: #e1cbb8;
+      color: #2e2b26;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.9rem;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
+
+    .practical-tips {
+      background: #f3ede5;
+      border-radius: 24px;
+      padding: 2rem 2rem 1.8rem;
+      margin-top: 2.2rem;
+      border: 1px solid #e2d2c2;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #7a4b2a;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.8rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      list-style: none;
+    }
+
+    .tips-grid li {
+      background: white;
+      padding: 1rem 1.2rem;
+      border-radius: 18px;
+      font-size: 0.96rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      border-left: 5px solid #d98e4a;
+      color: #2d3a3e;
+      transition: transform 0.1s ease;
+    }
+
+    .tips-grid li strong {
+      color: #b35e2e;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .note {
+      font-size: 0.88rem;
+      color: #6b5a4c;
+      margin-top: 1.5rem;
+      text-align: right;
+      border-top: 1px dashed #cdb9a8;
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 700px) {
+      .guide-container {
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      .attractions-table th {
+        display: none;
+      }
+
+      .attractions-table td {
+        display: block;
+        width: 100%;
+        padding: 1.2rem;
+      }
+
+      .attractions-table tr {
+        display: block;
+        margin-bottom: 1.2rem;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+      }
+
+      .attractions-table td:first-child {
+        background: #f3e9df;
+        font-weight: 600;
+        border-bottom: 2px solid #e0cfbf;
+      }
+
+      .attractions-table td:last-child {
+        background: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-container">
+    <h2>Marrakech Top 10 Attractions</h2>
+
+    <p class="intro">
+      <strong>Marrakech, the Red City,</strong> is a sensory adventure — from the bustling souks of the medina to serene gardens and ornate palaces. 
+      To help you navigate its treasures, we’ve curated the <strong>top 10 attractions</strong> with essential details: what makes each place special, 
+      current ticket prices (in Moroccan dirhams, MAD), and practical visiting tips so you can make the most of your time. 
+      Prices are for standard adult entry and may change; always check official sources before you go.
+    </p>
+
+    <!-- structured table: 3 columns – attraction / description & tip / price -->
+    <table class="attractions-table">
+      <thead>
+        <tr>
+          <th>Attraction</th>
+          <th>Description & tip</th>
+          <th>Ticket price (MAD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 1. Jardin Majorelle -->
+        <tr>
+          <td>
+            <span class="attraction-name">1. Jardin Majorelle</span>
+            <span style="font-size:0.85rem; color:#7a6a5c;">Garden & museum</span>
+          </td>
+          <td>
+            <div class="attraction-desc">
+              A stunning cobalt-blue villa and botanical garden designed by Jacques Majorelle, later owned by Yves Saint Laurent. 
+              Lush cacti, bamboo, and water features create a peaceful
+            
+            <section class="related-links">
+                <h3>More Marrakech Guides</h3>
+                <ul>
+                    <li><a href="marrakech.html">Best Time to Visit Marrakech</a></li>
+                    <li><a href="marrakech-weather.html">Marrakech Weather</a></li>
+                    <li><a href="marrakech-attractions.html">Marrakech Attractions</a></li>
+                    <li><a href="marrakech-itinerary.html">Marrakech Itinerary</a></li>
+                    <li><a href="marrakech-budget.html">Marrakech Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

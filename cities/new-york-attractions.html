@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New York Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>New York Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="new-york.html">New York</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for New York's top attractions. It presents a clear, structured overview of ten must-see sites, including descriptions, ticket prices, and practical visiting tips, all formatted for easy reading.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Top 10 Attractions – Travel Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .guide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 10px 15px -6px rgba(0, 0, 0, 0.05);
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            border-bottom: 4px solid #2563eb;
+            padding-bottom: 0.6rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .intro {
+            font-size: 1.15rem;
+            background: #f1f5f9;
+            padding: 1.5rem 1.8rem;
+            border-radius: 1rem;
+            margin-bottom: 2.5rem;
+            border-left: 6px solid #2563eb;
+            color: #1e293b;
+        }
+
+        .intro p {
+            margin-bottom: 0.75rem;
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Table styling */
+        .attractions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0 1.5rem;
+            font-size: 0.98rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .attractions-table th {
+            background-color: #1e293b;
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem 1.2rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .attractions-table td {
+            padding: 1rem 1.2rem;
+            vertical-align: top;
+            border-bottom: 1px solid #e2e8f0;
+            background-color: white;
+        }
+
+        .attractions-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .attractions-table tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        .attraction-name {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+
+        .attraction-desc {
+            color: #334155;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-weight: 600;
+            color: #1e40af;
+            white-space: nowrap;
+        }
+
+        .price small {
+            font-weight: 400;
+            color: #64748b;
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .tips-list {
+            margin: 0;
+            padding-left: 1.2rem;
+            color: #334155;
+            font-size: 0.92rem;
+        }
+
+        .tips-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .tips-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        /* Practical tips section */
+        .practical-tips {
+            background: #f1f5f9;
+            border-radius: 1.2rem;
+            padding: 2rem 2rem 1.8rem;
+            margin-top: 2.8rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .practical-tips h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .practical-tips h3::before {
+            content: "🧭";
+            font-size: 1.8rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 1.2rem 1.3rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9eef3;
+        }
+
+        .tip-card h4 {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #1e293b;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .tip-card p {
+            font-size: 0.93rem;
+            color: #475569;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tip-card ul {
+            padding-left: 1.2rem;
+            font-size: 0.93rem;
+            color: #475569;
+            margin-top: 0.4rem;
+        }
+
+        .tip-card li {
+            margin-bottom: 0.3rem;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 1.2rem;
+            font-style: italic;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .guide-container {
+                padding: 1.5rem 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .attractions-table th,
+            .attractions-table td {
+                padding: 0.8rem 0.8rem;
+            }
+
+            .attractions-table {
+                font-size: 0.9rem;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .attractions-table td {
+                white-space: normal;
+                min-width: 180px;
+            }
+
+            .practical-tips {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <h2>New York Top 10 Attractions</h2>
+
+        <!-- Introduction paragraph -->
+        <div class="intro">
+            <p>New York City is a whirlwind of iconic sights, world-class museums, and vibrant neighborhoods. From the soaring Empire State Building to the serene paths of Central Park, the city offers endless experiences for every traveler. This guide covers the <strong>top 10 attractions</strong> with up-to-date ticket information, essential descriptions, and practical tips to help you make the most of your visit.</p>
+            <p>Prices are in USD and reflect standard adult admission (as of 2025). Many attractions offer discounts for children, seniors, and students — always check official websites for the latest rates and combo deals.</p>
+        </div>
+
+       
+            
+            <section class="related-links">
+                <h3>More New York Guides</h3>
+                <ul>
+                    <li><a href="new-york.html">Best Time to Visit New York</a></li>
+                    <li><a href="new-york-weather.html">New York Weather</a></li>
+                    <li><a href="new-york-attractions.html">New York Attractions</a></li>
+                    <li><a href="new-york-itinerary.html">New York Itinerary</a></li>
+                    <li><a href="new-york-budget.html">New York Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

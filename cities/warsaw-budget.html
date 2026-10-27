@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Warsaw Travel Cost Guide - Complete travel guide with practical information for visitors.">
+    <title>Warsaw Travel Cost Guide | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="warsaw.html">Warsaw</a> > Travel Cost Guide
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Warsaw. It provides a detailed budget breakdown for different travel styles, including accommodation, food, transport, and activities, formatted as a clean, informative table with practical tips for travelers.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warsaw Travel Cost Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8fafc;
+      color: #0b1a2b;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -8px rgba(0, 20, 30, 0.15);
+      padding: 2.2rem 2rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a2942;
+      border-left: 8px solid #d62828;
+      padding-left: 1.2rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      color: #1e3a5f;
+      background: #eef4fa;
+      padding: 1.2rem 1.8rem;
+      border-radius: 20px;
+      margin: 1.2rem 0 2rem 0;
+      border: 1px solid #cbdae9;
+    }
+
+    .intro p {
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      margin: 2rem 0 1.8rem 0;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      min-width: 780px;
+    }
+
+    th {
+      background: #0a2942;
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      padding: 1rem 0.8rem;
+      text-align: left;
+      border-right: 1px solid #2d4b6e;
+    }
+
+    th:last-child {
+      border-right: none;
+    }
+
+    td {
+      padding: 1rem 0.8rem;
+      border-bottom: 1px solid #e2e9f2;
+      vertical-align: top;
+      background: white;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .category-cell {
+      font-weight: 600;
+      background: #f4f9ff;
+      color: #0a2942;
+      border-right: 1px solid #dde7f0;
+    }
+
+    .style-header {
+      background: #1b3b5c;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .budget-row td {
+      background: #fcfdff;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #4a627a;
+      font-style: italic;
+      margin-top: 0.4rem;
+    }
+
+    .tips-section {
+      background: #f0f6fe;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin-top: 2.5rem;
+      border: 1px solid #c8daf0;
+    }
+
+    .tips-section h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0a2942;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tips-section h3::before {
+      content: "💡";
+      font-size: 1.8rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .tip-card {
+      background: white;
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.03);
+      border-left: 5px solid #d62828;
+    }
+
+    .tip-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0a2942;
+      margin-bottom: 0.6rem;
+    }
+
+    .tip-card p {
+      font-size: 0.95rem;
+      color: #1e3a5f;
+    }
+
+    .tip-card ul {
+      padding-left: 1.2rem;
+      font-size: 0.94rem;
+      color: #1e3a5f;
+    }
+
+    .tip-card li {
+      margin-bottom: 0.4rem;
+    }
+
+    .currency-note {
+      background: #e6f0fa;
+      padding: 0.8rem 1.2rem;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      display: inline-block;
+      margin: 0.8rem 0 0.2rem 0;
+      border: 1px solid #b8d0e8;
+    }
+
+    .badge {
+      background: #d62828;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+      margin-left: 8px;
+      vertical-align: middle;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      .intro {
+        font-size: 1rem;
+        padding: 1rem 1.2rem;
+      }
+      .tips-section {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-container">
+    <!-- H2 heading -->
+    <h2>Warsaw Travel Cost Guide</h2>
+
+    <!-- Introduction paragraph -->
+    <div class="intro">
+      <p>Warsaw, Poland’s dynamic capital, blends rich history with a modern, vibrant pulse — and it remains one of the most affordable European city breaks. Whether you’re a backpacker watching every złoty, a mid-range traveler seeking comfort, or a luxury visitor wanting polish (pun intended), your daily budget can stretch further than in most Western European capitals. Below is a detailed breakdown of typical costs for accommodation, food, transport, and activities, structured by three travel styles: <strong>Budget</strong>, <strong>Mid-range</strong>, and <strong>Luxury</strong>. All prices are in Polish złoty (PLN) and include approximate euro equivalents for convenience (1 EUR ≈ 4.3 PLN).</p>
+    </div>
+
+    <!-- Main content: structured budget table -->
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th class="style-header">Budget (per day)</th>
+            <th class="style-header">Mid-range (per day)</th>
+            <th class="style-header">Luxury (per day)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- ACCOMMODATION -->
+          <tr>
+            <td class="category-cell">🏨 Accommodation</td>
+            <td>
+              <strong>80–140 PLN</strong> (≈ €19–33)<br>
+              <span class="note">Hostel dorm bed (6–10 bed) or basic guesthouse outside strict center. Private hostel room from 180 PLN.</span>
+            </td>
+            <td>
+              <strong>250–450 PLN
+            
+            <section class="related-links">
+                <h3>More Warsaw Guides</h3>
+                <ul>
+                    <li><a href="warsaw.html">Best Time to Visit Warsaw</a></li>
+                    <li><a href="warsaw-weather.html">Warsaw Weather</a></li>
+                    <li><a href="warsaw-attractions.html">Warsaw Attractions</a></li>
+                    <li><a href="warsaw-itinerary.html">Warsaw Itinerary</a></li>
+                    <li><a href="warsaw-budget.html">Warsaw Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

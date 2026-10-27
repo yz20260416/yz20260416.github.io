@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vancouver Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Vancouver Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="vancouver.html">Vancouver</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a complete HTML travel guide section for Vancouver's top 10 attractions. It includes a clear introduction, a structured table with descriptions, ticket prices, and visiting tips, followed by a practical tips section. The design is clean and easy to read, suitable for embedding in a travel website.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vancouver Travel Guide · Top 10 Attractions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f7fb;
+            color: #1a2b3c;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .guide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.15);
+            padding: 2.5rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0b2b3d;
+            margin-bottom: 0.75rem;
+            border-left: 6px solid #1e7e8c;
+            padding-left: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #2e4a5e;
+            margin: 1.5rem 0 2rem 0;
+            padding: 1rem 1.5rem;
+            background: #f0f6fa;
+            border-radius: 20px;
+            border-left: 4px solid #1e7e8c;
+        }
+
+        /* Table styling */
+        .attractions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0 2.5rem 0;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+            font-size: 0.98rem;
+        }
+
+        .attractions-table thead {
+            background: #0b2b3d;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+
+        .attractions-table th {
+            padding: 1rem 0.9rem;
+            text-align: left;
+            border-bottom: 3px solid #1e7e8c;
+        }
+
+        .attractions-table td {
+            padding: 1rem 0.9rem;
+            vertical-align: top;
+            border-bottom: 1px solid #dce7ed;
+            background: #ffffff;
+        }
+
+        .attractions-table tbody tr:hover td {
+            background: #f9fcff;
+        }
+
+        .attractions-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .attraction-name {
+            font-weight: 700;
+            color: #0b2b3d;
+            font-size: 1.05rem;
+        }
+
+        .price-badge {
+            display: inline-block;
+            background: #e1f0f4;
+            color: #0e5b66;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .tip-text {
+            color: #2b4b5e;
+            font-size: 0.92rem;
+        }
+
+        .tip-text strong {
+            color: #0e5b66;
+        }
+
+        /* Practical tips section */
+        .practical-tips {
+            background: #f2f8fc;
+            border-radius: 24px;
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin-top: 2rem;
+            border: 1px solid #cde3ec;
+        }
+
+        .practical-tips h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0b2b3d;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .practical-tips h3::before {
+            content: "🧭";
+            font-size: 1.9rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tip-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            border-left: 4px solid #1e7e8c;
+            transition: transform 0.1s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-2px);
+            background: #ffffff;
+            box-shadow: 0 8px 20px -10px rgba(16, 70, 90, 0.2);
+        }
+
+        .tip-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0e5b66;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .tip-card p {
+            color: #2e4a5e;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive table */
+        @media (max-width: 750px) {
+            .guide-container {
+                padding: 1.5rem 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+            }
+
+            .attractions-table {
+                font-size: 0.85rem;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .attractions-table th,
+            .attractions-table td {
+                padding: 0.8rem 0.6rem;
+            }
+
+            .practical-tips {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .attractions-table {
+                white-space: normal;
+                display: block;
+            }
+
+            .attractions-table thead {
+                display: none;
+            }
+
+            .attractions-table tbody tr {
+                display: block;
+                margin-bottom: 1.2rem;
+                border-radius: 16px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+                overflow: hidden;
+            }
+
+            .attractions-table td {
+                display: block;
+                padding: 0.7rem 1rem;
+                border-bottom: 1px solid #e2edf2;
+                white-space: normal;
+            }
+
+            .attractions-table td:last-child {
+                border-bottom: none;
+            }
+
+            .attractions-table td::before {
+                content: attr(data-label);
+                font-weight: 700;
+                color: #0b2b3d;
+                display: inline-block;
+                width: 90px;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.03em;
+            }
+
+            .attraction-name {
+                font-size: 1rem;
+            }
+
+            .price-badge {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <!-- H2 heading as required -->
+        <h2>Vancouver Top 10 Attractions</h2>
+
+        <!-- Introduction paragraph -->
+        <p class="intro">
+            Vancouver blends Pacific coastline, mountain backdrops, and vibrant urban culture into one unforgettable destination. 
+            Whether you're drawn to Stanley Park's seawall, the historic streets of Gastown, or the thrill of Capilano Suspension Bridge, 
+            these ten attractions capture the very best of the city. Below you'll find descriptions, current ticket prices (CAD), 
+            and practical visiting tips to help you plan a smooth, memorable trip.
+        </p>
+
+        <!-- Main content: structured table with attractions, prices, tips -->
+        <table class
+            
+            <section class="related-links">
+                <h3>More Vancouver Guides</h3>
+                <ul>
+                    <li><a href="vancouver.html">Best Time to Visit Vancouver</a></li>
+                    <li><a href="vancouver-weather.html">Vancouver Weather</a></li>
+                    <li><a href="vancouver-attractions.html">Vancouver Attractions</a></li>
+                    <li><a href="vancouver-itinerary.html">Vancouver Itinerary</a></li>
+                    <li><a href="vancouver-budget.html">Vancouver Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

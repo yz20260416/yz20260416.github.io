@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bangkok Weather by Month - Complete travel guide with practical information for visitors.">
+    <title>Bangkok Weather by Month | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="bangkok.html">Bangkok</a> > Weather by Month
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a complete HTML travel guide section for Bangkok's monthly weather. It includes a clear introduction, a structured table with temperature and rainfall data for each month, a list of best months to visit, and practical travel tips. The design is clean and readable, suitable for a travel website or guide.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangkok Weather by Month – Travel Guide</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8fafc;
+      margin: 0;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      line-height: 1.5;
+    }
+    .guide-card {
+      max-width: 1000px;
+      width: 100%;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 10px 15px -6px rgba(0, 0, 0, 0.05);
+      padding: 2rem 2rem 2.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0b2b4a;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      border-left: 6px solid #e67e22;
+      padding-left: 1rem;
+    }
+    .intro {
+      font-size: 1.1rem;
+      color: #1e3a5f;
+      background: #f0f7ff;
+      padding: 1rem 1.5rem;
+      border-radius: 18px;
+      margin: 1.5rem 0 2rem 0;
+      border-left: 5px solid #e67e22;
+      line-height: 1.6;
+    }
+    .intro p {
+      margin: 0;
+    }
+    .weather-table-wrapper {
+      overflow-x: auto;
+      margin: 2rem 0 1.8rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e2e8f0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      background: white;
+      min-width: 680px;
+    }
+    th {
+      background: #0b2b4a;
+      color: white;
+      font-weight: 600;
+      padding: 1rem 0.75rem;
+      text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    td {
+      padding: 0.85rem 0.75rem;
+      text-align: center;
+      border-bottom: 1px solid #e9edf2;
+      color: #1e293b;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:nth-child(even) {
+      background-color: #fafcff;
+    }
+    tr:hover {
+      background-color: #fff5e8;
+      transition: background 0.15s;
+    }
+    .month-name {
+      font-weight: 600;
+      color: #0b2b4a;
+      text-align: left;
+      padding-left: 1.2rem;
+    }
+    .temp-high {
+      font-weight: 600;
+      color: #b13e2d;
+    }
+    .temp-low {
+      color: #2c5282;
+    }
+    .rain {
+      font-weight: 500;
+      color: #0f6b5c;
+    }
+    .best-badge {
+      display: inline-block;
+      background: #e67e22;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      letter-spacing: 0.03em;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+      text-transform: uppercase;
+    }
+    .best-months-list {
+      background: #f1f9f0;
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0 2.2rem;
+      border: 1px solid #cfe8cc;
+    }
+    .best-months-list h3 {
+      font-size: 1.3rem;
+      margin: 0 0 0.8rem 0;
+      color: #1e4d2b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .best-months-list ul {
+      margin: 0;
+      padding-left: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 2rem;
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .best-months-list li {
+      font-weight: 500;
+      color: #1e3a2e;
+      background: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      border: 1px solid #b8d9b0;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .best-months-list li::before {
+      content: "☀️";
+      font-size: 1rem;
+    }
+    .tips-section {
+      background: #0b2b4a;
+      color: white;
+      border-radius: 24px;
+      padding: 1.8rem 2rem 2rem;
+      margin-top: 2rem;
+    }
+    .tips-section h3 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #fbbf6e;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+    .tip-item {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .tip-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: #ffd966;
+      font-weight: 600;
+    }
+    .tip-item p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+    .footnote {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 1.5rem;
+      text-align: center;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 1rem;
+    }
+    @media (max-width: 600px) {
+      .guide-card { padding: 1.5rem; }
+      h2 { font-size: 1.7rem; }
+      .intro { font-size: 1rem; padding: 1rem; }
+      .best-months-list { padding: 1.2rem; }
+      .tips-section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-card">
+    <!-- H2 as required -->
+    <h2>Bangkok Weather by Month</h2>
+
+    <!-- Introduction paragraph -->
+    <div class="intro">
+      <p>Bangkok has a tropical savanna climate, with three distinct seasons: hot (March–May), rainy (June–October), and cool (November–February). Temperatures remain warm year-round, but rainfall and humidity vary significantly. This monthly guide helps you plan the perfect trip—whether you seek sunshine, festival vibes, or fewer crowds.</p>
+    </div>
+
+    <!-- Main content
+            
+            <section class="related-links">
+                <h3>More Bangkok Guides</h3>
+                <ul>
+                    <li><a href="bangkok.html">Best Time to Visit Bangkok</a></li>
+                    <li><a href="bangkok-weather.html">Bangkok Weather</a></li>
+                    <li><a href="bangkok-attractions.html">Bangkok Attractions</a></li>
+                    <li><a href="bangkok-itinerary.html">Bangkok Itinerary</a></li>
+                    <li><a href="bangkok-budget.html">Bangkok Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

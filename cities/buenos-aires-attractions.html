@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buenos Aires Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Buenos Aires Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="buenos-aires.html">Buenos Aires</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Buenos Aires' top attractions. It presents a structured overview with a main table detailing each attraction's description, ticket prices, and visiting tips, followed by a practical tips section for travelers.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buenos Aires · Top 10 Attractions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #faf9f8;
+      color: #1e1e2a;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+
+    .guide-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      padding: 2.5rem 2rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a1f44;
+      margin-bottom: 1rem;
+      border-left: 8px solid #eab308;
+      padding-left: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      color: #2d3e50;
+      margin-bottom: 2.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid #f0e7d6;
+      max-width: 85%;
+    }
+
+    .attractions-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 14px;
+      margin: 1.5rem 0 1rem;
+    }
+
+    .attractions-table th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #6b4f2e;
+      background: #f9f3e9;
+      padding: 0.9rem 1rem;
+      border-radius: 14px 14px 6px 6px;
+    }
+
+    .attractions-table td {
+      background: #ffffff;
+      padding: 1.3rem 1rem;
+      vertical-align: top;
+      border: 1px solid #eae3d7;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      transition: all 0.15s ease;
+    }
+
+    .attractions-table tr:hover td {
+      background: #fefcf8;
+      border-color: #d9c9b0;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #0a1f44;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .barrio-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: #f0e7d6;
+      color: #5a3e1b;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      letter-spacing: 0.02em;
+      margin-top: 6px;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #1e5e3b;
+      background: #e8f3e8;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .tip-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .tip-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: #2e3b4e;
+    }
+
+    .tip-list li::before {
+      content: "•";
+      color: #eab308;
+      font-weight: 700;
+      position: absolute;
+      left: 0.2rem;
+      font-size: 1.2rem;
+    }
+
+    .practical-tips {
+      margin-top: 3rem;
+      background: #f7f4ef;
+      padding: 2rem 2rem 1.8rem;
+      border-radius: 28px;
+      border: 1px solid #e3d9cc;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #0a1f44;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.8rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .tip-card {
+      background: white;
+      padding: 1.3rem 1.4rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e9dfd2;
+    }
+
+    .tip-card h4 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1e3a5f;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tip-card p, .tip-card ul {
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .tip-card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .tip-card li {
+      margin-bottom: 0.3rem;
+    }
+
+    .note {
+      background: #fff6e0;
+      border-left: 5px solid #eab308;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      margin: 1.8rem 0 0.5rem;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      .intro {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+      .attractions-table th {
+        display: none;
+      }
+      .attractions-table, .attractions-table tbody, .attractions-table tr, .attractions-table td {
+        display: block;
+        width: 100%;
+      }
+      .attractions-table tr {
+        margin-bottom: 1.5rem;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #e2d7c8;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      }
+      .attractions-table td {
+        border: none;
+        border-bottom: 1px solid #f0e7db;
+        border-radius: 0;
+        padding: 1rem 1.2rem;
+        box-shadow: none;
+      }
+      .attractions-table td:last-child {
+        border-bottom: none;
+      }
+      .attractions-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #6b4f2e;
+        display: block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        margin-bottom: 0.3rem;
+      }
+      .attractions-table td:first-child::before {
+        display: none;
+      }
+      .attractions-table td:first-child {
+        background: #f9f3e9;
+        border-radius: 20px 20px 0 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .tips-grid {
+        grid-template-columns: 1fr;
+
+            
+            <section class="related-links">
+                <h3>More Buenos Aires Guides</h3>
+                <ul>
+                    <li><a href="buenos-aires.html">Best Time to Visit Buenos Aires</a></li>
+                    <li><a href="buenos-aires-weather.html">Buenos Aires Weather</a></li>
+                    <li><a href="buenos-aires-attractions.html">Buenos Aires Attractions</a></li>
+                    <li><a href="buenos-aires-itinerary.html">Buenos Aires Itinerary</a></li>
+                    <li><a href="buenos-aires-budget.html">Buenos Aires Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>

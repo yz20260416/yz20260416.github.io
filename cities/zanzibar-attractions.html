@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zanzibar Top 10 Attractions - Complete travel guide with practical information for visitors.">
+    <title>Zanzibar Top 10 Attractions | Travel Guides</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a> > <a href="zanzibar.html">Zanzibar</a> > Top 10 Attractions
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            This is a comprehensive HTML travel guide section for Zanzibar's top attractions. It presents a structured, informative overview of ten key sites, including descriptions, ticket prices, and visiting tips, followed by a practical tips section. The design is clean and scannable, using a table for the main content and a styled list for practical advice, making it suitable for embedding in a travel website.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zanzibar Travel Guide · Top 10 Attractions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f4ef;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e2b2f;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .guide-card {
+      max-width: 1200px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.2);
+      padding: 2rem 2rem 2.5rem;
+      border: 1px solid #e6dfd6;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0f3b3f;
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+      border-left: 6px solid #d4a373;
+      padding-left: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      color: #2d4a4e;
+      margin-bottom: 2rem;
+      padding: 0 0.25rem;
+      max-width: 85ch;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.75rem 0 2rem;
+      border-radius: 18px;
+      border: 1px solid #e2d9cf;
+      background: #fefcf9;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      min-width: 780px;
+    }
+
+    th {
+      background: #0f3b3f;
+      color: #f2e9de;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 1rem 1rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 1rem 1rem;
+      vertical-align: top;
+      border-bottom: 1px solid #e6dfd6;
+      background: #ffffff;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .attraction-name {
+      font-weight: 700;
+      color: #0f3b3f;
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .desc {
+      color: #2f4b4f;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #a45e2e;
+      white-space: nowrap;
+    }
+
+    .tip {
+      font-size: 0.88rem;
+      color: #4b5e61;
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eae3d9;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0f3b3f;
+      letter-spacing: 0.02em;
+      margin-top: 0.3rem;
+    }
+
+    .practical-tips {
+      background: #f2ede6;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin-top: 2.2rem;
+      border: 1px solid #ddd2c4;
+    }
+
+    .practical-tips h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f3b3f;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .practical-tips h3::before {
+      content: "🧭";
+      font-size: 1.7rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem 1.8rem;
+    }
+
+    .tip-item {
+      background: #ffffffd9;
+      padding: 0.9rem 1.1rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border-left: 4px solid #d4a373;
+    }
+
+    .tip-item strong {
+      display: block;
+      font-size: 0.98rem;
+      color: #1e3b3f;
+      margin-bottom: 0.25rem;
+    }
+
+    .tip-item span {
+      font-size: 0.9rem;
+      color: #3a5559;
+    }
+
+    .note {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #5a6b6d;
+      background: #ffffffb3;
+      padding: 0.75rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+      .guide-card {
+        padding: 1.5rem 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+        padding-left: 0.9rem;
+      }
+      .intro {
+        font-size: 1rem;
+      }
+      .practical-tips {
+        padding: 1.3rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-card">
+    <!-- H2: Zanzibar Top 10 Attractions -->
+    <h2>Zanzibar Top 10 Attractions</h2>
+
+    <!-- Introduction paragraph -->
+    <p class="intro">
+      Zanzibar, the spice island off Tanzania’s coast, blends Swahili, Arab, Indian and European influences into a 
+      captivating travel destination. From the labyrinthine alleys of Stone Town to the powder-white beaches of 
+      Nungwi and the rare red colobus monkeys of Jozani Forest, here are the ten attractions that define the island — 
+      with current ticket prices (2025) and practical tips to help you plan a smooth, memorable trip.
+    </p>
+
+    <!-- Main content: structured table -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Attraction</th>
+            <th>Description</th>
+            <th>Ticket price (approx.)</th>
+            <th>Visiting tips</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1. Stone Town -->
+          <tr>
+            <td>
+              <span class="attraction-name">1. Stone Town</span>
+              <span class="badge">UNESCO</span>
+            </td>
+            <td class="desc">
+              Historic heart of Zanzibar City — a maze of coral-stone houses, carved doors, bustling bazaars and 
+              the old slave market. Don’t miss the Anglican Cathedral, Darajani Market and Forodhani Gardens at sunset.
+            </td>
+            <td class="price">Free to wander;<br>guided walking tour $15–25</td>
+            <td class="tip">
+              Wear comfortable shoes — alleys are uneven. Start early to avoid heat. Forodhani food stalls are 
+              lively after 6 pm; try the Zanzibar pizza.
+            </td>
+          </tr>
+
+          <!-- 2. Nungwi Beach -->
+          <tr>
+            <td>
+              <span class="attraction-name">2. Nungwi Beach</span>
+            </td>
+            <td class="desc">
+              Northern tip beach famous for its turquoise water, soft sand and spectacular sunsets. 
+              Swimming
+            
+            <section class="related-links">
+                <h3>More Zanzibar Guides</h3>
+                <ul>
+                    <li><a href="zanzibar.html">Best Time to Visit Zanzibar</a></li>
+                    <li><a href="zanzibar-weather.html">Zanzibar Weather</a></li>
+                    <li><a href="zanzibar-attractions.html">Zanzibar Attractions</a></li>
+                    <li><a href="zanzibar-itinerary.html">Zanzibar Itinerary</a></li>
+                    <li><a href="zanzibar-budget.html">Zanzibar Budget</a></li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Travel Guides</p>
+    </footer>
+</body>
+</html>
