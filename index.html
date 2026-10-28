@@ -177,6 +177,7 @@
             .then(data => {
                 cities = data;
                 renderAll();
+                renderRegions();
             })
             .catch(err => {
                 console.error('Failed to load cities-index.json', err);
