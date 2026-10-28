@@ -117,8 +117,10 @@
         
         function renderRegions() {
             const regions = [...new Set(cities.map(c => c.region).filter(Boolean))];
-            const label = {asia: "Asia", europe: "Europe", americas: "Americas", africa: "Africa", oceania: "Oceania", "middle-east": "Middle East"};
-            document.getElementById('regionTags').innerHTML = regions.map(r => 
+            const label = {asia: "Asia", europe: "Europe", americas: "Americas", africa: "Africa", oceania: "Oceania", "middleeast": "Middle East", "middle-east": "Middle East"};
+            const el = document.getElementById('regionTags');
+            if (!el) return;
+            el.innerHTML = regions.map(r => 
                 `<a href="#${r}" class="region-tag" onclick="showRegion('${r}');return false;">${label[r] || r}</a>`
             ).join('');
         }
