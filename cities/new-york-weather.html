@@ -16,250 +16,142 @@
     
     <main>
         <article>
-            Here is a comprehensive HTML travel guide section for New York's monthly weather. You can copy and paste this code directly into your website's HTML editor.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New York Weather Guide – Monthly Climate & Travel Tips</title>
-  <style>
-    /* Base styling for the guide – clean, modern, readable */
-    .nyc-weather-guide {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      color: #1e1e1e;
-      line-height: 1.6;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    }
-
-    .nyc-weather-guide h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-top: 0.5rem;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 4px solid #0066cc;
-      display: inline-block;
-      color: #0a2540;
-    }
-
-    .nyc-weather-guide h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      color: #0a2540;
-      border-left: 6px solid #0066cc;
-      padding-left: 1rem;
-    }
-
-    .nyc-weather-guide p {
-      margin-bottom: 1.25rem;
-      font-size: 1.05rem;
-    }
-
-    .nyc-weather-guide .intro {
-      font-size: 1.15rem;
-      background: #f0f7ff;
-      padding: 1.5rem 1.8rem;
-      border-radius: 20px;
-      border-left: 6px solid #0066cc;
-      margin-bottom: 2rem;
-    }
-
-    /* Table styling – clean, responsive, easy to scan */
-    .weather-table-wrapper {
-      overflow-x: auto;
-      margin: 2rem 0 1.5rem;
-      border-radius: 18px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-    }
-
-    .weather-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.98rem;
-      min-width: 720px;
-      background: white;
-    }
-
-    .weather-table th {
-      background: #0a2540;
-      color: white;
-      font-weight: 600;
-      padding: 1rem 1.2rem;
-      text-align: left;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-    }
-
-    .weather-table td {
-      padding: 1rem 1.2rem;
-      border-bottom: 1px solid #e9edf2;
-      vertical-align: top;
-    }
-
-    .weather-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .weather-table tbody tr:hover {
-      background-color: #f8fafd;
-    }
-
-    .weather-table .month-cell {
-      font-weight: 600;
-      color: #0a2540;
-      white-space: nowrap;
-    }
-
-    .weather-table .temp-high {
-      font-weight: 600;
-      color: #c44536;
-    }
-
-    .weather-table .temp-low {
-      color: #2c5282;
-    }
-
-    .weather-table .rain {
-      color: #2b6cb0;
-      font-weight: 500;
-    }
-
-    .weather-table .best-badge {
-      display: inline-block;
-      background: #d4edda;
-      color: #0b5e2e;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.2rem 0.6rem;
-      border-radius: 30px;
-      margin-left: 0.5rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-
-    /* Practical tips list */
-    .tips-list {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .tips-list li {
-      background: #f9fcff;
-      padding: 1.25rem 1.5rem;
-      border-radius: 18px;
-      border: 1px solid #dde7f0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-      font-size: 1rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-
-    .tips-list li::before {
-      content: "☑️";
-      font-size: 1.3rem;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    .tips-list strong {
-      color: #0a2540;
-      font-weight: 600;
-    }
-
-    .footnote {
-      font-size: 0.9rem;
-      color: #4a5568;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 1.2rem;
-      margin-top: 2rem;
-      font-style: italic;
-    }
-
-    @media (max-width: 600px) {
-      .nyc-weather-guide {
-        padding: 0 1rem;
-      }
-      .nyc-weather-guide h2 {
-        font-size: 1.8rem;
-      }
-      .nyc-weather-guide h3 {
-        font-size: 1.4rem;
-      }
-      .intro {
-        padding: 1.2rem !important;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Travel Guide Section : New York Weather -->
-  <section class="nyc-weather-guide">
-    <h2>New York Weather by Month</h2>
-
-    <!-- Introduction -->
-    <p class="intro">
-      New York City experiences a humid subtropical climate with four distinct seasons — 
-      from crisp, snowy winters to hot, humid summers. Monthly weather varies significantly, 
-      so packing and planning depend heavily on when you visit. Below is a detailed breakdown 
-      of average high/low temperatures, typical rainfall, and the best months for sightseeing, 
-      festivals, and outdoor activities.
-    </p>
-
-    <!-- Main content: structured table -->
-    <h3>Monthly climate overview</h3>
-    <div class="weather-table-wrapper">
-      <table class="weather-table">
-        <thead>
-          <tr>
-            <th>Month</th>
-            <th>Avg. High (°F / °C)</th>
-            <th>Avg. Low (°F / °C)</th>
-            <th>Rainfall (inches / mm)</th>
-            <th>Travel notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="month-cell">January</td>
-            <td class="temp-high">39°F / 4°C</td>
-            <td class="temp-low">27°F / -3°C</td>
-            <td class="rain">3.6 in / 91 mm</td>
-            <td>Coldest month; snow possible. Indoor attractions & museums ideal.</td>
-          </tr>
-          <tr>
-            <td class="month-cell">February</td>
-            <td class="temp-high">42°F / 6°C</td>
-            <td class="temp-low">29°F / -2°C</td>
-            <td class="rain">3.2 in / 81 mm</td>
-            <td>Still wintry; fewer crowds, good for theater and dining.</td>
-          </tr>
-          <tr>
-            <td class="month-cell">March</td>
-            <td class="temp-high">50°F / 10°C</td>
-            <td class="temp-low">35°F / 2°C</td>
-            <td class="rain">4.3 in / 109 mm</td>
-            <td>Transitional; variable weather. Spring blooms begin late month.</td>
-          </tr>
-          <tr>
-            <td class="month-cell">April</td>
-            <td class="temp-high">62°
+            <h2>New York City Travel Weather Guide</h2>
+<p>New York's weather data reveals two clear sweet spots: September and May, when highs of 25.0°C and 21.5°C pair with comfortable lows and moderate rain-day counts, meaning you can plan long walking days and outdoor sightseeing with minimal backup plans. The toughest months are July, with 30.4°C highs and 13.6 rain days—the wettest month—bringing both heat and frequent downpours—and January, when lows of -3.2°C demand serious winter layers. Practically, this means booking spring or early autumn for the most reliable sightseeing conditions, and packing rain gear plus breathable clothing if you visit in summer.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Avg High (°C)</th>
+      <th>Avg Low (°C)</th>
+      <th>Avg Rain Days/Month</th>
+      <th>Rainfall</th>
+      <th>Crowds</th>
+      <th>Recommendation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>January</td>
+      <td>4.4</td>
+      <td>-3.2</td>
+      <td>10.2</td>
+      <td>High</td>
+      <td>Low</td>
+      <td>Cold and wet—pack heavy layers and waterproof boots; indoor attractions are the safer bet.</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>5.8</td>
+      <td>-3.1</td>
+      <td>10.0</td>
+      <td>High</td>
+      <td>Low</td>
+      <td>Still cold with frequent rain—dress warmly and keep plans flexible around wet days.</td>
+    </tr>
+    <tr>
+      <td>March</td>
+      <td>11.4</td>
+      <td>1.2</td>
+      <td>10.2</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Mild but rainy—bring a rain jacket and layers for chilly mornings and warmer afternoons.</td>
+    </tr>
+    <tr>
+      <td>April</td>
+      <td>16.4</td>
+      <td>6.2</td>
+      <td>11.0</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Pleasant temperatures but frequent showers—carry an umbrella and plan indoor backups.</td>
+    </tr>
+    <tr>
+      <td>May</td>
+      <td>21.5</td>
+      <td>11.6</td>
+      <td>11.2</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Warm and comfortable despite rain days—ideal for parks and walking; pack a compact rain layer.</td>
+    </tr>
+    <tr>
+      <td>June</td>
+      <td>27.3</td>
+      <td>17.2</td>
+      <td>9.8</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Warm with slightly fewer wet days—light clothing and hydration are key for busy sightseeing.</td>
+    </tr>
+    <tr>
+      <td>July</td>
+      <td>30.4</td>
+      <td>20.9</td>
+      <td>13.6</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Hottest and wettest month—expect heat and downpours; schedule outdoor time early and stay hydrated.</td>
+    </tr>
+    <tr>
+      <td>August</td>
+      <td>28.7</td>
+      <td>19.5</td>
+      <td>11.0</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Hot and humid with frequent rain—plan indoor breaks and carry rain gear daily.</td>
+    </tr>
+    <tr>
+      <td>September</td>
+      <td>25.0</td>
+      <td>16.0</td>
+      <td>9.8</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>One of the best months—warm and comfortable with fewer rain days; great for outdoor exploring.</td>
+    </tr>
+    <tr>
+      <td>October</td>
+      <td>19.4</td>
+      <td>10.2</td>
+      <td>7.6</td>
+      <td>Moderate</td>
+      <td>Medium</td>
+      <td>Excellent conditions—mild temperatures and the fewest rain days; ideal for walking tours.</td>
+    </tr>
+    <tr>
+      <td>November</td>
+      <td>12.4</td>
+      <td>3.8</td>
+      <td>8.0</td>
+      <td>Moderate</td>
+      <td>Medium</td>
+      <td>Cooler but manageable—layer up and expect some wet days; good value before the holidays.</td>
+    </tr>
+    <tr>
+      <td>December</td>
+      <td>6.7</td>
+      <td>-0.9</td>
+      <td>10.4</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Cold and wet with holiday crowds—wear winter gear and waterproof shoes for festive outings.</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Practical tips</h3>
+<ul>
+  <li>Aim for September or October for the best balance of mild temperatures, fewer rain days, and manageable crowds.</li>
+  <li>July is the wettest month (13.6 rain days) and the hottest—if visiting then, plan outdoor activities for mornings and keep indoor options ready.</li>
+  <li>Rain days are high most of the year, so always pack a compact umbrella or waterproof jacket, even in summer.</li>
+  <li>Winter months (January–February) combine sub-zero lows with frequent rain—insulated, waterproof footwear is essential.</li>
+  <li>Book major attractions in advance during high-crowd months (May–August, December) to avoid long queues.</li>
+</ul>
+            
+        <p class="source-note">Weather table based on real historical data from Open-Meteo (2021-2025). Generated by AI on 2026-10-28.</p>
+            
             
             <section class="related-links">
                 <h3>More New York Guides</h3>

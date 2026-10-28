@@ -16,235 +16,145 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Zanzibar, featuring a detailed monthly weather breakdown with temperatures, rainfall, and travel recommendations, followed by practical tips for visitors.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zanzibar Weather Guide · Monthly Climate & Travel Tips</title>
-  <style>
-    /* clean, informative styling for the travel guide section */
-    body {
-      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f9fbfd;
-      margin: 0;
-      padding: 2rem 1rem;
-      color: #1e2b3c;
-      line-height: 1.6;
-    }
-    .guide-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 8px 28px rgba(0, 20, 30, 0.08);
-      padding: 2rem 1.8rem 2.2rem;
-      border: 1px solid #e2eef9;
-    }
-    h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      color: #0b3b5c;
-      border-left: 6px solid #2a9d8f;
-      padding-left: 1rem;
-      margin-top: 0.2rem;
-      margin-bottom: 1.2rem;
-      line-height: 1.2;
-    }
-    .intro {
-      font-size: 1.08rem;
-      background: #e9f3f2;
-      padding: 1.2rem 1.6rem;
-      border-radius: 18px;
-      margin-bottom: 2rem;
-      color: #1a3e4c;
-      border: 1px solid #cbe5e1;
-    }
-    .intro p {
-      margin: 0;
-    }
-    .table-wrapper {
-      overflow-x: auto;
-      margin: 1.8rem 0 2rem;
-      border-radius: 16px;
-      border: 1px solid #d9e6f2;
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      min-width: 700px;
-    }
-    th {
-      background: #0e4b6b;
-      color: white;
-      font-weight: 600;
-      padding: 1rem 0.8rem;
-      text-align: left;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-    td {
-      padding: 0.9rem 0.8rem;
-      border-bottom: 1px solid #e2eef9;
-      vertical-align: top;
-    }
-    tr:last-child td {
-      border-bottom: none;
-    }
-    tr:hover td {
-      background-color: #f4fafc;
-    }
-    .month-cell {
-      font-weight: 600;
-      color: #0b3b5c;
-      white-space: nowrap;
-    }
-    .temp-high {
-      font-weight: 600;
-      color: #bc4b1c;
-    }
-    .rain-badge {
-      display: inline-block;
-      background: #ebf5ff;
-      border-radius: 30px;
-      padding: 0.2rem 0.7rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #1f5e8e;
-      white-space: nowrap;
-    }
-    .best-badge {
-      background: #d4f0e8;
-      color: #0c5e4b;
-      font-weight: 600;
-      border-radius: 30px;
-      padding: 0.2rem 0.9rem;
-      font-size: 0.8rem;
-      display: inline-block;
-      letter-spacing: 0.01em;
-    }
-    .peak-badge {
-      background: #fde6d2;
-      color: #9b4a1a;
-      font-weight: 600;
-      border-radius: 30px;
-      padding: 0.2rem 0.9rem;
-      font-size: 0.8rem;
-      display: inline-block;
-    }
-    .tips-section {
-      background: #f2f9fc;
-      border-radius: 20px;
-      padding: 1.8rem 2rem;
-      margin-top: 2.2rem;
-      border: 1px solid #cde3ed;
-    }
-    .tips-section h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #0b3b5c;
-      margin-top: 0;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .tips-section h3::before {
-      content: "🌴";
-      font-size: 1.8rem;
-    }
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.4rem;
-      margin-top: 0.5rem;
-    }
-    .tip-card {
-      background: #ffffff;
-      padding: 1.2rem 1.4rem;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-      border: 1px solid #d7e8f2;
-    }
-    .tip-card strong {
-      display: block;
-      font-size: 1.05rem;
-      color: #0e4b6b;
-      margin-bottom: 0.4rem;
-    }
-    .tip-card p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #2a4b5e;
-    }
-    .footnote {
-      font-size: 0.85rem;
-      color: #5e7e8f;
-      margin-top: 1.8rem;
-      text-align: center;
-      border-top: 1px dashed #c2d9e8;
-      padding-top: 1.2rem;
-    }
-    @media (max-width: 600px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.7rem;
-      }
-      .tips-section {
-        padding: 1.4rem 1.2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-<div class="guide-container">
+            <h2>Zanzibar Travel Weather Guide</h2>
 
-  <!-- H2 heading exactly as required -->
-  <h2>Zanzibar Weather by Month</h2>
+<p>Zanzibar's tropical climate divides neatly into distinct travel windows. Based on recent historical data, February stands out as the sweet spot — the hottest highs (33.1°C) but relatively few rain days (11.4) — while July offers the coolest, driest-feeling conditions with highs of just 27.5°C and lows of 22.3°C, ideal for sightseeing and beach days without oppressive heat. The worst period is April, when the long rains peak at 26.8 rain days and temperatures dip to a humid 28.7°C high. Practically, this means booking February for sun-soaked beach holidays and July for comfortable exploration, while avoiding April unless you don't mind frequent downpours.</p>
 
-  <!-- Introduction paragraph -->
-  <div class="intro">
-    <p>Zanzibar, the spice island off Tanzania’s coast, enjoys a tropical climate with warm temperatures year‑round. 
-    However, rainfall and humidity vary dramatically between the long rains (Masika), short rains (Vuli), and the dry seasons. 
-    Use this monthly guide to plan your beach holiday, spice tour, or cultural exploration — with average high temperatures, 
-    typical rainfall, and honest advice on the best months to visit.</p>
-  </div>
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Avg High (°C)</th>
+      <th>Avg Low (°C)</th>
+      <th>Avg Rain Days/Month</th>
+      <th>Rainfall</th>
+      <th>Crowds</th>
+      <th>Recommendation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>January</td>
+      <td>32.1</td>
+      <td>25.3</td>
+      <td>13.4</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Hot and humid with frequent showers; pack rain gear and expect peak-season prices.</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>33.1</td>
+      <td>25.6</td>
+      <td>11.4</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Hottest month but fewer rain days than January; great for beach lovers who can handle the heat.</td>
+    </tr>
+    <tr>
+      <td>March</td>
+      <td>32.5</td>
+      <td>25.3</td>
+      <td>15.6</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Warm with building rains as the long-rain season approaches; plan indoor backups.</td>
+    </tr>
+    <tr>
+      <td>April</td>
+      <td>28.7</td>
+      <td>24.3</td>
+      <td>26.8</td>
+      <td>High</td>
+      <td>Low</td>
+      <td>Worst month for weather — near-daily rain and humid; avoid unless seeking low prices.</td>
+    </tr>
+    <tr>
+      <td>May</td>
+      <td>28.5</td>
+      <td>24.1</td>
+      <td>17.8</td>
+      <td>High</td>
+      <td>Low</td>
+      <td>Rains easing and temperatures pleasant; good value with quieter beaches.</td>
+    </tr>
+    <tr>
+      <td>June</td>
+      <td>27.8</td>
+      <td>23.0</td>
+      <td>16.4</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Cooler and comfortable; still frequent showers but ideal for exploring Stone Town.</td>
+    </tr>
+    <tr>
+      <td>July</td>
+      <td>27.5</td>
+      <td>22.3</td>
+      <td>15.2</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Coolest month with manageable rain days; excellent for sightseeing and beach days.</td>
+    </tr>
+    <tr>
+      <td>August</td>
+      <td>28.6</td>
+      <td>21.6</td>
+      <td>14.6</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Warm days and comfortable nights; popular peak season with reliable sunshine between showers.</td>
+    </tr>
+    <tr>
+      <td>September</td>
+      <td>29.9</td>
+      <td>21.9</td>
+      <td>14.0</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Warming up with fewer rain days; a solid shoulder-season choice.</td>
+    </tr>
+    <tr>
+      <td>October</td>
+      <td>30.7</td>
+      <td>22.6</td>
+      <td>18.2</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Heat rising and short rains beginning; expect afternoon showers.</td>
+    </tr>
+    <tr>
+      <td>November</td>
+      <td>30.8</td>
+      <td>23.8</td>
+      <td>21.6</td>
+      <td>High</td>
+      <td>Low</td>
+      <td>Wet and humid with frequent downpours; fewer crowds but unpredictable days.</td>
+    </tr>
+    <tr>
+      <td>December</td>
+      <td>31.0</td>
+      <td>24.7</td>
+      <td>21.8</td>
+      <td>High</td>
+      <td>High</td>
+      <td>Festive season with hot, humid conditions and regular rain; book early.</td>
+    </tr>
+  </tbody>
+</table>
 
-  <!-- Main content: structured table with monthly weather, rainfall, and best‑month indicators -->
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>Month</th>
-          <th>Avg high<br><span style="font-weight:400;">(°C / °F)</span></th>
-          <th>Avg rainfall<br><span style="font-weight:400;">(mm)</span></th>
-          <th>Rain days<br><span style="font-weight:400;">(approx.)</span></th>
-          <th>Travel advice</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="month-cell">January</td>
-          <td><span class="temp-high">32°C / 90°F</span></td>
-          <td><span class="rain-badge">60 mm</span></td>
-          <td>6</td>
-          <td><span class="best-badge">Excellent</span> – hot, occasional short showers</td>
-        </tr>
-        <tr>
-          <td class="month-cell">February</td>
-          <td><span class="temp-high">32°C / 90°F</span></td>
-          <td><span class="rain-badge">50 mm</span></td>
-          <td>5</td>
-          <td><span
+<h3>Practical Tips</h3>
+<ul>
+  <li><strong>Best overall window:</strong> July–August offers the most comfortable temperatures (highs 27–29°C) with fewer rain days — ideal for combining beach time with Stone Town and spice-tour exploration.</li>
+  <li><strong>Pack for rain year-round:</strong> Every month averages 11+ rain days, so bring a light rain jacket, quick-dry clothing, and waterproof bags for electronics regardless of season.</li>
+  <li><strong>Avoid April if possible:</strong> With 26.8 rain days, the long rains can disrupt ferries, diving trips, and beach plans — only choose it for deep discounts and indoor-focused travel.</li>
+  <li><strong>Beat the heat:</strong> January–March highs exceed 32°C; schedule outdoor activities for early morning and late afternoon, and stay hydrated.</li>
+  <li><strong>Book ahead for peak season:</strong> December–February and July–August see high crowds and prices; reserve accommodation and excursions well in advance.</li>
+</ul>
+            
+        <p class="source-note">Weather table based on real historical data from Open-Meteo (2021-2025). Generated by AI on 2026-10-28.</p>
+            
             
             <section class="related-links">
                 <h3>More Zanzibar Guides</h3>

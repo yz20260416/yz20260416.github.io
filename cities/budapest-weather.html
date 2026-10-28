@@ -16,230 +16,142 @@
     
     <main>
         <article>
-            This is a complete HTML document for a travel guide section about Budapest's monthly weather. It includes a clear introduction, a detailed table with temperature and rainfall data, and practical tips for travelers.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budapest Weather Guide – Monthly Temperatures & Rainfall</title>
-    <style>
-        /* clean, readable styling for the travel guide section */
-        body {
-            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f7f9fc;
-            margin: 0;
-            padding: 2rem 1rem;
-            color: #1e2b3c;
-            line-height: 1.6;
-        }
-        .guide-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-            padding: 2rem 2rem 2.5rem;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            color: #0b2b4a;
-            border-bottom: 3px solid #e6edf5;
-            padding-bottom: 0.75rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-        .intro {
-            font-size: 1.1rem;
-            background: #f0f5fb;
-            padding: 1.25rem 1.5rem;
-            border-radius: 16px;
-            margin: 1.5rem 0 1.8rem;
-            border-left: 6px solid #2b6f9e;
-            color: #1d3b5c;
-        }
-        .weather-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-            border-radius: 16px;
-            overflow: hidden;
-            margin: 1.8rem 0 2rem;
-        }
-        .weather-table th {
-            background-color: #1e3b5a;
-            color: white;
-            font-weight: 600;
-            padding: 0.9rem 0.8rem;
-            text-align: center;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-        }
-        .weather-table td {
-            padding: 0.8rem 0.8rem;
-            text-align: center;
-            border-bottom: 1px solid #e2eaf2;
-            background-color: white;
-        }
-        .weather-table tr:last-child td {
-            border-bottom: none;
-        }
-        .weather-table tbody tr:hover td {
-            background-color: #f5faff;
-        }
-        .month-name {
-            font-weight: 600;
-            color: #143451;
-            text-align: left;
-            padding-left: 1.2rem;
-        }
-        .temp-high {
-            font-weight: 600;
-            color: #b8431c;
-        }
-        .temp-low {
-            color: #2a6b9c;
-        }
-        .rain-value {
-            font-weight: 500;
-            color: #1f5e3a;
-        }
-        .best-month-badge {
-            background: #e1f0e9;
-            color: #0e4f2e;
-            font-weight: 600;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            display: inline-block;
-            margin-left: 0.3rem;
-            letter-spacing: 0.3px;
-        }
-        .tips-section {
-            background: #f2f6fc;
-            border-radius: 20px;
-            padding: 1.8rem 2rem;
-            margin-top: 2.5rem;
-            border: 1px solid #dde7f0;
-        }
-        .tips-section h3 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            color: #0b2b4a;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .tips-section h3::before {
-            content: "🧳";
-            font-size: 1.6rem;
-        }
-        .tips-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.2rem;
-        }
-        .tips-list li {
-            background: white;
-            padding: 1rem 1.2rem 1rem 2.3rem;
-            border-radius: 14px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-            position: relative;
-            font-size: 0.98rem;
-            border: 1px solid #e1ebf5;
-            line-height: 1.5;
-        }
-        .tips-list li::before {
-            content: "•";
-            color: #2b6f9e;
-            font-weight: bold;
-            font-size: 1.8rem;
-            position: absolute;
-            left: 0.9rem;
-            top: 0.5rem;
-            line-height: 1;
-        }
-        .tips-list strong {
-            color: #0e3d60;
-        }
-        .footnote {
-            font-size: 0.85rem;
-            color: #5a6e82;
-            margin-top: 1.5rem;
-            text-align: right;
-            border-top: 1px dashed #cbdae8;
-            padding-top: 1rem;
-        }
-        @media (max-width: 650px) {
-            .guide-container { padding: 1.5rem; }
-            .weather-table th, .weather-table td { padding: 0.6rem 0.3rem; font-size: 0.8rem; }
-            .month-name { padding-left: 0.5rem; }
-            .tips-list li { padding: 0.9rem 0.9rem 0.9rem 2rem; }
-        }
-    </style>
-</head>
-<body>
-<div class="guide-container">
-    <!-- H2 heading as requested -->
-    <h2>Budapest Weather by Month</h2>
-
-    <!-- Introduction paragraph -->
-    <p class="intro">
-        Budapest enjoys a temperate continental climate, with four distinct seasons. Summers are warm and occasionally hot, 
-        winters are chilly and often grey, while spring and autumn bring mild, pleasant conditions. Rainfall is fairly evenly 
-        distributed throughout the year, though late spring and early summer tend to be slightly wetter. 
-        Below is a detailed monthly breakdown of average high/low temperatures (°C) and precipitation (mm), 
-        followed by practical tips to help you plan your visit — whether you're dreaming of sunny terrace evenings or cozy 
-        thermal-bath afternoons in the snow.
-    </p>
-
-    <!-- Main content: structured table with monthly data -->
-    <table class="weather-table">
-        <thead>
-            <tr>
-                <th>Month</th>
-                <th>Avg High (°C)</th>
-                <th>Avg Low (°C)</th>
-                <th>Rainfall (mm)</th>
-                <th>Travel notes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="month-name">January</td>
-                <td class="temp-high">2</td>
-                <td class="temp-low">-3</td>
-                <td class="rain-value">39</td>
-                <td>Cold, occasional snow; thermal baths are magical</td>
-            </tr>
-            <tr>
-                <td class="month-name">February</td>
-                <td class="temp-high">5</td>
-                <td class="temp-low">-1</td>
-                <td class="rain-value">37</td>
-                <td>Still chilly, but days slowly lengthen</td>
-            </tr>
-            <tr>
-                <td class="month-name">March</td>
-                <td class="temp-high">11</td>
-                <td class="temp-low">3</td>
-                <td class="rain-value">39</td>
-                <td>Spring arrives; mild afternoons, cool mornings</td>
-            </tr>
-            <tr>
-                <td class="month-name">April</td>
-                <td class="temp-high">17</td>
-                <td class="temp-low">7</td>
-                <td class="rain
+            <h2>Budapest Travel Weather Guide</h2>
+<p>Budapest's climate data reveal a city of two travel personalities. June through August brings the most reliable warmth, with July peaking at a 29.5°C average high and only 7.6 rain days — ideal for outdoor sightseeing, river cruises and thermal baths, though you'll share the city with peak crowds. The trade-off comes in late autumn and winter: November and December are the wettest months (9.0 and 8.8 rain days) with highs of just 9.2°C and 4.9°C, meaning short daylight, layered clothing and indoor-focused itineraries. For a sweet spot, aim for May or September, when mild temperatures and moderate rain days balance comfort against smaller crowds.</p>
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Avg High (°C)</th>
+      <th>Avg Low (°C)</th>
+      <th>Avg Rain Days/Month</th>
+      <th>Rainfall</th>
+      <th>Crowds</th>
+      <th>Recommendation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>January</td>
+      <td>5.6</td>
+      <td>-1.1</td>
+      <td>7.6</td>
+      <td>Moderate</td>
+      <td>Low</td>
+      <td>Cold with occasional frost; pack warm layers and plan indoor sights like baths and museums.</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>8.3</td>
+      <td>-0.1</td>
+      <td>6.8</td>
+      <td>Moderate</td>
+      <td>Low</td>
+      <td>Still chilly but drier than midwinter; good for low-crowd city walks with a warm coat.</td>
+    </tr>
+    <tr>
+      <td>March</td>
+      <td>12.6</td>
+      <td>2.0</td>
+      <td>7.4</td>
+      <td>Moderate</td>
+      <td>Low</td>
+      <td>Mild days with cold mornings; bring layers and an umbrella for occasional showers.</td>
+    </tr>
+    <tr>
+      <td>April</td>
+      <td>16.2</td>
+      <td>5.7</td>
+      <td>9.8</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Pleasant warmth but frequent rain; carry rain gear and mix outdoor and indoor plans.</td>
+    </tr>
+    <tr>
+      <td>May</td>
+      <td>21.1</td>
+      <td>10.9</td>
+      <td>11.2</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Warm and lively but the wettest month; keep a flexible itinerary and umbrella handy.</td>
+    </tr>
+    <tr>
+      <td>June</td>
+      <td>27.5</td>
+      <td>16.3</td>
+      <td>6.2</td>
+      <td>Moderate</td>
+      <td>High</td>
+      <td>Excellent warm, fairly dry weather; ideal for sightseeing, though crowds are building.</td>
+    </tr>
+    <tr>
+      <td>July</td>
+      <td>29.5</td>
+      <td>18.4</td>
+      <td>7.6</td>
+      <td>Moderate</td>
+      <td>High</td>
+      <td>Hottest month with good sun; book ahead, start early and stay hydrated in peak heat.</td>
+    </tr>
+    <tr>
+      <td>August</td>
+      <td>28.8</td>
+      <td>17.5</td>
+      <td>8.4</td>
+      <td>Moderate</td>
+      <td>High</td>
+      <td>Hot and mostly dry; great for outdoor days but expect busy attractions and warm nights.</td>
+    </tr>
+    <tr>
+      <td>September</td>
+      <td>23.2</td>
+      <td>13.2</td>
+      <td>9.0</td>
+      <td>High</td>
+      <td>Medium</td>
+      <td>Comfortable temperatures with more showers; a strong shoulder-season choice with fewer crowds.</td>
+    </tr>
+    <tr>
+      <td>October</td>
+      <td>16.9</td>
+      <td>7.6</td>
+      <td>5.6</td>
+      <td>Moderate</td>
+      <td>Medium</td>
+      <td>Crisp and relatively dry; one of the best autumn months for walking and photography.</td>
+    </tr>
+    <tr>
+      <td>November</td>
+      <td>9.2</td>
+      <td>2.3</td>
+      <td>9.0</td>
+      <td>High</td>
+      <td>Low</td>
+      <td>Cool and wet; pack waterproof layers and favor thermal baths, cafés and museums.</td>
+    </tr>
+    <tr>
+      <td>December</td>
+      <td>4.9</td>
+      <td>-0.3</td>
+      <td>8.8</td>
+      <td>Moderate</td>
+      <td>Medium</td>
+      <td>Cold and damp but festive; dress warmly for Christmas markets and short daylight hours.</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Practical tips</h3>
+<ul>
+  <li>Pack layers year-round: Budapest's continental climate swings sharply between daytime highs and nighttime lows, especially in spring and autumn.</li>
+  <li>April, May and September are the rainiest months (9+ rain days) — bring a compact umbrella and waterproof shoes.</li>
+  <li>For the best balance of weather and crowds, target late May, early June or October, avoiding both peak summer heat and winter damp.</li>
+  <li>In July and August, sightsee in the early morning and use afternoons for shaded thermal baths or indoor attractions to avoid peak heat.</li>
+  <li>Winter travelers should plan around short daylight: book indoor highlights such as the Parliament, baths and museums for afternoons.</li>
+</ul>
+            
+        <p class="source-note">Weather table based on real historical data from Open-Meteo (2021-2025). Generated by AI on 2026-10-28.</p>
+            
             
             <section class="related-links">
                 <h3>More Budapest Guides</h3>

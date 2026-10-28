@@ -16,287 +16,142 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section about Rome's monthly weather. It includes a clear introduction, a detailed table with temperature and rainfall data for each month, and practical tips for travelers. The layout is clean and informative, designed to help users plan their visit based on climate.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rome Weather Guide – Monthly Climate & Travel Tips</title>
-  <style>
-    /* clean, travel‑guide styling */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #faf7f2;
-      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      color: #1e2b2f;
-      padding: 2rem 1rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .guide-card {
-      max-width: 1100px;
-      width: 100%;
-      background: #ffffff;
-      border-radius: 28px;
-      box-shadow: 0 20px 40px -12px rgba(0, 20, 10, 0.15);
-      padding: 2.5rem 2rem;
-      border: 1px solid #e6dfd5;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #1f3e3c;
-      border-left: 8px solid #c7a252;
-      padding-left: 1.25rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.15rem;
-      color: #2e4a47;
-      margin-bottom: 2.25rem;
-      background: #f5f1e9;
-      padding: 1.5rem 1.8rem;
-      border-radius: 20px;
-      border: 1px solid #e3d9cb;
-    }
-
-    .intro strong {
-      color: #a5762c;
-      font-weight: 600;
-    }
-
-    /* table styling */
-    .weather-table-wrapper {
-      overflow-x: auto;
-      margin: 2rem 0 2.5rem;
-      border-radius: 18px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
-      border: 1px solid #e0d8cd;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.98rem;
-      background: white;
-      min-width: 680px;
-    }
-
-    th {
-      background: #2b5e5a;
-      color: white;
-      font-weight: 500;
-      padding: 1rem 0.8rem;
-      text-align: center;
-      font-size: 0.95rem;
-      letter-spacing: 0.3px;
-      border-right: 1px solid #3e7a75;
-    }
-
-    th:last-child {
-      border-right: none;
-    }
-
-    td {
-      padding: 0.9rem 0.8rem;
-      text-align: center;
-      border-bottom: 1px solid #ede7df;
-      color: #1e2f2c;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    tbody tr:hover {
-      background: #f9f5f0;
-    }
-
-    .month-name {
-      font-weight: 600;
-      color: #1f4b47;
-      text-align: left;
-      padding-left: 1.2rem;
-    }
-
-    .high-temp {
-      font-weight: 600;
-      color: #b1532b;
-    }
-
-    .low-temp {
-      color: #4e7b8a;
-    }
-
-    .rainfall {
-      color: #3d6b6b;
-    }
-
-    .best-badge {
-      display: inline-block;
-      background: #d4b87a;
-      color: #1f3e3c;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.2rem 0.6rem;
-      border-radius: 30px;
-      letter-spacing: 0.3px;
-      margin-left: 0.5rem;
-      text-transform: uppercase;
-      vertical-align: middle;
-    }
-
-    /* structured list / highlights */
-    .highlights {
-      background: #f9f6f1;
-      border-radius: 18px;
-      padding: 1.8rem 1.8rem 1.8rem 2.2rem;
-      margin: 2rem 0 2rem;
-      border-left: 6px solid #c7a252;
-    }
-
-    .highlights h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #1f3e3c;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .highlights ul {
-      list-style: none;
-    }
-
-    .highlights li {
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      font-size: 1.02rem;
-      color: #2b4a46;
-    }
-
-    .highlights li::before {
-      content: "☀️";
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .highlights li.rainy::before {
-      content: "🌧️";
-    }
-
-    .highlights li.mild::before {
-      content: "🍃";
-    }
-
-    .highlights li.snow::before {
-      content: "❄️";
-    }
-
-    /* practical tips section */
-    .tips-section {
-      background: #eef5f3;
-      border-radius: 22px;
-      padding: 2rem 2rem 2rem 2.2rem;
-      margin-top: 2.5rem;
-      border: 1px solid #cbdad6;
-      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
-    }
-
-    .tips-section h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: #1f3e3c;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-bottom: 2px dashed #a8c0b9;
-      padding-bottom: 0.6rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 0.8rem;
-    }
-
-    .tip-item {
-      background: white;
-      padding: 1.2rem 1.4rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-      border: 1px solid #d4e0dc;
-    }
-
-    .tip-item h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #1f5e58;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .tip-item p {
-      font-size: 0.97rem;
-      color: #2e4a47;
-    }
-
-    .footnote {
-      margin-top: 1.8rem;
-      font-size: 0.88rem;
-      color: #6a7e7a;
-      text-align: center;
-      border-top: 1px solid #d9d0c4;
-      padding-top: 1.5rem;
-      font-style: italic;
-    }
-
-    /* responsive */
-    @media (max-width: 650px) {
-      .guide-card {
-        padding: 1.8rem 1.2rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      .intro {
-        padding: 1.2rem;
-        font-size: 1rem;
-      }
-      .highlights {
-        padding: 1.5rem 1.2rem 1.5rem 1.6rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-card">
-    <!-- H2 heading as required -->
-    <h2>Rome Weather by Month</h2>
-
-    <!-- Introduction paragraph -->
-    <p class="intro">
-      Rome enjoys a Mediterranean climate with long,
+            <h2>Rome Travel Weather Guide</h2>
+<p>Rome's weather data reveals a city of two seasons. May is arguably the sweet spot: highs near 24°C and lows around 13°C make long days of walking and sightseeing genuinely comfortable. July is the toughest month, with average highs of 34°C and lows of 21.6°C, so plan outdoor sights for early morning and reserve midday for museums, churches, or shaded cafés. November is the wettest month, averaging 12.2 rain days, so pack a compact umbrella and keep indoor options ready. The shoulder months of April, May, September, and October offer the most balanced conditions overall.</p>
+<table border="1" cellpadding="6" cellspacing="0">
+<thead>
+<tr>
+<th>Month</th>
+<th>Avg High (°C)</th>
+<th>Avg Low (°C)</th>
+<th>Avg Rain Days/Month</th>
+<th>Rainfall</th>
+<th>Crowds</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>January</td>
+<td>12.9</td>
+<td>4.5</td>
+<td>10.2</td>
+<td>High</td>
+<td>Low</td>
+<td>Cool and often wet; pack layers and a rain jacket for low-crowd sightseeing.</td>
+</tr>
+<tr>
+<td>February</td>
+<td>15.0</td>
+<td>5.0</td>
+<td>6.8</td>
+<td>Moderate</td>
+<td>Low</td>
+<td>Milder and drier than January; a good quiet month for outdoor exploration.</td>
+</tr>
+<tr>
+<td>March</td>
+<td>16.7</td>
+<td>6.6</td>
+<td>9.8</td>
+<td>High</td>
+<td>Medium</td>
+<td>Pleasant temperatures but frequent showers; carry an umbrella.</td>
+</tr>
+<tr>
+<td>April</td>
+<td>19.4</td>
+<td>8.6</td>
+<td>10.4</td>
+<td>High</td>
+<td>Medium</td>
+<td>Warm days with regular rain; ideal for mixed indoor-outdoor itineraries.</td>
+</tr>
+<tr>
+<td>May</td>
+<td>23.9</td>
+<td>13.3</td>
+<td>11.6</td>
+<td>High</td>
+<td>High</td>
+<td>Excellent temperatures; expect some showers, so keep rain gear handy.</td>
+</tr>
+<tr>
+<td>June</td>
+<td>30.9</td>
+<td>18.6</td>
+<td>5.4</td>
+<td>Moderate</td>
+<td>High</td>
+<td>Hot but fairly dry; sightsee early and hydrate during midday heat.</td>
+</tr>
+<tr>
+<td>July</td>
+<td>34.0</td>
+<td>21.6</td>
+<td>3.2</td>
+<td>Low</td>
+<td>High</td>
+<td>Very hot and dry; avoid midday sun and book air-conditioned stays.</td>
+</tr>
+<tr>
+<td>August</td>
+<td>33.0</td>
+<td>21.3</td>
+<td>6.8</td>
+<td>Moderate</td>
+<td>High</td>
+<td>Hot with occasional storms; plan shaded breaks and evening walks.</td>
+</tr>
+<tr>
+<td>September</td>
+<td>28.0</td>
+<td>17.4</td>
+<td>8.0</td>
+<td>Moderate</td>
+<td>Medium</td>
+<td>Warm and mostly manageable; a strong month for comfortable touring.</td>
+</tr>
+<tr>
+<td>October</td>
+<td>23.5</td>
+<td>13.6</td>
+<td>10.0</td>
+<td>High</td>
+<td>Medium</td>
+<td>Mild but wetter; balance outdoor plans with museum time.</td>
+</tr>
+<tr>
+<td>November</td>
+<td>17.6</td>
+<td>8.9</td>
+<td>12.2</td>
+<td>High</td>
+<td>Low</td>
+<td>Wettest month; pack waterproof shoes and prioritize indoor attractions.</td>
+</tr>
+<tr>
+<td>December</td>
+<td>14.0</td>
+<td>5.7</td>
+<td>9.4</td>
+<td>High</td>
+<td>Medium</td>
+<td>Chilly and damp; dress warmly and enjoy festive, lighter-crowd sights.</td>
+</tr>
+</tbody>
+</table>
+<h3>Practical tips</h3>
+<ul>
+<li>Book May or September for the best balance of comfortable temperatures and manageable conditions.</li>
+<li>Avoid midday outdoor sightseeing in July and August, when highs reach 33–34°C; use early mornings and evenings instead.</li>
+<li>Carry a compact umbrella and waterproof layer from October through May, when rain days regularly exceed 9 per month.</li>
+<li>July is the driest month (3.2 rain days), making it reliable for outdoor plans despite the heat.</li>
+<li>November demands the most rain preparation (12.2 rain days); build flexibility into your itinerary.</li>
+</ul>
+            
+        <p class="source-note">Weather table based on real historical data from Open-Meteo (2021-2025). Generated by AI on 2026-10-28.</p>
+            
             
             <section class="related-links">
                 <h3>More Rome Guides</h3>
