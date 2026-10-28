@@ -16,238 +16,62 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Jerusalem's top attractions. It presents a structured, informative overview of ten key sites, including descriptions, ticket prices, and visiting tips, all formatted for easy reading.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jerusalem Travel Guide · Top 10 Attractions</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f8f7f4;
-      color: #1e1e2a;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-    }
-    .guide-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
-      padding: 2.5rem 2rem;
-    }
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #2c2a3a;
-      border-left: 6px solid #b8860b;
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1.2rem;
-    }
-    .intro {
-      font-size: 1.15rem;
-      color: #3d3b4a;
-      background: #fefcf5;
-      padding: 1.5rem 1.8rem;
-      border-radius: 20px;
-      margin-bottom: 2.2rem;
-      border: 1px solid #f0e6d2;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-    .attraction-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 12px;
-      margin: 1.5rem 0 2rem;
-    }
-    .attraction-table th {
-      text-align: left;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #6b5e4a;
-      padding: 0.6rem 1rem 0.6rem 1.2rem;
-      background: transparent;
-      border-bottom: 2px solid #e6dccb;
-    }
-    .attraction-table td {
-      background: #ffffff;
-      padding: 1.2rem 1.2rem;
-      vertical-align: top;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      border: 1px solid #ede7dd;
-      transition: all 0.1s ease;
-    }
-    .attraction-table tr:hover td {
-      background: #fefcf8;
-      border-color: #d9c9a8;
-      box-shadow: 0 6px 16px rgba(184, 134, 11, 0.08);
-    }
-    .attraction-name {
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: #2c2a3a;
-      display: block;
-      margin-bottom: 0.45rem;
-    }
-    .attraction-desc {
-      font-size: 0.95rem;
-      color: #3e3c4a;
-      margin-bottom: 0.6rem;
-      line-height: 1.5;
-    }
-    .badge {
-      display: inline-block;
-      background: #f5efe3;
-      color: #7a5c2e;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.2rem 0.7rem;
-      border-radius: 30px;
-      letter-spacing: 0.02em;
-      margin-top: 0.5rem;
-      border: 1px solid #e6d9c4;
-    }
-    .price-tag {
-      font-weight: 600;
-      color: #1f5e3a;
-      background: #eef6f0;
-      padding: 0.25rem 0.8rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      display: inline-block;
-      white-space: nowrap;
-      border: 1px solid #cfe3d6;
-    }
-    .tip-list {
-      list-style: none;
-      padding: 0;
-    }
-    .tip-list li {
-      margin-bottom: 0.6rem;
-      font-size: 0.92rem;
-      display: flex;
-      gap: 0.6rem;
-      align-items: flex-start;
-    }
-    .tip-list li::before {
-      content: "•";
-      color: #b8860b;
-      font-weight: 700;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-    .practical-tips {
-      background: #f5f1e9;
-      border-radius: 24px;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 2.5rem;
-      border: 1px solid #e3d9cb;
-    }
-    .practical-tips h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #2c2a3a;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .practical-tips h3::before {
-      content: "✧";
-      color: #b8860b;
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .tip-card {
-      background: white;
-      border-radius: 18px;
-      padding: 1.3rem 1.4rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-      border: 1px solid #e8dfd2;
-    }
-    .tip-card h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #2c2a3a;
-      margin-bottom: 0.6rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .tip-card p {
-      font-size: 0.92rem;
-      color: #3e3c4a;
-    }
-    .tip-card ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-      font-size: 0.92rem;
-      color: #3e3c4a;
-    }
-    .tip-card li {
-      margin-bottom: 0.3rem;
-    }
-    .note {
-      font-size: 0.85rem;
-      color: #6b5e4a;
-      margin-top: 1.2rem;
-      font-style: italic;
-      border-top: 1px dashed #d6cbbc;
-      padding-top: 1rem;
-    }
-    @media (max-width: 750px) {
-      .guide-container { padding: 1.5rem 1rem; }
-      h2 { font-size: 1.8rem; }
-      .attraction-table th { display: none; }
-      .attraction-table td { padding: 1rem; }
-      .attraction-table, .attraction-table tbody, .attraction-table tr, .attraction-table td {
-        display: block;
-        width: 100%;
-      }
-      .attraction-table tr {
-        margin-bottom: 1rem;
-        display: block;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      }
-      .attraction-table td {
-        border-radius: 16px;
-        border: 1px solid #ede7dd;
-      }
-      .attraction-table td:first-child {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom: none;
-      }
-      .attraction-table td:last-child {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        border-top: 1px solid #f0e6d2;
-      }
-    }
-  </style>
-</head>
-<body>
+            <h2>Top Attractions in Jerusalem</h2>
+<p>Jerusalem rewards visitors with an extraordinary blend of ancient history, living culture, and green escapes. From archaeological remains of the city's original core to world-class botanical collections and lively markets, the city offers something for every traveler. This guide highlights ten attractions most likely to appeal to international visitors, drawn from landmark sites, museums, parks, and iconic neighborhoods across the city.</p>
 
+<ol>
+  <li>
+    <strong>City of David (Archaeological Site)</strong> — This is the original settlement core of Jerusalem during the Bronze and Iron Ages, offering a glimpse into the city's earliest history. Excavations here reveal the foundations of ancient Jerusalem. 
+    <em>Tip:</em> Book tickets in advance and wear sturdy shoes, as the site involves walking through tunnels and uneven terrain.
+  </li>
+  <li>
+    <strong>Jerusalem Biblical Zoo</strong> — Located in the Malha neighborhood, this zoo is famous for its Afro-Asiatic collection of wildlife, many of which are described in the Hebrew Bible, and for its success in breeding endangered species. It has been cited as one of the most popular tourist attractions in the country. 
+    <em>Tip:</em> Visit on weekday mornings for smaller crowds and cooler weather; the zoo is a good family outing.
+  </li>
+  <li>
+    <strong>Jerusalem Botanical Gardens</strong> — The largest botanical garden in Israel, it features over 6,000 plant species from around the world arranged in phytogeographic sections, including Australia, South Africa, Europe, and the Mediterranean. It sits on the southeastern edge of the Givat Ram campus of the Hebrew University. 
+    <em>Tip:</em> Spring is the best time to see the gardens in bloom; allow at least two hours to explore.
+  </li>
+  <li>
+    <strong>Montefiore Windmill</strong> — This landmark windmill was built in 1857 as a flour mill on a slope opposite the western city walls, part of Moses Montefiore's efforts to develop the area. Today it serves as a small museum dedicated to Montefiore's achievements. 
+    <em>Tip:</em> Combine your visit with a stroll through the adjacent Mishkenot Sha'ananim neighborhood and its scenic views.
+  </li>
+  <li>
+    <strong>Mahane Yehuda Market</strong> — Often called "The Shuk," this lively marketplace has more than 250 vendors selling fresh produce, baked goods, fish, meat, cheeses, nuts, spices, wines, and housewares. It is popular with locals and tourists alike. 
+    <em>Tip:</em> Arrive early on Friday before the Sabbath for the fullest experience, or visit on a weekday morning to avoid the crowds.
+  </li>
+  <li>
+    <strong>Mamilla Mall</strong> — This upscale open-air mall in West Jerusalem features a 2,000-foot pedestrian promenade lined with 140 stores, restaurants, and cafes. Designed by Moshe Safdie, it sits just northwest of Jaffa Gate. 
+    <em>Tip:</em> It's an easy stop after visiting the Old City; evenings are pleasant for a walk along the promenade.
+  </li>
+  <li>
+    <strong>Ein Lavan</strong> — This spring lies in the Judean Mountains on the outskirts of Jerusalem, about 2 km east of the Biblical Zoo, surrounded by fig, walnut, almond, carob, olive, terebinth, and mulberry trees. It's a peaceful natural escape within the city's reach. 
+    <em>Tip:</em> Bring water and sun protection; the spring is best visited in spring or early summer when the surrounding greenery is lush.
+  </li>
+  <li>
+    <strong>Jerusalem Bird Observatory</strong> — This urban bird observatory occupies a 5,000-square-meter plot in central Jerusalem between the Knesset and the Supreme Court. It offers a surprising nature experience in the heart of the city. 
+    <em>Tip:</em> Migration seasons in spring and autumn offer the best birdwatching; check opening hours before you go.
+  </li>
+  <li>
+    <strong>Jerusalem Cinematheque</strong> — This cinematheque and film archive is a hub for cinema lovers in Jerusalem. It hosts screenings and is closely tied to the city's film culture. 
+    <em>Tip:</em> Check the schedule for English-subtitled screenings, especially during the Jerusalem Film Festival in summer.
+  </li>
+  <li>
+    <strong>Jerusalem Khan Theatre</strong> — Based in an old caravanserai building near the Jerusalem Railway Station, this repertory theatre offers a distinctive cultural experience in a historic setting. 
+    <em>Tip:</em> Look for performances with English subtitles or surtitles, and arrive early to admire the historic building.
+  </li>
+</ol>
+
+<h3>Practical tips</h3>
+<ul>
+  <li><strong>Best seasons:</strong> Spring (March–May) and autumn (September–November) offer mild weather ideal for outdoor sites like Ein Lavan and the Botanical Gardens.</li>
+  <li><strong>Shabbat awareness:</strong> Many attractions and the Mahane Yehuda Market close or operate reduced hours from Friday afternoon through Saturday; plan accordingly.</li>
+  <li><strong>Tickets:</strong> Book popular sites such as the City of David and the Biblical Zoo in advance, especially during holidays and summer.</li>
+  <li><strong>Getting around:</strong> Combine nearby attractions—for example, the Bird Observatory with the Knesset area, or Mamilla Mall with the Old City's Jaffa Gate.</li>
+  <li><strong>Summer events:</strong> Check dates for the Jerusalem Film Festival and other seasonal cultural events if you enjoy arts programming.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Jerusalem Guides</h3>

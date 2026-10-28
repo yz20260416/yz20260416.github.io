@@ -16,272 +16,50 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Miami's top 10 attractions. It presents key information in a clean, structured format, including descriptions, ticket prices, and practical tips for each location, all styled for easy reading.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miami Top 10 Attractions · Travel Guide</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: linear-gradient(145deg, #f0f9ff 0%, #e6f2f9 100%);
-      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      color: #1a2e3b;
-      padding: 2rem 1rem;
-    }
-
-    .guide-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 2.5rem;
-      box-shadow: 0 25px 40px -15px rgba(0, 40, 60, 0.3);
-      padding: 2.5rem 2rem;
-      border: 1px solid #ffffff70;
-    }
-
-    h2 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0b3b4b;
-      border-left: 8px solid #1e90b0;
-      padding-left: 1.5rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1.25rem;
-      text-shadow: 0 2px 4px rgba(0, 80, 100, 0.08);
-    }
-
-    .intro {
-      font-size: 1.2rem;
-      background: #d9eef7;
-      padding: 1.4rem 2rem;
-      border-radius: 2rem;
-      margin-bottom: 2.5rem;
-      color: #064663;
-      border: 1px solid #b3d9e8;
-      box-shadow: inset 0 1px 4px #ffffff90;
-    }
-
-    .intro p {
-      margin-bottom: 0.65rem;
-    }
-
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* table styling */
-    .attractions-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 12px;
-      margin: 1.5rem 0 2rem;
-    }
-
-    .attractions-table th {
-      text-align: left;
-      padding: 0.75rem 1rem;
-      font-weight: 600;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #1a5c72;
-      background: #d4eaf3;
-      border-radius: 1.2rem 1.2rem 0.4rem 0.4rem;
-      border-bottom: 2px solid #9dc6d9;
-    }
-
-    .attractions-table td {
-      background: white;
-      padding: 1.25rem 1rem;
-      vertical-align: top;
-      border-radius: 1.2rem;
-      box-shadow: 0 6px 14px rgba(0, 30, 40, 0.06);
-      border: 1px solid #e1eff5;
-      transition: transform 0.1s ease, box-shadow 0.2s;
-    }
-
-    .attractions-table tr:hover td {
-      box-shadow: 0 12px 22px rgba(0, 60, 80, 0.12);
-      transform: scale(1.003);
-      background: #feffff;
-    }
-
-    .attraction-name {
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: #11556b;
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-
-    .attraction-desc {
-      font-size: 0.96rem;
-      color: #1f4452;
-      margin-bottom: 0.5rem;
-      line-height: 1.5;
-    }
-
-    .ticket-badge {
-      display: inline-block;
-      background: #1e7a94;
-      color: white;
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.3rem 1rem;
-      border-radius: 30px;
-      margin-top: 0.4rem;
-      letter-spacing: 0.01em;
-      box-shadow: 0 2px 6px #1e7a9440;
-    }
-
-    .tip-text {
-      font-size: 0.9rem;
-      background: #f3fafd;
-      padding: 0.65rem 1rem;
-      border-radius: 20px;
-      border-left: 4px solid #4fa3c2;
-      margin-top: 0.7rem;
-      color: #0b4457;
-      font-style: italic;
-    }
-
-    .tip-text strong {
-      color: #0a4b60;
-      font-style: normal;
-    }
-
-    /* practical tips section */
-    .practical-tips {
-      background: #e2f0f7;
-      border-radius: 2rem;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 2.2rem;
-      border: 1px solid #b8d9e9;
-      box-shadow: 0 12px 24px -12px #1e5b7030;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #0a4052;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 2rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.2rem;
-    }
-
-    .tip-card {
-      background: white;
-      padding: 1.2rem 1.2rem 1.2rem 1.8rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 5px 12px #00000008;
-      border: 1px solid #d0e5f0;
-      position: relative;
-    }
-
-    .tip-card::before {
-      content: "•";
-      font-size: 2.2rem;
-      color: #1e90b0;
-      position: absolute;
-      left: 0.8rem;
-      top: 0.8rem;
-      line-height: 1;
-    }
-
-    .tip-card strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.4rem;
-      color: #0b4f66;
-    }
-
-    .tip-card p {
-      font-size: 0.95rem;
-      color: #2a4e5e;
-    }
-
-    /* responsiveness */
-    @media (max-width: 750px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-        padding-left: 1rem;
-      }
-
-      .attractions-table,
-      .attractions-table tbody,
-      .attractions-table tr,
-      .attractions-table td,
-      .attractions-table th {
-        display: block;
-        width: 100%;
-      }
-
-      .attractions-table th {
-        display: none;
-      }
-
-      .attractions-table tr {
-        margin-bottom: 1.5rem;
-        display: block;
-        border-radius: 1.5rem;
-        background: transparent;
-        box-shadow: none;
-      }
-
-      .attractions-table td {
-        display: block;
-        border-radius: 1rem;
-        margin-bottom: 0.5rem;
-        background: white;
-      }
-
-      .attractions-table td:empty {
-        display: none;
-      }
-
-      .tip-card {
-        padding-left: 2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-<div class="guide-container">
-  <!-- H2 heading exactly as required -->
-  <h2>Miami Top 10 Attractions</h2>
-
-  <!-- Introduction paragraph -->
-  <div class="intro">
-    <p>🌴 From the art-deco glamour of South Beach to the lush tropical gardens and vibrant cultural districts, Miami is a kaleidoscope of experiences.
+            <h2>Top Attractions in Miami</h2>
+<p>Miami is a city of contrasts, where Caribbean culture, Art Deco architecture, and waterfront glamour meet. From the Cuban rhythms of Little Havana to the performing arts stages downtown, the city offers travelers a rich mix of neighborhoods, parks, and cultural venues. This guide highlights ten standout attractions that capture Miami's distinctive character, with practical tips to help you plan your visit.</p>
+<ol>
+  <li>
+    <strong>Little Havana</strong> — Home to many Cuban exiles and immigrants from Central and South America, this neighborhood is named after Havana, Cuba's capital. It is a center of social, cultural, and political activity, famous for festivals such as the Calle Ocho Festival and Viernes Culturales. <em>Tip: Visit on the last Friday of the month for Cultural Fridays, when galleries and streets come alive.</em>
+  </li>
+  <li>
+    <strong>Little Haiti</strong> — Historically known as Lemon City and Little River, this neighborhood is home to Haitian immigrant residents and others from across the Caribbean. It is characterized by French–Creole designations, street life, restaurants, art galleries, dance, music, and theatre performances. <em>Tip: Go during the day to explore family-owned eateries and galleries; check local listings for cultural events.</em>
+  </li>
+  <li>
+    <strong>Adrienne Arsht Center for the Performing Arts</strong> — One of the largest performing arts centers in the United States, located in Miami. It presents artists from around the world, programming from its three resident companies, and free community events reflecting Miami's identity. <em>Tip: Look for free community events and check the season calendar in advance for ticketed performances.</em>
+  </li>
+  <li>
+    <strong>Bayside Marketplace</strong> — An open-air shopping and entertainment complex on the banks of Biscayne Bay in Greater Downtown Miami, with the city marina alongside. It opened in April 1987 as a festival marketplace. <em>Tip: Pair a visit with a bayfront stroll or boat tour; evenings are lively but busiest.</em>
+  </li>
+  <li>
+    <strong>Miami Design District</strong> — A neighborhood and shopping, dining, and cultural destination home to over 130 art galleries, showrooms, creative firms, luxury fashion stores, antiques dealers, eateries, and bars. It sits at the crossroads of several prominent Miami neighborhoods. <em>Tip: Browse galleries and public art on a weekday for a quieter experience.</em>
+  </li>
+  <li>
+    <strong>Jungle Island</strong> — A relaunched eco-adventure park on Watson Island, formerly known as Parrot Jungle. After hurricane damage and major renovations, it now features pop-up waterslides, an outdoor wind tunnel flight experience, zip lines, escape rooms, and a Nerf battle stadium. <em>Tip: Book popular add-ons like the wind tunnel in advance, especially on weekends.</em>
+  </li>
+  <li>
+    <strong>The Barnacle Historic State Park</strong> — A 5-acre Florida State Park in Coconut Grove, built in 1891 as the home of Ralph Middleton Munroe, one of Coconut Grove's founders. It is the oldest house in its original location in Miami-Dade County. <em>Tip: Combine with a walk through Coconut Grove; check state park hours before visiting.</em>
+  </li>
+  <li>
+    <strong>The Kampong</strong> — A botanical garden in Coconut Grove and one of the five gardens of the non-profit National Tropical Botanical Garden. It is open Tuesday through Saturday, 9:00am–3:00pm. <em>Tip: Reservations are encouraged, though tickets can be purchased on site.</em>
+  </li>
+  <li>
+    <strong>CocoWalk</strong> — An open-air shopping mall in Coconut Grove that opened in 1990, featuring an iconic entrance with an open central plaza. Its design heavily reflects Spanish architecture and marked the transformation of Coconut Grove. <em>Tip: Use it as a base for exploring the surrounding Grove neighborhood.</em>
+  </li>
+  <li>
+    <strong>Kaseya Center</strong> — A multi-purpose arena on Biscayne Bay and home of the NBA's Miami Heat. It has operated under several names, including American Airlines Arena and FTX Arena, before Kaseya acquired naming rights in 2023. <em>Tip: Check the event schedule ahead; the bayfront location makes for a scenic pre-game walk.</em>
+  </li>
+</ol>
+<h2>Practical tips</h2>
+<ul>
+  <li>Miami is hot and humid most of the year—plan outdoor neighborhood visits for mornings and keep hydrated.</li>
+  <li>Many cultural venues and gardens have limited hours; confirm opening days (for example, The Kampong is closed Sunday and Monday) before you go.</li>
+  <li>Reservations are encouraged at smaller attractions such as The Kampong, and popular add-ons at Jungle Island can sell out.</li>
+  <li>Time your visit to Little Havana around Cultural Fridays or the Calle Ocho Festival for the fullest experience.</li>
+  <li>Cluster nearby sights—Coconut Grove attractions (CocoWalk, The Barnacle, The Kampong) pair well for a single day.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Miami Guides</h3>

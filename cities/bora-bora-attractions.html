@@ -16,192 +16,123 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Bora Bora's top attractions. It presents ten key sights with descriptions, ticket prices, and practical tips in a clean, structured format suitable for travelers planning their trip.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bora Bora · Top 10 attractions</title>
-  <style>
-    /* minimal, clean styling for readability */
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f5f9fc;
-      margin: 0;
-      padding: 2rem 1rem;
-      color: #1e2b3c;
-      line-height: 1.5;
-    }
-    .guide-card {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 20px 35px -8px rgba(0, 20, 30, 0.15);
-      padding: 2rem 2rem 2rem 2rem;
-    }
-    h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #0b3b4f;
-      border-left: 8px solid #2b9c8e;
-      padding-left: 1.25rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1.25rem;
-    }
-    h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #1a5f6e;
-      margin: 2rem 0 1rem 0;
-    }
-    .intro {
-      font-size: 1.1rem;
-      background: #e6f3f2;
-      padding: 1.25rem 1.75rem;
-      border-radius: 20px;
-      margin-bottom: 2.25rem;
-      color: #143b44;
-      border: 1px solid #c2e0dc;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0 2rem 0;
-      font-size: 0.98rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    th {
-      background: #1d6f6a;
-      color: white;
-      font-weight: 600;
-      text-align: left;
-      padding: 1rem 0.9rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.3px;
-    }
-    td {
-      padding: 1rem 0.9rem;
-      vertical-align: top;
-      border-bottom: 1px solid #d9e9e7;
-      background: white;
-    }
-    tr:last-child td {
-      border-bottom: none;
-    }
-    .attraction-name {
-      font-weight: 700;
-      color: #0b4a4f;
-      font-size: 1.02rem;
-    }
-    .price-tag {
-      font-weight: 600;
-      color: #1a7a6e;
-      white-space: nowrap;
-      background: #eef9f7;
-      padding: 0.2rem 0.6rem;
-      border-radius: 30px;
-      display: inline-block;
-      font-size: 0.9rem;
-    }
-    .tip-text {
-      color: #2f4d5c;
-      font-size: 0.92rem;
-    }
-    .tips-section {
-      background: #f0f7fa;
-      border-radius: 24px;
-      padding: 1.5rem 2rem 1.5rem 2rem;
-      margin-top: 2.5rem;
-      border: 1px solid #cfe3e9;
-    }
-    .tips-section h3 {
-      margin-top: 0.2rem;
-      margin-bottom: 1.25rem;
-      color: #0b4a4f;
-      font-size: 1.5rem;
-    }
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-    .tip-item {
-      background: white;
-      border-radius: 18px;
-      padding: 1rem 1.25rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-      border-left: 4px solid #2b9c8e;
-    }
-    .tip-item strong {
-      display: block;
-      color: #1a5f6e;
-      margin-bottom: 0.4rem;
-      font-size: 1.05rem;
-    }
-    .tip-item p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #2a4a55;
-    }
-    .footnote {
-      font-size: 0.85rem;
-      color: #5b7b88;
-      margin-top: 1.5rem;
-      border-top: 1px dashed #b8d4da;
-      padding-top: 1rem;
-      text-align: center;
-    }
-    @media (max-width: 700px) {
-      .guide-card { padding: 1.2rem; }
-      h2 { font-size: 1.7rem; padding-left: 1rem; }
-      table { font-size: 0.85rem; }
-      th, td { padding: 0.75rem 0.6rem; }
-      .price-tag { font-size: 0.8rem; }
-    }
-  </style>
-</head>
-<body>
-<div class="guide-card">
+            <h2>Bora Bora Travel Guide: Top 10 Must-See Attractions</h2>
+<p>Bora Bora, a small island in French Polynesia's Society Islands, is famous for its turquoise lagoon, overwater bungalows, and the dramatic silhouette of Mount Otemanu. While the island is compact—about 30 km in circumference—its attractions range from mountaintop viewpoints and coral gardens to pearl farms and vanilla plantations. Most visitors arrive by air at Bora Bora Airport (BOB) on Motu Mute, then transfer by boat to their resort. Below are the top 10 attractions with practical details to help you plan your visit.</p>
 
-  <!-- H2 heading as required -->
-  <h2>Bora Bora Top 10 Attractions</h2>
+<ol>
+  <li>
+    <h3>Mount Otemanu Viewpoints</h3>
+    <p>Mount Otemanu, the island's iconic 727-meter volcanic peak, is best experienced from designated viewpoints rather than a summit hike (the summit is not accessible to tourists). Popular vantage points include the lookout near Faanui and the coastal road along the island's western side. The changing light at sunrise and sunset makes for spectacular photography.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Free (public viewpoints)</td></tr>
+      <tr><th>Opening Hours</th><td>Open 24 hours; daylight visits recommended</td></tr>
+      <tr><th>Visiting Tips</th><td>Bring water and sun protection; the best light is early morning or late afternoon. Combine with a drive around the island's perimeter road.</td></tr>
+    </table>
+  </li>
 
-  <!-- Introduction paragraph -->
-  <div class="intro">
-    <p style="margin:0;">Bora Bora is the ultimate South Pacific dream — a crown of emerald peaks encircled by a luminous turquoise lagoon and a string of coral motus. Beyond the overwater bungalows, the island offers world-class snorkeling, dramatic volcanic scenery, and a rich Polynesian culture. To help you plan, we’ve curated the <strong>top 10 attractions</strong> with honest descriptions, current ticket prices (in USD / XPF), and practical visiting tips so you can make the most of every moment in French Polynesia’s most iconic island.</p>
-  </div>
+  <li>
+    <h3>Matira Beach</h3>
+    <p>Matira Beach is Bora Bora's most famous public beach, located at the southern tip of the main island. It features soft white sand, shallow calm water, and a gentle slope ideal for swimming and snorkeling. Public access is free, and there are nearby snack bars and small shops.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Free</td></tr>
+      <tr><th>Opening Hours</th><td>Open 24 hours (public beach)</td></tr>
+      <tr><th>Visiting Tips</th><td>Arrive early to secure shade; the beach can get busy midday. Snorkel near the rocky points at either end for better fish life.</td></tr>
+    </table>
+  </li>
 
-  <!-- Main content: structured table with descriptions, prices, tips -->
-  <h3 style="margin-top:0.5rem;">✨ Essential experiences &amp; landmarks</h3>
-  <table>
-    <thead>
-      <tr>
-        <th style="width:22%;">Attraction</th>
-        <th style="width:38%;">Description</th>
-        <th style="width:18%;">Ticket price*</th>
-        <th style="width:22%;">Visiting tips</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- 1. Mount Otemanu -->
-      <tr>
-        <td><span class="attraction-name">1. Mount Otemanu</span></td>
-        <td>The island’s iconic 727m (2,385 ft) volcanic peak, visible from almost everywhere. Lush rainforest, dramatic ridges, and panoramic views of the lagoon. Hiking is not permitted to the summit, but guided 4x4 safaris and boat tours explore the base and offer spectacular photo stops.</td>
-        <td><span class="price-tag">4x4 tour: $85–120</span><br><span style="font-size:0.85rem; color:#4d6b78;">(≈ 9,000–13,000 XPF)</span></td>
-        <td class="tip-text">Book a 4x4 safari with a local guide (no self-drive off-road). Morning tours are cooler and clearer. Wear sturdy shoes and bring water.</td>
-      </tr>
-      <!-- 2. Lagoonarium (snorkeling & ray feeding) -->
-      <tr>
-        <td><span class="attraction-name">2. Lagoonarium</span></td>
-        <td>A natural open-water aquarium on a private motu, famous for its friendly rays, blacktip reef sharks, and dense coral gardens. Guided snorkeling tours include feeding sessions and a traditional Polynesian lunch.</td>
-        <td><span class="price-tag">Half-day tour: $95–140</span><br><span style="font-size:0.85rem; color:#4d6b78;">(≈ 10,000–15,000 XPF)</span></td>
-        <td class
+  <li>
+    <h3>Lagoonarium (Le Lagoonarium)</h3>
+    <p>This family-run marine park on a motu (islet) offers snorkeling in a natural lagoon enclosure with sharks, rays, and tropical fish. It is a popular half-day excursion that includes boat transfer and guided feeding sessions.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Approximately 6,000–8,000 XPF (about US$55–75) including transfer; prices vary by operator</td></tr>
+      <tr><th>Opening Hours</th><td>Typically 9:00–16:00, Monday–Saturday; confirm with operator</td></tr>
+      <tr><th>Visiting Tips</th><td>Book in advance through your resort or a local tour operator. Bring reef-safe sunscreen and an underwater camera.</td></tr>
+    </table>
+  </li>
+
+  <li>
+    <h3>Coral Gardens Snorkeling Sites</h3>
+    <p>The lagoon's Coral Gardens are shallow, protected snorkeling areas with vibrant coral formations and abundant fish. These sites are usually visited as part of lagoon tours, which may also include stops at shark and ray feeding spots.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Included in lagoon tours, typically 8,000–15,000 XPF (US$70–140) per person for a half or full day</td></tr>
+      <tr><th>Opening Hours</th><td>Tour-dependent; most departures between 8:00 and 9:00</td></tr>
+      <tr><th>Visiting Tips</th><td>Choose a small-group tour to reduce crowding. Wear water shoes and use only reef-safe sunscreen.</td></tr>
+    </table>
+  </li>
+
+  <li>
+    <h3>Bloody Mary's Restaurant</h3>
+    <p>A legendary waterfront restaurant and bar on the main island, Bloody Mary's is known for its fresh seafood, sand floor, and celebrity guest list. It is a popular lunch and dinner spot and a cultural landmark in its own right.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>No entry fee; meals typically 3,000–6,000 XPF (US$25–50) per person</td></tr>
+      <tr><th>Opening Hours</th><td>Generally 11:00–15:00 and 18:00–21:00; reservations recommended</td></tr>
+      <tr><th>Visiting Tips</th><td>Book ahead for dinner, especially in high season (June–August). The fish of the day is displayed for selection.</td></tr>
+    </table>
+  </li>
+
+  <li>
+    <h3>Bora Bora Pearl Farms</h3>
+    <p>French Polynesia is renowned for cultured black pearls, and several pearl farms on Bora Bora offer guided tours explaining the grafting process and pearl grading. Tours often include a demonstration and the opportunity to purchase jewelry.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Free tours at most farms; purchases optional</td></tr>
+      <tr><th>Opening Hours</th><td>Typically 9:00–17:00, Monday–Saturday; hours vary by farm</td></tr>
+      <tr><th>Visiting Tips</th><td>Ask about certification and grading before buying. Tours last 30–60 minutes and are a good rainy-day activity.</td></tr>
+    </table>
+  </li>
+
+  <li>
+    <h3>Vanilla Plantation Tours</h3>
+    <p>Small vanilla plantations on the main island offer insight into one of French Polynesia's signature crops. Guided visits explain cultivation, pollination, and curing, and often include tastings of vanilla products.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Usually free or a small fee (under 1,000 XPF); purchases optional</td></tr>
+      <tr><th>Opening Hours</th><td>Varies by plantation; typically weekday mornings</td></tr>
+      <tr><th>Visiting Tips</th><td>Call ahead to confirm tour times. Vanilla products make good gifts but check customs rules for your home country.</td></tr>
+    </table>
+  </li>
+
+  <li>
+    <h3>World War II Relics (Faanui and Surroundings)</h3>
+    <p>Bora Bora hosted a U.S. military base during World War II, and remnants such as coastal gun emplacements and a small museum display can be found around Faanui Bay. These sites offer a different perspective on the island's history.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Free for outdoor relics; small museum fees may apply</td></tr>
+      <tr><th>Opening Hours</th><td>Outdoor sites open 24 hours; museum hours vary</td></tr>
+      <tr><th>Visiting Tips</th><td>Combine with a circle-island drive. Respect any barriers or private property signs.</td></tr>
+    </table>
+  </li>
+
+  <li>
+    <h3>Circle Island Road Tour</h3>
+    <p>A drive or guided tour around the 30 km perimeter road showcases coastal villages, churches, viewpoints, and small shops. It is an efficient way to see the main island's non-lagoon attractions in a few hours.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Self-drive rental car approximately 5,000–8,000 XPF per day; guided tours 6,000–12,000 XPF per person</td></tr>
+      <tr><th>Opening Hours</th><td>Road accessible 24 hours; tours typically depart mornings</td></tr>
+      <tr><th>Visiting Tips</th><td>Drive slowly and watch for scooters and pedestrians. Fuel up in Vaitape, the main town.</td></tr>
+    </table>
+  </li>
+
+  <li>
+    <h3>Mount Pahia Hiking Trail</h3>
+    <p>For adventurous hikers, guided hikes toward Mount Pahia (661 m) offer panoramic views of the lagoon and Mount Otemanu. The trail is steep and often muddy, and a local guide is strongly recommended.</p>
+    <table>
+      <tr><th>Ticket Price</th><td>Guided hikes typically 8,000–12,000 XPF (US$70–110) per person</td></tr>
+      <tr><th>Opening Hours</th><td>Departures usually early morning (6:00–7:00) to avoid heat</td></tr>
+      <tr><th>Visiting Tips</th><td>Wear sturdy shoes and bring water, insect repellent, and a rain jacket. Not suitable for young children or those with mobility issues.</td></tr>
+    </table>
+  </li>
+</ol>
+
+<h3>Practical Tips for Visiting Bora Bora</h3>
+<ul>
+  <li><strong>Currency:</strong> The local currency is the CFP franc (XPF). Credit cards are widely accepted at resorts and larger restaurants, but carry cash for small shops, markets, and roadside vendors.</li>
+  <li><strong>Language:</strong> French and Tahitian are official; English is widely spoken in tourism settings.</li>
+  <li><strong>Best time to visit:</strong> May–October is the drier, cooler high season. November–April is warmer and wetter, with lower prices and fewer crowds.</li>
+  <li><strong>Transport:</strong> There are no public buses on the main island; options include rental cars, scooters, bicycles, and resort shuttles. Boat transfers connect the airport motu to the main island.</li>
+  <li><strong>Reef safety:</strong> Use reef-safe sunscreen, avoid touching coral, and respect shark and ray feeding guidelines set by tour operators.</li>
+  <li><strong>Budget:</strong> Bora Bora is an expensive destination; plan for resort dining costs and book tours in advance during peak season.</li>
+  <li><strong>Respect local customs:</strong> Dress modestly in villages, ask permission before photographing people, and avoid removing coral or shells from the lagoon.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Bora Bora Guides</h3>

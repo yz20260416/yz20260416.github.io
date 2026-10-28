@@ -16,288 +16,70 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Rome's top 10 attractions. It presents key information in a clean, structured format with a table for descriptions, ticket prices, and visiting tips, followed by a practical tips section. The design is informative and easy to scan for travelers planning their itinerary.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rome Top 10 Attractions · Travel Guide</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #faf7f2;
-      color: #1e1b16;
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
-
-    .guide-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 2rem;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-      padding: 2.5rem 2rem;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #1e1b16;
-      border-left: 8px solid #b8860b;
-      padding-left: 1.2rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.2rem;
-      background: #f8f4ed;
-      padding: 1.5rem 2rem;
-      border-radius: 1.5rem;
-      margin-bottom: 2.5rem;
-      color: #2d2a24;
-      border: 1px solid #e6dfd3;
-    }
-
-    .intro p {
-      margin-bottom: 0.75rem;
-    }
-
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Table styling */
-    .attractions-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.98rem;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-      margin-bottom: 2.5rem;
-    }
-
-    .attractions-table thead {
-      background: #2c3e4e;
-      color: #ffffff;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-size: 0.85rem;
-    }
-
-    .attractions-table th {
-      padding: 1rem 1rem;
-      text-align: left;
-      vertical-align: middle;
-    }
-
-    .attractions-table td {
-      padding: 1.2rem 1rem;
-      background: #ffffff;
-      border-bottom: 1px solid #ede8df;
-      vertical-align: top;
-    }
-
-    .attractions-table tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    .attractions-table tbody tr:hover td {
-      background: #fcf9f4;
-    }
-
-    .attraction-name {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #1e3b4f;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #eae3d7;
-      color: #4a3e2e;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      padding: 0.2rem 0.7rem;
-      border-radius: 30px;
-      margin-top: 0.3rem;
-    }
-
-    .price {
-      font-weight: 600;
-      color: #0a5c36;
-      white-space: nowrap;
-    }
-
-    .price small {
-      font-weight: 400;
-      color: #5f5a50;
-      font-size: 0.8rem;
-      display: block;
-    }
-
-    .tips-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .tips-list li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.6rem;
-      font-size: 0.93rem;
-    }
-
-    .tips-list li::before {
-      content: "•";
-      color: #b8860b;
-      font-weight: 700;
-      font-size: 1.2rem;
-      position: absolute;
-      left: 0.2rem;
-      top: -0.1rem;
-    }
-
-    /* Practical tips section */
-    .practical-tips {
-      background: #f2efe8;
-      border-radius: 1.5rem;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 1rem;
-      border: 1px solid #e0d8cb;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.7rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #1e3b4f;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 2rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.8rem 2.5rem;
-    }
-
-    .tip-card {
-      background: #ffffff;
-      border-radius: 1.2rem;
-      padding: 1.2rem 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-      border: 1px solid #e9e1d6;
-    }
-
-    .tip-card h4 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #2c3e4e;
-      margin-bottom: 0.7rem;
-      border-bottom: 2px solid #b8860b;
-      display: inline-block;
-      padding-bottom: 0.2rem;
-    }
-
-    .tip-card p, .tip-card ul {
-      font-size: 0.96rem;
-      color: #2d2a24;
-    }
-
-    .tip-card ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .tip-card ul li {
-      margin-bottom: 0.5rem;
-      padding-left: 1.3rem;
-      position: relative;
-    }
-
-    .tip-card ul li::before {
-      content: "→";
-      color: #b8860b;
-      position: absolute;
-      left: 0;
-      font-weight: 600;
-    }
-
-    /* responsive */
-    @media (max-width: 850px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.9rem;
-      }
-      .intro {
-        padding: 1.2rem;
-        font-size: 1rem;
-      }
-      .attractions-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-      .attractions-table th, .attractions-table td {
-        padding: 0.9rem 0.8rem;
-        white-space: normal;
-        min-width: 140px;
-      }
-      .tips-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .attractions-table td {
-        min-width: 180px;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-    }
-
-    /* small decoration */
-    .accent-text {
-      color: #b8860b;
-      font-weight: 600;
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-container">
-    <!-- H2 heading -->
-    <h2>Rome Top 10 Attractions</h2>
-
-    <!-- Introduction paragraph -->
-    <div class="intro">
-      <p>Rome is an open-air museum where ancient ruins, Renaissance masterpieces, and vibrant street life intertwine. With so many wonders, choosing where to start can be overwhelming. This guide highlights the <strong>10 essential attractions</strong> that capture the eternal city’s spirit — from the Colosseum’s bloody history to the Vatican’s sacred art. For each, you’ll find a concise description, current
+            <h2>Top Attractions in Rome</h2>
+<p>Rome is one of the world's most remarkable ancient cities, offering visitors an extraordinary concentration of art, ruins, churches, museums and monuments. From imperial baths and altars to Renaissance sculpture and legendary cafés, the city rewards both first-time visitors and returning travellers. The ten attractions below represent the highlights most likely to appeal to an international visitor, drawn from Rome's rich archaeological and cultural heritage.</p>
+<ol>
+  <li>
+    <strong>Baths of Caracalla (Terme di Caracalla)</strong><br>
+    These vast imperial baths were the city's second-largest public bath complex, built between roughly AD 212 and 217 under emperors Septimius Severus and Caracalla and in operation until the 530s. Their towering ruins have inspired architects and artists for centuries.<br>
+    <em>Tip:</em> Visit in the morning to avoid the midday heat, as the site offers little shade; it is easily combined with a walk along the nearby Appian Way.
+  </li>
+  <li>
+    <strong>Ara Pacis (Altar of Augustan Peace)</strong><br>
+    This celebrated altar was commissioned by the Roman Senate in 13 BC to honour Augustus's return from campaigns in Hispania and Gaul, and was consecrated in 9 BC. It is now housed in a modern museum pavilion near the Tiber.<br>
+    <em>Tip:</em> The site is close to the Mausoleum of Augustus and Piazza del Popolo, making it a convenient stop on a north-centre walking route.
+  </li>
+  <li>
+    <strong>Apollo Belvedere</strong><br>
+    This famous marble sculpture from classical antiquity, dated to the mid-2nd century AD, is considered a Roman copy of a bronze original by the Greek sculptor Leochares. Rediscovered in the late 15th century, it is displayed in the Vatican Museums.<br>
+    <em>Tip:</em> Book Vatican Museums tickets online in advance and arrive at opening time to see the sculpture before the crowds build.
+  </li>
+  <li>
+    <strong>Belvedere Torso</strong><br>
+    This 1.59-metre fragmentary marble statue of a male nude, signed by "Apollonios, son of Nestor, Athenian", has been in Rome since the 1430s and is now in the Museo Pio-Clementino of the Vatican Museums. It was long admired as an exemplar of ancient sculpture.<br>
+    <em>Tip:</em> Look for it in the Museo Pio-Clementino during the same Vatican Museums visit as the Apollo Belvedere.
+  </li>
+  <li>
+    <strong>Bocca della Verità (Mouth of Truth)</strong><br>
+    This ancient Roman marble mask stands against the portico wall of the Santa Maria in Cosmedin church at the site of the ancient Forum Boarium. According to a medieval legend, it bites off the hand of any liar who places a hand in its mouth.<br>
+    <em>Tip:</em> Queues can be long at midday; visit early in the morning, and combine it with the nearby Circus Maximus and Forum Boarium temples.
+  </li>
+  <li>
+    <strong>Aurelian Walls (Mura Aureliane)</strong><br>
+    Built between AD 271 and 275 during the reign of Emperor Aurelian, these city walls superseded the earlier Servian Wall and enclosed all seven hills of Rome plus the Campus Martius and Trastevere. Substantial stretches still stand today.<br>
+    <em>Tip:</em> The best-preserved sections are near the Porta San Sebastiano and along the Appian Way; a walk here pairs well with the Baths of Caracalla.
+  </li>
+  <li>
+    <strong>House of Augustus (Domus Augusti)</strong><br>
+    Situated on the Palatine Hill, this house is identified as the primary residence of Emperor Augustus (r. 27 BC – AD 14). It lies near the so-called Hut of Romulus and other sites tied to Rome's foundation legends.<br>
+    <em>Tip:</em> Access is limited and by timed entry, so check availability when buying your Palatine Hill and Roman Forum combined ticket.
+  </li>
+  <li>
+    <strong>Comitium</strong><br>
+    The Comitium was the original open-air public meeting space of Ancient Rome, with major religious and prophetic significance, its name deriving from the Latin word for "assembly". Located at the northwest corner of the Roman Forum, it was rediscovered by archaeologists around the turn of the twentieth century.<br>
+    <em>Tip:</em> Explore it as part of the Roman Forum; a guidebook or audio guide helps identify the early monuments such as the Rostra.
+  </li>
+  <li>
+    <strong>Insula dell'Ara Coeli</strong><br>
+    One of the few surviving examples of an insula, the apartment blocks where many Roman city dwellers lived, this structure was built in the 2nd century AD and rediscovered beneath an old church during Mussolini's urban renewal of the Capitoline Hill area.<br>
+    <em>Tip:</em> It sits at the foot of the Capitoline Hill near the Victor Emmanuel II Monument; view it en route to the Capitoline Museums.
+  </li>
+  <li>
+    <strong>Bioparco di Roma</strong><br>
+    This 17-hectare zoological garden occupies part of the original Villa Borghese estate and maintains 1,114 animals of 222 species. It is a popular family-friendly green space within one of Rome's grandest parks.<br>
+    <em>Tip:</em> Combine a visit with the Villa Borghese gardens and Galleria Borghese; book gallery tickets separately well in advance.
+  </li>
+</ol>
+<h3>Practical tips</h3>
+<ul>
+  <li>Book major sites such as the Vatican Museums and Galleria Borghese online in advance, as timed-entry slots sell out quickly in peak season.</li>
+  <li>Start early in the morning for outdoor ruins like the Baths of Caracalla and the Aurelian Walls to avoid both heat and crowds.</li>
+  <li>Many sites cluster geographically — the Bocca della Verità, Forum Boarium and Circus Maximus are within easy walking distance of each other.</li>
+  <li>Check opening days carefully: some monuments and church-affiliated sites close on certain weekdays or during religious services.</li>
+  <li>Wear comfortable shoes, as Rome's cobbled streets and archaeological areas involve considerable walking.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Rome Guides</h3>

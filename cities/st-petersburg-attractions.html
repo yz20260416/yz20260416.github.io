@@ -16,277 +16,127 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for St. Petersburg's top attractions. It presents a clear, structured overview of ten must-visit sites, including descriptions, ticket prices, and practical visiting tips, formatted for easy reading.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>St. Petersburg · Top 10 attractions</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+            <h2>St. Petersburg: Top 10 Must-See Attractions</h2>
 
-        body {
-            background: #f5f1eb;
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-            padding: 2rem 1.5rem;
-            color: #1e1e2a;
-            line-height: 1.5;
-        }
+<p>St. Petersburg, Russia's imperial capital on the Neva River, packs centuries of history, art, and architecture into a walkable historic center. From the gilded halls of the Hermitage to the gilded fountains of Peterhof, the city rewards travelers who plan ahead: book timed tickets online, arrive early, and set aside at least three full days. Below are the ten attractions no first-time visitor should skip, with current ticket guidance, opening hours, and practical tips. Prices and hours change seasonally—always confirm on official websites before you go.</p>
 
-        .guide {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 28px;
-            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
-            padding: 2.5rem 2rem;
-        }
+<ol>
+  <li>
+    <h3>State Hermitage Museum &amp; Winter Palace</h3>
+    <p>One of the world's largest art museums, housed in the baroque Winter Palace and adjoining buildings. Its collection spans Egyptian antiquities, Italian Renaissance masters, Rembrandt, and Matisse across more than 3 million items—only a fraction is on display. Allow at least half a day.</p>
+    <ul>
+      <li><strong>Tickets:</strong> approx. 500–700 RUB for the main museum (foreign visitors often pay a higher rate); separate tickets for special exhibitions. Free entry on certain days (expect crowds).</li>
+      <li><strong>Hours:</strong> Tue–Sun roughly 10:30–18:00 (Wed and Fri often until 21:00); closed Mondays and major holidays.</li>
+      <li><strong>Tips:</strong> Buy timed e-tickets in advance, enter via the courtyard rather than the main palace steps, and start with the upper floors to beat tour groups.</li>
+    </ul>
+  </li>
 
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: #0b2b40;
-            border-left: 8px solid #c9a227;
-            padding-left: 1.25rem;
-            margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
+  <li>
+    <h3>Church of the Savior on Spilled Blood</h3>
+    <p>Built on the site of Tsar Alexander II's assassination, this riotously colorful church is covered inside and out with mosaics—over 7,000 square meters of them. It is a museum rather than an active parish.</p>
+    <ul>
+      <li><strong>Tickets:</strong> approx. 450–500 RUB.</li>
+      <li><strong>Hours:</strong> daily, generally 10:30–18:00 (closed certain Wednesdays; hours vary seasonally).</li>
+      <li><strong>Tips:</strong> Visit early morning for the best light and smaller crowds; the Griboyedov Canal embankment opposite offers the classic photo angle.</li>
+    </ul>
+  </li>
 
-        .intro {
-            font-size: 1.15rem;
-            color: #2c3e50;
-            background: #faf7f2;
-            padding: 1.5rem 1.8rem;
-            border-radius: 20px;
-            margin-bottom: 2.5rem;
-            border: 1px solid #e4d9cc;
-            box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
-        }
+  <li>
+    <h3>Peterhof Palace &amp; Fountains</h3>
+    <p>The "Russian Versailles," a summer palace complex famed for its gravity-fed Grand Cascade and dozens of gilded fountains. The Lower Park alone justifies the trip; the palace interiors are a bonus.</p>
+    <ul>
+      <li><strong>Tickets:</strong> Lower Park approx. 750–1,000 RUB in high season; palace admission separate (approx. 1,000+ RUB).</li>
+      <li><strong>Hours:</strong> park daily approx. 9:00–20:00 in summer; fountains typically run May–October. Palace closed Mondays.</li>
+      <li><strong>Tips:</strong> Take a hydrofoil (meteor) from the city center for a scenic 30–40 minute ride, or the suburban train to Novy Peterhof plus a short bus. Go on a weekday and arrive at opening time.</li>
+    </ul>
+  </li>
 
-        .attractions-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0 2.5rem;
-            font-size: 0.98rem;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-        }
+  <li>
+    <h3>St. Isaac's Cathedral &amp; Colonnade</h3>
+    <p>Russia's largest Orthodox cathedral, a neoclassical landmark with a soaring gilded dome. Climb the colonnade for a 360-degree view over the historic center.</p>
+    <ul>
+      <li><strong>Tickets:</strong> cathedral approx. 400–500 RUB; colonnade approx. 300–400 RUB (separate ticket).</li>
+      <li><strong>Hours:</strong> generally Thu–Tue 10:30–18:00; closed Wednesdays.</li>
+      <li><strong>Tips:</strong> The colonnade is best at sunset; note that the cathedral functions partly as a museum, so dress respectfully.</li>
+    </ul>
+  </li>
 
-        .attractions-table th {
-            background: #0b2b40;
-            color: #f0e7d6;
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            padding: 1rem 0.9rem;
-            text-align: left;
-        }
+  <li>
+    <h3>Peter and Paul Fortress</h3>
+    <p>The city's founding site (1703), containing the Peter and Paul Cathedral—burial place of the Romanovs—plus museums on the city's history and a working mint.</p>
+    <ul>
+      <li><strong>Tickets:</strong> fortress grounds free; cathedral approx. 550–600 RUB; combined tickets available.</li>
+      <li><strong>Hours:</strong> grounds daily approx. 9:30–20:00; cathedral/museums roughly 10:00–18:00, closed some Wednesdays.</li>
+      <li><strong>Tips:</strong> Walk across the Ioannovsky Bridge; the beach on the Neva side offers superb skyline views. The noon cannon shot is a local ritual.</li>
+    </ul>
+  </li>
 
-        .attractions-table td {
-            padding: 1rem 0.9rem;
-            vertical-align: top;
-            border-bottom: 1px solid #e9e1d7;
-            background: white;
-        }
+  <li>
+    <h3>Russian Museum (Mikhailovsky Palace)</h3>
+    <p>The definitive collection of Russian fine art, from medieval icons (including works attributed to Andrei Rublev) to Repin, Aivazovsky, and the Russian avant-garde. A quieter alternative to the Hermitage.</p>
+    <ul>
+      <li><strong>Tickets:</strong> approx. 500–700 RUB.</li>
+      <li><strong>Hours:</strong> Wed–Mon roughly 10:00–18:00 (Thu until 21:00); closed Tuesdays.</li>
+      <li><strong>Tips:</strong> Pair it with a stroll through the adjacent Mikhailovsky Garden and the nearby Church of the Savior on Spilled Blood.</li>
+    </ul>
+  </li>
 
-        .attractions-table tr:last-child td {
-            border-bottom: none;
-        }
+  <li>
+    <h3>Nevsky Prospect &amp; Kazan Cathedral</h3>
+    <p>The city's main artery, lined with baroque and neoclassical facades, shops, and cafés. The Kazan Cathedral, with its sweeping colonnade modeled on St. Peter's in Rome, anchors the street.</p>
+    <ul>
+      <li><strong>Tickets:</strong> free to walk; Kazan Cathedral free entry (donations welcome).</li>
+      <li><strong>Hours:</strong> cathedral open daily, generally 7:00–20:00; active worship site.</li>
+      <li><strong>Tips:</strong> Start at Ploshchad Vosstaniya and walk toward the Admiralty; detour onto the Griboyedov Canal for canal-side views. Watch for pickpockets in crowds.</li>
+    </ul>
+  </li>
 
-        .attractions-table tr:hover td {
-            background: #fdfaf6;
-        }
+  <li>
+    <h3>Catherine Palace (Tsarskoye Selo)</h3>
+    <p>A rococo summer residence in Pushkin, 25 km south of the center, home to the legendary Amber Room. The blue-and-gold facade and gilded interiors are among the most photographed in Russia.</p>
+    <ul>
+      <li><strong>Tickets:</strong> palace approx. 1,000–1,500 RUB; park entry separate and cheaper.</li>
+      <li><strong>Hours:</strong> palace roughly 10:00–18:00, closed Mondays and some Tuesdays; timed entry required.</li>
+      <li><strong>Tips:</strong> Amber Room slots sell out—book online well ahead. Reach Pushkin by suburban train from Vitebsky station plus bus, or by taxi/rideshare.</li>
+    </ul>
+  </li>
 
-        .attraction-name {
-            font-weight: 600;
-            color: #0b2b40;
-            font-size: 1.05rem;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
+  <li>
+    <h3>Bronze Horseman &amp; Senate Square</h3>
+    <p>Etienne Falconet's 1782 equestrian statue of Peter the Great, immortalized by Pushkin's poem. The setting on the Decembrists' Square, with St. Isaac's and the Admiralty nearby, is one of the city's great vistas.</p>
+    <ul>
+      <li><strong>Tickets:</strong> free (public square).</li>
+      <li><strong>Hours:</strong> open 24 hours.</li>
+      <li><strong>Tips:</strong> Best visited at dawn or late evening for photos without crowds; combine with a Neva embankment walk.</li>
+    </ul>
+  </li>
 
-        .attraction-desc {
-            color: #3d4f5c;
-            font-size: 0.92rem;
-            line-height: 1.45;
-        }
+  <li>
+    <h3>Mariinsky Theatre</h3>
+    <p>Russia's premier opera and ballet house, a 19th-century landmark with world-class productions. Even if you skip the performance, the historic building and adjacent Mariinsky-2 concert hall are worth a look.</p>
+    <ul>
+      <li><strong>Tickets:</strong> vary widely by production and seat—roughly 1,500–10,000 RUB; book early for ballet.</li>
+      <li><strong>Hours:</strong> box office daily; performances typically evening, with matinees on weekends.</li>
+      <li><strong>Tips:</strong> Buy through the official site; dress smartly (jackets for men are customary); arrive early for cloakroom queues.</li>
+    </ul>
+  </li>
+</ol>
 
-        .price-badge {
-            display: inline-block;
-            background: #e9eef2;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #0b2b40;
-            white-space: nowrap;
-            margin: 0.1rem 0;
-        }
+<h2>Practical Tips for Visiting St. Petersburg</h2>
 
-        .price-note {
-            font-size: 0.78rem;
-            color: #6b7b86;
-            display: block;
-            margin-top: 0.2rem;
-        }
-
-        .tip-list {
-            list-style: none;
-            margin-top: 0.3rem;
-        }
-
-        .tip-list li {
-            font-size: 0.88rem;
-            color: #2d3e4b;
-            padding-left: 1.2rem;
-            position: relative;
-            margin-bottom: 0.4rem;
-        }
-
-        .tip-list li::before {
-            content: "•";
-            color: #c9a227;
-            font-weight: 700;
-            position: absolute;
-            left: 0.2rem;
-        }
-
-        .practical-tips {
-            background: #f2eee8;
-            border-radius: 24px;
-            padding: 2rem 2rem 1.8rem;
-            margin-top: 2.5rem;
-            border: 1px solid #ddd2c2;
-        }
-
-        .practical-tips h3 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #0b2b40;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .practical-tips h3::before {
-            content: "🧭";
-            font-size: 1.8rem;
-        }
-
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem 2rem;
-        }
-
-        .tip-card {
-            background: white;
-            border-radius: 18px;
-            padding: 1.2rem 1.3rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            border-left: 5px solid #c9a227;
-        }
-
-        .tip-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #0b2b40;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        .tip-card p, .tip-card ul {
-            font-size: 0.9rem;
-            color: #2e404e;
-            line-height: 1.5;
-        }
-
-        .tip-card ul {
-            padding-left: 1.2rem;
-            margin-top: 0.3rem;
-        }
-
-        .tip-card li {
-            margin-bottom: 0.25rem;
-        }
-
-        .note {
-            font-size: 0.85rem;
-            color: #5f6f7a;
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px dashed #b9aa97;
-            text-align: center;
-            font-style: italic;
-        }
-
-        @media (max-width: 700px) {
-            .guide {
-                padding: 1.5rem 1rem;
-            }
-            h2 {
-                font-size: 1.8rem;
-                padding-left: 1rem;
-            }
-            .attractions-table {
-                font-size: 0.85rem;
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-            }
-            .attractions-table th, .attractions-table td {
-                padding: 0.8rem 0.6rem;
-            }
-            .attractions-table td {
-                white-space: normal;
-                min-width: 180px;
-            }
-            .practical-tips {
-                padding: 1.5rem 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="guide">
-        <!-- H2 heading as required -->
-        <h2>St. Petersburg Top 10 Attractions</h2>
-
-        <!-- Introduction paragraph -->
-        <p class="intro">
-            St. Petersburg, Russia’s cultural capital, is a city of imperial palaces, winding canals, and world-class museums. 
-            From the gilded halls of the Hermitage to the quiet canals of the Moika, the city offers an unforgettable journey 
-            through three centuries of history. Below are the ten essential attractions, with up-to-date ticket information and 
-            practical tips to help you plan a smooth, enriching visit.
-        </p>
-
-        <!-- Main content: structured table with descriptions, prices, tips -->
-        <table class="attractions-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Attraction</th>
-                    <th>Description</th>
-                    <th>Ticket price (approx.)</th>
-                    <th>Visiting tips</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 1. Hermitage -->
-                <tr>
-                    <td>
+<ul>
+  <li><strong>Best season:</strong> June–July for White Nights (long daylight, festivals, crowded); May and September offer good weather with fewer crowds; winter is cold but museums are quiet.</li>
+  <li><strong>Book ahead:</strong> The Hermitage, Catherine Palace, and Peterhof palace require timed tickets in high season—reserve online to avoid sold-out days.</li>
+  <li><strong>Transport:</strong> The metro is fast, cheap, and an attraction in itself (check the ornate stations like Avtovo and Ploshchad Vosstaniya). Rideshares are widely used; traffic is heavy.</li>
+  <li><strong>Currency &amp; payments:</strong> Russian rubles (RUB). Carry some cash; foreign cards may not work due to sanctions—confirm your payment options before traveling.</li>
+  <li><strong>Visa &amp; entry:</strong> Most foreign visitors need a visa; e-visas and visa-free regimes change frequently—check your country's rules and register your stay if required.</li>
+  <li><strong>Language:</strong> English is limited outside tourist areas; learn the Cyrillic alphabet for metro and signage, and keep a translation app handy.</li>
+  <li><strong>Etiquette:</strong> Dress modestly in active churches; photography rules vary by site—look for signs.</li>
+  <li><strong>Safety:</strong> Watch for pickpockets on Nevsky Prospect and in crowded museums; keep valuables secure.</li>
+  <li><strong>Day trips:</strong> Peterhof and Tsarskoye Selo (Pushkin) each merit a half or full day; both are reachable by train or hydrofoil.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More St. Petersburg Guides</h3>

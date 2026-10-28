@@ -16,276 +16,62 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Melbourne's top 10 attractions. It includes a styled introduction, a detailed table with descriptions, ticket prices, and visiting tips for each attraction, followed by a practical tips section. The layout is clean and informative, suitable for travelers.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melbourne Top 10 Attractions · Travel Guide</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            <h2>Top Attractions in Melbourne</h2>
+<p>Melbourne blends grand Victorian architecture, riverside culture and a famously vibrant street life. From performing arts landmarks and world-class museums to historic amusement parks and beachside icons, the city rewards curious travellers. This guide highlights ten standout attractions that capture the city's character, each with a practical tip to help you plan your visit.</p>
 
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f7f9fc;
-      color: #1e2b3c;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-    }
+<ol>
+  <li>
+    <strong>Federation Square</strong> — This 3.2-hectare arts and culture precinct sits at the corner of Flinders and Swanston Streets, built above busy railway lines opposite Flinders Street Station. It houses major institutions including the Ian Potter Centre, the Australian Centre for the Moving Image (ACMI) and the Koorie Heritage Trust.
+    <br><em>Tip:</em> Most gallery and museum entry is free — check the ACMI and Ian Potter Centre websites for current exhibitions before you go.
+  </li>
+  <li>
+    <strong>Arts Centre Melbourne</strong> — Originally known as the Victorian Arts Centre, this Southbank performing arts complex comprises theatres and concert halls designed by architect Sir Roy Grounds. It anchors the Melbourne Arts Precinct just across the river from the CBD.
+    <br><em>Tip:</em> Visit at dusk for the spire's lighting and stay for a pre-show drink on the riverside terrace.
+  </li>
+  <li>
+    <strong>Crown Melbourne</strong> — This integrated resort and casino on the south bank of the Yarra River opened in 1994 and relocated to its current south bank site in 1997. It remains one of the city's central entertainment complexes.
+    <br><em>Tip:</em> Come in the evening to see the riverside gas brigades' fire displays along the promenade.
+  </li>
+  <li>
+    <strong>Chinatown</strong> — Centred at the eastern end of Little Bourke Street between Swanston and Spring Streets, this ethnic enclave was established in the 1850s during the Victorian gold rush. It is the longest continuous ethnic Chinese settlement in the Western World and the oldest Chinatown in the Southern Hemisphere.
+    <br><em>Tip:</em> Explore the laneways and arcades off Little Bourke Street — best on weekday lunchtimes when the eateries are buzzing.
+  </li>
+  <li>
+    <strong>Luna Park Melbourne</strong> — Opened on 13 December 1912 on the foreshore of Port Phillip Bay in St Kilda, this historic amusement park has been operating almost continuously ever since. Its heritage rides and famous face entrance make it a St Kilda icon.
+    <br><em>Tip:</em> Entry to the park is generally free; you pay per ride or buy an unlimited ride pass.
+  </li>
+  <li>
+    <strong>Brighton Bathing Boxes</strong> — Also called the Brighton Beach Huts, these colourful boxes line The Esplanade fronting Dendy Street Beach in Brighton, extending over 500 metres along the beachfront. They sit beside the Dr Jim Willis Reserve, the last vestige of natural vegetation along Brighton's foreshore.
+    <br><em>Tip:</em> Arrive early morning for the best light and fewer crowds; the beach is easily reached by train to Brighton Beach station.
+  </li>
+  <li>
+    <strong>Kings Domain</strong> — This 36-hectare urban parkland is an iconic part of central Melbourne, surrounding Government House Reserve, the Sidney Myer Music Bowl and the Shrine of Remembrance. The Domain holds deep significance for the Eastern Kulin nation and early colonial history.
+    <br><em>Tip:</em> Combine a walk through the Domain with a visit to the Shrine of Remembrance; the area is loveliest in spring and autumn.
+  </li>
+  <li>
+    <strong>IMAX Melbourne</strong> — Located eight storeys beneath the Melbourne Museum in Carlton, this is the largest IMAX theatre in the Southern Hemisphere and home to the largest 1.43:1 screen in the world. It is owned by Museums Victoria and features dual laser and 1570 film projectors.
+    <br><em>Tip:</em> Book tickets online in advance for blockbuster releases, and pair your visit with the Melbourne Museum above.
+  </li>
+  <li>
+    <strong>Flemington Racecourse</strong> — This major horse racing venue beside the Maribyrnong River has hosted racing since March 1840 and is most notable for the Melbourne Cup, the world's richest handicap and richest 3200-metre horse race.
+    <br><em>Tip:</em> If visiting in November, book Melbourne Cup tickets well ahead; otherwise check the racing calendar for race-day entry details.
+  </li>
+  <li>
+    <strong>The Esplanade Hotel (The Espy)</strong> — Built in 1878, this St Kilda hotel and music venue overlooks Port Phillip from the Upper Esplanade. It is famed for its long history of live music and served as the filming location for the music trivia program <em>Rockwiz</em>.
+    <br><em>Tip:</em> Catch a free or low-cost gig in the evening and explore nearby St Kilda Pier and Acland Street beforehand.
+  </li>
+</ol>
 
-    .guide-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 20px 35px -8px rgba(0, 20, 30, 0.15);
-      padding: 2rem 2rem 2.5rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0f2b3d;
-      border-left: 7px solid #e85a4f;
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1.25rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.15rem;
-      color: #2c3e50;
-      background: #ecf3f9;
-      padding: 1.4rem 1.8rem;
-      border-radius: 20px;
-      margin-bottom: 2.2rem;
-      border: 1px solid #d4e2ef;
-      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
-    }
-
-    .attractions-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 12px;
-      margin-bottom: 2.5rem;
-    }
-
-    .attractions-table th {
-      text-align: left;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #4a6579;
-      padding: 0.6rem 1rem 0.4rem 1rem;
-      border-bottom: 2px solid #cbdbe9;
-    }
-
-    .attractions-table td {
-      background: #ffffff;
-      padding: 1.1rem 1rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.05);
-      vertical-align: top;
-      border: 1px solid #e6edf5;
-    }
-
-    .attraction-name {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #0f2b3d;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .attraction-desc {
-      font-size: 0.95rem;
-      color: #2f4052;
-    }
-
-    .price-badge {
-      display: inline-block;
-      background: #eef6f0;
-      color: #1e6b3b;
-      font-weight: 600;
-      padding: 0.2rem 0.7rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      border: 1px solid #c2dfcc;
-    }
-
-    .free-badge {
-      background: #e3f0ff;
-      color: #0b4f8a;
-      border-color: #b8d4f0;
-    }
-
-    .tip-text {
-      font-size: 0.9rem;
-      color: #4a5e71;
-      background: #f9fbfd;
-      padding: 0.4rem 0.7rem;
-      border-radius: 12px;
-      border-left: 3px solid #99b8d4;
-      margin-top: 0.2rem;
-    }
-
-    .practical-tips {
-      background: #0f2b3d;
-      color: #eef3f8;
-      border-radius: 24px;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 1.5rem;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .practical-tips h3:before {
-      content: "🧭";
-      font-size: 1.8rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tip-card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 1.2rem 1.3rem;
-      backdrop-filter: blur(2px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .tip-card strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #ffd966;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    .tip-card p {
-      font-size: 0.95rem;
-      color: #d6e2ee;
-      line-height: 1.5;
-    }
-
-    .tip-card a {
-      color: #b3d9ff;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    @media (max-width: 750px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        padding-left: 0.8rem;
-      }
-
-      .attractions-table td {
-        padding: 0.9rem 0.8rem;
-      }
-
-      .attractions-table th {
-        font-size: 0.75rem;
-        padding-left: 0.6rem;
-      }
-
-      .practical-tips {
-        padding: 1.5rem 1.2rem;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .attractions-table, .attractions-table tbody, .attractions-table tr, .attractions-table td, .attractions-table th {
-        display: block;
-        width: 100%;
-      }
-
-      .attractions-table thead {
-        display: none;
-      }
-
-      .attractions-table tr {
-        margin-bottom: 1.5rem;
-        display: block;
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
-        border: 1px solid #e2ebf3;
-      }
-
-      .attractions-table td {
-        display: block;
-        border: none;
-        box-shadow: none;
-        padding: 0.7rem 1rem;
-        background: transparent;
-      }
-
-      .attractions-table td:first-child {
-        padding-top: 1rem;
-      }
-
-      .attractions-table td:last-child {
-        padding-bottom: 1rem;
-      }
-
-      .attractions-table td:before {
-        content: attr(data-label);
-        display: inline-block;
-        font-weight: 600;
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        color: #6d8aa3;
-        letter-spacing: 0.04em;
-        margin-right: 0.6rem;
-        width: 70px;
-      }
-
-      .attraction-name {
-        font-size: 1.2rem;
-        margin-bottom: 0.2rem;
-      }
-
-      .tip-text {
-        margin-top: 0.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
-<div class="guide-container">
-  <h2>Melbourne Top 10 Attractions</h2>
-
-  <div class="intro">
-    <p>
+<h3>Practical tips</h3>
+<ul>
+  <li>Melbourne's weather changes quickly — carry a layer and a compact umbrella even on sunny mornings.</li>
+  <li>Use the tram network in the CBD; the central city tram zone is generally free to ride.</li>
+  <li>Many cultural institutions such as Fed Square's galleries offer free general entry, so budget for special exhibitions instead.</li>
+  <li>For St Kilda and Brighton attractions, take the train rather than driving to avoid beachside parking hassles.</li>
+  <li>Book major events like the Melbourne Cup and popular IMAX screenings in advance, especially in spring and around public holidays.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Melbourne Guides</h3>

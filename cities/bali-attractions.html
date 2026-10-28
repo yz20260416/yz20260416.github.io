@@ -16,258 +16,72 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Bali's top 10 attractions. It presents key information like descriptions, ticket prices, and visiting tips in a clean, structured format suitable for travelers planning their itinerary.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bali Top 10 Attractions · Travel Guide</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f9f7f4;
-      color: #1e2b2c;
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
-    .guide-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 20px 40px -12px rgba(0, 20, 10, 0.15);
-      padding: 2.5rem 2rem;
-    }
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0f3b3a;
-      border-left: 8px solid #c49a6c;
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-    .intro {
-      font-size: 1.15rem;
-      background: #eff6f2;
-      padding: 1.5rem 1.8rem;
-      border-radius: 24px;
-      margin-bottom: 2.5rem;
-      color: #1f3e3c;
-      border: 1px solid #d9e6df;
-    }
-    .intro p {
-      margin-bottom: 0.75rem;
-    }
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
-    .attraction-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-      margin-bottom: 2.75rem;
-    }
-    .attraction-card {
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 1.5rem 1.75rem;
-      border: 1px solid #e2e9e4;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-      transition: box-shadow 0.2s ease;
-    }
-    .attraction-card:hover {
-      box-shadow: 0 12px 24px -8px rgba(30, 70, 60, 0.12);
-      border-color: #c0d6cb;
-    }
-    .attraction-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 0.75rem;
-      gap: 0.75rem;
-    }
-    .attraction-name {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0e3a37;
-      letter-spacing: -0.01em;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .attraction-name .badge {
-      font-size: 0.8rem;
-      font-weight: 500;
-      background: #c49a6c;
-      color: white;
-      padding: 0.2rem 0.8rem;
-      border-radius: 30px;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-    }
-    .ticket-price {
-      font-weight: 600;
-      background: #f0f3f0;
-      padding: 0.35rem 1rem;
-      border-radius: 40px;
-      font-size: 0.95rem;
-      color: #1d4a45;
-      border: 1px solid #cfdfd7;
-      white-space: nowrap;
-    }
-    .ticket-price i {
-      font-style: normal;
-      font-weight: 400;
-      color: #5b7c73;
-      margin-right: 0.25rem;
-    }
-    .description {
-      color: #2a4441;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    .visiting-tips {
-      background: #fafaf7;
-      border-radius: 18px;
-      padding: 1rem 1.25rem;
-      font-size: 0.95rem;
-      border-left: 4px solid #c49a6c;
-      color: #1d3b38;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 0.5rem 1rem;
-    }
-    .visiting-tips strong {
-      color: #0e3a37;
-      font-weight: 600;
-      display: inline-block;
-      margin-right: 0.25rem;
-    }
-    .tip-icon {
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-    .practical-section {
-      background: #1b3a36;
-      color: #f1f7f4;
-      border-radius: 28px;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 1rem;
-    }
-    .practical-section h3 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      color: #f7e9d9;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      border-bottom: 1px solid #3f625a;
-      padding-bottom: 0.9rem;
-    }
-    .practical-section h3 span {
-      font-size: 1.8rem;
-    }
-    .practical-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem 2rem;
-    }
-    .practical-item {
-      background: #234a44;
-      border-radius: 18px;
-      padding: 1.2rem 1.3rem;
-      border: 1px solid #32635a;
-      transition: background 0.15s;
-    }
-    .practical-item:hover {
-      background: #2b5a52;
-    }
-    .practical-item h4 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #e7dacb;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .practical-item p {
-      font-size: 0.95rem;
-      color: #d6e6e0;
-      margin-bottom: 0.4rem;
-    }
-    .practical-item p:last-child {
-      margin-bottom: 0;
-    }
-    .practical-item ul {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 0.4rem;
-    }
-    .practical-item li {
-      font-size: 0.92rem;
-      color: #d0e2db;
-      margin-bottom: 0.5rem;
-      padding-left: 1.3rem;
-      position: relative;
-    }
-    .practical-item li::before {
-      content: "•";
-      color: #c49a6c;
-      font-weight: bold;
-      position: absolute;
-      left: 0.2rem;
-    }
-    .footnote {
-      margin-top: 1.8rem;
-      font-size: 0.85rem;
-      color: #a7c0b6;
-      text-align: center;
-      border-top: 1px solid #32635a;
-      padding-top: 1.2rem;
-    }
-    @media (max-width: 600px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.7rem;
-        padding-left: 0.8rem;
-      }
-      .attraction-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .ticket-price {
-        white-space: normal;
-      }
-      .practical-section {
-        padding: 1.5rem 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-container">
-    <!-- H2 Heading -->
-    <h2>Bali Top 10 Attractions</h2>
+            <h2>Top Attractions in Bali</h2>
+<p>Bali packs an extraordinary range of experiences into one island: ancient Hindu temples perched on sea rocks, towering monuments to Balinese identity, misty mountain lakes, and wildlife parks teeming with exotic birds and animals. Whether you're drawn to culture, nature, or family-friendly fun, these ten attractions represent the best of what the Island of the Gods has to offer.</p>
 
-    <!-- Introduction paragraph -->
-    <div class="intro
+<ol>
+  <li>
+    <strong>Tanah Lot</strong><br>
+    This rock formation off Bali's coast is home to the ancient Hindu pilgrimage temple Pura Tanah Lot, a popular cultural icon and one of the island's most photographed sites. The temple's dramatic setting makes it a must-see for any visitor.
+    <br><em>Tip:</em> Visit in the late afternoon to catch the sunset, but arrive early as the area gets crowded.
+  </li>
+  <li>
+    <strong>Garuda Wisnu Kencana Cultural Park (GWK)</strong><br>
+    This cultural park in Ungasan, Badung, is devoted to the Hindu god Vishnu and his mythical bird mount, Garuda, and sits just 10–15 minutes from Ngurah Rai International Airport. Its centerpiece is the 121-meter-tall GWK statue, designed by Nyoman Nuarta and inaugurated in September 2018, making it one of Indonesia's tallest statues.
+    <br><em>Tip:</em> Combine your visit with a trip to nearby Uluwatu; the park is a convenient stop before or after a flight.
+  </li>
+  <li>
+    <strong>Bali Botanic Garden</strong><br>
+    The largest botanic garden in Indonesia, this sprawling site in the mountainous Bedugul region of Tabanan Regency sits around 1,300 meters above sea level, overlooking Bratan Lake and the Ulun Danu Temple. Established in 1959, it serves as a center for research, conservation, education, and recreation.
+    <br><em>Tip:</em> Bring a jacket—the highland air is noticeably cooler than coastal Bali—and allow at least half a day to explore.
+  </li>
+  <li>
+    <strong>Bali Bird Park</strong><br>
+    Located in Gianyar Regency, this 2-hectare park houses more than 1,300 birds representing over 250 species in an enclosed aviary. It's an excellent stop for families and bird enthusiasts alike.
+    <br><em>Tip:</em> Visit in the morning when the birds are most active, and check for scheduled feeding times and shows.
+  </li>
+  <li>
+    <strong>Bali Safari and Marine Park</strong><br>
+    This branch of Taman Safari in Gianyar is managed by the Taman Safari Group and operates as a conservation organization and member of the Association of Indonesian Zoos. It offers a safari-style wildlife experience for visitors of all ages.
+    <br><em>Tip:</em> Book tickets online in advance for discounts, and plan a full day to cover the safari and marine attractions.
+  </li>
+  <li>
+    <strong>Bali Zoo</strong><br>
+    As the first zoo to open in Bali and the island's primary zoo, it is home to over 600 animals from 60 species. It's a popular choice for families traveling with children.
+    <br><em>Tip:</em> Morning visits are cooler and offer better animal viewing; look for combination tickets with nearby attractions.
+  </li>
+  <li>
+    <strong>Goa Gajah (Elephant Cave)</strong><br>
+    Located in Gianyar near Ubud, this 9th-century cave served as a sanctuary and is one of Bali's most significant archaeological sites. Its ornate stone carvings and historic atmosphere make it a rewarding cultural stop.
+    <br><em>Tip:</em> Pair your visit with a trip to nearby Ubud; wear comfortable shoes and bring a sarong or rent one on site.
+  </li>
+  <li>
+    <strong>Tirta Gangga</strong><br>
+    This former royal palace in eastern Bali, named after the sacred Ganges River in India, is renowned for its Karangasem royal water palace, bathing pools, and Patirthan temple. The tiered water gardens are a photographer's delight.
+    <br><em>Tip:</em> Visit early in the day to avoid crowds and combine it with a drive through the scenic eastern countryside.
+  </li>
+  <li>
+    <strong>Kintamani and Mount Batur</strong><br>
+    This district on the western edge of the Mount Batur caldera is a classic stopping point for views of the volcano and surrounding region. It is also known for Pura Tuluk Biyu's 1,000-year-old "Rites of Peace" stone tablets and the local Kintamani dog breed.
+    <br><em>Tip:</em> Come on a clear morning for the best volcano views, and bring a layer—the elevation makes it chilly.
+  </li>
+  <li>
+    <strong>Bajra Sandhi Monument</strong><br>
+    This monument in Denpasar commemorates the struggles of the Balinese people throughout history and stands in front of the Bali Governor's Office. Built in 1987 and inaugurated in 2003, it is also the traditional starting ground for the annual Bali Arts Festival parade.
+    <br><em>Tip:</em> Visit in the cooler late afternoon, and check whether your trip coincides with the month-long Bali Arts Festival (usually mid-June to mid-July).
+  </li>
+</ol>
+
+<h3>Practical tips</h3>
+<ul>
+  <li><strong>Dress respectfully at temples:</strong> Wear a sarong and sash at sites like Tanah Lot and Goa Gajah; rentals are usually available at the entrance.</li>
+  <li><strong>Beat the crowds:</strong> Most attractions are busiest mid-morning to midday—arrive at opening time or in the late afternoon.</li>
+  <li><strong>Plan around distances:</strong> Bali's traffic can be slow; group nearby attractions (e.g., Ubud-area sites like Goa Gajah with the Bali Zoo and Bird Park in Gianyar) into a single day.</li>
+  <li><strong>Carry cash:</strong> Smaller sites and parking areas often prefer cash, and ATMs can be scarce in rural regions like Bedugul and Kintamani.</li>
+  <li><strong>Check festival timing:</strong> The Bali Arts Festival runs about a month from mid-June, with its opening parade at the Bajra Sandhi Monument—a spectacular bonus if your dates align.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Bali Guides</h3>

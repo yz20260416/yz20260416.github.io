@@ -16,229 +16,60 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Cairo's top attractions. It presents a structured, informative page with an introduction, a detailed table of ten key sites including descriptions, ticket prices, and visiting tips, followed by a practical tips section for travelers.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cairo Top 10 Attractions · Travel Guide</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #faf8f4;
-      color: #1e1e1e;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-    }
-    .guide-card {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 24px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-      padding: 2rem 2rem 2.5rem;
-    }
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: #2c3e4e;
-      border-left: 6px solid #c49a6c;
-      padding-left: 1rem;
-      margin-bottom: 1.25rem;
-      margin-top: 0.5rem;
-    }
-    .intro {
-      font-size: 1.15rem;
-      color: #3e4c5a;
-      background: #f5efe7;
-      padding: 1.25rem 1.75rem;
-      border-radius: 18px;
-      margin-bottom: 2rem;
-      border: 1px solid #e2d8cd;
-    }
-    .intro p {
-      margin-bottom: 0.75rem;
-    }
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
-    .attractions-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-      margin-bottom: 2.5rem;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .attractions-table th {
-      background: #2c3e4e;
-      color: white;
-      font-weight: 600;
-      padding: 1rem 0.75rem;
-      text-align: left;
-      font-size: 0.95rem;
-      letter-spacing: 0.3px;
-    }
-    .attractions-table td {
-      background: white;
-      padding: 1rem 0.75rem;
-      vertical-align: top;
-      border-bottom: 1px solid #eae2d9;
-    }
-    .attractions-table tr:last-child td {
-      border-bottom: none;
-    }
-    .attractions-table tr:hover td {
-      background: #fcf9f5;
-    }
-    .attraction-name {
-      font-weight: 700;
-      color: #1f2e3a;
-      font-size: 1rem;
-    }
-    .attraction-desc {
-      color: #3f4e5c;
-    }
-    .ticket-price {
-      font-weight: 600;
-      color: #8b5e2e;
-      white-space: nowrap;
-    }
-    .visiting-tip {
-      font-size: 0.9rem;
-      color: #4d5f6e;
-      background: #f9f5f0;
-      padding: 0.5rem 0.75rem;
-      border-radius: 10px;
-      display: inline-block;
-      line-height: 1.4;
-    }
-    .tips-section {
-      background: #eef3f7;
-      border-radius: 20px;
-      padding: 1.75rem 2rem;
-      margin-top: 1.5rem;
-      border: 1px solid #d0dde8;
-    }
-    .tips-section h3 {
-      font-size: 1.5rem;
-      font-weight: 650;
-      color: #1f3a4b;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .tips-section h3::before {
-      content: "🧭";
-      font-size: 1.7rem;
-    }
-    .tips-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem 1.75rem;
-      list-style: none;
-    }
-    .tips-list li {
-      background: white;
-      padding: 0.9rem 1.2rem;
-      border-radius: 14px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-      border-left: 4px solid #c49a6c;
-      font-size: 0.98rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-    }
-    .tips-list li::before {
-      content: "•";
-      color: #c49a6c;
-      font-weight: 700;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-    .note {
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      color: #5f6f7e;
-      font-style: italic;
-      background: #ffffffd9;
-      padding: 0.75rem 1.25rem;
-      border-radius: 12px;
-      border: 1px dashed #b8c7d4;
-    }
-    @media (max-width: 850px) {
-      .guide-card {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      .attractions-table th,
-      .attractions-table td {
-        padding: 0.8rem 0.5rem;
-        font-size: 0.85rem;
-      }
-      .attraction-name {
-        font-size: 0.9rem;
-      }
-      .visiting-tip {
-        font-size: 0.8rem;
-      }
-    }
-    @media (max-width: 600px) {
-      .attractions-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-      .attractions-table th,
-      .attractions-table td {
-        white-space: normal;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-card">
-    <h2>Cairo Top 10 Attractions</h2>
-
-    <div class="intro">
-      <p>Cairo is a city where ancient wonders meet vibrant modern life. From the last remaining wonder of the ancient world to bustling bazaars and world-class museums, the Egyptian capital offers an unforgettable journey through 5,000 years of history.</p>
-      <p>Below you’ll find the 10 must-see attractions, with honest descriptions, current ticket prices (as of 2025, in Egyptian pounds and approximate USD), and practical tips to make the most of your visit. Prices for foreign visitors are higher than for locals — we’ve listed the standard foreign adult ticket unless noted.</p>
-    </div>
-
-    <table class="attractions-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Attraction</th>
-          <th>Description</th>
-          <th>Ticket price (foreign adult)</th>
-          <th>Visiting tip</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td><span class="attraction-name">Pyramids of Giza & Sphinx</span></td>
-          <td class="attraction-desc">The iconic trio of Khufu, Khafre, and Menkaure, plus the enigmatic Sphinx. A bucket-list experience — you can even climb inside the Great Pyramid (separate ticket).</td>
-          <td class="ticket-price">EGP 540 (~$11) site entry; Great Pyramid interior +EGP 900 (~$18)</td>
-          <td><span class="visiting-tip">Go at 8 AM opening to beat crowds and heat. Bring water, hat, and comfortable shoes. Ignore aggressive vendors — a firm "no, thank you" works.</span></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td><span class="attraction-name">Egyptian Museum (Tahrir)</span></td>
-          <td class="attraction-desc
+            <h2>Top Attractions in Cairo</h2>
+<p>Cairo rewards visitors with layers of history spanning Fatimid streets, Mamluk mosques, Ottoman palaces, and modern landmarks along the Nile. From the medieval bazaar of Khan el-Khalili to the hilltop Citadel of Saladin, the city offers an extraordinary concentration of monuments. This guide highlights ten attractions that best capture Cairo's architectural heritage and living culture for the international traveler.</p>
+<ol>
+  <li>
+    <strong>Cairo Citadel (Citadel of Saladin)</strong> — This medieval Islamic fortification was begun by Salah ad-Din in 1176 and served as the seat of Egyptian government and royal residence for nearly 700 years. Its promontory setting on the Mokattam hills offers sweeping views over historic Cairo.
+    <br><em>Tip:</em> Visit in the morning to avoid heat and crowds; the Citadel sits near the Mosque of Muhammad Ali and is best reached by taxi.
+  </li>
+  <li>
+    <strong>Khan el-Khalili</strong> — Established as a center of trade in the Mamluk era, this famous bazaar in the historic center remains one of Cairo's main attractions for tourists and locals alike. It is home to many Egyptian artisans and workshops producing traditional crafts and souvenirs.
+    <br><em>Tip:</em> Go in the late afternoon or evening when the lanes are liveliest; bargain politely and expect crowds on weekends.
+  </li>
+  <li>
+    <strong>Al-Mu'izz Street</strong> — This major north-to-south street in the walled city of historic Cairo is one of Cairo's oldest, dating back to the Fatimid foundation of the city in the 10th century. It is named after the fourth Fatimid caliph, Al-Mu'izz li-Din Allah.
+    <br><em>Tip:</em> Walk it in the cooler early morning; the street is pedestrian-friendly and lined with monuments such as the Qalawun complex.
+  </li>
+  <li>
+    <strong>Qalawun Complex</strong> — Built by Sultan al-Mansur Qalawun between 1284 and 1285 on al-Mu'izz street, this historic religious complex includes a hospital (bimaristan), madrasa, mausoleum, and mosque. It is widely regarded as one of the major monuments of Islamic Cairo.
+    <br><em>Tip:</em> Combine with a walk along al-Mu'izz Street; check local opening hours as visiting times for monuments vary.
+  </li>
+  <li>
+    <strong>Bab Zuwayla</strong> — One of three remaining gates in the historic city walls of Cairo, this gate was built in 1092 by the Fatimid vizier Badr al-Jamali. Its two minaret towers were added between 1415 and 1422 as part of the adjacent Mosque of Sultan al-Muayyad.
+    <br><em>Tip:</em> Visit as part of a walk through the southern end of al-Mu'izz Street; the gate remains one of Cairo's major landmarks.
+  </li>
+  <li>
+    <strong>Al-Azhar Park</strong> — This public park in Historic Cairo is listed as one of the world's sixty great public spaces by the Project for Public Spaces. It was created by the Aga Khan Trust for Culture's Historic Cities Support Programme at a cost exceeding US$30 million.
+    <br><em>Tip:</em> A lovely spot for sunset views over the city; pair it with a visit to the nearby Darb al-Ahmar district.
+  </li>
+  <li>
+    <strong>Cairo Tower</strong> — At 187 m (614 ft), this free-standing concrete tower was the tallest structure in Egypt for 37 years until 1998. It also held the title of tallest structure in North Africa for 21 years.
+    <br><em>Tip:</em> Head up in the late afternoon for daylight views and stay for sunset; it stands on Gezira Island near Zamalek.
+  </li>
+  <li>
+    <strong>Abdeen Palace</strong> — This 19th-century palace built by Khedive Ismail served as the Egyptian royal household's primary official residence from 1874 until the 1952 revolution. Since then it has been one of the presidential palaces, centered in its eponymous district.
+    <br><em>Tip:</em> Located in the Western Area of Cairo near Khedival Cairo; check whether the palace museum is open before setting out.
+  </li>
+  <li>
+    <strong>Mosque of Ibn Tulun and Saliba Street</strong> — Saliba Street runs from the Cairo Citadel to the Mosque of Ibn Tulun, the largest mosque in Cairo and one of the few remaining Abbasid mosques in the city. The street itself is lined with old schools, mosques, hospitals, and mausoleums.
+    <br><em>Tip:</em> Walk Saliba Street in the morning and climb the mosque's spiral minaret for views; modest dress is recommended.
+  </li>
+  <li>
+    <strong>Mashhad of Sayyida Ruqayya</strong> — Erected in 1133 CE, this 12th-century shrine and mosque memorializes Ruqayya bint Ali, a member of the Prophet Muhammad's family. It is one of the few and most important Fatimid-era mausoleums preserved in Cairo today.
+    <br><em>Tip:</em> Visit respectfully outside prayer times; it lies in the historic city near other Fatimid monuments.
+  </li>
+</ol>
+<h3>Practical tips</h3>
+<ul>
+  <li>Visit outdoor monuments such as the Citadel, al-Mu'izz Street, and Saliba Street in the cooler early morning hours.</li>
+  <li>Dress modestly when entering mosques and shrines, and remove shoes where required.</li>
+  <li>Use taxis or ride-hailing apps to reach hilltop and historic-district sites, as walking routes between them can be long and hot.</li>
+  <li>Allow extra time around Khan el-Khalili and al-Mu'izz Street, where dense crowds slow progress in the evenings.</li>
+  <li>Check opening hours and ticket availability for palaces and monuments in advance, as schedules vary seasonally.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Cairo Guides</h3>

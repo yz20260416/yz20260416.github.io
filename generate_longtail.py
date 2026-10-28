@@ -106,6 +106,110 @@ MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
                "July", "August", "September", "October", "November", "December"]
 
 
+WIKI_API = "https://en.wikipedia.org/w/api.php"
+
+
+def fetch_attractions(city: str, country: str = "") -> list:
+    """从维基百科抓该城市的景点列表和简介。优先用 Tourism in {city} 页面，分类页降级。"""
+    headers = {"User-Agent": "TravelGuidesBot/1.0 (educational project)"}
+
+    def _query_extract(title: str) -> str:
+        params = {
+            "action": "query", "prop": "extracts",
+            "explaintext": 1, "titles": title,
+            "format": "json", "redirects": 1,
+        }
+        try:
+            r = requests.get(WIKI_API, params=params, headers=headers, timeout=30)
+            if r.status_code != 200:
+                return ""
+            pages = r.json().get("query", {}).get("pages", {})
+            for page in pages.values():
+                return page.get("extract", "")
+        except Exception:
+            pass
+        return ""
+
+    # 方案一：Tourism in {city} 页面
+    tourism_text = _query_extract(f"Tourism in {city}")
+    titles = []
+    if tourism_text and len(tourism_text) > 500:
+        m = re.search(r"is as follows:\s*(.+?)(?:\n\n|==)", tourism_text, re.S)
+        if m:
+            items = [x.strip() for x in m.group(1).split("\n") if x.strip()]
+            titles = [it for it in items if 3 < len(it) < 80][:20]
+        if titles:
+            print(f"  [wiki-attractions] {city}: Tourism 页面解析出 {len(titles)} 个景点")
+
+    # 方案二：分类页降级
+    if not titles:
+        def _category_members(cat_title: str) -> list:
+            params = {
+                "action": "query", "list": "categorymembers",
+                "cmtitle": cat_title, "cmlimit": 50,
+                "format": "json", "cmnamespace": 0,
+            }
+            try:
+                r = requests.get(WIKI_API, params=params, headers=headers, timeout=30)
+                if r.status_code != 200:
+                    return []
+                return [m["title"] for m in r.json().get("query", {}).get("categorymembers", [])]
+            except Exception:
+                return []
+
+        for cat in [f"Category:Tourist attractions in {city}",
+                    f"Category:Visitor attractions in {city}"]:
+            titles = _category_members(cat)
+            if len(titles) >= 5:
+                print(f"  [wiki-attractions] {city}: 降级到分类 '{cat}'，{len(titles)} 个条目")
+                break
+
+    if len(titles) < 3:
+        print(f"  [wiki-attractions] {city}: 景点数据不足，降级为纯 AI", file=sys.stderr)
+        return []
+
+    # 清理标题：去掉括号后缀、冒号描述
+    clean = []
+    for t in titles:
+        t = re.sub(r"\s*\(.*?\)\s*$", "", t)
+        t = t.split(":")[0].strip()
+        if t and 3 < len(t) < 60:
+            clean.append(t)
+    titles = list(dict.fromkeys(clean))[:20]
+
+    # 批量拉简介
+    results = []
+    for i in range(0, len(titles), 20):
+        batch = titles[i:i+20]
+        params = {
+            "action": "query", "prop": "extracts",
+            "exintro": 1, "explaintext": 1,
+            "titles": "|".join(batch), "format": "json", "redirects": 1,
+        }
+        try:
+            r = requests.get(WIKI_API, params=params, headers=headers, timeout=30)
+            if r.status_code != 200:
+                continue
+            pages = r.json().get("query", {}).get("pages", {})
+            for page in pages.values():
+                t = page.get("title", "")
+                ex = page.get("extract", "")
+                if t and ex and len(ex) > 50:
+                    results.append({"title": t, "extract": ex[:500]})
+        except Exception as e:
+            print(f"  [warn] {city} 拉简介失败: {e}", file=sys.stderr)
+
+    print(f"  [wiki-attractions] {city}: 最终 {len(results)} 个景点有简介")
+    return results
+
+
+def format_attractions_context(attrs: list) -> str:
+    lines = ["Real attraction data from Wikipedia:"]
+    for a in attrs:
+        lines.append(f"- {a['title']}: {a['extract']}")
+    return "\n".join(lines)
+
+
 def fetch_weather_data(city: str, country: str = "") -> dict:
     """调 Open-Meteo 拿过去 5 年真实天气，算出 12 个月的统计。失败返回 {}。"""
     headers = {"User-Agent": "TravelGuidesBot/1.0 (educational project)"}
@@ -234,7 +338,8 @@ def longtail_filename(name: str, suffix: str) -> str:
 # ---------------------------------------------------------------------------
 
 def call_deepseek(city: str, longtail_type: dict, api_key: str,
-                  weather_data: dict = None, retries: int = 3) -> str:
+                  weather_data: dict = None, attractions_data: list = None,
+                  retries: int = 3) -> str:
     if longtail_type["suffix"] == "weather" and weather_data:
         real = format_weather_context(weather_data)
         prompt = f"""Write a comprehensive travel weather guide for {city}.
@@ -257,6 +362,29 @@ Format as clean HTML with:
 - An <h2> title
 - Opening interpretation paragraph
 - The 12-row data table
+- A "Practical tips" section (3-5 bullets)
+
+Output only the HTML content, no markdown code fences."""
+    elif longtail_type["suffix"] == "attractions" and attractions_data:
+        real = format_attractions_context(attractions_data)
+        prompt = f"""Write a top attractions guide for {city}.
+
+USE THIS REAL WIKIPEDIA DATA for the attractions:
+{real}
+
+Requirements:
+- Select the 10 attractions most likely to interest a typical international tourist.
+- EXCLUDE these types even if present in the data: cemeteries, tourist information centers, generic shopping streets, duplicate entries of the same landmark, restaurants, event venues.
+- Prefer landmarks, temples/shrines, museums, parks, observation decks, historic districts, and iconic neighborhoods.
+- For each selected attraction, write a 1-2 sentence description based on the provided Wikipedia extract.
+- Add a practical tip (best time to visit, ticket info if known, or nearby area).
+- Do NOT invent attractions not in the data. If fewer than 10 qualify, list only the qualifying ones.
+- Format as a numbered list.
+
+Format as clean HTML with:
+- An <h2> title
+- A short intro paragraph (50-80 words)
+- The numbered list of 10 attractions
 - A "Practical tips" section (3-5 bullets)
 
 Output only the HTML content, no markdown code fences."""
@@ -431,10 +559,14 @@ def main() -> int:
         print(f"[{i}/{len(todo)}] 生成 {city} - {lt['suffix']} ...")
         try:
             weather_data = None
+            attractions_data = None
             if lt["suffix"] == "weather":
                 weather_data = fetch_weather_data(city, country)
-                time.sleep(2)  # 对 Open-Meteo 温和一些
-            content = call_deepseek(city, lt, api_key, weather_data=weather_data)
+                time.sleep(2)
+            elif lt["suffix"] == "attractions":
+                attractions_data = fetch_attractions(city, country)
+                time.sleep(1)
+            content = call_deepseek(city, lt, api_key, weather_data=weather_data, attractions_data=attractions_data)
             html = render_longtail_html(city_data, lt, content, weather_data=weather_data)
             out = CITIES_DIR / longtail_filename(city, lt["suffix"])
             out.write_text(html, encoding="utf-8")

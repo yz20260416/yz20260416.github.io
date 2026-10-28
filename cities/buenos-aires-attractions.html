@@ -16,276 +16,62 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Buenos Aires' top attractions. It presents a structured overview with a main table detailing each attraction's description, ticket prices, and visiting tips, followed by a practical tips section for travelers.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buenos Aires · Top 10 Attractions</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            <h2>Top Attractions in Buenos Aires</h2>
+<p>Buenos Aires blends grand Beaux-Arts architecture, vibrant café culture, and a thriving arts scene. From the historic Plaza de Mayo to the leafy parks of the north, the city rewards visitors who linger. This guide highlights ten attractions most likely to appeal to international travelers, drawing on landmark buildings, cultural centers, museums, and public spaces that capture the Argentine capital's distinctive character.</p>
 
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #faf9f8;
-      color: #1e1e2a;
-      line-height: 1.6;
-      padding: 2rem 1.5rem;
-    }
+<ol>
+  <li>
+    <strong>Buenos Aires Metropolitan Cathedral</strong> — This Roman Catholic cathedral overlooks Plaza de Mayo at the corner of San Martín and Rivadavia streets and serves as the mother church of the Archdiocese of Buenos Aires. Its neoclassical facade and richly decorated interior make it a central stop in the historic city center.
+    <br><em>Tip:</em> Visit in the morning on weekdays for quieter viewing; it sits directly across from the Casa Rosada, so combine it with a Plaza de Mayo walk.
+  </li>
+  <li>
+    <strong>Buenos Aires Central Post Office (Palacio Libertad)</strong> — Designed by French architect Norbert Maillart in Neoclassical Beaux-Arts style with Second Empire elements, this former seat of the Argentine Post Office now operates as the Palacio Libertad. Its monumental architecture makes it one of the city's most photogenic civic buildings.
+    <br><em>Tip:</em> Check current opening hours before visiting, as the building's public access varies; it is a short walk from Plaza de Mayo.
+  </li>
+  <li>
+    <strong>Botica del Ángel</strong> — Originally an artistic venue created in 1966 by animator, painter, set designer, actor, and costume designer Eduardo Bergara Leumann, this Monserrat museum became a launching ground for prominent Argentine artists. Its eclectic, theatrical interiors offer a uniquely Buenos Aires cultural experience.
+    <br><em>Tip:</em> Located in Monserrat near the historic center; confirm guided tour times in advance since visits are often organized by appointment.
+  </li>
+  <li>
+    <strong>Buenos Aires House of Culture</strong> — This architectural landmark in the Montserrat section of the capital is a notable stop for visitors interested in the city's built heritage. Its central location makes it easy to pair with nearby historic sights.
+    <br><em>Tip:</em> Drop by while exploring Montserrat; check the city's cultural calendar for temporary exhibitions and events.
+  </li>
+  <li>
+    <strong>Café Tortoni</strong> — First opened in 1858 by a French immigrant and named after a Parisian café, this coffeehouse at 825 Avenida de Mayo was inspired by Fin de siècle coffee houses and was once selected as one of the ten most beautiful cafés in the world. It remains a beloved institution for coffee, pastries, and atmosphere.
+    <br><em>Tip:</em> Arrive early or expect a queue, especially at peak hours; it is a short walk from Plaza de Mayo and the Cathedral.
+  </li>
+  <li>
+    <strong>Café La Biela</strong> — Situated at 600 Quintana Avenue in Recoleta, opposite the church of Nuestra Señora del Pilar, this traditional café is known for its large terrace shaded by a giant rubber tree. It is popular with both locals and tourists for people-watching.
+    <br><em>Tip:</em> Visit mid-morning or late afternoon for a quieter terrace seat; it is ideally placed for exploring the Recoleta area.
+  </li>
+  <li>
+    <strong>Centro Cultural Recoleta</strong> — This exhibition and cultural events center in the Recoleta barrio hosts sculptures, exhibitions, concerts, and workshops of diverse types. In 2006 it drew over 20,000 people in three days for a major festival of installations, performances, and screenings.
+    <br><em>Tip:</em> Many exhibitions are free or low-cost; check the schedule online and pair your visit with a stroll through the surrounding Recoleta neighborhood.
+  </li>
+  <li>
+    <strong>Centro Cultural General San Martín</strong> — Run by the city government and designed by architect Mario Roberto Álvarez, this cultural center near Corrientes Avenue hosts diverse cultural and artistic events. Built between 1962 and 1973, it is a hub of theater, music, and visual arts.
+    <br><em>Tip:</em> Look for same-day tickets to performances; the center's Corrientes Avenue location makes it easy to combine with an evening in the theater district.
+  </li>
+  <li>
+    <strong>Floralis Genérica</strong> — This steel and aluminum sculpture in United Nations Square, a gift to the city by architect Eduardo Catalano, was created in 2002 and is designed to close its petals in the evening and open them in the morning. Catalano described it as a synthesis of all flowers and a hope reborn each day.
+    <br><em>Tip:</em> Visit near sunset to watch the petals close, or early morning to see them open; the surrounding park is pleasant for a walk.
+  </li>
+  <li>
+    <strong>Feria de San Telmo</strong> — Created in 1970 by architect José María Peña, this antique fair fills Plaza Dorrego with 270 stands every Sunday from 10 am to 4 pm and draws around 10,000 visitors weekly, most of them international tourists. Street tango shows and orchestras add to the lively atmosphere.
+    <br><em>Tip:</em> Go on a Sunday morning and bring cash for antiques and crafts; arrive early to browse before the crowds peak.
+  </li>
+</ol>
 
-    .guide-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-      padding: 2.5rem 2rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0a1f44;
-      margin-bottom: 1rem;
-      border-left: 8px solid #eab308;
-      padding-left: 1.2rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.15rem;
-      color: #2d3e50;
-      margin-bottom: 2.2rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 2px solid #f0e7d6;
-      max-width: 85%;
-    }
-
-    .attractions-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 14px;
-      margin: 1.5rem 0 1rem;
-    }
-
-    .attractions-table th {
-      text-align: left;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #6b4f2e;
-      background: #f9f3e9;
-      padding: 0.9rem 1rem;
-      border-radius: 14px 14px 6px 6px;
-    }
-
-    .attractions-table td {
-      background: #ffffff;
-      padding: 1.3rem 1rem;
-      vertical-align: top;
-      border: 1px solid #eae3d7;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-      transition: all 0.15s ease;
-    }
-
-    .attractions-table tr:hover td {
-      background: #fefcf8;
-      border-color: #d9c9b0;
-    }
-
-    .attraction-name {
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: #0a1f44;
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-
-    .barrio-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 500;
-      background: #f0e7d6;
-      color: #5a3e1b;
-      padding: 0.2rem 0.7rem;
-      border-radius: 30px;
-      letter-spacing: 0.02em;
-      margin-top: 6px;
-    }
-
-    .price {
-      font-weight: 600;
-      color: #1e5e3b;
-      background: #e8f3e8;
-      padding: 0.2rem 0.6rem;
-      border-radius: 20px;
-      display: inline-block;
-      font-size: 0.9rem;
-      white-space: nowrap;
-    }
-
-    .tip-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .tip-list li {
-      position: relative;
-      padding-left: 1.4rem;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-      color: #2e3b4e;
-    }
-
-    .tip-list li::before {
-      content: "•";
-      color: #eab308;
-      font-weight: 700;
-      position: absolute;
-      left: 0.2rem;
-      font-size: 1.2rem;
-    }
-
-    .practical-tips {
-      margin-top: 3rem;
-      background: #f7f4ef;
-      padding: 2rem 2rem 1.8rem;
-      border-radius: 28px;
-      border: 1px solid #e3d9cc;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.7rem;
-      font-weight: 600;
-      color: #0a1f44;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.8rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-    }
-
-    .tip-card {
-      background: white;
-      padding: 1.3rem 1.4rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      border: 1px solid #e9dfd2;
-    }
-
-    .tip-card h4 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #1e3a5f;
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .tip-card p, .tip-card ul {
-      font-size: 0.95rem;
-      color: #374151;
-    }
-
-    .tip-card ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-    }
-
-    .tip-card li {
-      margin-bottom: 0.3rem;
-    }
-
-    .note {
-      background: #fff6e0;
-      border-left: 5px solid #eab308;
-      padding: 0.8rem 1.2rem;
-      border-radius: 12px;
-      font-size: 0.95rem;
-      margin: 1.8rem 0 0.5rem;
-    }
-
-    /* responsive */
-    @media (max-width: 800px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      .intro {
-        max-width: 100%;
-        font-size: 1rem;
-      }
-      .attractions-table th {
-        display: none;
-      }
-      .attractions-table, .attractions-table tbody, .attractions-table tr, .attractions-table td {
-        display: block;
-        width: 100%;
-      }
-      .attractions-table tr {
-        margin-bottom: 1.5rem;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 1px solid #e2d7c8;
-        background: white;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-      }
-      .attractions-table td {
-        border: none;
-        border-bottom: 1px solid #f0e7db;
-        border-radius: 0;
-        padding: 1rem 1.2rem;
-        box-shadow: none;
-      }
-      .attractions-table td:last-child {
-        border-bottom: none;
-      }
-      .attractions-table td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        color: #6b4f2e;
-        display: block;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-        margin-bottom: 0.3rem;
-      }
-      .attractions-table td:first-child::before {
-        display: none;
-      }
-      .attractions-table td:first-child {
-        background: #f9f3e9;
-        border-radius: 20px 20px 0 0;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .tips-grid {
-        grid-template-columns: 1fr;
-
+<h3>Practical tips</h3>
+<ul>
+  <li>Many central attractions—the Cathedral, Central Post Office, Café Tortoni, and House of Culture—cluster around Plaza de Mayo and Avenida de Mayo, so plan them as a single walking day.</li>
+  <li>Reserve Sundays for the Feria de San Telmo, which runs 10 am to 4 pm and is best experienced before midday crowds build.</li>
+  <li>For cafés like Tortoni and La Biela, visit outside peak meal times to avoid long waits, especially on weekends.</li>
+  <li>Check opening hours and tour schedules in advance for museums and cultural centers such as Botica del Ángel and the Centro Cultural Recoleta, as access can vary.</li>
+  <li>Use the city's reliable public transport and taxis between neighborhoods like Recoleta, Montserrat, and San Telmo, which are spread across the center.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Buenos Aires Guides</h3>

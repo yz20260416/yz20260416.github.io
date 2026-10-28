@@ -16,231 +16,30 @@
     
     <main>
         <article>
-            ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Travel Guide – Top 10 Attractions</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-      background: #fafbfc;
-    }
-    h2 {
-      color: #0b3d5c;
-      border-bottom: 3px solid #d4af37;
-      padding-bottom: 0.4rem;
-      font-size: 1.9rem;
-      margin-top: 0;
-    }
-    h3 {
-      color: #0b3d5c;
-      font-size: 1.3rem;
-      margin-top: 2.2rem;
-      margin-bottom: 0.8rem;
-    }
-    p.intro {
-      font-size: 1.05rem;
-      color: #34495e;
-      background: #eef3f7;
-      padding: 1rem 1.2rem;
-      border-left: 5px solid #d4af37;
-      border-radius: 0 6px 6px 0;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0 2rem;
-      background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border-radius: 8px;
-      overflow: hidden;
-      font-size: 0.95rem;
-    }
-    thead {
-      background: #0b3d5c;
-      color: #ffffff;
-    }
-    th, td {
-      padding: 0.85rem 1rem;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid #e2e8ee;
-    }
-    th {
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-    tbody tr:nth-child(even) {
-      background: #f6f9fb;
-    }
-    tbody tr:hover {
-      background: #eaf3f8;
-    }
-    .attraction-name {
-      font-weight: 600;
-      color: #0b3d5c;
-    }
-    .price {
-      white-space: nowrap;
-      font-weight: 500;
-      color: #1a6b3c;
-    }
-    .tips {
-      background: #fff9e6;
-      border: 1px solid #e6d9a8;
-      border-radius: 8px;
-      padding: 1.2rem 1.5rem 1.5rem;
-      margin-top: 2rem;
-    }
-    .tips h3 {
-      margin-top: 0;
-      color: #7a5c00;
-    }
-    .tips ul {
-      margin: 0.5rem 0 0;
-      padding-left: 1.3rem;
-    }
-    .tips li {
-      margin-bottom: 0.6rem;
-    }
-    .note {
-      font-size: 0.88rem;
-      color: #6b7a8a;
-      margin-top: 1.2rem;
-      font-style: italic;
-    }
-    @media (max-width: 700px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-      thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
-      tbody tr {
-        margin-bottom: 1.2rem;
-        border: 1px solid #dde4ea;
-        border-radius: 8px;
-        overflow: hidden;
-        background: #ffffff;
-      }
-      td {
-        border-bottom: 1px solid #eef2f6;
-        padding: 0.7rem 1rem;
-      }
-      td::before {
-        content: attr(data-label);
-        display: block;
-        font-weight: 600;
-        color: #0b3d5c;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        margin-bottom: 0.2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <h2>Dubai Top 10 Attractions</h2>
-
-  <p class="intro">
-    Dubai blends record-breaking architecture, desert adventure, and rich Arabian heritage into one
-    unforgettable destination. From the world's tallest building to traditional souks and man-made
-    islands, the city offers experiences for every type of traveler. Below are the ten attractions
-    that should be on every Dubai itinerary, complete with current ticket guidance and practical
-    visiting tips to help you plan efficiently and save money.
-  </p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Attraction</th>
-        <th>Description</th>
-        <th>Ticket Price (approx.)</th>
-        <th>Visiting Tips</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-label="#">1</td>
-        <td data-label="Attraction" class="attraction-name">Burj Khalifa</td>
-        <td data-label="Description">
-          The world's tallest building (828 m) with observation decks on levels 124–125 and 148.
-          Panoramic views stretch across the skyline, desert, and Gulf — spectacular at sunset.
-        </td>
-        <td data-label="Ticket Price" class="price">
-          At the Top (124/125): from AED 149 (off-peak) / AED 179 (peak)<br>
-          At the Top SKY (148): from AED 399
-        </td>
-        <td data-label="Visiting Tips">
-          Book online in advance for the cheapest slots; off-peak weekday mornings are least crowded.
-          Combine with the Dubai Mall and Fountain show.
-        </td>
-      </tr>
-      <tr>
-        <td data-label="#">2</td>
-        <td data-label="Attraction" class="attraction-name">Dubai Mall &amp; Dubai Fountain</td>
-        <td data-label="Description">
-          One of the world's largest malls with 1,200+ shops, an indoor aquarium, ice rink, and the
-          free Dubai Fountain show — a choreographed water-and-light spectacle set to music.
-        </td>
-        <td data-label="Ticket Price" class="price">
-          Mall entry: Free<br>
-          Dubai Aquarium: from AED 145<br>
-          Fountain show: Free
-        </td>
-        <td data-label="Visiting Tips">
-          Fountain shows run every 30 minutes from early evening; arrive 15–20 minutes early for a
-          good spot on the boardwalk. Avoid Friday evenings if you dislike crowds.
-        </td>
-      </tr>
-      <tr>
-        <td data-label="#">3</td>
-        <td data-label="Attraction" class="attraction-name">Palm Jumeirah &amp; The View at The Palm</td>
-        <td data-label="Description">
-          Iconic palm-shaped man-made island lined with resorts and beaches. The View observation
-          deck on level 52 of The Palm Tower offers 360° views of the island and skyline.
-        </td>
-        <td data-label="Ticket Price" class="price">
-          The View (Level 52): from AED 100<br>
-          Level 54 (Next Level): from AED 175
-        </td>
-        <td data-label="Visiting Tips">
-          Visit near sunset for the best photos. Combine with a walk along the Palm's boardwalk or a
-          beach day at one of the island's public beaches.
-        </td>
-      </tr>
-      <tr>
-        <td data-label="#">4</td>
-        <td data-label="Attraction" class="attraction-name">Dubai Marina &amp; JBR Walk</td>
-        <td data-label="Description">
-          A glamorous waterfront district with skyscraper-lined promenades, al fresco dining, yacht
-          cruises, and the lively Jumeirah Beach Residence (JBR) beachfront.
-        </td>
-        <td data-label="Ticket Price" class="price">
-          Entry: Free<br>
-          Marina dhow cruise dinner: from AED 150–250
-        </td>
-        <td data-label="Visiting Tips">
-          Stroll the Marina Walk in the evening when temperatures drop. Book a dhow cruise for a
-          different perspective; verify inclusions (dinner, transfers) before booking.
-        </td>
-      </tr>
-      <tr>
-        <td data-label="#">5</td>
-        <td data-label="Attraction" class="attraction-name">Desert Safari (Dubai Desert Conservation Reserve)</td
+            <h2>Top Attractions in Dubai</h2>
+<p>Dubai has transformed itself into one of the world's most visited cities, drawing millions of international tourists each year with a mix of record-breaking landmarks, historic souks and family-friendly parks. From the world's tallest observation wheel to traditional gold and spice markets along the creek, the city offers experiences for every kind of traveller. Here are ten attractions most likely to appeal to a typical international visitor.</p>
+<ol>
+  <li><strong>Ain Dubai</strong> — Located at Bluewaters Island, this giant Ferris wheel is the world's tallest observation wheel at 250 m (820 ft), carrying up to 1,750 passengers in 48 cabins with views over Dubai Marina. It has held the record since October 2021.</li>
+  <li><strong>Dubai Frame</strong> — This observatory, museum and monument in Zabeel Park holds the record for the largest frame in the world at 150.24 m high and 95.53 m wide. Its viewing deck offers views of old Dubai to the north and the newer city to the south.</li>
+  <li><strong>Dubai Aquarium and Underwater Zoo</strong> — Housed in the Dubai Mall, this is the biggest aquarium in Dubai and one of the largest in the world, featuring the largest glass tank viewing panel at 107 feet wide and 27 feet tall.</li>
+  <li><strong>Dubai Gold Souk</strong> — This traditional market in Deira's Al Ras district comprises over 380 retailers, most of them jewellery traders, dealing in gold, platinum, silver, bullion, loose diamonds and colour stones. Some shops are more than four decades old.</li>
+  <li><strong>Dubai Spice Souk</strong> — Also known as the Old Souk, this traditional market in Deira sits adjacent to the Gold Souk near the Old Souk abra station on Dubai Creek. Its narrow lanes are lined with stores selling a variety of fragrances and spices.</li>
+  <li><strong>Dubai Textile Souk</strong> — This traditional textile market in the historic Bur Dubai neighbourhood runs along Dubai Creek, opposite the Spice and Gold Souks in Deira, which are reachable by special abra boats across the creek.</li>
+  <li><strong>Jumeirah Beach</strong> — A white sand beach in the Jumeirah district stretching along the Persian Gulf coast from Burj Al Arab towards the junction with The Palm Jumeirah. It is one of the city's most popular coastal spots.</li>
+  <li><strong>Dubai Safari Park</strong> — This eco-friendly safari park on Hatta Road in Al Warqa 5 is powered mainly by solar energy and houses around 3,000 animals from 78 mammal species, plus dozens of reptile, bird and primate types. It replaced the Dubai Zoo on its 50th anniversary.</li>
+  <li><strong>IMG Worlds of Adventure</strong> — One of the world's largest indoor theme parks, located on Sheikh Mohammad Bin Zayed Road in City of Arabia. It is divided into six zones, including worlds themed around Cartoon Network and Marvel brands.</li>
+  <li><strong>Hatta Heritage Village</strong> — A reconstruction of a traditional mountain village in Hatta, in the Al Hajar Mountains, consisting of 30 buildings made from mud, palm trunks and fronds, reeds and stone. Many interiors are furnished to reflect UAE life before the 1960s.</li>
+</ol>
+<h3>Practical tips</h3>
+<ul>
+  <li>Visit outdoor attractions such as Jumeirah Beach and the souks in the cooler morning hours, as Dubai's midday heat can be intense.</li>
+  <li>The Gold, Spice and Textile Souks are clustered around Dubai Creek — cross between Bur Dubai and Deira by traditional abra boat for a cheap, scenic connection.</li>
+  <li>Indoor attractions like IMG Worlds of Adventure and the Dubai Aquarium are good options for hot afternoons or less favourable weather.</li>
+  <li>Hatta Heritage Village lies well outside the city centre in the Al Hajar Mountains, so plan a half or full day for the trip.</li>
+  <li>Book tickets for Ain Dubai and the Dubai Frame in advance, especially around sunset when demand for observation decks is highest.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Dubai Guides</h3>

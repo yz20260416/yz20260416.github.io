@@ -16,218 +16,62 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Hanoi's top attractions. It presents ten key sites with descriptions, ticket prices, and practical visiting tips in a clean, structured format. The page includes an introduction, a detailed table for each attraction, and a separate tips section, making it easy for travelers to plan their visit.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanoi Top 10 Attractions · Travel Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #faf8f5;
-            color: #1e1e1e;
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
-        .guide-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-            padding: 2rem 2rem 2.5rem;
-        }
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: #1e2b2f;
-            border-left: 6px solid #c44536;
-            padding-left: 1.2rem;
-            margin-top: 0.5rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-        }
-        .intro {
-            font-size: 1.15rem;
-            color: #2d3e44;
-            background: #f2efe9;
-            padding: 1.4rem 1.8rem;
-            border-radius: 20px;
-            margin-bottom: 2.5rem;
-            border: 1px solid #e2dad0;
-        }
-        .intro p {
-            margin-bottom: 0.75rem;
-        }
-        .intro p:last-child {
-            margin-bottom: 0;
-        }
-        .table-wrapper {
-            overflow-x: auto;
-            border-radius: 20px;
-            border: 1px solid #e2dad0;
-            margin-bottom: 2.8rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            font-size: 0.98rem;
-            min-width: 860px;
-        }
-        th {
-            background: #1e2b2f;
-            color: #f0ede8;
-            font-weight: 500;
-            text-align: left;
-            padding: 1rem 1.2rem;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-        }
-        td {
-            padding: 1rem 1.2rem;
-            border-bottom: 1px solid #eae3db;
-            vertical-align: top;
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        .attraction-name {
-            font-weight: 600;
-            color: #1e2b2f;
-            font-size: 1.05rem;
-        }
-        .price-badge {
-            display: inline-block;
-            background: #e9e2d9;
-            padding: 0.25rem 0.75rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #3a2c25;
-            white-space: nowrap;
-        }
-        .free-badge {
-            background: #d9e8d6;
-            color: #1e4a2b;
-        }
-        .tip-text {
-            color: #4a5b62;
-            font-size: 0.93rem;
-        }
-        .tip-text strong {
-            color: #c44536;
-            font-weight: 600;
-        }
-        .practical-tips {
-            background: #f2efe9;
-            border-radius: 20px;
-            padding: 1.8rem 2rem;
-            margin-top: 1rem;
-            border: 1px solid #e2dad0;
-        }
-        .practical-tips h3 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #1e2b2f;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .practical-tips h3::before {
-            content: "🧭";
-            font-size: 1.8rem;
-        }
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-top: 0.8rem;
-        }
-        .tip-card {
-            background: white;
-            padding: 1.2rem 1.4rem;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-            border-left: 4px solid #c44536;
-        }
-        .tip-card h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1e2b2f;
-            margin-bottom: 0.6rem;
-        }
-        .tip-card p {
-            font-size: 0.95rem;
-            color: #3d4d54;
-        }
-        .tip-card ul {
-            padding-left: 1.2rem;
-            margin-top: 0.5rem;
-            font-size: 0.95rem;
-            color: #3d4d54;
-        }
-        .tip-card li {
-            margin-bottom: 0.35rem;
-        }
-        .note {
-            margin-top: 1.8rem;
-            font-size: 0.9rem;
-            color: #6b5e55;
-            font-style: italic;
-            border-top: 1px dashed #cfc5ba;
-            padding-top: 1.2rem;
-        }
-        @media (max-width: 700px) {
-            .guide-container { padding: 1.5rem 1rem; }
-            h2 { font-size: 1.8rem; }
-            .intro { padding: 1rem 1.2rem; font-size: 1rem; }
-            .practical-tips { padding: 1.2rem; }
-        }
-    </style>
-</head>
-<body>
-    <div class="guide-container">
-        <!-- H2 heading -->
-        <h2>Hanoi Top 10 Attractions</h2>
+            <h2>Top Attractions in Hanoi</h2>
+<p>Hanoi blends a thousand years of history with French colonial elegance and modern Vietnamese energy. From the misty legend of Hoàn Kiếm Lake to the solemn grandeur of Ba Đình Square, the city rewards curious travelers with landmarks, temples, and living craft traditions. This guide highlights ten of the most rewarding sights for an international visitor, each paired with a practical tip to help you plan your days.</p>
 
-        <!-- Introduction paragraph -->
-        <div class="intro">
-            <p>Hanoi, Vietnam’s thousand-year-old capital, blends French colonial elegance with traditional Vietnamese soul. From the serene Hoan Kiem Lake to the bustling Old Quarter, the city offers a treasure trove of cultural and historical sites. Whether you’re a history buff, a foodie, or a wanderer, these ten attractions capture the essence of Hanoi. Below you’ll find descriptions, current ticket prices (in VND and approximate USD), and practical tips to make the most of your visit.</p>
-            <p><strong>Note:</strong> Prices are as of early 2025 and may change; always check official sources before you go. Many sites accept cash only, so carry small notes.</p>
-        </div>
+<ol>
+  <li>
+    <strong>Hoàn Kiếm Lake</strong> — This 12-hectare freshwater lake sits in the historical heart of Hanoi and is also known as Sword Lake or Tả Vọng Lake. Its name, "Lake of the Returned Sword," comes from a local legend, and the surrounding area is ideal for an evening stroll.
+    <br><em>Tip:</em> Visit around sunrise or after dark, when locals gather for tai chi and the lake is beautifully lit.
+  </li>
+  <li>
+    <strong>Thê Húc Bridge</strong> — This bright red footbridge crosses Hoàn Kiếm Lake and connects the shore to the Ngọc Sơn temple island. It is one of the most photographed spots in the city and a natural stop on any lake walk.
+    <br><em>Tip:</em> Combine it with a circuit of the lake; go early morning to avoid crowds and catch soft light.
+  </li>
+  <li>
+    <strong>Ho Chi Minh Mausoleum</strong> — This large monument in the center of Ba Đình Square is the resting place of revolutionary leader and President Ho Chi Minh. It stands where Ho read the Declaration of Independence on September 2, 1945, and is open to the public.
+    <br><em>Tip:</em> It is typically open only in the morning and closed on certain days; dress respectfully (shoulders and knees covered) and expect security checks.
+  </li>
+  <li>
+    <strong>Presidential Palace Historical Site</strong> — Located in Hanoi, this site is where Ho Chi Minh lived and worked from December 19, 1954 until his death on September 2, 1969. The leafy compound includes his stilt house and gardens, offering a quiet contrast to the mausoleum.
+    <br><em>Tip:</em> Pair it with the mausoleum and Ba Đình Square in one morning, as they are within walking distance.
+  </li>
+  <li>
+    <strong>Memorial to the Revolutionary Martyrs</strong> — This war memorial stands across Ba Đình Square from the Ho Chi Minh Mausoleum and near the Hanoi Citadel. Designed by architect Lê Hiệp and built in 1993, it fuses traditional Vietnamese and modernist styles to commemorate those who died in the Vietnam War.
+    <br><em>Tip:</em> Visit as part of a Ba Đình Square walk; it is an outdoor monument best seen in the cooler morning hours.
+  </li>
+  <li>
+    <strong>Hanoi Opera House</strong> — Built by the French colonial administration between 1901 and 1911 as the Hanoi Municipal Theater, this grand opera house anchors August Revolution Square at the head of Tràng Tiền street. It is one of three opera houses built during the colonial period.
+    <br><em>Tip:</em> Admire the facade from the square, or check the schedule for performances; the surrounding Tràng Tiền area is good for a coffee stop.
+  </li>
+  <li>
+    <strong>Hanoi Ceramic Mosaic Mural</strong> — Also called the Hanoi Ceramic Road, this mosaic mural runs along the walls of the Red River dike system for about 6.5 kilometers. It was one of the major projects developed for the Millennial Anniversary of Hanoi.
+    <br><em>Tip:</em> It is best explored by motorbike or car along the dike road; a stretch near the city center is easy to reach on foot from the Old Quarter.
+  </li>
+  <li>
+    <strong>Đường Lâm Ancient Village</strong> — This cluster of ancient villages lies in the Sơn Tây area of Hà Nội, about 50 km west of the city center on the right bank of the Red River. It preserves traditional village life and architecture, making it a popular day trip from the capital.
+    <br><em>Tip:</em> Allow a full day; go on a weekday for quieter lanes and consider hiring a local guide to explain the village's history.
+  </li>
+  <li>
+    <strong>Vạn Phúc Silk Village</strong> — Vạn Phúc is a ward of Hà Đông district renowned for its traditional silk weaving village, one of the oldest in the country with a history spanning over 1,000 years. As of 2025 it has been merged into the new ward of Hà Đông.
+    <br><em>Tip:</em> Visit on a weekday morning to see weaving in action and browse silk shops; it is a short drive southwest of central Hanoi.
+  </li>
+  <li>
+    <strong>West Lake area (Tây Hồ)</strong> — West Lake is a large freshwater lake and one of Hanoi's most scenic districts, lined with pagodas, cafés, and waterfront promenades. It is a favorite spot for sunset views and a relaxed escape from the busy Old Quarter.
+    <br><em>Tip:</em> Go late afternoon for sunset over the water; the surrounding streets are great for a lakeside dinner or coffee.
+  </li>
+</ol>
 
-        <!-- Main content: structured table with attractions, prices, tips -->
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Attraction</th>
-                        <th>Description</th>
-                        <th>Ticket price</th>
-                        <th>Visiting tips</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="attraction-name">1. Hoan Kiem Lake & Ngoc Son Temple</td>
-                        <td>Heart of Hanoi, this picturesque lake is perfect for a morning stroll. The red Huc Bridge leads to Ngoc Son Temple (Temple of the Jade Mound), dedicated to Tran Hung Dao. Legend says the lake is where Emperor Le Loi returned his magic sword to the Golden Turtle God.</td>
-                        <td><span class="price-badge">30,000 VND (~$1.20)</span> for temple entry (lake free)</td>
-                        <td class="tip-text"><strong>Go early (6–8am)</strong> to see locals doing tai chi and avoid crowds. The temple is small; combine with a walk around the lake. Weekend evenings the area becomes a pedestrian zone.</td>
-                    </tr>
-                    <tr>
-                        <td class="attraction
+<h3>Practical tips</h3>
+<ul>
+  <li><strong>Best time to visit:</strong> October to April brings cooler, drier weather; summers are hot and humid with frequent rain.</li>
+  <li><strong>Mausoleum etiquette:</strong> The Ho Chi Minh Mausoleum is generally open mornings only and closed on some days, so check ahead; wear respectful clothing covering shoulders and knees.</li>
+  <li><strong>Getting around:</strong> The Hoàn Kiếm Lake and Opera House sights cluster in the center, while Ba Đình Square sights are a short taxi or cyclo ride away; use ride-hailing apps for fixed fares.</li>
+  <li><strong>Day trips:</strong> Đường Lâm and Vạn Phúc are best done as half- or full-day trips; arrange transport in advance or join a small-group tour.</li>
+  <li><strong>Money and tickets:</strong> Carry small Vietnamese dong notes for temple and site entry fees, and confirm opening hours locally as they can change seasonally.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Hanoi Guides</h3>

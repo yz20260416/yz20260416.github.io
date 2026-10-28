@@ -16,265 +16,72 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Cape Town's top 10 attractions. It presents a clear introduction, a structured table with descriptions, ticket prices, and visiting tips for each attraction, followed by a practical tips section. The design is clean and informative, suitable for travelers planning a trip.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cape Town Travel Guide · Top 10 attractions</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            <h2>Top Attractions in Cape Town</h2>
+<p>Cape Town rewards visitors with an extraordinary mix of dramatic scenery, rich history, and unique wildlife encounters. From the windswept tip of the Cape Peninsula to historic gardens and penguin-filled coves, the city offers something for every kind of traveller. This guide highlights ten standout attractions drawn from across the metropole, each worth building into your itinerary whether you have a few days or a few weeks.</p>
 
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
+<ol>
+  <li>
+    <strong>Cape Point</strong><br>
+    Cape Point is a dramatic promontory at the southeast corner of the Cape Peninsula, a mountainous landform running roughly thirty kilometres at the extreme southwestern tip of Africa. It sits just east of the famous Cape of Good Hope, offering spectacular ocean views.<br>
+    <em>Tip:</em> Arrive early in the morning to beat tour buses and catch clearer skies; the drive from the city takes about an hour, so combine it with a stop at Boulders Beach.
+  </li>
+  <li>
+    <strong>Boulders Beach</strong><br>
+    This sheltered beach of inlets between granite boulders in Simon's Town is famous for its colony of endemic, critically endangered African penguins, which settled there in 1982. It forms part of the Table Mountain National Park.<br>
+    <em>Tip:</em> Visit on a weekday morning for fewer crowds, and use the boardwalks rather than approaching the penguins directly.
+  </li>
+  <li>
+    <strong>Castle of Good Hope</strong><br>
+    This 17th-century pentagonal bastion fort is South Africa's oldest surviving colonial building and now a provincial heritage site. Following 1980s restorations, it is considered one of the best-preserved examples of its kind.<br>
+    <em>Tip:</em> It sits in the Foreshore near the CBD; go mid-morning to join a guided tour and see the ceremonial key ceremony.
+  </li>
+  <li>
+    <strong>Company's Garden</strong><br>
+    This large public park in the Cape Town CBD is the oldest garden in South Africa and a national heritage site. Originally planted in the 1650s by the region's first European settlers to grow produce for ships rounding the Cape, it is watered from the Molteno Dam.<br>
+    <em>Tip:</em> It is free to enter and central, making it an ideal shaded break between visits to nearby museums.
+  </li>
+  <li>
+    <strong>Arderne Gardens</strong><br>
+    This 4.5-hectare public park and arboretum in Claremont was established in 1845 by timber merchant Ralph Henry Arderne and named a South African Provincial Heritage Site in 1979. It contains over 300 trees, six of which are designated Champion Trees.<br>
+    <em>Tip:</em> A peaceful, photogenic spot popular for wedding photos; visit on a sunny weekday for the quietest experience.
+  </li>
+  <li>
+    <strong>Beaches of Cape Town</strong><br>
+    The Cape Metropole offers a wide variety of beaches divided into three regions by the Cape Peninsula: False Bay, the Atlantic Seaboard, and the Blaauwberg/West Coast. The sea in False Bay is about six degrees warmer than the Atlantic Seaboard.<br>
+    <em>Tip:</em> Choose False Bay beaches for warmer swimming and Atlantic Seaboard beaches for dramatic sunset views; the Atlantic side is notably colder.
+  </li>
+  <li>
+    <strong>Duiker Island</strong><br>
+    Also known as Seal Island, this small island off Hout Bay is renowned for its marine wildlife, including Cape fur seals and bird species such as cormorants and kelp gulls. Tourists and photographers visit regularly by boat from Mariner's Wharf.<br>
+    <em>Tip:</em> Book a boat trip from Hout Bay harbour and bring a warm layer, as conditions on the water can be chilly and breezy.
+  </li>
+  <li>
+    <strong>Baxter Theatre Centre</strong><br>
+    This performing arts complex in Rondebosch is part of the University of Cape Town and a popular venue for theatre performers and artists across the Western Cape. It is one of the city's leading cultural stages.<br>
+    <em>Tip:</em> Check the programme in advance and book tickets online; the Rondebosch area is easily reached by taxi or rideshare.
+  </li>
+  <li>
+    <strong>Bosman Family Vineyards</strong><br>
+    Situated on the farm Lelienfontein in Wellington, this estate produces wines for local and export markets and is home to one of the most influential vine nurseries in Africa. It offers a taste of the Cape Winelands beyond the city.<br>
+    <em>Tip:</em> Wellington is about an hour's drive from Cape Town; book a tasting in advance and designate a driver or join a wine tour.
+  </li>
+  <li>
+    <strong>Graaff's Pool</strong><br>
+    This public tidal pool and bathing area is a notable landmark in Sea Point, built in 1910 by wine merchant Pieter Marais for his paralysed wife. A tunnel once connected his manor house to the pool so she could be brought there unseen.<br>
+    <em>Tip:</em> Combine a visit with a stroll along the Sea Point promenade; the pool is free and best enjoyed on a calm, sunny day.
+  </li>
+</ol>
 
-    .guide-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 2rem;
-      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
-      padding: 2rem 2rem 3rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0f172a;
-      border-left: 8px solid #e11d48;
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.15rem;
-      background: #f1f5f9;
-      padding: 1.5rem 2rem;
-      border-radius: 1.5rem;
-      margin-bottom: 2.5rem;
-      border: 1px solid #e2e8f0;
-      color: #1e293b;
-    }
-
-    .intro p {
-      margin-bottom: 0.75rem;
-    }
-
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
-
-    .attractions-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      border-radius: 1.25rem;
-      overflow: hidden;
-      margin-bottom: 3rem;
-      background: white;
-    }
-
-    .attractions-table th {
-      background: #0f172a;
-      color: white;
-      font-weight: 600;
-      text-align: left;
-      padding: 1rem 1.2rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-    }
-
-    .attractions-table td {
-      padding: 1.2rem 1.2rem;
-      border-bottom: 1px solid #e9eef3;
-      vertical-align: top;
-      background: white;
-    }
-
-    .attractions-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .attractions-table tr:hover td {
-      background: #fafcff;
-    }
-
-    .attraction-name {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #0f172a;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .attraction-desc {
-      color: #334155;
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
-
-    .price-badge {
-      display: inline-block;
-      background: #eef2ff;
-      color: #1e3a8a;
-      font-weight: 600;
-      padding: 0.2rem 0.7rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      margin-top: 0.2rem;
-    }
-
-    .tip-text {
-      font-size: 0.9rem;
-      color: #475569;
-      background: #f8fafc;
-      padding: 0.4rem 0.6rem;
-      border-radius: 8px;
-      border-left: 3px solid #e11d48;
-      margin-top: 0.2rem;
-    }
-
-    .practical-tips {
-      background: #f0f4f9;
-      border-radius: 1.75rem;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 1rem;
-      border: 1px solid #d9e2ec;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.8rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tip-card {
-      background: white;
-      border-radius: 1.2rem;
-      padding: 1.3rem 1.3rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-      border: 1px solid #e2e8f0;
-      transition: transform 0.1s ease;
-    }
-
-    .tip-card:hover {
-      transform: translateY(-2px);
-      border-color: #cbd5e1;
-    }
-
-    .tip-card strong {
-      display: block;
-      font-size: 1.05rem;
-      color: #0f172a;
-      margin-bottom: 0.5rem;
-      border-bottom: 2px solid #e11d48;
-      padding-bottom: 0.4rem;
-      width: fit-content;
-    }
-
-    .tip-card p {
-      font-size: 0.92rem;
-      color: #334155;
-      margin-bottom: 0.5rem;
-    }
-
-    .tip-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .note {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 1.8rem;
-      text-align: right;
-      border-top: 1px dashed #cbd5e1;
-      padding-top: 1rem;
-      font-style: italic;
-    }
-
-    /* responsive */
-    @media (max-width: 800px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-        padding-left: 1rem;
-      }
-      .intro {
-        padding: 1.2rem 1.2rem;
-        font-size: 1rem;
-      }
-      .attractions-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-      .attractions-table th,
-      .attractions-table td {
-        padding: 0.9rem 1rem;
-        white-space: normal;
-        min-width: 180px;
-      }
-      .tips-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .price-badge {
-        white-space: normal;
-      }
-      .attractions-table td {
-        min-width: 150px;
-      }
-    }
-  </style>
-</head>
-<body>
-<div class="guide-container">
-
-  <!-- H2 heading as required -->
-  <h2>Cape Town Top 10 Attractions</h2>
-
-  <!-- Introduction paragraph -->
-  <div class="intro">
-    <p>🌍 <strong>Where the mountains meet the sea</strong> — Cape Town is a city of dramatic landscapes, poignant history, and vibrant culture. From the flat-topped silhouette of Table Mountain to the penguin‑dotted shores of Boulders Beach, there’s no shortage of iconic experiences. To help you plan, we’ve curated the <strong>top 10 attractions</strong> with up-to-date descriptions, ticket price ranges (in South African Rand, ZAR), and practical visiting tips. Whether you’re a first‑timer or a returning explorer, these highlights will anchor your Cape Town adventure.</p>
-    <p style="font-size:0.95rem; margin-top:0.5rem;">💡 <em>Prices are indicative for 2025 and may vary by season, age, and booking channel. Always check official websites for the latest rates.</em></p>
-  </div>
-
-  <!-- Main content: structured table with descriptions, prices, tips
+<h3>Practical tips</h3>
+<ul>
+  <li>Book popular sites like Boulders Beach and boat trips to Duiker Island in advance, especially during the December–January peak season.</li>
+  <li>Use ride-hailing apps or organised tours for outlying attractions such as Cape Point and Bosman Family Vineyards, where parking and driving can be a hassle.</li>
+  <li>Bring layers: Atlantic Seaboard beaches and boat trips are notably colder than False Bay, which is around six degrees warmer.</li>
+  <li>Visit outdoor attractions like Company's Garden and Arderne Gardens on weekday mornings for fewer crowds and better light.</li>
+  <li>Check opening hours and performance schedules for the Baxter Theatre Centre before planning your day around a show.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Cape Town Guides</h3>

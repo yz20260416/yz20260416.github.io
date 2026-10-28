@@ -16,232 +16,52 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Barcelona's top 10 attractions. It includes a clear introduction, a structured table with descriptions, ticket prices, and visiting tips for each attraction, followed by a practical tips section. The design is clean and informative, suitable for travelers planning their visit.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barcelona Top 10 Attractions · Travel Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f8f6f2;
-            color: #1e1e1e;
-            line-height: 1.5;
-            padding: 2rem 1rem;
-        }
-        .guide {
-            max-width: 1280px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 28px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-            padding: 2.5rem 2rem;
-        }
-        h2 {
-            font-size: 2.4rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: #0b3b4b;
-            border-left: 8px solid #e05a3a;
-            padding-left: 1.2rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        .intro {
-            font-size: 1.15rem;
-            color: #2d3e4b;
-            margin-bottom: 2.5rem;
-            max-width: 900px;
-            background: #f0f4f8;
-            padding: 1.5rem 2rem;
-            border-radius: 20px;
-            border: 1px solid #d9e2e9;
-        }
-        .intro p {
-            margin: 0;
-        }
-        .intro strong {
-            color: #c0452a;
-            font-weight: 600;
-        }
-        .table-wrapper {
-            overflow-x: auto;
-            border-radius: 18px;
-            border: 1px solid #dde3e9;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-            margin-bottom: 2rem;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-            min-width: 900px;
-        }
-        th {
-            background: #0b3b4b;
-            color: white;
-            font-weight: 600;
-            text-align: left;
-            padding: 1rem 1rem;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            white-space: nowrap;
-        }
-        td {
-            padding: 1.2rem 1rem;
-            vertical-align: top;
-            border-bottom: 1px solid #e6ecf0;
-            background: white;
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        .attraction-name {
-            font-weight: 700;
-            color: #0b3b4b;
-            font-size: 1.05rem;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-        .attraction-desc {
-            font-size: 0.92rem;
-            color: #2f4050;
-            margin-top: 0.25rem;
-            line-height: 1.5;
-        }
-        .price {
-            font-weight: 600;
-            color: #c0452a;
-            white-space: nowrap;
-        }
-        .price small {
-            font-weight: 400;
-            color: #5e6f7e;
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 0.2rem;
-        }
-        .tips-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .tips-list li {
-            position: relative;
-            padding-left: 1.4rem;
-            margin-bottom: 0.7rem;
-            font-size: 0.92rem;
-            color: #1f3442;
-        }
-        .tips-list li::before {
-            content: "•";
-            color: #e05a3a;
-            font-weight: 700;
-            font-size: 1.3rem;
-            position: absolute;
-            left: 0;
-            top: -0.2rem;
-        }
-        .practical-tips {
-            background: #f0f4f8;
-            border-radius: 24px;
-            padding: 2rem 2rem 1.8rem;
-            margin-top: 2rem;
-            border: 1px solid #d0dde8;
-        }
-        .practical-tips h3 {
-            font-size: 1.7rem;
-            font-weight: 600;
-            color: #0b3b4b;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        .practical-tips h3::before {
-            content: "🧭";
-            font-size: 1.8rem;
-        }
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem 2rem;
-        }
-        .tip-item {
-            background: white;
-            padding: 1rem 1.3rem;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            border-left: 4px solid #e05a3a;
-        }
-        .tip-item strong {
-            display: block;
-            font-size: 1rem;
-            color: #0b3b4b;
-            margin-bottom: 0.3rem;
-        }
-        .tip-item p {
-            font-size: 0.92rem;
-            color: #2b4252;
-        }
-        .note {
-            font-size: 0.9rem;
-            color: #5a6f7e;
-            margin-top: 1.5rem;
-            padding-top: 0.8rem;
-            border-top: 1px dashed #b8ccda;
-            text-align: right;
-            font-style: italic;
-        }
-        @media (max-width: 700px) {
-            .guide { padding: 1.5rem 1rem; }
-            h2 { font-size: 1.9rem; }
-            .intro { padding: 1rem 1.2rem; font-size: 1rem; }
-            .practical-tips { padding: 1.5rem 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <div class="guide">
-        <!-- H2 heading -->
-        <h2>Barcelona Top 10 Attractions</h2>
+            <h2>Top Attractions in Barcelona</h2>
+<p>Barcelona blends medieval streets, Gaudí's playful Modernisme, and a lively waterfront into one of Europe's most rewarding city breaks. From the Gothic cathedral to the surreal façades of the Eixample, the city rewards both first-time visitors and repeat travellers. Below are ten standout attractions drawn from Barcelona's rich architectural, cultural, and family-friendly offerings, each with a practical tip to help you plan your visit.</p>
 
-        <!-- Introduction paragraph -->
-        <div class="intro">
-            <p>Barcelona is a city where Gothic stone meets modernist curves, and the Mediterranean breeze carries the scent of tapas and sea salt. From Gaudí’s surreal masterpieces to lively markets and sun-drenched beaches, the Catalan capital offers an unforgettable mix of culture, architecture, and cuisine. To help you plan, we’ve curated the <strong>10 must-see attractions</strong> — complete with descriptions, current ticket prices (2025), and smart visiting tips. Prices are per adult unless noted; booking online often saves time and money.</p>
-        </div>
+<ol>
+  <li>
+    <strong>Casa Batlló</strong> — A building in the center of Barcelona designed by Antoni Gaudí and considered one of his masterpieces, redesigned in 1904 and refurbished several times since. Its organic, bone-like façade and colourful tilework make it a highlight of the Passeig de Gràcia. <em>Tip:</em> Book timed-entry tickets online in advance; mornings are quieter than midday.
+  </li>
+  <li>
+    <strong>La Pedrera (Casa Milà)</strong> — This Modernista building, popularly known as "the stone quarry" for its rough-hewn appearance, was the last private residence designed by Gaudí and built between 1906 and 1912. Its undulating façade and rooftop chimneys are unforgettable. <em>Tip:</em> Visit the rooftop at sunset for the best light and views; evening tours are also available.
+  </li>
+  <li>
+    <strong>Barcelona Cathedral</strong> — The Cathedral of the Holy Cross and Saint Eulalia is the seat of the archbishop of Barcelona, constructed from the thirteenth to fifteenth centuries with a neo-Gothic façade added in the late nineteenth century. Its cloister encloses the charming Well of the Geese. <em>Tip:</em> Go early in the morning to avoid queues and enjoy the cloister in relative calm.
+  </li>
+  <li>
+    <strong>La Boqueria</strong> — A large public market in the Ciutat Vella district and one of the city's foremost tourist landmarks, with an entrance from La Rambla near the Liceu opera house. It offers a very diverse selection of goods, from fresh produce to tapas counters. <em>Tip:</em> Arrive before 10am to see the market at its most authentic and least crowded.
+  </li>
+  <li>
+    <strong>Aquarium Barcelona</strong> — Located in Port Vell, this aquarium houses 35 tanks with 11,000 animals representing 451 species, including a vast ocean tank for sharks and rays that is 36 metres in diameter. It's a great family stop near the waterfront. <em>Tip:</em> Combine your visit with a stroll along Port Vell; buy tickets online to skip the line.
+  </li>
+  <li>
+    <strong>Barcelona Zoo</strong> — Situated in the Parc de la Ciutadella, this zoo was once internationally known as the home of Snowflake, the only known albino gorilla, who died in 2003. It remains a popular family attraction within a lovely park. <em>Tip:</em> Pair the zoo with a walk through Ciutadella Park and a picnic; weekday mornings are calmest.
+  </li>
+  <li>
+    <strong>Arc de Triomf</strong> — This memorial arch was built by architect Josep Vilaseca i Casanovas as the main access gate for the 1888 Barcelona World Fair, crossing the wide promenade of Passeig de Lluís Companys. It leads toward Ciutadella Park, which now occupies the fair's site. <em>Tip:</em> Visit on a sunny morning and continue into Ciutadella Park for a relaxed walk.
+  </li>
+  <li>
+    <strong>Columbus Monument</strong> — This 60-metre-tall monument to Christopher Columbus stands at the lower end of La Rambla and was constructed for the 1888 Universal Exposition in honor of his first voyage to the Americas. It marks the point where the city meets the sea. <em>Tip:</em> Ride the lift to the viewing platform for harbour views, then walk up La Rambla.
+  </li>
+  <li>
+    <strong>Barcelona Pavilion</strong> — Designed by Ludwig Mies van der Rohe and Lilly Reich as the German Pavilion for the 1929 International Exposition, this structure is an important building in the history of modern architecture, known for its simple form and use of expensive materials. <em>Tip:</em> It sits near Montjuïc's exhibition grounds; combine it with a visit to the nearby Magic Fountain area.
+  </li>
+  <li>
+    <strong>Dona i Ocell</strong> — This 22-metre-high sculpture by Joan Miró stands in the Joan Miró Park and was covered in tiles by the artist's collaborator Joan Gardy Artigas. It is part of a trilogy commissioned from Miró to welcome visitors to Barcelona. <em>Tip:</em> It's a quick, free photo stop; visit en route to Montjuïc or the nearby Plaça d'Espanya.
+  </li>
+</ol>
 
-        <!-- Main content: structured table -->
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Attraction</th>
-                        <th>Description</th>
-                        <th>Ticket price (approx.)</th>
-                        <th>Visiting tips</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 1. Sagrada Família -->
-                    <tr>
-                        <td><span class="attraction-name">1. Sagrada Família</span></td>
-                        <td class="attraction-desc">Gaudí’s unfinished basilica is a mind-bending forest of stone columns, hyper-real sculptures, and kaleidoscopic stained glass. A UNESCO site and Barcelona’s icon.</td>
-                        <td class="price">€26–€40<small>Basic entry €26; guided or tower access €40</small></td>
-                        <td>
-                            <ul class="tips-list">
-                                <li>Book online weeks ahead; slots sell out.</li>
-                                <li>Go early morning or late afternoon for softer light.</li>
-                                <li>Towers have narrow spiral stairs — not for claustrophobics.</li>
-
+<h2>Practical tips</h2>
+<ul>
+  <li>Book timed-entry tickets online for Gaudí sites like Casa Batlló and La Pedrera, as walk-up queues can be long.</li>
+  <li>Visit major landmarks such as the cathedral and La Boqueria early in the morning to avoid crowds.</li>
+  <li>Group nearby attractions: Casa Batlló and La Pedrera along Passeig de Gràcia, and the Arc de Triomf with Ciutadella Park and the zoo.</li>
+  <li>Use the metro to move between districts efficiently; many attractions are a short walk from a station.</li>
+  <li>Carry water and wear comfortable shoes, especially for Montjuïc-area sights and waterfront walks.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Barcelona Guides</h3>

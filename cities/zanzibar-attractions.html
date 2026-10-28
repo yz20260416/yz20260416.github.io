@@ -16,264 +16,108 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Zanzibar's top attractions. It presents a structured, informative overview of ten key sites, including descriptions, ticket prices, and visiting tips, followed by a practical tips section. The design is clean and scannable, using a table for the main content and a styled list for practical advice, making it suitable for embedding in a travel website.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zanzibar Travel Guide · Top 10 Attractions</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            <h2>Zanzibar: Top 10 Must-See Attractions</h2>
+<p>Zanzibar, an archipelago off the coast of Tanzania, blends Swahili, Arab, Indian, and European influences into a distinctive cultural landscape. From the labyrinthine alleys of Stone Town to the spice farms of the interior and the turquoise waters of the northern beaches, the islands offer a compact but varied itinerary. Below are ten attractions worth prioritizing, with practical details on tickets, hours, and how to make the most of each visit. Prices are given in Tanzanian shillings (TZS) with approximate US dollar equivalents, and hours can shift seasonally or after Ramadan, so confirm locally before setting out.</p>
 
-    body {
-      background: #f7f4ef;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      line-height: 1.6;
-      color: #1e2b2f;
-      padding: 2rem 1rem;
-      display: flex;
-      justify-content: center;
-    }
+<ol>
+  <li>
+    <h3>Stone Town (Mji Mkongwe)</h3>
+    <p>The historic core of Zanzibar City is a UNESCO World Heritage Site and the archipelago's cultural heart. Its narrow lanes reveal carved wooden doors, coral-stone merchant houses, mosques, churches, and bustling markets. Walking the old town is free; individual sights such as the Old Fort, the House of Wonders (currently closed for restoration), and the former slave market site at the Anglican Cathedral charge small fees or ask for donations.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Free to walk; individual sites TZS 5,000–10,000 (approx. US$2–4)</td></tr>
+      <tr><th>Opening hours</th><td>Public streets open 24 hours; sights generally 8:00–18:00</td></tr>
+      <tr><th>Visiting tips</th><td>Dress modestly (shoulders and knees covered), especially near mosques. Hire a licensed guide (TZS 30,000–50,000 for a half-day) to navigate the alleys and hear the history. Visit early morning or late afternoon to avoid heat and crowds.</td></tr>
+    </table>
+  </li>
 
-    .guide-card {
-      max-width: 1200px;
-      width: 100%;
-      background: #ffffff;
-      border-radius: 32px;
-      box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.2);
-      padding: 2rem 2rem 2.5rem;
-      border: 1px solid #e6dfd6;
-    }
+  <li>
+    <h3>Jozani Chwaka Bay National Park</h3>
+    <p>Zanzibar's only national park protects a mangrove and groundwater forest that is home to the endemic Zanzibar red colobus monkey, along with Sykes' monkeys, duikers, and diverse birdlife. A boardwalk crosses the mangrove swamp, and guided forest walks are included with entry.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Approx. TZS 25,000–35,000 (US$10–14) for non-resident adults; children reduced</td></tr>
+      <tr><th>Opening hours</th><td>Daily, roughly 7:30–17:30</td></tr>
+      <tr><th>Visiting tips</th><td>Go early for the best wildlife sightings. Keep a respectful distance from the colobus monkeys and never feed them. Wear closed shoes and bring insect repellent. The park is about 35 km southeast of Stone Town and easily combined with a spice farm visit.</td></tr>
+    </table>
+  </li>
 
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0f3b3f;
-      margin-top: 0.5rem;
-      margin-bottom: 0.75rem;
-      border-left: 6px solid #d4a373;
-      padding-left: 1.25rem;
-      line-height: 1.2;
-    }
+  <li>
+    <h3>Spice Farms (Kizimbani and Kidichi)</h3>
+    <p>Zanzibar was once the world's leading producer of cloves, and spice tours remain a signature experience. Guides lead visitors through plantations of cloves, cinnamon, nutmeg, vanilla, cardamom, and black pepper, explaining their cultivation and traditional medicinal uses, often ending with a tasting and the chance to buy fresh spices.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Approx. TZS 20,000–30,000 (US$8–12) per person, including guide</td></tr>
+      <tr><th>Opening hours</th><td>Daily, generally 8:00–17:00</td></tr>
+      <tr><th>Visiting tips</th><td>Book through a reputable operator or your hotel. Bring cash for spice purchases and a hat for sun. Tours last one to two hours; combine with Jozani or a rural village visit for a full-day excursion.</td></tr>
+    </table>
+  </li>
 
-    .intro {
-      font-size: 1.1rem;
-      color: #2d4a4e;
-      margin-bottom: 2rem;
-      padding: 0 0.25rem;
-      max-width: 85ch;
-    }
+  <li>
+    <h3>Prison Island (Changuu Island)</h3>
+    <p>A short boat ride from Stone Town, Changuu was built as a prison for rebellious slaves and later used as a quarantine station. Today it is best known for its colony of Aldabra giant tortoises, some over a century old, and for its beaches and snorkeling offshore.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Island entry approx. TZS 10,000–15,000 (US$4–6); boat transfer TZS 30,000–50,000 return, often arranged with a guide</td></tr>
+      <tr><th>Opening hours</th><td>Daily, roughly 8:30–17:00; boats run from Stone Town waterfront</td></tr>
+      <tr><th>Visiting tips</th><td>Agree the boat price and return time before departure. Do not ride or crowd the tortoises. Bring snorkeling gear and water; facilities are limited. Combine with a Stone Town walking tour in the morning.</td></tr>
+    </table>
+  </li>
 
-    .table-wrapper {
-      overflow-x: auto;
-      margin: 1.75rem 0 2rem;
-      border-radius: 18px;
-      border: 1px solid #e2d9cf;
-      background: #fefcf9;
-    }
+  <li>
+    <h3>Nungwi Beach</h3>
+    <p>On the northern tip of Unguja, Nungwi is one of Zanzibar's most popular beaches thanks to its swimmable waters at all tides, white sand, and lively village atmosphere. It is a hub for dhow-building, sunset cruises, diving, and snorkeling, with a wide range of restaurants and bars.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Free public beach; activities priced separately (sunset dhow cruise approx. TZS 50,000–80,000)</td></tr>
+      <tr><th>Opening hours</th><td>Open 24 hours; activity operators generally 8:00–18:00</td></tr>
+      <tr><th>Visiting tips</th><td>Swim within marked areas and be aware of currents. Respect local dress when walking through the village away from the beach. Book diving and snorkeling with established operators and check equipment before departure.</td></tr>
+    </table>
+  </li>
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      min-width: 780px;
-    }
+  <li>
+    <h3>Kendwa Beach</h3>
+    <p>Neighboring Nungwi, Kendwa is known for its wide, calm bay and tidal conditions that allow swimming throughout the day. It hosts the monthly Full Moon Party, a large beach event, and offers a quieter, resort-oriented alternative to Nungwi's busier strip.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Free public beach; Full Moon Party entry varies (often TZS 20,000–50,000)</td></tr>
+      <tr><th>Opening hours</th><td>Open 24 hours; beach bars and restaurants typically 10:00 until late</td></tr>
+      <tr><th>Visiting tips</th><td>Book accommodation well ahead around full moon. The beach is calmer for families than some east-coast spots. Arrange transport back to Stone Town in advance, as night driving is best avoided.</td></tr>
+    </table>
+  </li>
 
-    th {
-      background: #0f3b3f;
-      color: #f2e9de;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      padding: 1rem 1rem;
-      text-align: left;
-      white-space: nowrap;
-    }
+  <li>
+    <h3>Mnemba Atoll Marine Conservation Area</h3>
+    <p>Off the northeast coast near Matemwe, Mnemba Atoll is Zanzibar's premier snorkeling and diving destination, with coral gardens, turtles, reef fish, and seasonal dolphins. The atoll surrounds a private island; day visitors use boats from Matemwe and nearby villages.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Marine conservation fee approx. TZS 10,000–20,000 (US$4–8) plus boat and guide, typically TZS 60,000–120,000 per person for a half-day trip</td></tr>
+      <tr><th>Opening hours</th><td>Day trips generally depart 8:00–9:00 and return by 13:00–15:00; no access to the private island</td></tr>
+      <tr><th>Visiting tips</th><td>Book with a licensed operator who provides life jackets and reef-safe practices. Do not touch coral or chase marine life. Sea conditions can be rough; trips may be cancelled in bad weather. Bring sunscreen, a rash guard, and water.</td></tr>
+    </table>
+  </li>
 
-    td {
-      padding: 1rem 1rem;
-      vertical-align: top;
-      border-bottom: 1px solid #e6dfd6;
-      background: #ffffff;
-    }
+  <li>
+    <h3>The Old Fort (Ngome Kongwe), Stone Town</h3>
+    <p>Built by Omani Arabs around 1700, the Old Fort is Stone Town's oldest surviving building. Its thick coral-stone walls enclose a courtyard that hosts an amphitheater, craft stalls, and cultural performances, and it is a convenient orientation point beside the House of Wonders and Forodhani Gardens.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Free entry; performances and some events ticketed</td></tr>
+      <tr><th>Opening hours</th><td>Daily, roughly 8:00–18:00</td></tr>
+      <tr><th>Visiting tips</th><td>Visit in the late afternoon and continue to Forodhani Gardens for the evening food stalls. Bargain politely at craft stalls. The fort is a good starting point for a self-guided Stone Town walk.</td></tr>
+    </table>
+  </li>
 
-    tr:last-child td {
-      border-bottom: none;
-    }
+  <li>
+    <h3>Forodhani Gardens Night Market</h3>
+    <p>This waterfront park in Stone Town transforms each evening into a food market where vendors grill skewers of seafood and meat, press fresh sugarcane juice, and sell Zanzibar pizza and urojo soup. It is as much a social ritual as a meal, popular with locals and visitors alike.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Free entry; food typically TZS 3,000–15,000 (US$1–6) per item</td></tr>
+      <tr><th>Opening hours</th><td>Daily from around 17:30 until roughly 22:00, busiest after dark</td></tr>
+      <tr><th>Visiting tips</th><td>Choose stalls with high turnover and watch food being cooked to order. Carry small notes and coins. It is busiest around 19:00–21:00; go earlier for a calmer experience. Keep valuables secure in crowds.</td></tr>
+    </table>
+  </li>
 
-    .attraction-name {
-      font-weight: 700;
-      color: #0f3b3f;
-      font-size: 1rem;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .desc {
-      color: #2f4b4f;
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
-
-    .price {
-      font-weight: 600;
-      color: #a45e2e;
-      white-space: nowrap;
-    }
-
-    .tip {
-      font-size: 0.88rem;
-      color: #4b5e61;
-      font-style: italic;
-      line-height: 1.45;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #eae3d9;
-      padding: 0.2rem 0.7rem;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #0f3b3f;
-      letter-spacing: 0.02em;
-      margin-top: 0.3rem;
-    }
-
-    .practical-tips {
-      background: #f2ede6;
-      border-radius: 24px;
-      padding: 1.8rem 2rem;
-      margin-top: 2.2rem;
-      border: 1px solid #ddd2c4;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0f3b3f;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.7rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem 1.8rem;
-    }
-
-    .tip-item {
-      background: #ffffffd9;
-      padding: 0.9rem 1.1rem;
-      border-radius: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-      border-left: 4px solid #d4a373;
-    }
-
-    .tip-item strong {
-      display: block;
-      font-size: 0.98rem;
-      color: #1e3b3f;
-      margin-bottom: 0.25rem;
-    }
-
-    .tip-item span {
-      font-size: 0.9rem;
-      color: #3a5559;
-    }
-
-    .note {
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      color: #5a6b6d;
-      background: #ffffffb3;
-      padding: 0.75rem 1.2rem;
-      border-radius: 40px;
-      display: inline-block;
-    }
-
-    @media (max-width: 600px) {
-      .guide-card {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-        padding-left: 0.9rem;
-      }
-      .intro {
-        font-size: 1rem;
-      }
-      .practical-tips {
-        padding: 1.3rem 1.2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-card">
-    <!-- H2: Zanzibar Top 10 Attractions -->
-    <h2>Zanzibar Top 10 Attractions</h2>
-
-    <!-- Introduction paragraph -->
-    <p class="intro">
-      Zanzibar, the spice island off Tanzania’s coast, blends Swahili, Arab, Indian and European influences into a 
-      captivating travel destination. From the labyrinthine alleys of Stone Town to the powder-white beaches of 
-      Nungwi and the rare red colobus monkeys of Jozani Forest, here are the ten attractions that define the island — 
-      with current ticket prices (2025) and practical tips to help you plan a smooth, memorable trip.
-    </p>
-
-    <!-- Main content: structured table -->
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Attraction</th>
-            <th>Description</th>
-            <th>Ticket price (approx.)</th>
-            <th>Visiting tips</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- 1. Stone Town -->
-          <tr>
-            <td>
-              <span class="attraction-name">1. Stone Town</span>
-              <span class="badge">UNESCO</span>
-            </td>
-            <td class="desc">
-              Historic heart of Zanzibar City — a maze of coral-stone houses, carved doors, bustling bazaars and 
-              the old slave market. Don’t miss the Anglican Cathedral, Darajani Market and Forodhani Gardens at sunset.
-            </td>
-            <td class="price">Free to wander;<br>guided walking tour $15–25</td>
-            <td class="tip">
-              Wear comfortable shoes — alleys are uneven. Start early to avoid heat. Forodhani food stalls are 
-              lively after 6 pm; try the Zanzibar pizza.
-            </td>
-          </tr>
-
-          <!-- 2. Nungwi Beach -->
-          <tr>
-            <td>
-              <span class="attraction-name">2. Nungwi Beach</span>
-            </td>
-            <td class="desc">
-              Northern tip beach famous for its turquoise water, soft sand and spectacular sunsets. 
-              Swimming
+  <li>
+    <h3>Jambiani and the Southeast Coast</h3>
+    <p>The southeast coast, including Jambiani and Paje, offers long white-sand beaches, dramatic tides, and a strong seaweed-farming culture. Paje is a center for kitesurfing thanks to steady winds and shallow lagoons, while Jambiani is quieter and well suited to village walks and relaxing.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Free public beaches; kitesurfing lessons typically TZS 150,000–250,000 (US$60–100) per session</td></tr>
+      <tr><th>Opening
+            
+            
             
             <section class="related-links">
                 <h3>More Zanzibar Guides</h3>

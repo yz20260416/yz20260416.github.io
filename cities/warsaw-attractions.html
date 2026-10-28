@@ -16,207 +16,30 @@
     
     <main>
         <article>
-            Here is a comprehensive travel guide section for Warsaw, formatted as HTML.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Warsaw Travel Guide · Top 10 Attractions</title>
-  <style>
-    /* clean, informative styling */
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      line-height: 1.6;
-      color: #1e1e2f;
-      background: #fafafc;
-      margin: 0;
-      padding: 2rem 1rem;
-    }
-    .guide-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 24px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-      padding: 2rem 2rem 2.5rem;
-      border: 1px solid #eaeef5;
-    }
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #0b2b4a;
-      border-left: 6px solid #c8102e;
-      padding-left: 1rem;
-      margin-top: 0.2rem;
-      margin-bottom: 1rem;
-    }
-    .intro {
-      font-size: 1.1rem;
-      color: #2d3e50;
-      margin-bottom: 2rem;
-      padding: 0 0 0 1.2rem;
-      border-left: 3px solid #d0d9e6;
-    }
-    .attraction-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      margin: 1.5rem 0 2rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .attraction-table th {
-      background: #0b2b4a;
-      color: white;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      font-size: 0.8rem;
-      padding: 1rem 0.8rem;
-      text-align: left;
-    }
-    .attraction-table td {
-      background: white;
-      padding: 1rem 0.8rem;
-      border-bottom: 1px solid #e6ecf3;
-      vertical-align: top;
-    }
-    .attraction-table tr:last-child td {
-      border-bottom: none;
-    }
-    .attraction-table tr:hover td {
-      background: #f5f9ff;
-    }
-    .attraction-table .price-col {
-      font-weight: 500;
-      white-space: nowrap;
-      color: #1e4a6b;
-    }
-    .attraction-table .name-col {
-      font-weight: 600;
-      color: #0b2b4a;
-    }
-    .tip-badge {
-      display: inline-block;
-      background: #f0f4fa;
-      border-radius: 20px;
-      padding: 0.2rem 0.7rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #1f4e7a;
-      margin-top: 6px;
-      white-space: nowrap;
-    }
-    .practical-tips {
-      background: #f2f7fc;
-      border-radius: 20px;
-      padding: 1.8rem 2rem;
-      margin-top: 2rem;
-      border: 1px solid #d9e5f0;
-    }
-    .practical-tips h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #0b2b4a;
-      margin-top: 0;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.7rem;
-    }
-    .practical-tips ul {
-      margin: 0.5rem 0 0;
-      padding-left: 1.5rem;
-      columns: 1;
-    }
-    .practical-tips li {
-      margin-bottom: 0.7rem;
-      break-inside: avoid;
-    }
-    .practical-tips strong {
-      color: #0b2b4a;
-    }
-    @media (max-width: 700px) {
-      .guide-container { padding: 1.5rem 1rem; }
-      .attraction-table { font-size: 0.85rem; }
-      .attraction-table th, .attraction-table td { padding: 0.7rem 0.5rem; }
-      .practical-tips { padding: 1.2rem; }
-      h2 { font-size: 1.8rem; }
-    }
-    .note {
-      font-size: 0.9rem;
-      color: #4a5b6b;
-      margin-top: 0.5rem;
-      font-style: italic;
-    }
-  </style>
-</head>
-<body>
-<div class="guide-container">
-
-  <h2>Warsaw Top 10 Attractions</h2>
-  
-  <p class="intro">
-    Warsaw is a phoenix city — rebuilt from rubble into a vibrant European capital where history meets modernity. 
-    From the meticulously restored Old Town (a UNESCO site) to world-class museums and lush parks, 
-    the city offers a wealth of experiences for every traveler. Below are the top 10 attractions, 
-    with essential details on ticket prices and practical tips to help you plan a smooth visit.
-  </p>
-
-  <!-- structured main content: table + short descriptions -->
-  <table class="attraction-table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Attraction</th>
-        <th>Description</th>
-        <th>Ticket price (approx.)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td class="name-col">Old Town (Stare Miasto)</td>
-        <td>UNESCO-listed heart of Warsaw, painstakingly reconstructed after WWII. Cobblestone lanes, colorful facades, the Royal Castle, and vibrant market square. Free to wander; castle entry is extra.</td>
-        <td class="price-col">Free (Royal Castle: 30–70 PLN)</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td class="name-col">Royal Castle (Zamek Królewski)</td>
-        <td>Baroque palace on Castle Square, former residence of Polish kings. Rich interiors, art collections, and the famous Canaletto Room. Book online to skip lines.</td>
-        <td class="price-col">70 PLN (adult); 50 PLN reduced</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td class="name-col">POLIN Museum of the History of Polish Jews</td>
-        <td>Modern, award-winning museum on the site of the former Warsaw Ghetto. Powerful 1,000-year history of Polish Jews, stunning architecture. Allow 3+ hours.</td>
-        <td class="price-col">45 PLN (adult); 30 PLN reduced</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td class="name-col">Warsaw Uprising Museum</td>
-        <td>Immersive museum dedicated to the 1944 uprising. Atmospheric exhibits, original artifacts, a replica bomber, and a moving film. A must for history buffs.</td>
-        <td class="price-col">35 PLN (adult); 30 PLN reduced</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td class="name-col">Łazienki Park & Palace on the Isle</td>
-        <td>Warsaw’s largest park (76 ha) with a neoclassical palace, amphitheater, and free-roaming peacocks. Chopin concerts in summer. Perfect for a leisurely stroll.</td>
-        <td class="price-col">Park free; Palace: 40 PLN (adult); 20 PLN reduced</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td class="name-col">Palace of Culture and Science (PKiN)</td>
-        <td>Stalin-era skyscraper, iconic symbol of Warsaw. 30th-floor terrace offers panoramic views. Includes theaters, museums, and a swimming pool. A classic photo stop.</td>
-        <td class="price-col">Viewing terrace: 
+            <h2>Top Attractions in Warsaw</h2>
+<p>Warsaw blends reconstructed medieval charm with bold modern culture, from the Gothic towers and city walls of the Old Town to avant-garde galleries and riverside promenades. Opera, contemporary art, historic markets and leafy districts all sit within reach of the city centre. Here are ten attractions most likely to appeal to an international visitor, drawn from the city's landmark, cultural and neighbourhood highlights.</p>
+<ol>
+  <li><strong>City Walls of Warsaw</strong> — The city walls around Warsaw Old Town comprise an inner and outer line with several gates, originally raised between the 13th and 16th centuries and rebuilt in 1950–1963. The best-preserved fragments run parallel to Podwale Street, from the Royal Castle to the Barbican and on to the Vistula Embankment. <em>Tip: Walk this stretch in the early morning to enjoy the fortifications before the Old Town crowds arrive.</em></li>
+  <li><strong>Knight Tower</strong> — This historic Gothic defensive tower on Rycerska Street sits in the inner city wall of the Old Town between Piekarska and Wąski Dunaj Streets, built in the 14th century before 1339 and restored to its historic form in 1958–1963. <em>Tip: Combine it with a wander through the narrow lanes of the Old Town, just steps from the Barbican.</em></li>
+  <li><strong>Grand Theatre, Warsaw (Teatr Wielki – Opera Narodowa)</strong> — This theatre and opera complex on historic Theatre Square is home to the Polish National Ballet and seats over 2,000, having been inaugurated in 1833 with Rossini's The Barber of Seville. <em>Tip: Book opera or ballet tickets in advance, or simply admire the monumental facade and Theatre Square.</em></li>
+  <li><strong>National Philharmonic, Warsaw</strong> — Located at 5 Jasna Street, this cultural institution was built between 1900 and 1901 and hosts the Warsaw National Philharmonic Orchestra, as well as the International Chopin Piano Competition since 1955. <em>Tip: Check the concert calendar for evening performances; Jasna Street is a short walk from the Palace of Culture area.</em></li>
+  <li><strong>Greetings from Jerusalem Avenue</strong> — This site-specific artwork by Joanna Rajkowska is a life-size artificial date palm erected on 12 December 2002 at the Charles de Gaulle Roundabout, where Jerusalem Avenue meets New World Street. <em>Tip: It is a quick photo stop along the Royal Route; visit at dusk when the roundabout is lit up.</em></li>
+  <li><strong>Foksal Gallery</strong> — Established in 1966, this non-commercial gallery space shows works by contemporary avant-garde artists. <em>Tip: Check opening hours before visiting, as gallery schedules vary; it pairs well with a stroll along Nowy Świat.</em></li>
+  <li><strong>Koszyki Hall (Hala Koszyki)</strong> — This historic market and food hall at 63 Koszykowa Street first opened in 1909 and has been redeveloped into a mixed-use facility with offices, bookstores, elegant bars and gourmet restaurants in a heritage Art Nouveau arcade. <em>Tip: Come hungry at lunchtime or early evening to sample the food stalls without the peak crowds.</em></li>
+  <li><strong>Magdalena Abakanowicz Bridge</strong> — This pedestrian and bicycle bridge across the Vistula is 452 metres long and 16.3 metres wide, connecting Ulica Stefana Okrzei and Ulica Karowa; construction began in 2022 and it opened on 28 March 2024. <em>Tip: Cross at sunset for river views toward the Old Town skyline; it links the Praga and Powiśle districts.</em></li>
+  <li><strong>Beaches of Warsaw</strong> — Warsaw's riverside beaches became popular for sunbathing during the interwar period, when areas near the Miedzeszyński Embankment hosted wooden pavilions and changing rooms. Today's functional beaches offer a relaxed riverside escape in summer. <em>Tip: Visit on a warm weekday afternoon in summer; bring your own towel and check river conditions.</em></li>
+  <li><strong>Potocki Mausoleum</strong> — This Gothic Revival mausoleum in the Wilanów district, next to Wilanów Palace at 10 Potockiego Street, was designed by Enrico Marconi and built between 1834 and 1836 as the symbolic grave of Stanisław Kostka Potocki. <em>Tip: Pair it with a visit to Wilanów Palace and its gardens, allowing a half day for the district.</em></li>
+</ol>
+<h3>Practical tips</h3>
+<ul>
+  <li>Many of the Old Town sights — the city walls, Knight Tower and the Royal Route — are outdoors and free; start early to avoid crowds.</li>
+  <li>Book opera, ballet and philharmonic tickets online in advance, especially around the Chopin Piano Competition season.</li>
+  <li>Use trams and buses to reach outlying spots such as Wilanów and the riverside beaches; the city centre is best explored on foot.</li>
+  <li>Check individual gallery and venue opening hours, as smaller cultural spaces keep limited schedules.</li>
+  <li>Summer is ideal for the Vistula beaches and the pedestrian bridge, while indoor venues suit cooler months.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Warsaw Guides</h3>

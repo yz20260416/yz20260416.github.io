@@ -16,232 +16,112 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Fiji's top attractions. It presents ten key destinations with descriptions, ticket prices, and practical visiting tips in a clean, structured format suitable for travelers.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiji Top 10 Attractions – Travel Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: #f5f9fc;
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            line-height: 1.6;
-            color: #1e2b3a;
-            padding: 2rem 1rem;
-        }
-        .guide-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 32px;
-            box-shadow: 0 20px 40px -12px rgba(0, 30, 50, 0.25);
-            padding: 2.5rem 2rem;
-            border: 1px solid #d9eaf2;
-        }
-        h2 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: #0a4b6e;
-            letter-spacing: -0.02em;
-            border-left: 8px solid #1e9bd7;
-            padding-left: 1.2rem;
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-        }
-        .intro {
-            font-size: 1.18rem;
-            background: #e8f3fa;
-            padding: 1.5rem 2rem;
-            border-radius: 24px;
-            margin-bottom: 2.5rem;
-            color: #0b3b52;
-            border: 1px solid #cbe2f0;
-            box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.8);
-        }
-        .intro p {
-            margin-bottom: 0.75rem;
-        }
-        .intro p:last-child {
-            margin-bottom: 0;
-        }
-        .attractions-table-wrap {
-            overflow-x: auto;
-            margin: 2rem 0 1.5rem;
-            border-radius: 24px;
-            box-shadow: 0 6px 18px rgba(0, 40, 60, 0.08);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.98rem;
-            background: white;
-            min-width: 860px;
-        }
-        th {
-            background: #0a4b6e;
-            color: white;
-            font-weight: 600;
-            padding: 1rem 1rem;
-            text-align: left;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            white-space: nowrap;
-        }
-        td {
-            padding: 1rem 1rem;
-            border-bottom: 1px solid #d9eaf2;
-            vertical-align: top;
-            background: #ffffff;
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        tr:hover td {
-            background: #f2f9ff;
-        }
-        .attraction-name {
-            font-weight: 700;
-            color: #0a4b6e;
-            font-size: 1.05rem;
-            display: block;
-            margin-bottom: 6px;
-        }
-        .attraction-desc {
-            color: #2e4a5e;
-            font-size: 0.94rem;
-            line-height: 1.55;
-        }
-        .price-badge {
-            display: inline-block;
-            background: #e2f0f9;
-            color: #0a4b6e;
-            font-weight: 600;
-            padding: 0.3rem 0.8rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            border: 1px solid #b8d8ec;
-        }
-        .price-badge.free {
-            background: #dff0e4;
-            color: #1b6b3f;
-            border-color: #b2dcc3;
-        }
-        .tip-list {
-            list-style: none;
-            margin-top: 0.5rem;
-        }
-        .tip-list li {
-            font-size: 0.92rem;
-            margin-bottom: 0.45rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #1f4058;
-        }
-        .tip-list li::before {
-            content: "✔️";
-            position: absolute;
-            left: 0;
-            font-size: 0.85rem;
-            color: #1e9bd7;
-        }
-        .practical-tips {
-            background: #f0f7fc;
-            border-radius: 28px;
-            padding: 2rem 2rem 1.8rem;
-            margin-top: 2.8rem;
-            border: 1px solid #cbe2f0;
-        }
-        .practical-tips h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0a4b6e;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .practical-tips h3::before {
-            content: "🧭";
-            font-size: 2rem;
-        }
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .tip-card {
-            background: white;
-            border-radius: 20px;
-            padding: 1.4rem 1.4rem 1.2rem;
-            box-shadow: 0 4px 10px rgba(0, 40, 60, 0.04);
-            border: 1px solid #d9eaf2;
-        }
-        .tip-card h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #0a4b6e;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .tip-card p, .tip-card ul {
-            font-size: 0.95rem;
-            color: #1f4058;
-        }
-        .tip-card ul {
-            padding-left: 1.2rem;
-            margin-top: 0.5rem;
-        }
-        .tip-card li {
-            margin-bottom: 0.35rem;
-        }
-        .note {
-            margin-top: 1.8rem;
-            font-size: 0.9rem;
-            color: #4d6a7e;
-            text-align: center;
-            border-top: 1px dashed #b8d8ec;
-            padding-top: 1.5rem;
-        }
-        @media (max-width: 700px) {
-            .guide-container { padding: 1.5rem 1rem; }
-            h2 { font-size: 1.9rem; }
-            .intro { padding: 1.2rem; font-size: 1rem; }
-            .practical-tips { padding: 1.5rem 1rem; }
-            .practical-tips h3 { font-size: 1.5rem; }
-        }
-    </style>
-</head>
-<body>
-    <div class="guide-container">
-        <!-- H2 heading -->
-        <h2>Fiji Top 10 Attractions</h2>
-
-        <!-- Introduction paragraph -->
-        <div class="intro">
-            <p>🌴 <strong>Welcome to Fiji – the heart of the South Pacific.</strong> With over 330 islands, pristine coral reefs, and a vibrant Melanesian culture, Fiji offers experiences that range from adrenaline-pumping adventures to serene escapes. Whether you're snorkeling with manta rays, hiking through cloud forests, or simply unwinding on a white-sand beach, the islands deliver unforgettable moments.</p>
-            <p>This curated guide covers the <strong>top 10 attractions</strong> across Fiji, complete with descriptions, current ticket prices (in Fijian dollars, with approximate USD equivalents), and practical tips to help you plan a smooth and enriching journey. Prices are indicative and may vary by season or operator — always check official sites before booking.</p>
-        </div>
-
-        <!-- Main content: structured table with descriptions, prices, and visiting tips -->
-        <div class="attractions-table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Attraction & Description</th>
-                        <th>Ticket Price (FJD / USD*)</th>
-                       
+            <h2>Top 10 Must-See Attractions in Fiji</h2>
+<p>Fiji is an archipelago of more than 330 islands in the South Pacific, known for its coral reefs, white-sand beaches, volcanic peaks, and vibrant Fijian culture. Whether you base yourself in Nadi, Denarau, the Mamanuca Islands, or the Yasawas, these ten attractions cover the country's best natural and cultural highlights. Prices and hours below are typical at the time of writing and can change seasonally, so confirm locally before you go.</p>
+<ol>
+  <li>
+    <h3>Mamanuca Islands</h3>
+    <p>A chain of about 20 islands southwest of Nadi, the Mamanucas are Fiji's most accessible island escape, featured in films such as <em>Cast Away</em>. Expect turquoise lagoons, fringing reefs, and resorts ranging from backpacker to luxury. Day cruises depart from Denarau and Port Denarau Marina.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Day cruises typically FJD 150–350 per adult; island resort day passes vary</td></tr>
+      <tr><th>Opening hours</th><td>Day trips usually depart 8:00–9:00 and return 16:00–18:00; resorts operate daily</td></tr>
+      <tr><th>Visiting tips</th><td>Book in advance in peak season (June–September); bring reef-safe sunscreen, cash for island fees, and a light rain jacket.</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Yasawa Islands</h3>
+    <p>A volcanic archipelago northwest of Nadi, the Yasawas offer dramatic peaks, caves, and some of Fiji's clearest water. The Yasawa Flyer ferry links the islands daily, making island-hopping easy for independent travelers.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Yasawa Flyer passes from around FJD 250–400 depending on route; resort day passes FJD 50–150</td></tr>
+      <tr><th>Opening hours</th><td>Ferry departs Port Denarau daily in the morning; resort facilities generally 7:00–22:00</td></tr>
+      <tr><th>Visiting tips</th><td>Buy a multi-day ferry pass for flexibility; carry cash as ATMs are scarce; village visits require modest dress (sarongs recommended).</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Sabeto Hot Springs and Mud Pool</h3>
+    <p>Near Nadi, this natural hot spring and mud pool is a popular half-day excursion. Visitors coat themselves in mineral-rich mud, let it dry, then rinse off in the warm spring pools. It is a relaxed, family-friendly experience.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Around FJD 30–50 per adult; children discounted</td></tr>
+      <tr><th>Opening hours</th><td>Daily, roughly 8:00–17:00</td></tr>
+      <tr><th>Visiting tips</th><td>Bring a towel and a change of clothes; wear dark swimwear as mud can stain; combine with a Nadi sightseeing tour.</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Garden of the Sleeping Giant</h3>
+    <p>Founded by actor Raymond Burr near Nadi, this lush botanical garden sits at the foot of the Sleeping Giant mountain. It features orchids, native plants, and shaded walking trails with mountain views.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Around FJD 18–25 per adult; children reduced</td></tr>
+      <tr><th>Opening hours</th><td>Monday–Saturday 9:00–17:00; often closed Sunday</td></tr>
+      <tr><th>Visiting tips</th><td>Go early to avoid heat; bring insect repellent; the garden pairs well with Sabeto Hot Springs on the same road.</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Sri Siva Subramaniya Temple, Nadi</h3>
+    <p>The largest Hindu temple in the Southern Hemisphere, this colorful Dravidian-style temple in Nadi is a striking cultural landmark built by Indian indentured laborers' descendants. Photography inside the main temple is restricted.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Free entry; donations welcome</td></tr>
+      <tr><th>Opening hours</th><td>Daily, approximately 5:30–19:00 (closed during certain prayer times)</td></tr>
+      <tr><th>Visiting tips</th><td>Dress modestly (shoulders and knees covered); remove shoes before entering; be respectful during worship.</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Denarau Island and Port Denarau</h3>
+    <p>Fiji's main resort and marina hub, Denarau offers golf, spas, restaurants, and the departure point for most island cruises. The marina is the gateway to the Mamanucas and Yasawas.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Free to walk the marina; activities and cruises priced separately</td></tr>
+      <tr><th>Opening hours</th><td>Marina shops and restaurants generally 9:00–22:00</td></tr>
+      <tr><th>Visiting tips</th><td>Use the Bula Bus for easy transport around the island; book cruises at the marina; sunset is best viewed from the waterfront.</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Sigatoka Sand Dunes National Park</h3>
+    <p>Fiji's first national park protects a dramatic coastal dune system on the Coral Coast, with archaeological sites and endemic forest. Walking trails range from short loops to longer hikes with ocean views.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Around FJD 10–20 per adult; guided walks extra</td></tr>
+      <tr><th>Opening hours</th><td>Daily, approximately 8:00–17:00</td></tr>
+      <tr><th>Visiting tips</th><td>Wear sturdy shoes and a hat; carry water; the dunes are exposed—avoid midday heat; combine with Sigatoka town and market.</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Kula Wild Adventure Park, Coral Coast</h3>
+    <p>A wildlife park near Sigatoka focused on conservation of Fiji's native species, including the crested iguana and Fiji's endemic birds. It also offers zipline and adventure activities for families.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Entry around FJD 40–60 per adult; zipline and combo packages extra</td></tr>
+      <tr><th>Opening hours</th><td>Daily, roughly 9:00–17:00</td></tr>
+      <tr><th>Visiting tips</th><td>Allow 2–3 hours; good for families with children; check combo ticket prices online for savings.</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Bouma National Heritage Park, Taveuni</h3>
+    <p>On the "Garden Island" of Taveuni, Bouma protects rainforest, waterfalls, and coastal trails. The Lavena Coastal Walk and Tavoro (Bouma) Falls are highlights, with guided options available.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Park entry around FJD 20–30; guided walks and boat transfers extra</td></tr>
+      <tr><th>Opening hours</th><td>Daily, approximately 8:00–17:00</td></tr>
+      <tr><th>Visiting tips</th><td>Bring reef shoes for river crossings; hire a local guide for the coastal walk; Taveuni is reached by short domestic flight from Nadi or Suva.</td></tr>
+    </table>
+  </li>
+  <li>
+    <h3>Suva Municipal Market and Fiji Museum</h3>
+    <p>Fiji's capital offers a cultural counterpoint to the resorts. The bustling municipal market sells produce, kava, and handicrafts, while the Fiji Museum in Thurston Gardens documents the islands' history and anthropology.</p>
+    <table>
+      <tr><th>Ticket price</th><td>Market free; Fiji Museum entry around FJD 5–10</td></tr>
+      <tr><th>Opening hours</th><td>Market Monday–Saturday roughly 7:00–17:00; museum Monday–Saturday about 9:30–16:30, closed Sunday</td></tr>
+      <tr><th>Visiting tips</th><td>Visit the market in the morning for the best atmosphere; ask before photographing vendors; Suva is walkable in the central district.</td></tr>
+    </table>
+  </li>
+</ol>
+<h2>Practical Tips for Visiting Fiji</h2>
+<ul>
+  <li><strong>Best time to visit:</strong> May to October is the dry season with cooler, drier weather; November to April is wetter and cyclone season, with lower prices.</li>
+  <li><strong>Currency and payments:</strong> The Fijian dollar (FJD) is the local currency. Cards are widely accepted at resorts, but carry cash for markets, villages, and island fees.</li>
+  <li><strong>Getting around:</strong> Nadi International Airport is the main gateway. Domestic flights, ferries, and catamarans connect the islands; taxis and rental cars serve Viti Levu.</li>
+  <li><strong>Culture and etiquette:</strong> Dress modestly in villages, remove hats and sunglasses when entering a village, and ask permission before photographing people. Kava ceremonies are a customary welcome.</li>
+  <li><strong>Reef safety:</strong> Use reef-safe sunscreen, avoid touching coral, and check tide and current conditions before snorkeling or diving.</li>
+  <li><strong>Health:</strong> Drink bottled or filtered water on outer islands, use insect repellent, and consider travel insurance covering water activities.</li>
+  <li><strong>Prices and hours:</strong> Confirm admission fees and opening times directly with operators, as they vary by season and are subject to change.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Fiji Guides</h3>

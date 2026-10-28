@@ -16,234 +16,41 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Prague's top 10 attractions. It includes a clear introduction, a structured table with descriptions, ticket prices, and visiting tips for each attraction, followed by a practical tips section. The design is clean and informative, suitable for travelers planning a trip.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prague Top 10 Attractions · Travel Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f9f7f4;
-            color: #1e1b1a;
-            line-height: 1.5;
-            padding: 2rem 1rem;
-        }
-        .guide-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 28px;
-            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
-            padding: 2rem 2rem 2.5rem;
-            border: 1px solid #e8e2db;
-        }
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: #2c1e15;
-            border-left: 8px solid #b85b3a;
-            padding-left: 1.25rem;
-            margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        .intro {
-            font-size: 1.15rem;
-            color: #3b322c;
-            background: #fdfaf7;
-            padding: 1.25rem 1.75rem;
-            border-radius: 20px;
-            margin-bottom: 2.5rem;
-            border: 1px solid #e7ddd2;
-            box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.9);
-            line-height: 1.7;
-        }
-        .intro strong {
-            color: #b85b3a;
-            font-weight: 600;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2.5rem;
-            background: white;
-        }
-        th {
-            background: #2c1e15;
-            color: #f2e9e1;
-            font-weight: 600;
-            text-align: left;
-            padding: 1rem 1rem;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            text-transform: uppercase;
-            border-right: 1px solid #4a372b;
-        }
-        th:last-child {
-            border-right: none;
-        }
-        td {
-            padding: 1rem 1rem;
-            vertical-align: top;
-            border-bottom: 1px solid #ede7e1;
-            background: #ffffff;
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        .attraction-name {
-            font-weight: 700;
-            color: #2c1e15;
-            font-size: 1rem;
-            display: block;
-            margin-bottom: 0.2rem;
-        }
-        .attraction-name small {
-            font-weight: 400;
-            color: #8a7a6e;
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 2px;
-        }
-        .desc {
-            color: #3f3732;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        .price {
-            font-weight: 600;
-            color: #1e1b1a;
-            white-space: nowrap;
-        }
-        .price small {
-            font-weight: 400;
-            color: #7f6e60;
-            font-size: 0.75rem;
-            display: block;
-            margin-top: 3px;
-        }
-        .tips {
-            color: #4b3f37;
-            font-size: 0.88rem;
-            font-style: italic;
-            background: #fefcf9;
-            padding: 0.25rem 0.5rem;
-            border-radius: 8px;
-            display: inline-block;
-        }
-        .practical-tips {
-            background: #f2ede7;
-            border-radius: 24px;
-            padding: 2rem 2rem 1.75rem;
-            margin-top: 0.5rem;
-            border: 1px solid #d9cec2;
-        }
-        .practical-tips h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #2c1e15;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        .practical-tips h3::before {
-            content: "🧭";
-            font-size: 1.8rem;
-        }
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem 2rem;
-        }
-        .tip-item {
-            background: #ffffffd9;
-            backdrop-filter: blur(2px);
-            padding: 1.2rem 1.4rem;
-            border-radius: 18px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e4d9cf;
-        }
-        .tip-item h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #b85b3a;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .tip-item p {
-            font-size: 0.93rem;
-            color: #3b322c;
-            line-height: 1.6;
-        }
-        .tip-item ul {
-            padding-left: 1.2rem;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: #3b322c;
-        }
-        .tip-item li {
-            margin-bottom: 0.35rem;
-        }
-        .footnote {
-            margin-top: 1.8rem;
-            font-size: 0.85rem;
-            color: #7a6b5e;
-            text-align: center;
-            border-top: 1px dashed #cfc2b6;
-            padding-top: 1.2rem;
-        }
-        @media (max-width: 780px) {
-            .guide-container { padding: 1.5rem 1rem; }
-            h2 { font-size: 1.8rem; }
-            th, td { padding: 0.8rem 0.6rem; }
-            .attraction-name { font-size: 0.9rem; }
-        }
-    </style>
-</head>
-<body>
-<div class="guide-container">
-    <!-- H2 heading as required -->
-    <h2>Prague Top 10 Attractions</h2>
+            <h2>Top Attractions in Prague</h2>
+<p>Prague rewards visitors with a compact historic core where medieval bridges, Gothic churches, and bold modern architecture sit side by side. Beyond the famous Old Town, the city offers leafy nature reserves, a Renaissance star-shaped villa, and moving memorials to twentieth-century history. This guide highlights ten standout sights that give a well-rounded introduction to the Czech capital, from riverfront landmarks to quiet corners worth seeking out.</p>
 
-    <!-- Introduction paragraph -->
-    <div class="intro">
-        <p>✨ <strong>Prague, the City of a Hundred Spires</strong>, blends Gothic grandeur, Baroque charm, and modern vibrancy. From the world’s largest ancient castle to hidden beer gardens, the city offers unforgettable experiences. This guide covers the <strong>top 10 must-see attractions</strong> with current ticket prices (2025), concise descriptions, and smart visiting tips — so you can plan a seamless trip.</p>
-    </div>
+<ol>
+  <li><strong>Charles Bridge</strong> — This medieval stone arch bridge over the Vltava was begun in 1357 under King Charles IV and completed in the early 15th century, replacing the flood-damaged Judith Bridge. It remains Prague's most iconic crossing between the Old Town and Malá Strana.</li>
 
-    <!-- Main content: structured table with descriptions, prices, tips -->
-    <table>
-        <thead>
-            <tr>
-                <th>Attraction</th>
-                <th>Description</th>
-                <th>Ticket price (approx.)</th>
-                <th>Visiting tip</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- 1. Prague Castle -->
-            <tr>
-                <td>
-                    <span class="attraction-name">1. Prague Castle <small>Pražský hrad</small></span>
-                </td>
-                <td class="desc">World’s largest ancient castle complex (UNESCO). Includes St. Vitus Cathedral, Old Royal Palace, Golden Lane, and picturesque gardens. A full day of
+  <li><strong>Josefov (Jewish Quarter)</strong> — The former Jewish ghetto and now the smallest cadastral district of Prague, Josefov is enclosed by the Old Town and is often represented by the community's red-and-yellow Star of David flag. Its historic synagogues and old cemetery make it one of the city's most visited quarters.</li>
+
+  <li><strong>Clementinum</strong> — This large historic building complex in Prague houses the National Library of the Czech Republic and formerly hosted the National, University, and Technical libraries. It is a major landmark of the Old Town and a fine example of Prague's layered architectural heritage.</li>
+
+  <li><strong>Dancing House</strong> — Nicknamed "Ginger and Fred," this riverside building on Rašínovo nábřeží was designed by Croatian-Czech architect Vlado Milunić with Frank Gehry in 1992 and completed in 1996. Its playful, curving form makes it one of Prague's most recognizable modern structures.</li>
+
+  <li><strong>Lennon Wall</strong> — Located at Velkopřevorské náměstí in Malá Strana, this historic legal graffiti wall became a place of free expression after a mural of John Lennon was painted following his 1980 murder. It has long served as a site for demonstrations and commemorative messages.</li>
+
+  <li><strong>Church of Saint Procopius, Žižkov</strong> — This three-aisled Neo-Gothic parish church, dedicated to Bohemia's patron saint Procopius of Sázava, was designed by Josef Mocker and František Mikš. Its steeple dominates the Žižkov skyline alongside the later television tower.</li>
+
+  <li><strong>Memorial to the Victims of Communism</strong> — Unveiled in 2002, this series of statues at the base of Petřín hill in Malá Strana commemorates victims of the communist regime in Czechoslovakia between 1948 and 1989. The work is by sculptor Olbram Zoubek with architects Jan Kerel and Zdeněk Holzel.</li>
+
+  <li><strong>Letohrádek Hvězda (Star Summer Palace)</strong> — This Renaissance villa, whose name translates as "Star Villa," sits in a game reserve of the same name in the Liboc district, about 7 km west of the city centre. Its distinctive star-shaped plan and park setting make it a rewarding excursion.</li>
+
+  <li><strong>Divoká Šárka</strong> — This nature reserve on Prague's northwestern outskirts preserves a gorge named after the legendary warrior Šárka, with Slavic settlement traces dating to the 7th–9th centuries. It offers a wild, rocky escape from the city within easy reach of the centre.</li>
+
+  <li><strong>Lucerna Palace</strong> — This entertainment and shopping complex in the New Town was named a national cultural monument in 2017. It is a landmark of Prague's early 20th-century commercial architecture and a lively cultural hub.</li>
+</ol>
+
+<h3>Practical tips</h3>
+<ul>
+  <li>Cross Charles Bridge early in the morning to avoid the heaviest crowds and get clearer views of the river and statues.</li>
+  <li>Many Old Town sights, including Josefov and the Clementinum, are within easy walking distance of each other; plan a loop on foot rather than relying on transport.</li>
+  <li>For Divoká Šárka and Letohrádek Hvězda, allow extra travel time since both lie outside the historic centre; comfortable shoes are essential for the reserve's rocky paths.</li>
+  <li>The Lennon Wall and the Memorial to the Victims of Communism are free outdoor sights, best visited in daylight and paired with a walk through Malá Strana.</li>
+  <li>Check opening hours in advance for the Clementinum and Josefov, as library and synagogue access can be limited or ticketed.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Prague Guides</h3>

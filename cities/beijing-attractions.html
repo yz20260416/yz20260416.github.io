@@ -16,245 +16,72 @@
     
     <main>
         <article>
-            Here is the HTML code for a comprehensive travel guide section about Beijing's top attractions. It includes an introduction, a structured table with descriptions, ticket prices, and tips, followed by a practical tips section.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beijing Top 10 Attractions – Travel Guide</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
-      line-height: 1.6;
-      padding: 2rem 1rem;
-    }
-    .guide-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1);
-      padding: 2rem 1.5rem;
-    }
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0f172a;
-      border-left: 8px solid #b91c1c;
-      padding-left: 1.2rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-    .intro {
-      font-size: 1.15rem;
-      color: #334155;
-      margin-bottom: 2.5rem;
-      padding: 0 0.5rem;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 1.5rem;
-    }
-    .intro strong {
-      color: #b91c1c;
-      font-weight: 600;
-    }
-    .attractions-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 12px;
-      margin: 1.5rem 0 2rem;
-    }
-    .attractions-table th {
-      text-align: left;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #475569;
-      padding: 0.75rem 1rem;
-      background: #f1f5f9;
-      border-radius: 12px 12px 0 0;
-      border-bottom: 2px solid #cbd5e1;
-    }
-    .attractions-table td {
-      background: #ffffff;
-      padding: 1.2rem 1rem;
-      vertical-align: top;
-      border-bottom: 1px solid #e2e8f0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-    }
-    .attractions-table tr {
-      transition: all 0.15s ease;
-    }
-    .attractions-table tbody tr:hover td {
-      background: #fef9f9;
-      border-bottom-color: #fecaca;
-    }
-    .attr-name {
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: #0f172a;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .attr-desc {
-      font-size: 0.95rem;
-      color: #334155;
-      margin-top: 0.3rem;
-    }
-    .ticket-price {
-      font-weight: 600;
-      color: #b91c1c;
-      white-space: nowrap;
-      font-size: 1rem;
-    }
-    .ticket-note {
-      font-size: 0.8rem;
-      color: #64748b;
-      font-weight: 400;
-      display: block;
-      margin-top: 0.2rem;
-    }
-    .visit-tip {
-      font-size: 0.9rem;
-      background: #f1f5f9;
-      padding: 0.5rem 0.75rem;
-      border-radius: 12px;
-      color: #1e293b;
-      border-left: 3px solid #b91c1c;
-      margin-top: 0.3rem;
-    }
-    .practical-tips {
-      background: #f1f5f9;
-      border-radius: 20px;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 2.5rem;
-      border: 1px solid #e2e8f0;
-    }
-    .practical-tips h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.8rem;
-    }
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 0.5rem;
-    }
-    .tip-card {
-      background: #ffffff;
-      padding: 1.2rem 1.2rem 1rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-      border: 1px solid #e2e8f0;
-    }
-    .tip-card h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #b91c1c;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .tip-card p {
-      font-size: 0.95rem;
-      color: #334155;
-    }
-    .tip-card ul {
-      padding-left: 1.2rem;
-      font-size: 0.95rem;
-      color: #334155;
-    }
-    .tip-card li {
-      margin-bottom: 0.3rem;
-    }
-    .footnote {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 1.5rem;
-      text-align: center;
-      border-top: 1px dashed #cbd5e1;
-      padding-top: 1.2rem;
-    }
-    @media (max-width: 700px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      .attractions-table th {
-        display: none;
-      }
-      .attractions-table, .attractions-table tbody, .attractions-table tr, .attractions-table td {
-        display: block;
-        width: 100%;
-      }
-      .attractions-table tr {
-        margin-bottom: 1.5rem;
-        border-radius: 16px;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e2e8f0;
-        background: #ffffff;
-      }
-      .attractions-table td {
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid #f1f5f9;
-      }
-      .attractions-table td:last-child {
-        border-bottom: none;
-      }
-      .attractions-table td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        display: inline-block;
-        width: 90px;
-        color: #64748b;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-      }
-      .attr-name {
-        display: inline;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-container">
-    <!-- H2 heading exactly as requested -->
-    <h2>Beijing Top 10 Attractions</h2>
+            <h2>Top Attractions in Beijing: A Guide for International Visitors</h2>
+<p>Beijing blends imperial history with modern spectacle, from the Ming-dynasty Great Wall at Badaling to the marble terraces of the Temple of Heaven. This guide highlights ten diverse attractions—landmarks, temples, museums, parks, and historic neighborhoods—that offer a well-rounded introduction to China's capital for first-time and repeat visitors alike.</p>
 
-    <!-- Introduction paragraph -->
-    <p class="intro">
-      Beijing, the capital of China, is a city where ancient grandeur meets modern energy. 
-      From imperial palaces and sacred temples to lively hutongs and world-class museums, 
-      the city offers an unforgettable journey through 3,000 years of history. 
-      To help you plan, here are the <strong>top 10 attractions in Beijing</strong> — 
-      each with a description, current ticket prices (as of 2025), and practical visiting tips 
-      so you can make the most of your trip.
-    </p>
+<ol>
+  <li>
+    <strong>Badaling Great Wall</strong><br>
+    Badaling is the most visited section of the Great Wall of China, located about 80 kilometers northwest of central Beijing in Yanqing District. The wall here was built in 1504 during the Ming Dynasty, and its highest point, Beibalou (North Eighth Tower), reaches roughly 1,015 meters above sea level.<br>
+    <em>Tip:</em> Arrive early in the morning to beat tour groups; cable car tickets can be purchased on-site or in advance.
+  </li>
+  <li>
+    <strong>Forbidden City &amp; Tiananmen Area (via Beijing Planning Exhibition Hall)</strong><br>
+    The Beijing Planning Exhibition Hall, housed in the old 1903 railway station building beside Tiananmen Square, features a scale model of the entire metropolitan area plus multimedia exhibits on the city's past, present, and future. It's an ideal orientation stop before exploring the nearby imperial core.<br>
+    <em>Tip:</em> Visit on a weekday morning; combine with a walk through Tiananmen Square and the Forbidden City (booked separately, passport required).
+  </li>
+  <li>
+    <strong>Temple of Heaven — Circular Mound Altar</strong><br>
+    The Circular Mound Altar is an open, three-tiered marble platform within the Temple of Heaven complex, constructed in 1530 under the Jiajing Emperor and enlarged in 1749. Its blue-glazed slabs and white marble balustrades made it the site of imperial heaven-worship ceremonies.<br>
+    <em>Tip:</em> Go at dawn to see locals practicing tai chi; the surrounding park is a highlight in itself.
+  </li>
+  <li>
+    <strong>Beijing Guozijian (Imperial Academy)</strong><br>
+    China's national university during the Yuan, Ming, and Qing dynasties, the Guozijian sits on Guozijian Street in Dongcheng District beside the Confucian Temple. Most of its present buildings date to the Ming dynasty, and the academy was devoted to memorization and explication of the classics.<br>
+    <em>Tip:</em> Pair with the adjacent Confucian Temple; the surrounding hutong streets are excellent for a quiet stroll.
+  </li>
+  <li>
+    <strong>Beijing Ancient Observatory</strong><br>
+    Built in 1442 during the Ming dynasty and expanded under the Qing, this pretelescopic observatory received new, more accurate instruments from Jesuit astronomers in 1644. As one of the oldest observatories in the world, its grounds cover 10,000 square meters.<br>
+    <em>Tip:</em> A compact, underrated stop near Jianguomen; allow about an hour and check opening hours before visiting.
+  </li>
+  <li>
+    <strong>Beijing Zoo</strong><br>
+    Founded in 1906 during the late Qing dynasty, Beijing Zoo is the oldest zoo in China and the oldest public park in northern China. It spans 89 hectares in Xicheng District and is a research center breeding rare animals from around the world.<br>
+    <em>Tip:</em> Visit on a weekday morning for fewer crowds; the giant panda house is the main draw, so head there first.
+  </li>
+  <li>
+    <strong>Central Radio &amp; TV Tower</strong><br>
+    This 405-meter telecommunications and observation tower was the tallest structure in Beijing until 2018, and its observation deck at 238 meters offers panoramic views over the city. It ranks among the tallest towers in the world.<br>
+    <em>Tip:</em> Go near sunset for day-to-night views; the deck is a good alternative to the more crowded Olympic Tower.
+  </li>
+  <li>
+    <strong>Beijing Olympic Tower</strong><br>
+    Completed in 2014 and opened on August 8, 2015, this tower on the Olympic Green in Chaoyang District is used strictly for observation, with no offices or apartments. Its design by China Architecture Design &amp; Research Group makes it a striking modern landmark.<br>
+    <em>Tip:</em> Combine with a walk around the Olympic Green and the Bird's Nest; evening lighting is spectacular.
+  </li>
+  <li>
+    <strong>Cuandixia Historic Village</strong><br>
+    Cuandixia is a Ming-dynasty village in Zhaitang, Mentougou District, known for its well-preserved courtyard homes. It's a popular escape from the city and offers a glimpse of traditional rural architecture in the mountains west of Beijing.<br>
+    <em>Tip:</em> Best visited in autumn for foliage; it's a full-day trip by car, so arrange transport in advance.
+  </li>
+  <li>
+    <strong>Beijing World Park</strong><br>
+    Opened in 1993, this 46.7-hectare theme park in Fengtai District lets visitors "see the world without leaving Beijing" through replicas of global landmarks. It's about 17 kilometers from Tiananmen and draws an estimated 1.5 million visitors annually.<br>
+    <em>Tip:</em> A fun, low-key option for families; go on a clear weekday and allow half a day.
+  </li>
+</ol>
 
-    <!-- Main content: structured table with descriptions, prices
+<h3>Practical tips</h3>
+<ul>
+  <li><strong>Book ahead:</strong> Major sites like the Forbidden City and Badaling require advance online reservations; carry your passport, which serves as your ticket ID.</li>
+  <li><strong>Beat the crowds:</strong> Visit headline attractions at opening time; early mornings are also best for parks and temples where locals exercise.</li>
+  <li><strong>Getting around:</strong> The subway is fast and inexpensive; for outlying sites like Badaling and Cuandixia, use official tourist buses or pre-arranged drivers.</li>
+  <li><strong>Season:</strong> Spring (April–May) and autumn (September–October) offer the most comfortable weather for walking and hiking.</li>
+  <li><strong>Timing:</strong> Allow a full day for the Great Wall and half a day each for the Temple of Heaven and the Guozijian/Confucian Temple area.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Beijing Guides</h3>

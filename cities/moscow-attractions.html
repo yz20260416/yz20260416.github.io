@@ -16,288 +16,41 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Moscow's top 10 attractions. It presents a structured, informative overview with a clean and readable layout, including a detailed table of attractions with descriptions, ticket prices, and visiting tips, followed by practical travel advice.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moscow Top 10 Attractions · Travel Guide</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            <h2>Top Attractions in Moscow</h2>
+<p>Moscow rewards visitors with a striking mix of imperial grandeur, Soviet-era ambition and living Orthodox tradition. From the gold-domed theatres of the historic centre to the monumental exhibition grounds in the north, the city offers landmarks that span centuries of Russian history and culture. This guide highlights ten diverse attractions—opera houses, avant-garde architecture, museums and public spaces—that give a well-rounded introduction to the Russian capital.</p>
 
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-    }
+<ol>
+  <li><strong>Bolshoi Theatre</strong> — A historic opera house originally designed by architect Joseph Bové, and before the revolution part of the Imperial Theatres of the Russian Empire. Today it is home to the world-famous Bolshoi Ballet and opera company, making it one of Moscow's most iconic cultural landmarks.</li>
 
-    .guide-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 8px 16px -6px rgba(0, 0, 0, 0.02);
-      padding: 2rem 2rem 2.5rem;
-      transition: all 0.2s;
-    }
+  <li><strong>Exhibition of Achievements of National Economy (VDNKh)</strong> — A permanent general-purpose trade show and amusement park, and one of Moscow's largest public spaces. Between 1991 and 2014 it was known as the All-Russia Exhibition Centre, and it remains a showcase of monumental Soviet architecture and pavilions.</li>
 
-    h2 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #0f172a;
-      margin-bottom: 0.75rem;
-      border-left: 8px solid #b91c1c;
-      padding-left: 1.25rem;
-      line-height: 1.2;
-    }
+  <li><strong>Cosmonauts Alley</strong> — A wide pedestrian avenue in northern Moscow leading to the Russian Memorial Museum of Cosmonautics and the Monument to the Conquerors of Space. The car-free walk connects the museum and monument directly to the VDNKh subway station.</li>
 
-    .intro {
-      font-size: 1.125rem;
-      color: #334155;
-      margin-bottom: 2rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #e2e8f0;
-    }
+  <li><strong>Bakhmetevsky Bus Garage</strong> — A former public bus garage designed in 1926 by Konstantin Melnikov with structural engineering by Vladimir Shukhov, completed in 1927 as a striking example of avant-garde architecture applied to an industrial facility. After decades of neglect, it was restored in 2007–2008 and reopened as a gallery of modern art.</li>
 
-    .intro p {
-      margin-bottom: 0.75rem;
-    }
+  <li><strong>Bakhrushin Museum</strong> — The A. A. Bakhrushin State Central Theatre Museum is dedicated to the theatre and was founded in 1894 by the merchant and philanthropist Alexey Alexandrovich Bakhrushin. It is characterised by the Great Soviet Encyclopedia as the largest institution of its kind.</li>
 
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
+  <li><strong>Church of St. Nicholas in Tolmachi</strong> — Both a Russian Orthodox house church and a museum forming part of the State Tretyakov Gallery, this church houses important religious relics and icons. First mentioned in 1625 as a wooden church, it has since undergone major transformations.</li>
 
-    /* table styling */
-    .attractions-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      border-radius: 18px;
-      overflow: hidden;
-      margin: 1.5rem 0 2rem;
-    }
+  <li><strong>Central Children's Store on Lubyanka</strong> — A landmark building and shopping mall in the historic centre of Moscow on Lubyanka Square, commissioned in 1957. For decades it was the largest children's department store in the Soviet Union, and it remains a distinctive local attraction.</li>
 
-    .attractions-table th {
-      background: #0f172a;
-      color: #f1f5f9;
-      font-weight: 600;
-      text-align: left;
-      padding: 1rem 1rem;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      border-right: 1px solid #1e293b;
-    }
+  <li><strong>Central House of Officers of the Russian Army</strong> — Also known as the Mikhail Frunze Central House of Officers, this Russian cultural centre and cultural heritage site of the Russian Army sits on Suvorov Square. It is designed to meet the spiritual, educational and cultural needs of servicemen and civilian personnel.</li>
 
-    .attractions-table th:last-child {
-      border-right: none;
-    }
+  <li><strong>Arch Moscow</strong> — An international exhibition of architecture and design held annually since 1995 in Moscow. It takes place at the Central House of Artist on Krymsky Val and is organised by the Expo Park Company, drawing architecture enthusiasts from around the world.</li>
 
-    .attractions-table td {
-      background: white;
-      padding: 1rem 1rem;
-      vertical-align: top;
-      border-bottom: 1px solid #e9eef3;
-      color: #1e293b;
-    }
+  <li><strong>Galeyev Gallery</strong> — A Russian art gallery in Moscow owned and curated by the distinguished art historian Ildar Galeyev. It actively curates exhibitions on pre-war Russian art from the 1910s to the 1940s, appealing to visitors interested in early 20th-century Russian culture.</li>
+</ol>
 
-    .attractions-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .attractions-table tr:hover td {
-      background: #fef9f0;
-      transition: background 0.15s;
-    }
-
-    .attraction-name {
-      font-weight: 700;
-      color: #9b1c1c;
-      display: block;
-      font-size: 1.02rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .attraction-desc {
-      color: #2d3c4f;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .price-badge {
-      display: inline-block;
-      background: #f1f5f9;
-      padding: 0.2rem 0.5rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #0f172a;
-      border: 1px solid #cbd5e1;
-      white-space: nowrap;
-    }
-
-    .price-free {
-      background: #e6f7ec;
-      border-color: #86d9a5;
-      color: #0b5e2e;
-    }
-
-    .tip-text {
-      font-size: 0.88rem;
-      color: #334155;
-      background: #f1f5f9;
-      padding: 0.3rem 0.6rem;
-      border-radius: 12px;
-      display: inline-block;
-      line-height: 1.4;
-    }
-
-    /* practical tips section */
-    .practical-tips {
-      background: #f1f5f9;
-      border-radius: 24px;
-      padding: 1.8rem 2rem;
-      margin-top: 2rem;
-      border: 1px solid #dbe4ed;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.7rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tip-card {
-      background: white;
-      border-radius: 18px;
-      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-      border-left: 4px solid #b91c1c;
-      transition: transform 0.1s;
-    }
-
-    .tip-card strong {
-      display: block;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.01em;
-    }
-
-    .tip-card p {
-      font-size: 0.92rem;
-      color: #334155;
-      margin: 0;
-    }
-
-    .tip-card ul {
-      margin: 0.4rem 0 0 1rem;
-      padding: 0;
-      font-size: 0.92rem;
-      color: #334155;
-    }
-
-    .tip-card li {
-      margin-bottom: 0.25rem;
-    }
-
-    .note {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 1.2rem;
-      font-style: italic;
-      border-top: 1px dashed #cbd5e1;
-      padding-top: 1rem;
-    }
-
-    /* responsive */
-    @media (max-width: 800px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        padding-left: 0.9rem;
-      }
-
-      .attractions-table {
-        display: block;
-        overflow-x: auto;
-        white-space: normal;
-        border-radius: 14px;
-      }
-
-      .attractions-table th,
-      .attractions-table td {
-        padding: 0.8rem 0.8rem;
-      }
-
-      .attractions-table td {
-        min-width: 180px;
-      }
-
-      .practical-tips {
-        padding: 1.25rem;
-      }
-
-      .tips-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .attractions-table {
-        font-size: 0.85rem;
-      }
-
-      .price-badge {
-        white-space: normal;
-        word-break: break-word;
-      }
-    }
-
-    /* small utility */
-    .nowrap {
-      white-space: nowrap;
-    }
-  </style>
-</head>
-<body>
-<div class="guide-container">
-
-  <!-- H2 heading -->
-  <h2>Moscow Top 10 Attractions</h2>
-
-  <!-- Introduction paragraph -->
-  <div class="intro">
-    <p>Moscow is a city of monumental scale, where centuries-old history meets bold modern architecture. From the iconic onion domes of St. Basil’s to the gleaming skyscrapers of Moscow City, the Russian capital offers an unforgettable journey through time. Whether you’re a first-time visitor or a seasoned traveler, these <strong>top 10 attractions
+<h3>Practical tips</h3>
+<ul>
+  <li>Moscow's fountains generally operate only in the warmer months because of the cold climate, so plan fountain-viewing around summer visits.</li>
+  <li>Bolshoi Theatre performances sell out well in advance; check the official schedule early and book ahead if you want tickets.</li>
+  <li>VDNKh, Cosmonauts Alley and the Cosmonautics Museum are clustered in the north and can be combined in a single day; the area is easily reached by metro.</li>
+  <li>Many museums close one day per week, so confirm opening hours before travelling to a specific site.</li>
+  <li>Dress warmly for winter visits—outdoor landmarks like VDNKh and Cosmonauts Alley involve considerable walking in the open air.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Moscow Guides</h3>

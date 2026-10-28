@@ -16,262 +16,30 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Nairobi's top attractions. It includes a styled introduction, a structured table with descriptions, ticket prices, and visiting tips for each of the ten attractions, followed by a practical tips section for travelers.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nairobi Top 10 Attractions · Travel Guide</title>
-  <style>
-    /* clean, readable travel-guide styling */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            <h2>Top Attractions in Nairobi</h2>
+<p>Nairobi is one of the few capitals where you can watch lions at dawn and visit a literary icon's home by afternoon. Kenya's capital blends world-class wildlife, cultural heritage, and colonial-era history into a compact, accessible city. From the only national park bordering a major city to museums celebrating independence and traditional homesteads, these are the attractions most likely to reward an international visitor's time.</p>
 
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #faf9f7;
-      color: #1e1e1e;
-      line-height: 1.55;
-      padding: 2rem 1rem;
-    }
+<ol>
+  <li><strong>Nairobi National Park</strong> — Established in 1946 just 7 km south of the city, this is a rare national park fenced on three sides with an open southern boundary that lets migrating wildlife move to the Kitengela plains. Herbivores gather here during the dry season, making game viewing especially rewarding.</li>
+  <li><strong>Giraffe Centre</strong> — Located in Lang'ata about 20 km from central Nairobi, this wildlife conservation facility was established to protect the vulnerable Rothschild's giraffe found only in East African grasslands. It began in 1979 as a nature sanctuary and offers hands-on wildlife education for visitors.</li>
+  <li><strong>Karen Blixen Museum</strong> — Set "at the foot of the Ngong Hills" about 10 km outside Nairobi, this is the former African home of Danish author Karen Blixen, famous for her 1937 book <em>Out of Africa</em>. The estate offers a vivid window into colonial-era life in Kenya.</li>
+  <li><strong>National Museums of Kenya (Nairobi National Museum)</strong> — The headquarters of Kenya's state heritage corporation sits on Museum Hill between the CBD and Westlands. Its collections and research span palaeontology, archaeology, ethnography, and biodiversity, making it the country's premier museum stop.</li>
+  <li><strong>Bomas of Kenya</strong> — This tourist village in Langata, about 10 km from the CBD, displays traditional homesteads belonging to several Kenyan tribes. It is also home to one of the largest auditoriums in Africa and hosts cultural performances.</li>
+  <li><strong>African Heritage House</strong> — Gazetted as a national monument in 2016, this house designed by Alan Donovan preserves forgotten African architectural designs, drawing inspiration from structures such as the Great Mosque of Djenne in Mali. It faces Nairobi National Park and is open for tours, meals, events, and overnight stays.</li>
+  <li><strong>Uhuru Gardens National Monument and Museum</strong> — This commemorative park and museum celebrates Kenya's independence from the British Empire on 12 December 1963; "uhuru" is Swahili for freedom. It features a Mũgumo tree said to mark the exact spot where the colonial flag was lowered and the Kenyan flag raised.</li>
+  <li><strong>Nairobi Railway Museum</strong> — Adjacent to Nairobi railway station, this museum opened in 1971 and displays exhibits from the defunct East African Railways. It retains a working rail connection and houses three operational steam locomotives kept securely under cover.</li>
+</ol>
 
-    .guide-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-      padding: 2.5rem 2rem;
-    }
-
-    h2 {
-      font-size: 2.1rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #1e3c2c;
-      border-left: 6px solid #d4a373;
-      padding-left: 1.25rem;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.1rem;
-      color: #2d3e2f;
-      background: #f6f3ef;
-      padding: 1.4rem 1.8rem;
-      border-radius: 20px;
-      margin-bottom: 2.2rem;
-      border: 1px solid #e6dfd6;
-    }
-
-    .intro p {
-      margin-bottom: 0.75rem;
-    }
-
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* structured table — responsive */
-    .attractions-table-wrapper {
-      overflow-x: auto;
-      margin: 1.8rem 0 2.5rem;
-      border-radius: 18px;
-      border: 1px solid #e2dcd2;
-      background: #fff;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      min-width: 800px;
-    }
-
-    th {
-      background: #1e3c2c;
-      color: #ffffff;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      font-size: 0.8rem;
-      padding: 1rem 1rem;
-      text-align: left;
-      white-space: nowrap;
-    }
-
-    td {
-      padding: 1.1rem 1rem;
-      border-bottom: 1px solid #eae5dd;
-      vertical-align: top;
-      background: #ffffff;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .attraction-name {
-      font-weight: 600;
-      color: #1e3c2c;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .attraction-desc {
-      color: #3d4a3f;
-      font-size: 0.92rem;
-      line-height: 1.45;
-    }
-
-    .price {
-      font-weight: 500;
-      color: #2b5e3b;
-      background: #eef5f0;
-      padding: 0.2rem 0.6rem;
-      border-radius: 30px;
-      display: inline-block;
-      white-space: nowrap;
-      font-size: 0.85rem;
-    }
-
-    .tip-badge {
-      display: inline-block;
-      background: #f7f2e9;
-      border-left: 3px solid #d4a373;
-      padding: 0.4rem 0.8rem;
-      font-size: 0.85rem;
-      border-radius: 0 10px 10px 0;
-      color: #2e3b2e;
-      line-height: 1.4;
-    }
-
-    .practical-tips {
-      background: #f2f5f0;
-      border-radius: 20px;
-      padding: 2rem 2rem 1.8rem;
-      margin-top: 2.2rem;
-      border: 1px solid #dbe2d6;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #1e3c2c;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.8rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tip-card {
-      background: #ffffff;
-      padding: 1.2rem 1.3rem;
-      border-radius: 16px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
-      border: 1px solid #e3e8df;
-    }
-
-    .tip-card strong {
-      display: block;
-      font-size: 1rem;
-      color: #1e3c2c;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .tip-card p {
-      font-size: 0.92rem;
-      color: #3c4a3c;
-    }
-
-    .tip-card ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-      font-size: 0.92rem;
-      color: #3c4a3c;
-    }
-
-    .tip-card li {
-      margin-bottom: 0.3rem;
-    }
-
-    .note {
-      font-size: 0.85rem;
-      color: #5a6b5a;
-      margin-top: 1.8rem;
-      text-align: center;
-      border-top: 1px dashed #ccd9cc;
-      padding-top: 1.2rem;
-    }
-
-    @media (max-width: 600px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.7rem;
-      }
-      .intro {
-        padding: 1.2rem;
-        font-size: 1rem;
-      }
-      .practical-tips {
-        padding: 1.5rem 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-container">
-    <!-- H2 heading as required -->
-    <h2>Nairobi Top 10 Attractions</h2>
-
-    <!-- introduction paragraph -->
-    <div class="intro">
-      <p>Nairobi, Kenya’s vibrant capital, is a city where urban energy meets wild savannah. Known as the “Green City in the Sun,” it surprises travelers with a national park within city limits, rich cultural heritage, and a thriving food and art scene. Whether you’re a wildlife enthusiast, history buff, or curious explorer, these top 10 attractions capture the essence of Nairobi — from elephant orphans and giraffe kisses to colonial-era museums and lively markets. Below you’ll find descriptions, current ticket prices (in USD/KES), and practical tips to make the most of each visit.</p>
-    </div>
-
-    <!-- main content: structured table with descriptions, prices, tips -->
-    <div class="attractions-table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Attraction</th>
-            <th>Description</th>
-            <th>Ticket price (approx.)</th>
-            <th>Visiting tips</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- 1. Nairobi National Park -->
-          <tr>
-            <td>
-              <div class="attraction-name">1. Nairobi National Park</div>
-            </td>
-            <td>
-              <div class="attraction-desc">The world’s only national park within a capital city. Spot lions, rhinos, giraffes, and zebras against a skyline backdrop. The park also hosts the Sheldrick Wildlife Trust elephant orphanage and the Nairobi Animal Orphanage.</div>
-            </td>
-            <td><span class="price">$43 (non-resident) / KES 5,600</span></td>
-            <td>
-              <div
+<h2>Practical tips</h2>
+<ul>
+  <li>Visit Nairobi National Park early in the morning during the dry season for the best herbivore sightings, and note that the open southern boundary allows wildlife to migrate.</li>
+  <li>The Giraffe Centre and Karen Blixen Museum are both in the Lang'ata/Karen area — pair them in a single half-day trip to save on travel time.</li>
+  <li>Book African Heritage House tours, lunches, or overnight stays in advance, as visits are arranged rather than walk-in.</li>
+  <li>Check opening hours for the National Museum and Railway Museum before setting out; both are best visited on weekday mornings when quieter.</li>
+  <li>Bomas of Kenya is about 10 km from the CBD — allow extra time for traffic and confirm performance schedules ahead of your visit.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Nairobi Guides</h3>

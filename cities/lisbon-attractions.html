@@ -16,241 +16,32 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Lisbon's top 10 attractions. It presents key information in a clean, structured format, including a detailed table with descriptions, ticket prices, and visiting tips, followed by a practical tips section to help travelers plan their visit.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lisbon Top 10 · Travel Guide</title>
-  <style>
-    /* clean, readable travel-guide styling */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            <h2>Top Attractions in Lisbon</h2>
+<p>Lisbon rewards visitors with a blend of maritime history, grand monuments, and lively neighbourhoods. From the Manueline splendour of Belém to the medieval lanes beneath São Jorge Castle, the city packs centuries of discovery into a compact, walkable core. This guide highlights ten standout sights most likely to appeal to an international traveller, each drawn from Lisbon's rich heritage of fortresses, monasteries, museums, and gardens.</p>
 
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #faf7f2;
-      color: #1e2b2f;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-    }
+<ol>
+  <li><strong>Belém Tower (Torre de Belém)</strong> — This 16th-century fortification served as a point of embarkation and disembarkation for Portuguese explorers and as a ceremonial gateway to Lisbon. The tower symbolises Portugal's maritime and colonial power in early modern Europe, built during the height of the Portuguese Renaissance.</li>
+  <li><strong>Jerónimos Monastery</strong> — A former monastery of the Order of Saint Jerome near the Tagus in Belém, it became the necropolis of the Portuguese royal dynasty of Aviz in the 16th century. It is one of Lisbon's most celebrated monuments and a masterpiece of Manueline architecture.</li>
+  <li><strong>São Jorge Castle</strong> — A historic castle in the Santa Maria Maior parish whose hill has been occupied since at least the 8th century BC, with the oldest fortifications dating to the 2nd century BC. The site has played an important part in Lisbon's history and offers sweeping views over the city.</li>
+  <li><strong>Lisbon Oceanarium (Oceanário de Lisboa)</strong> — Located in Parque das Nações, the former Expo '98 exhibition grounds, it is one of the largest indoor aquariums in Europe. Approximately one million people visit each year.</li>
+  <li><strong>Belém Cultural Center (Centro Cultural de Belém)</strong> — A complex of artistic venues in Belém and the largest building with cultural facilities in Portugal, with over 140,000 m² of usable space. It was initially built for Portugal's 1992 Presidency of the European Council and now provides permanent venues for conferences, exhibitions, and performance arts.</li>
+  <li><strong>Church of Santa Engrácia (National Pantheon)</strong> — A 17th-century monument in Alfama, originally a church, converted into the National Pantheon where important Portuguese personalities are buried. It stands close to the Monastery of São Vicente de Fora.</li>
+  <li><strong>Casa dos Bicos</strong> — A historical house in Alfama built in the early 16th century, with a curious spiked façade influenced by Italian Renaissance palaces and Portuguese Manueline styles. It survived the 1755 earthquake and now houses the José Saramago Foundation.</li>
+  <li><strong>Lisbon Zoo (Jardim Zoológico de Lisboa)</strong> — Founded in 1884 and now located at Quinta das Laranjeiras in Sete Rios, it houses about 2,000 animals of more than 300 species. Its mission includes conservation and breeding programmes.</li>
+  <li><strong>Águas Livres Aqueduct</strong> — A historic aqueduct system considered one of the most remarkable examples of 18th-century Portuguese engineering and one of Lisbon's best-known landmarks. The main aqueduct extends about 14.2 km, while the complete network reaches nearly 58 km.</li>
+  <li><strong>Estufa Fria</strong> — A greenhouse containing three distinct gardens, located in Edward VII Park between Alameda Engenheiro Edgar Cardoso and Alameda Cardeal Cerejeira. It offers a lush, sheltered escape within the city.</li>
+</ol>
 
-    .guide-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-      padding: 2.2rem 2rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #0e3b3e;
-      border-left: 6px solid #e6a15c;
-      padding-left: 1rem;
-      margin-bottom: 1.2rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.12rem;
-      color: #2f4045;
-      background: #f2efe9;
-      padding: 1.2rem 1.6rem;
-      border-radius: 20px;
-      margin-bottom: 2.2rem;
-      border: 1px solid #e6ddd2;
-    }
-
-    .table-responsive {
-      overflow-x: auto;
-      margin: 1.8rem 0 2rem;
-      border-radius: 18px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      font-size: 0.96rem;
-      min-width: 880px;
-    }
-
-    th {
-      background: #1e3e42;
-      color: white;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      font-size: 0.82rem;
-      padding: 1rem 0.9rem;
-      text-align: left;
-    }
-
-    td {
-      padding: 1rem 0.9rem;
-      border-bottom: 1px solid #e9e2d9;
-      vertical-align: top;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    tbody tr:hover {
-      background: #fdfaf6;
-    }
-
-    .attr-name {
-      font-weight: 600;
-      color: #14555a;
-      font-size: 1rem;
-    }
-
-    .price {
-      font-weight: 600;
-      color: #a15c1c;
-      white-space: nowrap;
-    }
-
-    .tip-text {
-      color: #3b4f55;
-      font-size: 0.92rem;
-    }
-
-    .practical-tips {
-      background: #eef5f2;
-      border-radius: 22px;
-      padding: 1.8rem 2rem;
-      margin-top: 2rem;
-      border-left: 6px solid #2b7a6e;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #0b3b38;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.6rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem 1.8rem;
-      margin-top: 0.6rem;
-    }
-
-    .tip-item {
-      background: white;
-      padding: 1rem 1.2rem;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-      border: 1px solid #d5e3df;
-    }
-
-    .tip-item strong {
-      display: block;
-      color: #1c5b55;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .tip-item p {
-      font-size: 0.93rem;
-      color: #2b4347;
-    }
-
-    .note {
-      font-style: italic;
-      color: #5d6f74;
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      padding-top: 0.8rem;
-      border-top: 1px dashed #b9cfc9;
-    }
-
-    @media (max-width: 600px) {
-      .guide-container {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-      }
-      .intro {
-        font-size: 1rem;
-      }
-      .practical-tips {
-        padding: 1.2rem 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-container">
-    <h2>Lisbon Top 10 Attractions</h2>
-
-    <p class="intro">
-      Lisbon, the sun-drenched capital of Portugal, blends historic charm with a vibrant modern edge. 
-      From Moorish castles to world-class museums and iconic yellow trams, the city offers endless discoveries. 
-      Below are the 10 must-visit attractions — with descriptions, current ticket prices (2025), and insider tips 
-      to help you make the most of your trip.
-    </p>
-
-    <!-- main content: structured table -->
-    <div class="table-responsive">
-      <table>
-        <thead>
-          <tr>
-            <th>Attraction</th>
-            <th>Description</th>
-            <th>Ticket price (adult)</th>
-            <th>Visiting tips</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="attr-name">1. Belém Tower</span></td>
-            <td>16th-century fortified tower and UNESCO site, symbol of Portugal's maritime discoveries. Stunning views from the terrace.</td>
-            <td class="price">€8 (tower only)<br>€12 combined with Jerónimos</td>
-            <td class="tip-text">Go early (9am) or late afternoon to avoid queues. Combine with Jerónimos Monastery. Closed Mondays.</td>
-          </tr>
-          <tr>
-            <td><span class="attr-name">2. Jerónimos Monastery</span></td>
-            <td>Manueline masterpiece, final resting place of Vasco da Gama. The cloister is breathtaking.</td>
-            <td class="price">€12 (cloister + church)<br>€18 combined with Belém Tower</td>
-            <td class="tip-text">Buy the combined ticket online. The church is free but separate entrance. Closed Mondays.</td>
-          </tr>
-          <tr>
-            <td><span class="attr-name">3. Castelo de São Jorge</span></td>
-            <td>Moorish castle on the highest hill, panoramic views over the city and Tagus River. Peacocks roam the grounds.</td>
-            <td class="price">€15 (adult)<br>€7.5 students/seniors</td>
-            <td class="tip-text">Wear comfortable shoes – cobblestones. Sunset is magical but crowded; arrive 1h before.</td>
-          </tr>
-          <tr>
-            <td><span class="attr-name">4. Alfama & Tram 28</span></td>
-            <td>Lisbon's oldest district, a maze of narrow streets, fado houses, and viewpoints. Tram 28 is a historic ride through it.</td>
-            <td class="price">Tram ride: €3.10 (single)<br>Alfama: free to wander</td>
-            <td class="tip-text">Tram 28 gets packed – board at Martim Moniz or Graça early. Watch for pickpockets. Walk instead for hidden gems.</td>
-          </tr>
-          <tr>
-            <td><span class
+<h3>Practical tips</h3>
+<ul>
+  <li>Visit Belém's Tower and Jerónimos Monastery early in the morning to avoid the longest queues, as both are among the city's busiest sights.</li>
+  <li>Many Belém-area attractions are close together, so plan a single day combining the tower, monastery, and Belém Cultural Center on foot.</li>
+  <li>Wear comfortable shoes for São Jorge Castle and Alfama, whose steep, cobbled lanes reward slow exploration.</li>
+  <li>The Lisbon Oceanarium and Parque das Nações are easily reached by metro and make a good half-day outing away from the historic centre.</li>
+  <li>Check opening days in advance for cultural venues such as the Belém Cultural Center and Casa dos Bicos, which may close on certain days.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Lisbon Guides</h3>

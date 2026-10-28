@@ -16,259 +16,52 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Budapest's top 10 attractions. It presents an introduction, a structured table with descriptions, ticket prices, and visiting tips, followed by a practical tips section. The design uses a clean, card-based layout with a warm color scheme to make the information easy to scan and use.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Budapest Top 10 Attractions · Travel Guide</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            <h2>Top Attractions in Budapest</h2>
+<p>Budapest rewards visitors with a remarkable blend of imperial history, riverside beauty, and lively urban culture. From the hilltop Buda Castle complex to the elegant sweep of Andrássy Avenue, the city's landmarks trace centuries of Hungarian heritage. This guide highlights ten standout sights most likely to appeal to international travellers, each paired with a practical tip to help you plan your visit.</p>
 
-    body {
-      background: #f5efe9;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-      color: #2e241f;
-    }
+<ol>
+  <li>
+    <strong>Buda Castle</strong> — The historical castle and palace complex of the Hungarian kings, first completed in 1265, with the Baroque palace on the site today built between 1749 and 1769 and later rebuilt after World War II damage. A practical tip: visit in the morning to enjoy the palace grounds and hilltop views before tour groups arrive.
+  </li>
+  <li>
+    <strong>Andrássy út (Andrássy Avenue)</strong> — This grand boulevard dating back to 1872 links Erzsébet Square with Városliget and is lined with spectacular Neo-renaissance mansions; it was recognised as a World Heritage Site in 2002. A practical tip: stroll the avenue in the late afternoon, when the facades catch the golden light, and stop at one of its historic cafés.
+  </li>
+  <li>
+    <strong>Citadella</strong> — The fortress perched atop Gellért Hill occupies a site of strategic importance in Budapest's military history and offers some of the city's most celebrated panoramas. A practical tip: go near sunset for the best views over the Danube and Pest, and wear comfortable shoes for the uphill walk.
+  </li>
+  <li>
+    <strong>Danube Promenade (Dunakorzó)</strong> — Located on the Pest side of the city, this riverside promenade stretches along the left bank of the Danube from the Széchenyi Chain Bridge to the Erzsébet Bridge. A practical tip: an evening walk here pairs beautifully with views of the illuminated bridges and Buda Castle across the water.
+  </li>
+  <li>
+    <strong>Aquincum Military Amphitheatre</strong> — The greater of two Roman amphitheatres in Budapest, built around 145 during the reign of Emperor Antoninus Pius and located in the Óbuda district near the Danube. A practical tip: combine your visit with the nearby Aquincum Civil Amphitheatre for a full Roman-era outing in Óbuda.
+  </li>
+  <li>
+    <strong>Aquincum Civil Amphitheatre</strong> — Built between 250 and 300 AD, this ancient structure seated between 6,000 and 7,000 people and features an inscription to the Greek goddess Nemesis south of its western gate. A practical tip: these Roman ruins are open-air, so visit on a dry day and bring water, as shade is limited.
+  </li>
+  <li>
+    <strong>Archduke Joseph's Palace</strong> — A former royal residence on Castle Hill next to Buda Castle, once the property of Archduke Joseph Karl of Austria and now being reconstructed as part of the Buda Castle Hill revival programme. A practical tip: check locally for current access, as reconstruction work may restrict entry to parts of the site.
+  </li>
+  <li>
+    <strong>Comedy Theatre of Budapest (Vígszínház)</strong> — Founded in the late 19th century as an opposition to the conservative National Theatre, it became a pioneer institution of Hungarian drama and is one of the city's oldest theatres still in operation. A practical tip: even if you don't attend a performance, admire the building's exterior while exploring the nearby Nagymező utca theatre district.
+  </li>
+  <li>
+    <strong>Batthyány Square Market Hall</strong> — One of the major market halls built during the dual monarchy, this 1900–1901 hall by Pál Klunzinger has an interior reminiscent of the Central Market Hall and can house 690 sellers across its 3,156 m². A practical tip: visit in the morning for the freshest produce and a quieter atmosphere, then cross to the Danube bank nearby.
+  </li>
+  <li>
+    <strong>Danube-Ipoly National Park</strong> — One of the most diverse national parks in Hungary, offering a green escape within reach of the capital. A practical tip: set aside a full day and check trail and transport options in advance, as the park's varied terrain rewards proper planning.
+  </li>
+</ol>
 
-    .guide-card {
-      max-width: 1300px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 2rem;
-      box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.15), 0 8px 12px -6px rgba(0, 0, 0, 0.05);
-      padding: 2.5rem 2rem;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #1e1a17;
-      border-left: 8px solid #c49a6c;
-      padding-left: 1.25rem;
-      margin-bottom: 1.25rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.15rem;
-      color: #3d332e;
-      background: #faf6f2;
-      padding: 1.5rem 1.8rem;
-      border-radius: 1.5rem;
-      margin-bottom: 2.5rem;
-      border: 1px solid #e8ddd2;
-      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.8);
-    }
-
-    .intro p {
-      margin-bottom: 0.75rem;
-    }
-
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Table styling */
-    .attractions-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 12px;
-      margin: 1.8rem 0 1rem;
-    }
-
-    .attractions-table th {
-      text-align: left;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #7b6a5c;
-      padding: 0.6rem 1rem 0.6rem 1.5rem;
-      background: transparent;
-      border-bottom: 2px solid #e0d4c8;
-    }
-
-    .attractions-table td {
-      background: #fefcf9;
-      padding: 1.3rem 1.2rem 1.3rem 1.5rem;
-      vertical-align: top;
-      border-radius: 1.2rem;
-      box-shadow: 0 4px 10px -4px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
-      border: 1px solid #efe6de;
-      transition: transform 0.1s ease, box-shadow 0.2s ease;
-    }
-
-    .attractions-table tr:hover td {
-      box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
-      background: #ffffff;
-      border-color: #dccfc2;
-    }
-
-    .attraction-name {
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: #1e1a17;
-      display: block;
-      margin-bottom: 0.3rem;
-      letter-spacing: -0.01em;
-    }
-
-    .attraction-desc {
-      font-size: 0.95rem;
-      color: #4a3f38;
-      margin-bottom: 0.6rem;
-      line-height: 1.5;
-    }
-
-    .price-badge {
-      display: inline-block;
-      background: #e7d9cc;
-      color: #3e2e22;
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 0.25rem 0.9rem;
-      border-radius: 30px;
-      margin-right: 0.5rem;
-      margin-bottom: 0.3rem;
-      white-space: nowrap;
-    }
-
-    .tip-text {
-      font-size: 0.88rem;
-      color: #6b5a4c;
-      display: block;
-      margin-top: 0.5rem;
-      padding-left: 0.2rem;
-      border-left: 3px solid #c49a6c;
-      padding-left: 0.75rem;
-      font-style: italic;
-    }
-
-    .tip-text::before {
-      content: "💡 ";
-      font-style: normal;
-    }
-
-    /* practical tips section */
-    .practical-tips {
-      margin-top: 3rem;
-      background: #f3ede7;
-      border-radius: 1.8rem;
-      padding: 2rem 2rem 1.8rem;
-      border: 1px solid #e1d5c9;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.6rem;
-      font-weight: 650;
-      color: #1e1a17;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .practical-tips h3::before {
-      content: "🧭";
-      font-size: 1.8rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.2rem;
-      margin-top: 0.8rem;
-    }
-
-    .tip-item {
-      background: #ffffffd9;
-      backdrop-filter: blur(2px);
-      padding: 1rem 1.3rem;
-      border-radius: 1.2rem;
-      border: 1px solid #e2d6cb;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-      font-size: 0.95rem;
-      color: #312a25;
-    }
-
-    .tip-item strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      color: #1e1a17;
-    }
-
-    .tip-item span {
-      color: #5b4c41;
-    }
-
-    @media (max-width: 850px) {
-      .guide-card {
-        padding: 1.8rem 1.2rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        padding-left: 1rem;
-      }
-
-      .attractions-table th {
-        display: none;
-      }
-
-      .attractions-table, .attractions-table tbody, .attractions-table tr, .attractions-table td {
-        display: block;
-        width: 100%;
-      }
-
-      .attractions-table tr {
-        margin-bottom: 1.5rem;
-      }
-
-      .attractions-table td {
-        border-radius: 1rem;
-        padding: 1.2rem 1.2rem;
-        border: 1px solid #e1d5c9;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-      }
-
-      .attractions-table td::before {
-        content: attr(data-label);
-        display: block;
-        font-weight: 600;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #8c7a6b;
-        margin-bottom: 0.5rem;
-      }
-
-      .practical-tips {
-        padding: 1.5rem 1.2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .intro {
-        padding: 1.2rem;
-        font-size: 1rem;
-      }
-
-      .price-badge {
-        font-size: 0.8rem;
-        white-space: normal;
-      }
-   
+<h3>Practical tips</h3>
+<ul>
+  <li>Many of Budapest's headline sights, including Buda Castle and the Danube Promenade, are best experienced on foot; wear comfortable shoes for the hill climbs.</li>
+  <li>Time your visits to outdoor Roman ruins such as the Aquincum amphitheatres for dry weather, since shade and shelter are limited.</li>
+  <li>Sunset and early evening are ideal for Gellért Hill and the riverside promenade, when the city's landmarks are illuminated.</li>
+  <li>Check current access details for sites under reconstruction, such as Archduke Joseph's Palace, before making a special trip.</li>
+  <li>For market halls and theatres, mornings and advance booking respectively help you avoid crowds and disappointment.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Budapest Guides</h3>

@@ -16,255 +16,60 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Mexico City's top attractions. It presents a structured, informative overview with a clean layout, including a detailed table of ten key sites, descriptions, ticket prices, and practical tips for travelers.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mexico City · Top 10 attractions · Travel guide</title>
-  <style>
-    /* clean, readable travel-guide styling */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #faf8f5;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      line-height: 1.55;
-      color: #1e1e2a;
-      padding: 2rem 1.2rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .guide-card {
-      max-width: 1200px;
-      width: 100%;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-      padding: 2.2rem 2rem;
-    }
-
-    h2 {
-      font-size: 2.1rem;
-      letter-spacing: -0.02em;
-      font-weight: 700;
-      color: #0f2b3d;
-      border-left: 8px solid #e05a4f;
-      padding-left: 1.2rem;
-      margin-bottom: 0.75rem;
-      line-height: 1.2;
-    }
-
-    .intro {
-      font-size: 1.1rem;
-      color: #2d3e4f;
-      margin: 1rem 0 2rem 0;
-      padding: 0 0.2rem;
-      background: #f2f6f9;
-      padding: 1.2rem 1.6rem;
-      border-radius: 20px;
-      border-left: 4px solid #e05a4f;
-    }
-
-    .table-responsive {
-      overflow-x: auto;
-      margin: 1.8rem 0 2rem 0;
-      border-radius: 18px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      background: white;
-      min-width: 780px;
-    }
-
-    th {
-      background: #0f2b3d;
-      color: white;
-      font-weight: 600;
-      padding: 1rem 0.9rem;
-      text-align: left;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-    }
-
-    td {
-      padding: 1rem 0.9rem;
-      border-bottom: 1px solid #e9edf2;
-      vertical-align: top;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .attraction-name {
-      font-weight: 700;
-      color: #0f2b3d;
-      font-size: 1.02rem;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-
-    .attraction-desc {
-      font-size: 0.9rem;
-      color: #3e4c5a;
-      line-height: 1.5;
-    }
-
-    .price-badge {
-      background: #eef4f8;
-      font-weight: 600;
-      color: #0b3b4f;
-      padding: 0.2rem 0.7rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      white-space: nowrap;
-      display: inline-block;
-      margin-bottom: 0.3rem;
-      border: 1px solid #cddce6;
-    }
-
-    .tip-text {
-      font-size: 0.88rem;
-      color: #4a5a6a;
-      display: block;
-      margin-top: 0.3rem;
-      background: #f9fbfd;
-      padding: 0.4rem 0.6rem;
-      border-radius: 10px;
-      border-left: 3px solid #e05a4f;
-    }
-
-    .practical-tips {
-      background: #eef3f7;
-      border-radius: 24px;
-      padding: 1.8rem 2rem;
-      margin-top: 2rem;
-      border: 1px solid #d6e2ec;
-    }
-
-    .practical-tips h3 {
-      font-size: 1.5rem;
-      font-weight: 650;
-      color: #0f2b3d;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .practical-tips h3::before {
-      content: "✈️";
-      font-size: 1.8rem;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .tip-item {
-      background: white;
-      border-radius: 18px;
-      padding: 1.2rem 1.3rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-      border: 1px solid #d9e2ea;
-    }
-
-    .tip-item strong {
-      display: block;
-      font-size: 1.05rem;
-      color: #0f2b3d;
-      margin-bottom: 0.5rem;
-      font-weight: 650;
-    }
-
-    .tip-item p {
-      font-size: 0.92rem;
-      color: #2f3f4e;
-      line-height: 1.5;
-    }
-
-    .note {
-      font-size: 0.88rem;
-      color: #5f6f7e;
-      margin-top: 1.5rem;
-      font-style: italic;
-      padding-top: 0.8rem;
-      border-top: 1px dashed #cbd7e2;
-    }
-
-    @media (max-width: 600px) {
-      .guide-card {
-        padding: 1.5rem 1rem;
-      }
-      h2 {
-        font-size: 1.7rem;
-        padding-left: 0.9rem;
-      }
-      .intro {
-        font-size: 1rem;
-        padding: 1rem;
-      }
-      .practical-tips {
-        padding: 1.3rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="guide-card">
-    <h2>Mexico City Top 10 Attractions</h2>
-
-    <p class="intro">
-      Mexico City is a sprawling, vibrant capital where ancient pyramids, colonial palaces, and world-class museums collide. 
-      From the legendary Zócalo to the canals of Xochimilco, the city offers an unforgettable mix of history, art, and flavor. 
-      Below are the 10 essential attractions — with descriptions, current ticket prices (in MXN, approximate USD), and smart tips 
-      to help you plan a smooth, memorable visit.
-    </p>
-
-    <!-- main content: structured table with descriptions, prices, tips -->
-    <div class="table-responsive">
-      <table>
-        <thead>
-          <tr>
-            <th>Attraction</th>
-            <th>Description</th>
-            <th>Ticket price (MXN / USD approx.)</th>
-            <th>Visiting tips</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- 1. Zócalo & Metropolitan Cathedral -->
-          <tr>
-            <td>
-              <span class="attraction-name">1. Zócalo & Metropolitan Cathedral</span>
-              <span style="font-size:0.8rem; color:#6b7c8b;">Centro Histórico</span>
-            </td>
-            <td class="attraction-desc">
-              One of the largest city squares in the world, flanked by the National Palace, the Metropolitan Cathedral, and the ruins of Templo Mayor. 
-              The heart of Mexico’s political and religious life for centuries.
-            </td>
-            <td>
-              <span class="price-badge">Free (square & cathedral)</span><br>
-              <span style="font-size:0.8rem;">Cathedral: free; donations welcome</span>
-            </td>
-            <td>
-              <span class="tip-text">Visit early morning to avoid crowds and heat. The cathedral’s interior is stunning — dress modestly. 
-              Don’t miss the
+            <h2>Top Attractions in Mexico City</h2>
+<p>Mexico City rewards visitors with layers of history, art, and green space. From the vast Zócalo at the heart of the historic center to the museums and forests of Chapultepec, the capital blends Aztec foundations, colonial architecture, and modern culture. This guide highlights ten standout sights most likely to appeal to an international traveler, each drawn from the city's rich and varied landscape.</p>
+<ol>
+  <li>
+    <strong>Historic Center of Mexico City (Centro Histórico)</strong><br>
+    The historic center focuses on the Zócalo, the largest plaza in Latin America, which can hold nearly 100,000 people and extends outward for many blocks to the Alameda Central. It is the essential starting point for understanding the city's colonial and pre-Hispanic heritage.
+  </li>
+  <li>
+    <strong>Chapultepec Forest (Bosque de Chapultepec)</strong><br>
+    Centered on Chapultepec Hill, this is one of the largest city parks in Mexico at just over 866 hectares and is considered the first and most important of Mexico City's "lungs." It serves as a vital ecological space and a beloved recreational area for residents and visitors alike.
+  </li>
+  <li>
+    <strong>Madero Street</strong><br>
+    This geographically and historically significant pedestrian street runs east–west from the Zócalo to the Eje Central, where it becomes Avenida Juárez. Named after a key figure in Mexican history, it is a major thoroughfare of the historic center and ideal for strolling.
+  </li>
+  <li>
+    <strong>Casa de los Azulejos (House of Tiles)</strong><br>
+    This 18th-century Baroque palace was built by the Count of the Valle de Orizaba family and is distinguished by a facade covered on three sides by blue and white colonial Talavera tiles from Puebla. It remains one of the most photographed landmarks in the historic center.
+  </li>
+  <li>
+    <strong>Palacio de Correos de México (Postal Palace)</strong><br>
+    Located near the Palacio de Bellas Artes, this 1907 building was the most modern of its time, mixing several traditions—mainly Neo-Plateresque—into a complex, eclectic design. It is a striking architectural gem in the heart of the city.
+  </li>
+  <li>
+    <strong>Los Pinos</strong><br>
+    This complex served as the official residence and office of the President of Mexico from 1934 to 2018, and the name became a metonym for the presidency. Since December 2018 it has operated as a cultural space within Chapultepec Forest.
+  </li>
+  <li>
+    <strong>Cárcamo de Dolores</strong><br>
+    Located in the Second Section of Chapultepec Park, this hydraulic structure includes a building by architect Ricardo Rivas housing Diego Rivera's mural "Agua, el origen de la vida," plus the outdoor Tlaloc Fountain, also by Rivera. It combines engineering, architecture, and major public art.
+  </li>
+  <li>
+    <strong>Casa del Lago Juan José Arreola</strong><br>
+    Instituted in 1959 as the first off-campus Cultural Center of the National Autonomous University of Mexico, it promotes cultural and generational encounter between the vanguard and tradition. It sits in the Woods of Chapultepec, a traditional Sunday walk area for capital residents.
+  </li>
+  <li>
+    <strong>Centro Cultural de España</strong><br>
+    Housed in a restored old mansion at 18 Guatemala Street behind the Cathedral, this cultural center was inaugurated in 2002 by the king of Spain and the president of Mexico. The land once belonged to Hernán Cortés, adding historic depth to its contemporary programming.
+  </li>
+  <li>
+    <strong>Pico del Águila (Cumbres del Ajusco National Park)</strong><br>
+    This 3,937-meter peak is part of the Ajusco range in Tlalpan borough and is a popular Sunday hike that can be climbed in about two hours. It offers a rewarding outdoor escape with sweeping views south of the city.
+  </li>
+</ol>
+<h3>Practical tips</h3>
+<ul>
+  <li>Start early at the Zócalo and Historic Center to avoid midday crowds, then walk Madero Street toward the Palacio de Bellas Artes.</li>
+  <li>Allow at least a full day for Chapultepec; combine the forest, Los Pinos, Casa del Lago, and the Cárcamo de Dolores in one visit.</li>
+  <li>Wear comfortable shoes—many central sights are best explored on foot along pedestrian streets.</li>
+  <li>For Pico del Águila, go on a clear morning, bring water and sun protection, and start early since the hike takes about two hours.</li>
+  <li>Check opening hours for cultural centers and palaces in advance, as schedules vary and some close on Mondays.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Mexico City Guides</h3>

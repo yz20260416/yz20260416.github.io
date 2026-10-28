@@ -16,191 +16,62 @@
     
     <main>
         <article>
-            This is a comprehensive HTML travel guide section for Vienna's top 10 attractions. It presents key information in a clean, structured format with a table for quick reference and practical tips for travelers.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vienna Travel Guide · Top 10 Attractions</title>
-    <style>
-        /* clean, readable styling for the guide */
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #faf9f8;
-            color: #1e1e1e;
-            line-height: 1.6;
-            margin: 0;
-            padding: 2rem 1rem;
-        }
-        .guide-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-            padding: 2rem 2rem 2.5rem;
-        }
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            color: #0a2e4b;
-            border-left: 8px solid #b8860b;
-            padding-left: 1.2rem;
-        }
-        .intro {
-            font-size: 1.15rem;
-            color: #2d3e50;
-            background: #f4f1ec;
-            padding: 1.25rem 1.8rem;
-            border-radius: 16px;
-            margin: 1.5rem 0 2rem 0;
-            border: 1px solid #e2ddd5;
-        }
-        .attraction-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-            margin: 1.8rem 0 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-        .attraction-table th {
-            background: #0a2e4b;
-            color: white;
-            font-weight: 600;
-            padding: 1rem 0.8rem;
-            text-align: left;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-        }
-        .attraction-table td {
-            padding: 1rem 0.8rem;
-            border-bottom: 1px solid #e6e3df;
-            vertical-align: top;
-            background: white;
-        }
-        .attraction-table tr:last-child td {
-            border-bottom: none;
-        }
-        .attraction-table tr:hover td {
-            background: #fcfaf7;
-        }
-        .attraction-name {
-            font-weight: 600;
-            color: #0a2e4b;
-            font-size: 1rem;
-        }
-        .ticket-price {
-            font-weight: 600;
-            color: #8b5a00;
-            white-space: nowrap;
-        }
-        .tip-badge {
-            display: inline-block;
-            background: #eae3d7;
-            color: #3e3a33;
-            font-size: 0.8rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            margin-top: 0.3rem;
-            font-weight: 500;
-        }
-        .practical-tips {
-            background: #f0f4f8;
-            border-radius: 20px;
-            padding: 1.8rem 2rem;
-            margin-top: 2.5rem;
-            border: 1px solid #d0dde9;
-        }
-        .practical-tips h3 {
-            font-size: 1.6rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            color: #0a2e4b;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .practical-tips ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.2rem;
-        }
-        .practical-tips li {
-            background: white;
-            padding: 1rem 1.2rem;
-            border-radius: 14px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            border-left: 4px solid #b8860b;
-            font-size: 0.98rem;
-        }
-        .practical-tips strong {
-            color: #0a2e4b;
-        }
-        .footnote {
-            font-size: 0.85rem;
-            color: #6b6f76;
-            margin-top: 1.8rem;
-            border-top: 1px dashed #ccc;
-            padding-top: 1rem;
-            text-align: center;
-        }
-        @media (max-width: 700px) {
-            .guide-container { padding: 1.2rem; }
-            h2 { font-size: 1.8rem; }
-            .attraction-table th, .attraction-table td { padding: 0.7rem 0.5rem; font-size: 0.85rem; }
-            .attraction-table { display: block; overflow-x: auto; white-space: nowrap; }
-            .practical-tips ul { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-<div class="guide-container">
+            <h2>Top Attractions in Vienna</h2>
+<p>Vienna blends imperial grandeur with modern culture, from the sprawling Hofburg Palace to quirky landmarks like the Hundertwasserhaus. The city's historic center, ringed by the grand Ringstraße, holds many of its finest sights, while green spaces and the Danube Canal offer breathing room between museum visits. Whether you're drawn to Habsburg history, contemporary art, or family-friendly aquariums, these ten attractions capture the essence of Austria's capital.</p>
 
-    <!-- H2 heading exactly as requested -->
-    <h2>Vienna Top 10 Attractions</h2>
+<ol>
+  <li>
+    <strong>Hofburg Palace</strong> — The former principal imperial palace of the Habsburg dynasty, built in the 13th century and expanded over the centuries, served as the imperial winter residence. Since 1946 it has been the official residence and workplace of the Austrian president.
+    <br><em>Tip:</em> Allow at least half a day; the complex includes multiple museums, so check combined tickets.
+  </li>
+  <li>
+    <strong>Austrian Parliament Building</strong> — Located on the Ringstraße in the first district near Hofburg Palace, this grand building houses the two chambers of Austria's parliament. It was originally built for the Imperial Council of the Austro-Hungarian Empire.
+    <br><em>Tip:</em> Visit early morning for the best light on the facade and fewer crowds along the Ringstraße.
+  </li>
+  <li>
+    <strong>Haus des Meeres</strong> — This public aquarium in Mariahilf district houses over ten thousand aquatic creatures across roughly 4,000 square meters inside a converted World War II flak tower. It drew a record 650,000 visitors in 2012.
+    <br><em>Tip:</em> Book tickets online in advance; it's a popular family destination, especially on weekends.
+  </li>
+  <li>
+    <strong>Hundertwasserhaus</strong> — This whimsical apartment house, completed in 1985, was built on the idea and concept of Austrian artist Friedensreich Hundertwasser. Its irregular forms and colorful facade make it one of Vienna's most photographed buildings.
+    <br><em>Tip:</em> It's a residential building, so admire from outside; combine with a stroll through the nearby streets.
+  </li>
+  <li>
+    <strong>Imperial Crypt (Kaisergruft)</strong> — Founded in 1618 beneath the Capuchin Church near Hofburg Palace, this burial chamber has served since 1633 as the principal place of entombment for the House of Habsburg. It holds the remains of 145 Habsburg royalty.
+    <br><em>Tip:</em> A modest entrance fee applies; visit on a weekday morning for a quieter experience.
+  </li>
+  <li>
+    <strong>Ducal Crypt</strong> — This burial chamber beneath the chancel of Stephansdom holds 78 containers with the bodies, hearts, or viscera of 72 members of the House of Habsburg. It offers a fascinating, if macabre, glimpse into imperial burial traditions.
+    <br><em>Tip:</em> Combine with a visit to St. Stephen's Cathedral above; guided tours are limited, so check times in advance.
+  </li>
+  <li>
+    <strong>Herzgruft (Heart Crypt)</strong> — Located behind the Loreto Chapel in the Augustinian Church within the Hofburg complex, this crypt protects 54 urns containing the hearts of Habsburg family members. The first heart was placed here in 1654.
+    <br><em>Tip:</em> It's a small, easily missed site—ask at the church entrance for directions.
+  </li>
+  <li>
+    <strong>Botanical Garden of the University of Vienna</strong> — Covering 8 hectares and immediately adjacent to the Belvedere gardens, this botanical garden is part of the University of Vienna. It's a peaceful green escape in the city.
+    <br><em>Tip:</em> Pair with a visit to the Belvedere; spring and early summer are best for blooms. Entry is generally free.
+  </li>
+  <li>
+    <strong>Donaukanal</strong> — This former arm of the Danube, regulated since 1598, runs 17.3 kilometers and borders the city center, where the Wien River flows into it. Today its banks are lined with murals, bars, and promenades.
+    <br><em>Tip:</em> Go in the late afternoon or evening for the lively riverside atmosphere and street art.
+  </li>
+  <li>
+    <strong>Bohemian Prater</strong> — This small amusement park at the edge of Vienna in Favoriten dates to the second half of the 19th century, and some rides are over 100 years old. It was almost completely destroyed by a bomb attack in 1944 and later rebuilt.
+    <br><em>Tip:</em> Ideal for families with children; check seasonal opening hours before making the trip.
+  </li>
+</ol>
 
-    <!-- Introduction paragraph -->
-    <div class="intro">
-        <p>Vienna, the former imperial capital on the Danube, blends grand palaces, world-class museums, and a lively coffeehouse culture into one elegant city. From the gilded halls of Schönbrunn to the cutting-edge KunstHausWien, the city offers a wealth of experiences for every traveler. Below you’ll find the <strong>top 10 attractions</strong> with essential details on what to see, current ticket prices (as of 2025), and practical tips to make the most of your visit. All prices are in euros and reflect standard adult admission unless noted.</p>
-    </div>
-
-    <!-- Main content: structured table with descriptions, prices, and tips -->
-    <table class="attraction-table">
-        <thead>
-            <tr>
-                <th>Attraction</th>
-                <th>Description</th>
-                <th>Ticket price (adult)</th>
-                <th>Visiting tips</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="attraction-name">1. Schönbrunn Palace</span></td>
-                <td>Former imperial summer residence with 1,441 rooms, opulent interiors, and sprawling gardens. The <em>Grand Tour</em> covers 40 state rooms; the Gloriette offers panoramic views.</td>
-                <td class="ticket-price">€32 (Grand Tour)<br><span style="font-weight:400;">€22 (Imperial Tour)</span></td>
-                <td>Book online to skip ticket lines; arrive early (before 10am). The gardens are free and perfect for a stroll. Combine with a visit to the Gloriette café.</td>
-            </tr>
-            <tr>
-                <td><span class="attraction-name">2. St. Stephen's Cathedral</span></td>
-                <td>Vienna’s iconic Gothic cathedral with a colourful tiled roof, catacombs, and a 136-metre south tower. Climb 343 steps for a breathtaking view.</td>
-                <td class="ticket-price">€6 (cathedral)<br>€6 (south tower)<br>€6 (catacombs)<br><span style="font-weight:400;">Combined tickets available</span></td>
-                <td>Dress respectfully (shoulders/knees covered). Go early morning or late afternoon to avoid crowds. The evening light on the roof tiles is spectacular.</td>
-            </tr>
-            <tr>
-                <td><span class="attraction-name">3. Belvedere Palace</span></td>
-                <td>Baroque palace complex housing the world’s largest collection of Gustav Klimt, including <em>The Kiss</em>. Upper and Lower Belvedere are connected by formal gardens.</td>
-                <td class="ticket-price">€19.50 (Upper Belvedere)<br><span style="font-weight:400;">€15 (Lower)<br>€27 (Klimt ticket)</span></td>
-               
+<h3>Practical tips</h3>
+<ul>
+  <li>Many major sights cluster in the Innere Stadt and along the Ringstraße—plan walking routes to minimize transit time.</li>
+  <li>Purchase a Vienna City Card or transit pass for discounts on museums and unlimited public transport.</li>
+  <li>Book popular attractions like Haus des Meeres online to skip ticket queues, especially in summer.</li>
+  <li>Visit outdoor sites such as the Donaukanal and Hundertwasserhaus in the morning for fewer crowds and better photos.</li>
+  <li>Note that several crypts have limited opening hours—confirm schedules before your visit.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Vienna Guides</h3>

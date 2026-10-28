@@ -16,211 +16,124 @@
     
     <main>
         <article>
-            Here is a comprehensive HTML travel guide section for Dublin's top attractions, formatted as requested.
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dublin Travel Guide – Top 10 Attractions</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            line-height: 1.6;
-            color: #1e2b3a;
-            background-color: #f9fafc;
-            margin: 0;
-            padding: 2rem 1rem;
-        }
-        .guide-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-            padding: 2.5rem 2rem;
-            border: 1px solid #e6edf4;
-        }
-        h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #0b3b5c;
-            border-left: 8px solid #c44536;
-            padding-left: 1.2rem;
-            margin-top: 0.2rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-        .intro {
-            font-size: 1.1rem;
-            color: #2c3e50;
-            background: #f0f6fb;
-            padding: 1.2rem 1.8rem;
-            border-radius: 16px;
-            margin-bottom: 2.2rem;
-            border: 1px solid #d9e6f2;
-        }
-        .intro p {
-            margin: 0;
-        }
-        .attraction-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 12px;
-            margin: 1.5rem 0 2rem;
-        }
-        .attraction-table th {
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: #1f4e6f;
-            padding: 0 0.8rem 0.4rem 0.8rem;
-            border-bottom: 2px solid #cbdae7;
-        }
-        .attraction-table td {
-            background: #ffffff;
-            padding: 1.2rem 1rem;
-            border-radius: 14px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e2eaf2;
-            vertical-align: top;
-        }
-        .attraction-table tr:hover td {
-            background: #f8fcff;
-            border-color: #b8d2e8;
-            transition: 0.15s;
-        }
-        .attr-name {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #0b3b5c;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        .attr-desc {
-            font-size: 0.95rem;
-            color: #2f4052;
-            margin-bottom: 0.5rem;
-        }
-        .attr-price {
-            font-weight: 600;
-            color: #1d6f42;
-            background: #e6f3ea;
-            display: inline-block;
-            padding: 0.2rem 0.9rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            margin-top: 0.3rem;
-        }
-        .attr-tip {
-            font-size: 0.88rem;
-            color: #4a5e72;
-            background: #f2f6fa;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 0.4rem;
-            border-left: 3px solid #c44536;
-        }
-        .tips-section {
-            background: #eef4fa;
-            border-radius: 20px;
-            padding: 1.8rem 2rem;
-            margin-top: 2.5rem;
-            border: 1px solid #cfe0ee;
-        }
-        .tips-section h3 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #0b3b5c;
-            margin-top: 0;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .tips-section h3::before {
-            content: "🧭";
-            font-size: 1.8rem;
-        }
-        .tips-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem 2rem;
-        }
-        .tips-list li {
-            position: relative;
-            padding-left: 2rem;
-            font-size: 0.98rem;
-            color: #1f3a4e;
-            line-height: 1.5;
-        }
-        .tips-list li::before {
-            content: "✔️";
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 1rem;
-        }
-        .small-note {
-            font-size: 0.85rem;
-            color: #5f7d95;
-            margin-top: 1.5rem;
-            font-style: italic;
-            border-top: 1px dashed #b8cbd9;
-            padding-top: 1rem;
-        }
-        @media (max-width: 700px) {
-            .guide-container { padding: 1.5rem; }
-            .attraction-table td { display: block; width: 100%; margin-bottom: 1rem; }
-            .attraction-table th { display: none; }
-            .attraction-table tr { display: block; margin-bottom: 1.2rem; }
-            .attraction-table td:first-child { border-radius: 14px 14px 0 0; }
-            .attraction-table td:last-child { border-radius: 0 0 14px 14px; }
-        }
-    </style>
-</head>
-<body>
-<div class="guide-container">
+            <h2>Dublin's Top 10 Must-See Attractions</h2>
 
-    <!-- H2 heading as requested -->
-    <h2>Dublin Top 10 Attractions</h2>
+<p>Dublin packs centuries of history, literature, and lively pub culture into a compact, walkable city centre. Whether you have two days or a week, these ten attractions cover the essentials—from the medieval halls of Dublin Castle to the world-famous collections of the National Museum. Below you'll find descriptions, current ticket prices, opening hours, and practical tips to help you plan your visit.</p>
 
-    <!-- Introduction paragraph -->
-    <div class="intro">
-        <p>Dublin is a city where Viking history, literary giants, and warm pub culture collide. From the hallowed halls of Trinity College to the hallowed (and haunted) walls of Kilmainham Gaol, the Irish capital packs centuries of story into a walkable centre. Whether you’re chasing the Book of Kells, a perfect pint of stout, or a windswept coastal view, these ten attractions capture the essence of Dublin. Below you’ll find honest descriptions, current ticket prices (as of 2025), and practical tips to help you skip queues, save money, and make the most of every stop.</p>
-    </div>
+<ol>
+  <li>
+    <h3>Trinity College &amp; the Book of Kells</h3>
+    <p>Ireland's oldest university (founded 1592) is home to the Long Room, a breathtaking 65-metre library hall, and the Book of Kells, an illuminated 9th-century manuscript of the Gospels. The current <em>Book of Kells Experience</em> combines the manuscript display with a digital exhibition.</p>
+    <table>
+      <tr><th>Tickets</th><td>Adult €18.50–€25 (online rates vary); students/seniors reduced; children under 12 free</td></tr>
+      <tr><th>Hours</th><td>Mon–Sat 9:30–17:00, Sun 12:00–16:30 (seasonal variations; book a timed slot)</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Book online in advance—walk-up queues are long, especially in summer.</p>
+  </li>
 
-    <!-- Main content: structured table with descriptions, prices, tips -->
-    <table class="attraction-table">
-        <thead>
-            <tr>
-                <th style="width: 25%;">Attraction</th>
-                <th style="width: 45%;">Description</th>
-                <th style="width: 30%;">Ticket & Tips</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- 1. Guinness Storehouse -->
-            <tr>
-                <td><span class="attr-name">1. Guinness Storehouse</span></td>
-                <td class="attr-desc">Ireland’s most visited attraction tells the story of the black stuff across seven floors shaped like a giant pint glass. You’ll learn about brewing, advertising, and the Guinness family, finishing with a complimentary pint in the Gravity Bar – Dublin’s best 360° view.</td>
-                <td>
-                    <span class="attr-price">€26–€32 (adult, online saver)</span><br>
-                    <span class="attr-tip">Book online for a 10–15% discount and skip the ticket queue. Go early (10am) or after 5pm to avoid crowds. Gravity Bar pint included.</span>
-                </td>
-            </tr>
-            <!-- 2. Trinity College & Book of Kells -->
-            <tr>
-                <td><span class="attr-name">2. Trinity College & Book of Kells</span></td>
-                <td class="attr-desc">Founded in 1592, Trinity’s cobbled squares are free to
+  <li>
+    <h3>Guinness Storehouse</h3>
+    <p>Set in the seven-storey fermentation building of the St James's Gate brewery, this interactive experience tells the story of Ireland's most famous stout, ending with a pint and 360° views in the Gravity Bar.</p>
+    <table>
+      <tr><th>Tickets</th><td>Adult from €22–€30 (online vs. gate); discounts for students, seniors, and families</td></tr>
+      <tr><th>Hours</th><td>Daily 9:30–19:00 (last entry 17:00); extended summer hours</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Visit before 11:00 or after 16:00 to avoid peak crowds; the ticket includes one pint.</p>
+  </li>
+
+  <li>
+    <h3>Kilmainham Gaol</h3>
+    <p>This former prison held leaders of Ireland's independence movement, including the 1916 Easter Rising executants. Guided tours bring the country's revolutionary history vividly to life.</p>
+    <table>
+      <tr><th>Tickets</th><td>Adult €8; senior/student €4; child €4; family €20 (booking essential)</td></tr>
+      <tr><th>Hours</th><td>Daily 9:30–18:00 (last tour 17:00); reduced winter hours</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Tickets sell out days ahead—reserve online as soon as your dates are fixed.</p>
+  </li>
+
+  <li>
+    <h3>St Patrick's Cathedral</h3>
+    <p>Ireland's largest cathedral (founded 1191) is where Jonathan Swift served as dean; his grave and epitaph are inside. The Gothic interior and colourful floor tiles are highlights.</p>
+    <table>
+      <tr><th>Tickets</th><td>Adult €9; student/senior €8; child €4; family €24</td></tr>
+      <tr><th>Hours</th><td>Mon–Sat 9:00–17:00, Sun 9:00–10:30 &amp; 12:30–14:30 (services restrict visiting)</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Combine with nearby Christ Church Cathedral (5-minute walk) for a cathedral double-bill.</p>
+  </li>
+
+  <li>
+    <h3>Dublin Castle</h3>
+    <p>Seat of British rule in Ireland for 700 years, now a government complex. The State Apartments and the medieval Record Tower are open on guided tours, and the Chapel Royal is a hidden gem.</p>
+    <table>
+      <tr><th>Tickets</th><td>State Apartments adult €8; senior/student €6; child €4; family €20</td></tr>
+      <tr><th>Hours</th><td>Daily 9:45–17:45 (last admission 17:15)</td></tr>
+    </table>
+    <p><strong>Tip:</strong> The castle courtyards and gardens are free to wander; only the apartments require a ticket.</p>
+  </li>
+
+  <li>
+    <h3>National Museum of Ireland – Archaeology</h3>
+    <p>On Kildare Street, this free museum houses the Ardagh Chalice, the Tara Brooch, and the finest collection of prehistoric gold in Europe. The bog bodies exhibit is unforgettable.</p>
+    <table>
+      <tr><th>Tickets</th><td>Free (donations welcome)</td></tr>
+      <tr><th>Hours</th><td>Tue–Sat 10:00–17:00, Sun 14:00–17:00; closed Mon</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Pair it with the National Gallery next door for a free culture afternoon.</p>
+  </li>
+
+  <li>
+    <h3>EPIC The Irish Emigration Museum</h3>
+    <p>An award-winning, fully digital museum in the Docklands telling the story of the 10 million people who left Ireland. Interactive and ideal for families.</p>
+    <table>
+      <tr><th>Tickets</th><td>Adult €18.50; student/senior €16; child €9.50; family from €45</td></tr>
+      <tr><th>Hours</th><td>Daily 10:00–18:45 (last entry 17:00)</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Allow 1.5–2 hours; the museum is a short walk from the Jeanie Johnston famine ship.</p>
+  </li>
+
+  <li>
+    <h3>Phoenix Park &amp; Dublin Zoo</h3>
+    <p>One of Europe's largest enclosed city parks (707 hectares), home to wild fallow deer, the President's residence, and Dublin Zoo. Great for a picnic or a bike ride.</p>
+    <table>
+      <tr><th>Tickets</th><td>Park free; Dublin Zoo adult €22, child €16.50, family from €60</td></tr>
+      <tr><th>Hours</th><td>Park open 24 hours; zoo daily 9:30–18:00 (seasonal)</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Rent a bike at the park gates; the deer herds are best seen near the Papal Cross at dawn or dusk.</p>
+  </li>
+
+  <li>
+    <h3>Christ Church Cathedral</h3>
+    <p>Dublin's oldest cathedral (c. 1030) sits on a hill above the Liffey, with a striking crypt and a famous medieval floor-tile collection. The adjoining Dublinia museum covers Viking and medieval Dublin.</p>
+    <table>
+      <tr><th>Tickets</th><td>Adult €9.50; senior/student €8; child €4; family €24; combined ticket with Dublinia available</td></tr>
+      <tr><th>Hours</th><td>Mon–Sat 9:30–18:00, Sun 12:30–18:00 (services restrict access)</td></tr>
+    </table>
+    <p><strong>Tip:</strong> The crypt café is a quiet spot for lunch away from Temple Bar crowds.</p>
+  </li>
+
+  <li>
+    <h3>Temple Bar &amp; the Ha'penny Bridge</h3>
+    <p>Dublin's most famous nightlife quarter is a maze of cobbled streets, pubs with live traditional music, and the iconic 1816 Ha'penny Bridge over the Liffey. Free to explore and best experienced on foot.</p>
+    <table>
+      <tr><th>Tickets</th><td>Free (pub prices apply)</td></tr>
+      <tr><th>Hours</th><td>Streets always open; pubs generally 11:30–00:30 (later Fri–Sat)</td></tr>
+    </table>
+    <p><strong>Tip:</strong> Temple Bar is pricey and touristy—for better value trad music, try pubs on Wexford Street or in Smithfield.</p>
+  </li>
+</ol>
+
+<h2>Practical Tips</h2>
+<ul>
+  <li><strong>Book ahead:</strong> Kilmainham Gaol, the Book of Kells, and Guinness Storehouse sell out in peak season—reserve online.</li>
+  <li><strong>Get a Leap Card:</strong> A reloadable travel card for buses, trams (Luas), and DART trains; capped daily fares make it cheaper than cash.</li>
+  <li><strong>Walk the centre:</strong> Most attractions above sit within a 2 km radius of O'Connell Bridge; a compact walking itinerary beats taxis.</li>
+  <li><strong>Check service times:</strong> Cathedrals restrict tourist access during Sunday services—plan around them.</li>
+  <li><strong>Weather:</strong> Rain is common year-round; pack a waterproof layer and expect cool summers (15–20°C).</li>
+  <li><strong>Free days:</strong> National museums and galleries are free; many attractions offer reduced rates for students and seniors with ID.</li>
+  <li><strong>Currency:</strong> Ireland uses the euro (€); contactless cards are widely accepted, but carry some cash for small pubs.</li>
+</ul>
+            
+            
             
             <section class="related-links">
                 <h3>More Dublin Guides</h3>
