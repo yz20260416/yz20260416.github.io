@@ -1,0 +1,1165 @@
+[
+  {
+    "name": "Tokyo",
+    "country": "Japan",
+    "slug": "tokyo",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "temp": "15-22°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Kyoto",
+    "country": "Japan",
+    "slug": "kyoto",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "temp": "12-20°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Osaka",
+    "country": "Japan",
+    "slug": "osaka",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "temp": "14-21°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Seoul",
+    "country": "South Korea",
+    "slug": "seoul",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "temp": "10-20°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Beijing",
+    "country": "China",
+    "slug": "beijing",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "temp": "8-18°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Shanghai",
+    "country": "China",
+    "slug": "shanghai",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "temp": "12-22°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Bangkok",
+    "country": "Thailand",
+    "slug": "bangkok",
+    "region": "asia",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "temp": "25-32°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Singapore",
+    "country": "Singapore",
+    "slug": "singapore",
+    "region": "asia",
+    "bestMonths": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "temp": "26-31°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Bali",
+    "country": "Indonesia",
+    "slug": "bali",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "26-31°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Hanoi",
+    "country": "Vietnam",
+    "slug": "hanoi",
+    "region": "asia",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "temp": "15-25°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Paris",
+    "country": "France",
+    "slug": "paris",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "10-20°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "London",
+    "country": "UK",
+    "slug": "london",
+    "region": "europe",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "12-22°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Rome",
+    "country": "Italy",
+    "slug": "rome",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "temp": "12-24°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Barcelona",
+    "country": "Spain",
+    "slug": "barcelona",
+    "region": "europe",
+    "bestMonths": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "15-26°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Amsterdam",
+    "country": "Netherlands",
+    "slug": "amsterdam",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9
+    ],
+    "temp": "8-18°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Vienna",
+    "country": "Austria",
+    "slug": "vienna",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "8-20°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Prague",
+    "country": "Czech Republic",
+    "slug": "prague",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "6-18°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Athens",
+    "country": "Greece",
+    "slug": "athens",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "15-28°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Lisbon",
+    "country": "Portugal",
+    "slug": "lisbon",
+    "region": "europe",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "temp": "14-24°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Dublin",
+    "country": "Ireland",
+    "slug": "dublin",
+    "region": "europe",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "temp": "10-19°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "New York",
+    "country": "USA",
+    "slug": "new-york",
+    "region": "americas",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "10-25°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Los Angeles",
+    "country": "USA",
+    "slug": "los-angeles",
+    "region": "americas",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "temp": "15-28°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "San Francisco",
+    "country": "USA",
+    "slug": "san-francisco",
+    "region": "americas",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "temp": "12-22°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Miami",
+    "country": "USA",
+    "slug": "miami",
+    "region": "americas",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      4,
+      11,
+      12
+    ],
+    "temp": "20-30°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Toronto",
+    "country": "Canada",
+    "slug": "toronto",
+    "region": "americas",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "12-26°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Vancouver",
+    "country": "Canada",
+    "slug": "vancouver",
+    "region": "americas",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "12-22°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Mexico City",
+    "country": "Mexico",
+    "slug": "mexico-city",
+    "region": "americas",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "temp": "12-25°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Rio de Janeiro",
+    "country": "Brazil",
+    "slug": "rio-de-janeiro",
+    "region": "americas",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "18-28°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Buenos Aires",
+    "country": "Argentina",
+    "slug": "buenos-aires",
+    "region": "americas",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "12-25°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Lima",
+    "country": "Peru",
+    "slug": "lima",
+    "region": "americas",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "temp": "15-22°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Sydney",
+    "country": "Australia",
+    "slug": "sydney",
+    "region": "oceania",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "15-25°C",
+    "emoji": "🏝️"
+  },
+  {
+    "name": "Melbourne",
+    "country": "Australia",
+    "slug": "melbourne",
+    "region": "oceania",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "12-22°C",
+    "emoji": "🏝️"
+  },
+  {
+    "name": "Auckland",
+    "country": "New Zealand",
+    "slug": "auckland",
+    "region": "oceania",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
+    "temp": "16-24°C",
+    "emoji": "🏝️"
+  },
+  {
+    "name": "Fiji",
+    "country": "Fiji",
+    "slug": "fiji",
+    "region": "oceania",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "temp": "22-30°C",
+    "emoji": "🏝️"
+  },
+  {
+    "name": "Bora Bora",
+    "country": "French Polynesia",
+    "slug": "bora-bora",
+    "region": "oceania",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "temp": "24-30°C",
+    "emoji": "🏝️"
+  },
+  {
+    "name": "Cairo",
+    "country": "Egypt",
+    "slug": "cairo",
+    "region": "africa",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "temp": "15-28°C",
+    "emoji": "🦁"
+  },
+  {
+    "name": "Cape Town",
+    "country": "South Africa",
+    "slug": "cape-town",
+    "region": "africa",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      11,
+      12
+    ],
+    "temp": "17-26°C",
+    "emoji": "🦁"
+  },
+  {
+    "name": "Marrakech",
+    "country": "Morocco",
+    "slug": "marrakech",
+    "region": "africa",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "temp": "15-28°C",
+    "emoji": "🦁"
+  },
+  {
+    "name": "Nairobi",
+    "country": "Kenya",
+    "slug": "nairobi",
+    "region": "africa",
+    "bestMonths": [
+      1,
+      2,
+      7,
+      8
+    ],
+    "temp": "15-25°C",
+    "emoji": "🦁"
+  },
+  {
+    "name": "Zanzibar",
+    "country": "Tanzania",
+    "slug": "zanzibar",
+    "region": "africa",
+    "bestMonths": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "temp": "24-30°C",
+    "emoji": "🦁"
+  },
+  {
+    "name": "Dubai",
+    "country": "UAE",
+    "slug": "dubai",
+    "region": "middleeast",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "temp": "20-33°C",
+    "emoji": "🌍"
+  },
+  {
+    "name": "Istanbul",
+    "country": "Turkey",
+    "slug": "istanbul",
+    "region": "middleeast",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "10-25°C",
+    "emoji": "🌍"
+  },
+  {
+    "name": "Jerusalem",
+    "country": "Israel",
+    "slug": "jerusalem",
+    "region": "middleeast",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "temp": "12-25°C",
+    "emoji": "🌍"
+  },
+  {
+    "name": "Petra",
+    "country": "Jordan",
+    "slug": "petra",
+    "region": "middleeast",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "10-25°C",
+    "emoji": "🌍"
+  },
+  {
+    "name": "Maldives",
+    "country": "Maldives",
+    "slug": "maldives",
+    "region": "middleeast",
+    "bestMonths": [
+      1,
+      2,
+      3,
+      12
+    ],
+    "temp": "26-31°C",
+    "emoji": "🌍"
+  },
+  {
+    "name": "Moscow",
+    "country": "Russia",
+    "slug": "moscow",
+    "region": "europe",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "10-24°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "St. Petersburg",
+    "country": "Russia",
+    "slug": "st-petersburg",
+    "region": "europe",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "8-22°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Warsaw",
+    "country": "Poland",
+    "slug": "warsaw",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "6-20°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Budapest",
+    "country": "Hungary",
+    "slug": "budapest",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "8-22°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Copenhagen",
+    "country": "Denmark",
+    "slug": "copenhagen",
+    "region": "europe",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "10-22°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Guangzhou",
+    "country": "China",
+    "slug": "guangzhou",
+    "region": "asia",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "temp": "15-28°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Shenzhen",
+    "country": "China",
+    "slug": "shenzhen",
+    "region": "asia",
+    "bestMonths": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "temp": "15-28°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Chengdu",
+    "country": "China",
+    "slug": "chengdu",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "10-24°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Xi'an",
+    "country": "China",
+    "slug": "xi-an",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "temp": "8-22°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Hangzhou",
+    "country": "China",
+    "slug": "hangzhou",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "10-26°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Chongqing",
+    "country": "China",
+    "slug": "chongqing",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "12-26°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Harbin",
+    "country": "China",
+    "slug": "harbin",
+    "region": "asia",
+    "bestMonths": [
+      12,
+      1,
+      2
+    ],
+    "temp": "-20-0°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Kunming",
+    "country": "China",
+    "slug": "kunming",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "10-24°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Guilin",
+    "country": "China",
+    "slug": "guilin",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10,
+      11
+    ],
+    "temp": "12-28°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Lhasa",
+    "country": "China",
+    "slug": "lhasa",
+    "region": "asia",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "5-20°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Jinan",
+    "country": "China",
+    "slug": "jinan",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "10-26°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Huangshan",
+    "country": "China",
+    "slug": "huangshan",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "5-20°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Zhangjiajie",
+    "country": "China",
+    "slug": "zhangjiajie",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "10-26°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Jiuzhaigou",
+    "country": "China",
+    "slug": "jiuzhaigou",
+    "region": "asia",
+    "bestMonths": [
+      9,
+      10,
+      11
+    ],
+    "temp": "5-20°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Sanya",
+    "country": "China",
+    "slug": "sanya",
+    "region": "asia",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "temp": "20-30°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Dali",
+    "country": "China",
+    "slug": "dali",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "10-24°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Lijiang",
+    "country": "China",
+    "slug": "lijiang",
+    "region": "asia",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10,
+      11
+    ],
+    "temp": "8-22°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Shangri-La",
+    "country": "China",
+    "slug": "shangri-la",
+    "region": "asia",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "5-18°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Yangshuo",
+    "country": "China",
+    "slug": "yangshuo",
+    "region": "asia",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "12-28°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Madrid",
+    "country": "Spain",
+    "slug": "madrid",
+    "region": "europe",
+    "bestMonths": [
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "temp": "10-25°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Milan",
+    "country": "Italy",
+    "slug": "milan",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "12-27°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Berlin",
+    "country": "Germany",
+    "slug": "berlin",
+    "region": "europe",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "temp": "10-24°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Florence",
+    "country": "Italy",
+    "slug": "florence",
+    "region": "europe",
+    "bestMonths": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "temp": "12-28°C",
+    "emoji": "🏛️"
+  },
+  {
+    "name": "Las Vegas",
+    "country": "USA",
+    "slug": "las-vegas",
+    "region": "americas",
+    "bestMonths": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "temp": "15-35°C",
+    "emoji": "🗽"
+  },
+  {
+    "name": "Phuket",
+    "country": "Thailand",
+    "slug": "phuket",
+    "region": "asia",
+    "bestMonths": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "temp": "26-33°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "slug": "ho-chi-minh-city",
+    "region": "asia",
+    "bestMonths": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "temp": "24-34°C",
+    "emoji": "🏯"
+  },
+  {
+    "name": "Kuala Lumpur",
+    "country": "Malaysia",
+    "slug": "kuala-lumpur",
+    "region": "asia",
+    "bestMonths": [
+      5,
+      6,
+      7,
+      12,
+      1
+    ],
+    "temp": "24-33°C",
+    "emoji": "🏯"
+  }
+]

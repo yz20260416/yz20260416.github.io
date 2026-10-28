@@ -89,11 +89,7 @@
         
         <div class="section">
             <h2 class="section-title">🗺️ Browse by Region</h2>
-            <div class="region-tags">
-                <a href="#asia" class="region-tag">Asia</a>
-                <a href="#europe" class="region-tag">Europe</a>
-                <a href="#americas" class="region-tag">Americas</a>
-            </div>
+            <div class="region-tags" id="regionTags"></div>
         </div>
         
         <footer>
@@ -102,20 +98,14 @@
     </div>
     
     <script>
-        const cities = [
-            {name: "Tokyo", country: "Japan", region: "asia", emoji: "🗼", bestMonths: [3,4,10,11], temp: "15-22°C"},
-            {name: "Paris", country: "France", region: "europe", emoji: "🗼", bestMonths: [4,5,6,9,10], temp: "10-20°C"},
-            {name: "London", country: "UK", region: "europe", emoji: "🎡", bestMonths: [5,6,7,8,9], temp: "12-22°C"},
-            {name: "New York", country: "USA", region: "americas", emoji: "🗽", bestMonths: [4,5,6,9,10], temp: "10-25°C"},
-        ];
+        let cities = [];
         
         const now = new Date();
         const currentMonth = now.getMonth() + 1;
-        document.getElementById('currentMonth').textContent = `(${new Date().toLocaleString('en', {month: 'long'})})`;
+        document.getElementById('currentMonth').textContent = `(${now.toLocaleString('en', {month: 'long'})})`;
         
         function createCityCard(city) {
-            const slug = city.name.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
-            return `<a href="cities/${slug}.html" class="city-card">
+            return `<a href="cities/${city.slug}.html" class="city-card">
                 <div class="city-image">${city.emoji}</div>
                 <div class="city-info">
                     <div class="city-name">${city.name}</div>
@@ -125,11 +115,32 @@
             </a>`;
         }
         
-        const bestNow = cities.filter(c => c.bestMonths.includes(currentMonth));
-        document.getElementById('bestNowGrid').innerHTML = bestNow.map(createCityCard).join('');
+        function renderRegions() {
+            const regions = [...new Set(cities.map(c => c.region).filter(Boolean))];
+            const label = {asia: "Asia", europe: "Europe", americas: "Americas", africa: "Africa", oceania: "Oceania", "middle-east": "Middle East"};
+            document.getElementById('regionTags').innerHTML = regions.map(r => 
+                `<a href="#${r}" class="region-tag" onclick="showRegion('${r}');return false;">${label[r] || r}</a>`
+            ).join('');
+        }
         
-        const trending = cities.slice(0, 4);
-        document.getElementById('trendingGrid').innerHTML = trending.map(createCityCard).join('');
+        function showRegion(region) {
+            const filtered = cities.filter(c => c.region === region);
+            document.getElementById('bestNowGrid').innerHTML = filtered.map(createCityCard).join('');
+            document.querySelector('.section-title').scrollIntoView({behavior: 'smooth'});
+            document.getElementById('currentMonth').textContent = `— ${region}`;
+        }
+        
+        function renderAll() {
+            const bestNow = cities.filter(c => c.bestMonths.includes(currentMonth));
+            document.getElementById('bestNowGrid').innerHTML = bestNow.length 
+                ? bestNow.map(createCityCard).join('') 
+                : '<p style="color:white">No cities match this month.</p>';
+            
+            const trending = cities.slice(0, 8);
+            document.getElementById('trendingGrid').innerHTML = trending.map(createCityCard).join('');
+            
+            renderRegions();
+        }
         
         const searchInput = document.getElementById('searchInput');
         const searchResults = document.getElementById('searchResults');
@@ -140,13 +151,35 @@
                 searchResults.classList.remove('active');
                 return;
             }
-            const matches = cities.filter(c => c.name.toLowerCase().includes(q) || c.country.toLowerCase().includes(q));
-            searchResults.innerHTML = matches.map(c => {
-                const slug = c.name.toLowerCase().replace(/ /g, '-').replace(/\./g, '');
-                return `<a href="cities/${slug}.html">${c.emoji} ${c.name}, ${c.country}</a>`;
-            }).join('');
+            const matches = cities.filter(c => 
+                c.name.toLowerCase().includes(q) || c.country.toLowerCase().includes(q)
+            ).slice(0, 10);
+            if (matches.length === 0) {
+                searchResults.innerHTML = '<div style="padding:15px 24px;color:#999">No matches</div>';
+            } else {
+                searchResults.innerHTML = matches.map(c => 
+                    `<a href="cities/${c.slug}.html">${c.emoji} ${c.name}, ${c.country}</a>`
+                ).join('');
+            }
             searchResults.classList.add('active');
         });
+        
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-box')) {
+                searchResults.classList.remove('active');
+            }
+        });
+        
+        fetch('cities-index.json')
+            .then(r => r.json())
+            .then(data => {
+                cities = data;
+                renderAll();
+            })
+            .catch(err => {
+                console.error('Failed to load cities-index.json', err);
+                document.getElementById('bestNowGrid').innerHTML = '<p style="color:white">Failed to load cities.</p>';
+            });
     </script>
 </body>
 </html>

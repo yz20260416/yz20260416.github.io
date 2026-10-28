@@ -17,6 +17,7 @@ import os
 import re
 import sys
 import time
+from city_utils import slugify, city_filename
 from datetime import date
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -29,6 +30,7 @@ import requests
 
 API_URL = "https://api.deepseek.com/chat/completions"
 API_MODEL = "deepseek-chat"
+WIKI_API = "https://en.wikipedia.org/w/api.php"
 
 BASE_DIR = Path(__file__).resolve().parent
 CITIES_DIR = BASE_DIR / "cities"
@@ -36,7 +38,7 @@ SITEMAP_PATH = BASE_DIR / "sitemap.xml"
 CITIES_JSON = BASE_DIR / "cities.json"
 SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "https://yz20260416.github.io").rstrip("/")
 
-# 从 aider.sh 读取 API Key
+
 def get_api_key():
     key = os.environ.get("DEEPSEEK_API_KEY")
     if key:
@@ -52,9 +54,10 @@ def get_api_key():
             print(f"[warn] 读取 aider.sh 失败: {e}", file=sys.stderr)
     return None
 
+
 API_KEY = get_api_key()
 
-# 加载城市配置
+
 def load_cities():
     if not CITIES_JSON.exists():
         print(f"[error] 找不到 {CITIES_JSON}", file=sys.stderr)
@@ -62,26 +65,61 @@ def load_cities():
     with open(CITIES_JSON, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+
 CITIES_DATA = load_cities()
+
+
+# ---------------------------------------------------------------------------
+# 维基百科材料抓取
+# ---------------------------------------------------------------------------
+
+def fetch_wiki_culture(city: str, country: str = "") -> str:
+    """抓维基百科该城市条目的 History/Culture 章节原文。失败返回空字符串。"""
+    headers = {"User-Agent": "TravelGuidesBot/1.0 (educational project)"}
+
+    def _query(title: str) -> str:
+        params = {
+            "action": "query",
+            "prop": "extracts",
+            "explaintext": 1,
+            "format": "json",
+            "redirects": 1,
+            "titles": title,
+        }
+        try:
+            resp = requests.get(WIKI_API, params=params, headers=headers, timeout=30)
+            if resp.status_code != 200:
+                return ""
+            data = resp.json()
+            pages = data.get("query", {}).get("pages", {})
+            for page in pages.values():
+                extract = page.get("extract", "")
+                if extract and len(extract) > 200:
+                    # 只取前 3000 字符，避免 prompt 过长
+                    return extract[:3000]
+            return ""
+        except Exception as e:
+            print(f"  [warn] wiki 查询 '{title}' 失败: {e}", file=sys.stderr)
+            return ""
+
+    # 依次尝试：城市名+国家、城市名、城市名 (国家)
+    for title in [f"{city}", f"{city}, {country}", f"{city} ({country})"]:
+        text = _query(title)
+        if text:
+            print(f"  [wiki] {city}: 拿到 {len(text)} 字符材料")
+            return text
+
+    print(f"  [wiki] {city}: 未找到材料，跳过人文段", file=sys.stderr)
+    return ""
+
 
 # ---------------------------------------------------------------------------
 # 工具函数
 # ---------------------------------------------------------------------------
 
-def slugify(name: str) -> str:
-    s = name.lower().strip()
-    s = re.sub(r"[^a-z0-9]+", "-", s)
-    return s.strip("-")
-
-
-def city_filename(name: str) -> str:
-    return f"{slugify(name)}.html"
-
-
 def related_for(city_data):
     if "related" in city_data:
         return city_data["related"]
-    # 默认取同 region 的前 3 个城市
     region = city_data.get("region", "")
     same_region = [c["name"] for c in CITIES_DATA if c.get("region") == region and c["name"] != city_data["name"]]
     return same_region[:3]
@@ -93,10 +131,13 @@ def related_for(city_data):
 
 PROMPT_TEMPLATE = """You are a travel writer. Produce factual, concise travel guide content for the city: {city}.
 
+{culture_section}
+
 Return ONLY a JSON object (no markdown, no code fences) with exactly this schema:
 
 {{
   "intro": "2-3 sentences overview of the city and why/when to visit.",
+  "culture": "{culture_instruction}",
   "months": [
     {{"month": "January", "temperature": "2-10°C", "rainfall": "Low", "crowds": "Low", "recommendation": "Good"}},
     ... exactly 12 entries, January through December ...
@@ -122,11 +163,44 @@ Rules:
 - recommendation must be one of: Excellent, Very Good, Good, Fair.
 - Use realistic seasonal data for {city}.
 - Keep descriptions to a single sentence.
+- In the "culture" field, avoid references to modern political systems or ideologies; focus on culture, history, customs, geography, and daily life.
 - Output valid JSON only.
 """
 
+CULTURE_INSTRUCTION_WITH_MATERIAL = (
+    "200-300 words on the local character of this city. "
+    "Using ONLY the provided Wikipedia material, extract 1-2 SPECIFIC details that a generic travel guide would miss "
+    "(a named tradition, a local custom, a historical quirk, a neighborhood's character). "
+    "For each detail, explain in one sentence why a visitor should care. "
+    "Do NOT write generic phrases like 'rich history' or 'vibrant culture'. "
+    "Do NOT summarize the entire Wikipedia article — pick specific details."
+)
 
-def call_deepseek(city: str, api_key: str, retries: int = 3) -> dict:
+CULTURE_INSTRUCTION_FALLBACK = (
+    "200-300 words on the local character of this city. "
+    "Be specific: name one local tradition, custom, or historical detail that a generic guide would miss, "
+    "and explain why a visitor should care. Avoid generic phrases."
+)
+
+
+def call_deepseek(city: str, api_key: str, culture_material: str = "", retries: int = 3) -> dict:
+    if culture_material:
+        culture_section = (
+            "Below is reference material from Wikipedia about this city. "
+            "Use it to extract SPECIFIC local details, not generic descriptions.\n\n"
+            f"--- WIKIPEDIA MATERIAL ---\n{culture_material}\n--- END MATERIAL ---"
+        )
+        culture_instruction = CULTURE_INSTRUCTION_WITH_MATERIAL
+    else:
+        culture_section = ""
+        culture_instruction = CULTURE_INSTRUCTION_FALLBACK
+
+    prompt = PROMPT_TEMPLATE.format(
+        city=city,
+        culture_section=culture_section,
+        culture_instruction=culture_instruction,
+    )
+
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
@@ -135,7 +209,7 @@ def call_deepseek(city: str, api_key: str, retries: int = 3) -> dict:
         "model": API_MODEL,
         "messages": [
             {"role": "system", "content": "You output strict JSON only."},
-            {"role": "user", "content": PROMPT_TEMPLATE.format(city=city)},
+            {"role": "user", "content": prompt},
         ],
         "temperature": 0.7,
         "response_format": {"type": "json_object"},
@@ -166,9 +240,42 @@ def esc(text) -> str:
     return escape(str(text))
 
 
-def render_html(city_data: dict, data: dict) -> str:
+POLITICAL_TERMS = [
+    "communist", "capitalist", "socialist", "imperialist",
+    "regime", "dictatorship", "authoritarian",
+]
+
+def sanitize_culture(text: str) -> str:
+    """替换文化段里可能引发不必要联想的政治分期表述。"""
+    if not text:
+        return text
+    out = text
+    out = out.replace(
+        "through imperial, republican, and communist eras",
+        "across more than two millennia of continuous history"
+    )
+    out = out.replace(
+        "imperial, republican, and communist eras",
+        "more than two millennia of continuous history"
+    )
+    out = out.replace(
+        "imperial, republican, and communist",
+        "more than two millennia of"
+    )
+    # 兜底：逐词替换，保留句子通顺
+    for term in POLITICAL_TERMS:
+        out = out.replace(term, "")
+    # 清理替换后可能出现的多余空格和标点
+    import re as _re
+    out = _re.sub(r"\s{2,}", " ", out)
+    out = _re.sub(r"\s+([,.;:])", r"\1", out)
+    return out.strip()
+
+
+def render_html(city_data: dict, data: dict, has_culture_material: bool = False) -> str:
     city = city_data["name"]
     intro = esc(data.get("intro", ""))
+    culture = esc(sanitize_culture(data.get("culture", "")))
     months = data.get("months", [])
     attractions = data.get("attractions", [])
     practical = data.get("practical", {})
@@ -211,6 +318,20 @@ def render_html(city_data: dict, data: dict) -> str:
         for r in related
     )
 
+    culture_section = ""
+    if culture:
+        culture_section = f"""
+      <h2>Local Character</h2>
+      <p>{culture}</p>
+"""
+
+    source_note = ""
+    if has_culture_material:
+        source_note = (
+            f'\n      <p class="source-note">Local character section based on public Wikipedia material; '
+            f'generated by AI on {date.today().isoformat()}.</p>'
+        )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -228,6 +349,7 @@ def render_html(city_data: dict, data: dict) -> str:
     </header>
 
     <main>
+{culture_section}
       <h2>Monthly Overview</h2>
       <div class="table-wrapper">
         <table>
@@ -267,6 +389,7 @@ def render_html(city_data: dict, data: dict) -> str:
 {related_items}
         </ul>
       </nav>
+{source_note}
     </main>
 
     <footer>
@@ -307,6 +430,11 @@ def rebuild_sitemap() -> None:
 """
     SITEMAP_PATH.write_text(xml, encoding="utf-8")
     print(f"[sitemap] 已更新 {SITEMAP_PATH}（{len(urls)} 条 URL）")
+    try:
+        from build_index import main as build_index_main
+        build_index_main()
+    except Exception as e:
+        print(f"[warn] 更新 cities-index.json 失败: {e}", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -356,10 +484,12 @@ def main() -> int:
 
     for i, city_data in enumerate(todo, 1):
         city = city_data["name"]
+        country = city_data.get("country", "")
         print(f"[{i}/{len(todo)}] 生成 {city} ...")
         try:
-            data = call_deepseek(city, api_key)
-            html = render_html(city_data, data)
+            culture_material = fetch_wiki_culture(city, country)
+            data = call_deepseek(city, api_key, culture_material=culture_material)
+            html = render_html(city_data, data, has_culture_material=bool(culture_material))
             out = CITIES_DIR / city_filename(city)
             out.write_text(html, encoding="utf-8")
             print(f"  -> 已写入 {out}")
