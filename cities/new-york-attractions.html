@@ -3,19 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="New York Top 10 Attractions - Complete travel guide with practical information for visitors.">
-    <title>New York Top 10 Attractions | Travel Guides</title>
+    <title>New York Attractions - Travel Guides</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { margin: 0; padding: 0; background: #f8fafc; font-family: sans-serif; }
+        .content-wrapper { max-width: 960px; margin: 0 auto; padding: 100px 20px 60px; }
+        
+        /* 多主题色彩卡片 */
+        .content-card { 
+            background: #fff; padding: 40px; border-radius: 16px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); width: 100%; box-sizing: border-box;
+            border-top: 6px solid #10b981;
+        }
+        
+        /* 标题带主题色 */
+        h2, h3 { color: #047857; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 8px; overflow: hidden; }
+        th { background: #10b981; color: white; padding: 12px; text-align: left; font-weight: 600; }
+        td { padding: 12px; border-bottom: 1px solid #e2e8f0; background: #fff; }
+        tr:nth-child(even) td { background: #ecfdf5; }
+        
+        ul, ol { background: #ecfdf5; padding: 24px 24px 24px 48px; border-radius: 12px; margin: 20px 0; border: 1px solid #10b98133; }
+        li { margin-bottom: 10px; line-height: 1.6; }
+        
+        * { max-width: 100% !important; box-sizing: border-box; }
+    
+        /* 统一内部标题样式 */
+        .content-card h1, .content-card h2 {
+            font-size: 2em;
+            margin-top: 0;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            letter-spacing: -0.5px;
+        }
+        .content-card p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+        
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../index.html">Home</a> > <a href="new-york.html">New York</a> > Top 10 Attractions
-        </nav>
-    </header>
-    
-    <main>
-        <article>
+    <nav style="position: fixed; top: 0; left: 0; width: 100vw; height: 60px; z-index: 999999; background: #1e293b; display: flex; align-items: center; padding: 0 24px; box-sizing: border-box; gap: 24px; font-family: -apple-system, sans-serif; font-size: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+    <a href="../index.html" style="color: #f8fafc; text-decoration: none; font-weight: bold; margin-right: 10px;">&larr; Home</a>
+    <span style="color: #475569;">|</span>
+    <a href="new-york.html" style="color: #cbd5e1; text-decoration: none;">New York Guide</a>
+    <a href="new-york-weather.html" style="color: #cbd5e1; text-decoration: none;">Weather</a>
+    <a href="new-york-attractions.html" style="color: #ef4444; font-weight: 800; border-bottom: 3px solid #ef4444; padding-bottom: 4px; text-decoration: none;">Attractions</a>
+    <a href="new-york-itinerary.html" style="color: #cbd5e1; text-decoration: none;">Itinerary</a>
+    <a href="new-york-budget.html" style="color: #cbd5e1; text-decoration: none;">Budget</a>
+</nav>
+    <div class="content-wrapper">
+        <div class="content-card">
+
+        <div class="banner-image" style="width: 100%; height: 200px; background-image: url('../css/images/new-york.jpg'); background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></div>
+        
+            
+            
+
+      
+        
+<article>
             <h2>New York City: Top 10 Must-See Attractions</h2>
 <p>New York City packs an extraordinary concentration of iconic sights into five boroughs, from world-class museums and soaring observation decks to leafy parks and historic landmarks. This guide covers the ten attractions most travelers should prioritize, with current-style ticket prices (always verify on official websites, as prices change), opening hours, and practical tips to help you plan efficiently and avoid common pitfalls.</p>
 
@@ -134,21 +186,9 @@
             
             
             
-            <section class="related-links">
-                <h3>More New York Guides</h3>
-                <ul>
-                    <li><a href="new-york.html">Best Time to Visit New York</a></li>
-                    <li><a href="new-york-weather.html">New York Weather</a></li>
-                    <li><a href="new-york-attractions.html">New York Attractions</a></li>
-                    <li><a href="new-york-itinerary.html">New York Itinerary</a></li>
-                    <li><a href="new-york-budget.html">New York Budget</a></li>
-                </ul>
-            </section>
-        </article>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026 Travel Guides</p>
-    </footer>
+            
+        
+        </div>
+    </div>
 </body>
 </html>

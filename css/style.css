@@ -174,3 +174,161 @@ footer {
     font-size: 0.9rem;
   }
 }
+
+
+
+
+/* 基础排版统一（防止页面大小不一） */
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px 60px; }
+main, article { 
+    background: #fff; padding: 36px; border-radius: 16px; 
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04); margin-top: 24px; 
+    border-top: 6px solid #e2e8f0; /* 默认顶部边条 */
+}
+
+/* 1. 主页 (无 class，默认)：高级蓝 */
+body:not([class*="theme-"]) main { border-top-color: #3b82f6; }
+body:not([class*="theme-"]) h2 { color: #1e3a8a; }
+
+/* 2. 天气页：天空蓝 */
+.theme-weather main { border-top-color: #0ea5e9; }
+.theme-weather h2 { color: #0369a1; }
+.theme-weather th { background: #0ea5e9; color: white; }
+
+/* 3. 景点页：生机绿 */
+.theme-attractions main { border-top-color: #10b981; }
+.theme-attractions h2 { color: #047857; }
+.theme-attractions th { background: #10b981; color: white; }
+
+/* 4. 行程页：活力橙 */
+.theme-itinerary main { border-top-color: #ea580c; }
+.theme-itinerary h2 { color: #c2410c; }
+.theme-itinerary th { background: #ea580c; color: white; }
+
+/* 5. 预算页：高级紫/灰 */
+.theme-budget main { border-top-color: #8b5cf6; }
+.theme-budget h2 { color: #6d28d9; }
+.theme-budget th { background: #8b5cf6; color: white; }
+
+/* 通用表格美化（覆盖 AI 生成的干瘪表格） */
+table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 8px; overflow: hidden; }
+th { padding: 14px 16px; text-align: left; font-weight: 600; }
+td { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; background: #fff; color: #334155; }
+tbody tr:nth-child(even) td { background-color: #f8fafc; }
+
+/* 通用列表美化 */
+ul, ol { background: #f8fafc; padding: 24px 24px 24px 48px; border-radius: 12px; border: 1px solid #e2e8f0; margin: 24px 0; }
+li { margin-bottom: 12px; color: #334155; line-height: 1.6; }
+li strong { color: #0f172a; }
+
+/* ==========================================
+   强制统一全站页面尺寸与间距
+   ========================================== */
+
+/* 统一容器宽度 */
+.container { 
+    max-width: 960px; 
+    margin: 0 auto; 
+    padding: 0 20px 60px; 
+}
+
+/* 统一内页主体（不管有没有 header，顶部的距离都一致） */
+main, article { 
+    background: #fff; 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04); 
+    border-top: 6px solid #e2e8f0;
+    margin-top: 24px; 
+    width: 100%; /* 强制撑满容器 */
+    box-sizing: border-box;
+}
+
+/* 统一长尾页顶部的面包屑导航高度 */
+body > header {
+    background: #f8fafc;
+    padding: 12px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 0;
+}
+body > header nav { font-size: 14px; color: #64748b; }
+body > header a { color: #ea580c; text-decoration: none; }
+
+/* 统一主页面顶部的 header 高度，防止跳页时抖动 */
+.container > header {
+    padding-top: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 24px;
+}
+.container > header h1 { font-size: 2em; color: #0f172a; margin-bottom: 12px; }
+
+/* 多主题色彩 */
+body:not([class*="theme-"]) main { border-top-color: #3b82f6; }
+body:not([class*="theme-"]) h2 { color: #1e3a8a; }
+.theme-weather main { border-top-color: #0ea5e9; }
+.theme-weather h2 { color: #0369a1; }
+.theme-weather th { background: #0ea5e9; color: white; }
+.theme-attractions main { border-top-color: #10b981; }
+.theme-attractions h2 { color: #047857; }
+.theme-attractions th { background: #10b981; color: white; }
+.theme-itinerary main { border-top-color: #ea580c; }
+.theme-itinerary h2 { color: #c2410c; }
+.theme-itinerary th { background: #ea580c; color: white; }
+.theme-budget main { border-top-color: #8b5cf6; }
+.theme-budget h2 { color: #6d28d9; }
+.theme-budget th { background: #8b5cf6; color: white; }
+
+table { width: 100%; border-collapse: collapse; margin: 24px 0; border-radius: 8px; overflow: hidden; }
+th { padding: 14px 16px; text-align: left; font-weight: 600; }
+td { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; background: #fff; color: #334155; }
+tbody tr:nth-child(even) td { background-color: #f8fafc; }
+ul, ol { background: #f8fafc; padding: 24px 24px 24px 48px; border-radius: 12px; border: 1px solid #e2e8f0; margin: 24px 0; }
+li { margin-bottom: 12px; color: #334155; line-height: 1.6; }
+li strong { color: #0f172a; }
+
+/* ==========================================
+   暴力镇压 AI 乱排版：强制统一内层尺寸
+   ========================================== */
+
+/* 1. 强制主体和文章撑满容器，不允许有任何内缩 */
+main, article, .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. 清理 AI 留下的各种奇奇怪怪的 div 和 section 边距 */
+article > div, 
+article > section, 
+main > div, 
+main > section,
+.table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* 3. 强制表格撑满，绝对不允许表格缩在角落 */
+table {
+    width: 100% !important;
+    display: table !important;
+    table-layout: auto !important;
+    margin: 24px 0 !important;
+}
+
+/* 4. 强制列表（ul/ol）不缩水 */
+ul, ol {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 5. 统一所有的内联段落和标题，防止 AI 加了奇怪的 left-padding */
+p, h2, h3, h4 {
+    max-width: 100% !important;
+}

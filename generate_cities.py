@@ -318,6 +318,19 @@ def render_html(city_data: dict, data: dict, has_culture_material: bool = False)
         for r in related
     )
 
+    # 生成该城市自己的 4 个长尾页链接
+    slug = slugify(city)
+    own_guides = f"""
+      <nav class="related-cities" style="margin-bottom: 2rem; background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <h2 style="margin-top: 0;">Explore {esc(city)}</h2>
+        <ul>
+          <li><a href="{slug}-weather.html">Weather by Month</a></li>
+          <li><a href="{slug}-attractions.html">Top Attractions</a></li>
+          <li><a href="{slug}-itinerary.html">3-Day Itinerary</a></li>
+          <li><a href="{slug}-budget.html">Travel Cost Guide</a></li>
+        </ul>
+      </nav>"""
+
     culture_section = ""
     if culture:
         culture_section = f"""
@@ -349,6 +362,7 @@ def render_html(city_data: dict, data: dict, has_culture_material: bool = False)
     </header>
 
     <main>
+{own_guides}
 {culture_section}
       <h2>Monthly Overview</h2>
       <div class="table-wrapper">
